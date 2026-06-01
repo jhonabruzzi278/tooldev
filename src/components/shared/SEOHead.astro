@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = 'Descubre, entiende y evalúa herramientas para desarrolladores. Guías, alternativas y recomendaciones reales en español.', ogImage } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const fullTitle = `${title} | ToolDev`;
+const image = ogImage ? new URL(ogImage, Astro.site).href : undefined;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="ToolDev" />
+{image && <meta property="og:image" content={image} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+{image && <meta name="twitter:image" content={image} />}

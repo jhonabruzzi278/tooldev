@@ -1,0 +1,46 @@
+---
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+
+const benefits = [
+  {
+    title: 'Explicaciones reales',
+    description: 'No solo listamos herramientas. Explicamos qué son, para qué sirven y cuándo usarlas.',
+    icon: '💡',
+  },
+  {
+    title: 'Alternativas útiles',
+    description: 'Cada herramienta incluye alternativas para que compares y elijas la mejor opción.',
+    icon: '🔄',
+  },
+  {
+    title: 'Contenido en español',
+    description: 'Todo el contenido está escrito en español, pensado para la comunidad hispanohablante.',
+    icon: '🌎',
+  },
+  {
+    title: 'Curación de calidad',
+    description: 'Seleccionamos y analizamos cada herramienta para ofrecerte solo lo mejor.',
+    icon: '✨',
+  },
+];
+---
+
+<section class="py-16 bg-muted/50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">¿Por qué ToolDev?</h2>
+      <p class="text-muted-foreground">Te ayudamos a tomar mejores decisiones técnicas</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {benefits.map((benefit) => (
+        <Card class="text-center">
+          <CardHeader>
+            <div class="text-4xl mb-4">{benefit.icon}</div>
+            <CardTitle>{benefit.title}</CardTitle>
+            <CardDescription>{benefit.description}</CardDescription>
+          </CardHeader>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

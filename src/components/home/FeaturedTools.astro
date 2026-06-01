@@ -1,0 +1,26 @@
+---
+import ToolCard from '@/components/tools/ToolCard.astro';
+import { getCollection } from 'astro:content';
+
+const allTools = await getCollection('tools');
+const featuredTools = allTools.filter((t) => t.data.featured);
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Herramientas destacadas</h2>
+      <p class="text-muted-foreground">Las herramientas más populares y útiles para desarrolladores</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featuredTools.map((tool) => (
+        <ToolCard tool={tool} />
+      ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/tools" class="text-primary hover:underline font-medium">
+        Ver todas las herramientas →
+      </a>
+    </div>
+  </div>
+</section>
