@@ -1,6 +1,4 @@
 ---
-import { getToolLogo } from '@/lib/svgl';
-import type { ThemeOptions } from '@/lib/svgl';
 import { readdirSync, existsSync } from 'node:fs';
 
 interface Props {
@@ -22,23 +20,11 @@ if (existsSync(logosDir)) {
   }
 }
 
-const localSrc = localMap[toolName];
-
-const logo = localSrc ? null : await getToolLogo(toolName);
-const route = logo?.route;
+const src = localMap[toolName];
 ---
 
 {
-  localSrc ? (
-    <img src={localSrc} alt={toolName} width={size} height={size} class={className || undefined} loading="lazy" decoding="async" />
-  ) : route ? (
-    typeof route === 'string' ? (
-      <img src={route} alt={toolName} width={size} height={size} class={className || undefined} loading="lazy" decoding="async" />
-    ) : (
-      <>
-        <img src={(route as ThemeOptions).light} alt={toolName} width={size} height={size} class={`dark:hidden${className ? ' ' + className : ''}`} loading="lazy" decoding="async" />
-        <img src={(route as ThemeOptions).dark} alt={toolName} width={size} height={size} class={`hidden dark:block${className ? ' ' + className : ''}`} loading="lazy" decoding="async" />
-      </>
-    )
-  ) : null
+  src && (
+    <img src={src} alt={toolName} width={size} height={size} class={className || undefined} loading="lazy" decoding="async" />
+  )
 }

@@ -8,8 +8,8 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  // Cambiar por la URL real de producción (Vercel o dominio personalizado)
-  site: 'https://tooldev.dev',
+  // Production URL — update when custom domain is set
+  site: 'https://tool-dev-rust.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   },
