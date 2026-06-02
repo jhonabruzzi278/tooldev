@@ -1,0 +1,17 @@
+---
+import CategoriesDetailContent from '@/components/pages/CategoriesDetailContent.astro';
+import { categories } from '@/lib/categories';
+import type { Locale } from '@/lib/i18n/translations';
+
+export async function getStaticPaths() {
+  return categories.map((cat) => ({
+    params: { slug: cat.slug },
+    props: { locale: 'en' as Locale },
+  }));
+}
+
+const { slug } = Astro.params;
+const { locale = 'en' as Locale } = Astro.props;
+---
+
+<CategoriesDetailContent slug={slug!} {locale} />

@@ -1,0 +1,66 @@
+---
+import ToolLogo from '@/components/tools/ToolLogo.astro';
+import { getCollection } from 'astro:content';
+import { getCategoryBySlug } from '@/lib/categories';
+import { Icon } from 'astro-icon/components';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+
+const allTools = await getCollection('tools');
+const featuredTools = allTools.filter((t) => t.data.featured);
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.featuredTitle}</h2>
+      <p class="text-muted-foreground">{lang.home.featuredSubtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {featuredTools.map((tool) => {
+        const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
+        const category = getCategoryBySlug(tool.data.category);
+        const screenshotPath = `/screenshots/${tool.id}.webp`;
+
+        return (
+          <a href={toolHref} class="group block">
+            <div class="rounded-xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-md">
+              <div class="relative aspect-[16/10] bg-muted/20">
+                <img
+                  src={screenshotPath}
+                  alt={tool.data.name}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <ToolLogo toolName={tool.data.name} size={22} />
+                  <h3 class="font-semibold text-base truncate">{tool.data.name}</h3>
+                </div>
+                {category && (
+                  <span class="text-sm text-muted-foreground">{category.name}</span>
+                )}
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href={locale === 'en' ? '/en/tools' : '/tools'} class="text-base text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+        {lang.home.featuredAllFull}
+        <Icon name="tabler:arrow-right" width="16" height="16" />
+      </a>
+    </div>
+  </div>
+</section>

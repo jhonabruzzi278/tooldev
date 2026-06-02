@@ -21,6 +21,27 @@ const tools = defineCollection({
     features: z.array(z.string()),
     alternatives: z.array(z.string()).optional(),
     relatedTools: z.array(z.string()).optional(),
+    howToUse: z.array(z.object({
+      step: z.number(),
+      title: z.string(),
+      description: z.string(),
+    })).optional(),
+    whenToUse: z.array(z.object({
+      title: z.string(),
+      description: z.string(),
+    })).optional(),
+    examples: z.array(z.object({
+      title: z.string(),
+      code: z.string(),
+      output: z.string().optional(),
+    })).optional(),
+    tips: z.array(z.object({
+      text: z.string(),
+    })).optional(),
+    faq: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
     publishedAt: z.coerce.date(),
   }),
 });

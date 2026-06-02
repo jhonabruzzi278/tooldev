@@ -1,35 +1,61 @@
 ---
 import ThemeToggle from './ThemeToggle';
 import MobileMenu from './MobileMenu';
+import LanguageSwitcher from './LanguageSwitcher';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
 
 const navLinks = [
-  { href: '/tools', label: 'Herramientas' },
-  { href: '/categories', label: 'Categorías' },
-  { href: '/about', label: 'Acerca de' },
-  { href: '/contact', label: 'Contacto' },
+  { href: locale === 'en' ? '/en/tools' : '/tools', label: lang.nav.tools },
+  { href: locale === 'en' ? '/en/categories' : '/categories', label: lang.nav.categories },
+  { href: locale === 'en' ? '/en/about' : '/about', label: lang.nav.about },
+  { href: locale === 'en' ? '/en/contact' : '/contact', label: lang.nav.contact },
 ];
+
+const currentPath = Astro.url.pathname;
+const baseHref = locale === 'en' ? '/en' : '/';
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<header class="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
   <div class="container mx-auto flex h-16 items-center justify-between px-4">
-    <a href="/" class="flex items-center gap-2 font-bold text-xl">
-      <span class="text-primary">Tool</span><span class="text-muted-foreground">Dev</span>
+    <a href={baseHref} class="flex items-center gap-2 font-bold text-xl tracking-tight">
+      <span class="size-7 rounded-lg bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">T</span>
+      <span class="hidden sm:inline">{lang.site.name.slice(0, 4)}</span><span class="text-muted-foreground hidden sm:inline">{lang.site.name.slice(4)}</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {link.label}
-        </a>
-      ))}
+    <nav class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => {
+        const isActive = currentPath.startsWith(link.href) && link.href !== baseHref;
+        return (
+          <a
+            href={link.href}
+            aria-current={isActive ? 'page' : undefined}
+            class={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+              isActive
+                ? 'text-foreground bg-muted'
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+            }`}
+          >
+            {link.label}
+            {isActive && (
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full" />
+            )}
+          </a>
+        );
+      })}
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1">
+      <LanguageSwitcher locale={locale} client:load />
       <ThemeToggle client:load />
-      <MobileMenu client:load links={navLinks} />
+      <MobileMenu client:load links={navLinks} locale={locale} />
     </div>
   </div>
 </header>

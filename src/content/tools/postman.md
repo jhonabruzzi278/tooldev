@@ -19,6 +19,60 @@ features:
   - Integración con CI/CD
 alternatives: []
 relatedTools: [docker, github-copilot]
+howToUse:
+  - step: 1
+    title: "Crea una nueva colección"
+    description: "Abre Postman, haz clic en 'New Collection' y asigna un nombre descriptivo. Las colecciones agrupan peticiones relacionadas con una misma API, facilitando la organización, documentación y ejecución de tests en lote."
+  - step: 2
+    title: "Configura el entorno y variables"
+    description: "Define entornos (dev, staging, producción) con variables como {{base_url}} o {{api_key}}. Así cambias de entorno sin modificar cada request. Usa variables globales para tokens de autenticación."
+  - step: 3
+    title: "Envía peticiones y escribe tests"
+    description: "Crea una petición HTTP especificando método, URL, headers y body. En la pestaña 'Tests' escribe scripts en JavaScript para validar respuestas con pm.test(), verificando status codes, tiempos de respuesta y estructura del body."
+  - step: 4
+    title: "Automatiza con Collection Runner"
+    description: "Ejecuta todas las peticiones de una colección de forma secuencial con Collection Runner. Programa ejecuciones periódicas con Monitors para detectar regresiones en tus endpoints automáticamente."
+whenToUse:
+  - title: "Desarrollo y prueba de APIs REST"
+    description: "Cuando necesitas probar endpoints manualmente durante el desarrollo, inspeccionar respuestas JSON, y depurar headers y códigos de estado antes de integrar con el frontend."
+  - title: "Documentación de APIs para equipos"
+    description: "Para generar documentación interactiva automática a partir de tus colecciones, permitiendo que otros desarrolladores exploren y prueben tu API sin escribir código."
+  - title: "Automatización de tests de integración"
+    description: "Cuando quieres validar que tus endpoints funcionan correctamente en cada despliegue mediante suites de tests ejecutables desde CI/CD con Newman."
+examples:
+  - title: "Test básico de status code"
+    code: |
+      pm.test("Status code is 200", () => {
+          pm.response.to.have.status(200);
+      });
+      pm.test("Response time is acceptable", () => {
+          pm.expect(pm.response.responseTime).to.be.below(500);
+      });
+    output: "PASS: Status code is 200\nPASS: Response time is acceptable"
+  - title: "Validación de body JSON"
+    code: |
+      const response = pm.response.json();
+      pm.test("User has required fields", () => {
+          pm.expect(response).to.have.property("id");
+          pm.expect(response).to.have.property("name");
+          pm.expect(response.name).to.be.a("string");
+      });
+    output: "PASS: User has required fields"
+tips:
+  - text: "Usa variables de entorno para base_url, api_key y tokens; nunca hardcodees credenciales en las peticiones."
+  - text: "Organiza las colecciones por recurso o módulo, usando carpetas para agrupar peticiones relacionadas (CRUD de usuarios, autenticación, etc.)."
+  - text: "Ejecuta Newman en tu pipeline CI/CD para validar automáticamente que los endpoints no se rompen con cada commit."
+  - text: "Documenta los parámetros y ejemplos de respuesta en la descripción de cada request para que el equipo entienda la API rápidamente."
+  - text: "Usa pruebas de esquema JSON con tv4 o Ajv para validar que la estructura de las respuestas cumple el contrato esperado."
+faq:
+  - question: "¿Cómo ejecuto tests de Postman desde la terminal o CI/CD?"
+    answer: "Usa Newman, el CLI de Postman. Instálalo con npm install -g newman y ejecuta newman run tu-coleccion.json -e entorno.json. Integra con GitHub Actions, Jenkins o cualquier CI."
+  - question: "¿Qué diferencia hay entre variables de entorno y variables globales?"
+    answer: "Las variables de entorno cambian según el entorno seleccionado (dev, staging, prod). Las variables globales son compartidas entre todos los entornos y persisten entre sesiones."
+  - question: "¿Puedo compartir colecciones con mi equipo sin la versión de pago?"
+    answer: "Sí, puedes exportar colecciones como archivos JSON y compartirlas por Git o cualquier medio. La versión de pago añade sincronización en tiempo real y workspaces colaborativos."
+  - question: "¿Postman soporta GraphQL o solo REST?"
+    answer: "Postman soporta GraphQL nativamente: puedes enviar queries y mutations, explorar esquemas con autocompletado y validar respuestas contra el schema de GraphQL."
 publishedAt: 2026-05-31
 ---
 
@@ -59,4 +113,4 @@ Postman sirve para probar APIs de forma rápida sin escribir código, documentar
 - Puede ser pesado y consumir muchos recursos del sistema.
 - Dependencia de servicios en la nube para funciones de equipo.
 - No es open source, lo que limita la personalización.
-- La interfaz puede resultar abrumadora con tantas funcionalidades.
+- La interfaz puede resultar abrumadora por la cantidad de funcionalidades.

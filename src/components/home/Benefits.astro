@@ -1,46 +1,52 @@
 ---
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Icon } from 'astro-icon/components';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
 
-const benefits = [
-  {
-    title: 'Explicaciones reales',
-    description: 'No solo listamos herramientas. Explicamos qué son, para qué sirven y cuándo usarlas.',
-    icon: '💡',
-  },
-  {
-    title: 'Alternativas útiles',
-    description: 'Cada herramienta incluye alternativas para que compares y elijas la mejor opción.',
-    icon: '🔄',
-  },
-  {
-    title: 'Contenido en español',
-    description: 'Todo el contenido está escrito en español, pensado para la comunidad hispanohablante.',
-    icon: '🌎',
-  },
-  {
-    title: 'Curación de calidad',
-    description: 'Seleccionamos y analizamos cada herramienta para ofrecerte solo lo mejor.',
-    icon: '✨',
-  },
-];
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
 ---
 
-<section class="py-16 bg-muted/50">
+<section class="py-16 border-t border-border/50">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">¿Por qué ToolDev?</h2>
-      <p class="text-muted-foreground">Te ayudamos a tomar mejores decisiones técnicas</p>
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.benefitsTitle}</h2>
+      <p class="text-muted-foreground">{lang.home.benefitsSubtitle}</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {benefits.map((benefit) => (
-        <Card class="text-center">
-          <CardHeader>
-            <div class="text-4xl mb-4">{benefit.icon}</div>
-            <CardTitle>{benefit.title}</CardTitle>
-            <CardDescription>{benefit.description}</CardDescription>
-          </CardHeader>
-        </Card>
-      ))}
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <div class="text-center">
+        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <Icon name="tabler:bulb" class="text-primary" width="24" height="24" />
+        </div>
+        <h3 class="font-semibold text-base mb-1">{lang.benefits.realTitle}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.realDesc}</p>
+      </div>
+      <div class="text-center">
+        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <Icon name="tabler:arrows-shuffle" class="text-primary" width="24" height="24" />
+        </div>
+        <h3 class="font-semibold text-base mb-1">{lang.benefits.altTitle}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.altDesc}</p>
+      </div>
+      <div class="text-center">
+        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <Icon name="tabler:world" class="text-primary" width="24" height="24" />
+        </div>
+        <h3 class="font-semibold text-base mb-1">{lang.benefits.langTitle}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.langDesc}</p>
+      </div>
+      <div class="text-center">
+        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <Icon name="tabler:compass" class="text-primary" width="24" height="24" />
+        </div>
+        <h3 class="font-semibold text-base mb-1">{lang.benefits.curatedTitle}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.curatedDesc}</p>
+      </div>
     </div>
   </div>
 </section>

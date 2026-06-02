@@ -1,26 +1,8 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import ToolCard from '@/components/tools/ToolCard.astro';
-import { getCollection } from 'astro:content';
+import ToolsIndexContent from '@/components/pages/ToolsIndexContent.astro';
+import type { Locale } from '@/lib/i18n/translations';
 
-const tools = await getCollection('tools');
-const sortedTools = tools.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const locale = (Astro.currentLocale as Locale) || 'es';
 ---
 
-<BaseLayout title="Herramientas" description="Explora todas las herramientas para desarrolladores. Encuentra la herramienta perfecta para tu próximo proyecto.">
-  <section class="py-12">
-    <div class="container mx-auto px-4">
-      <div class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">Todas las herramientas</h1>
-        <p class="text-muted-foreground text-lg">
-          {sortedTools.length} herramientas para desarrolladores
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sortedTools.map((tool) => (
-          <ToolCard tool={tool} />
-        ))}
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<ToolsIndexContent {locale} />

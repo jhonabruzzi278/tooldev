@@ -2,9 +2,16 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import type { Locale } from '@/lib/i18n/translations';
+import { translations } from '@/lib/i18n/translations';
 
-export default function ContactForm() {
+interface ContactFormProps {
+  locale?: Locale;
+}
+
+export default function ContactForm({ locale = 'es' }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const lang = translations[locale];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,29 +41,29 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1">Nombre</label>
-        <Input id="name" name="name" required placeholder="Tu nombre" />
+        <label htmlFor="name" className="block text-sm font-medium mb-1">{lang.contact.formName}</label>
+        <Input id="name" name="name" required placeholder={lang.contact.formPlaceholderName} />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">Correo electrónico</label>
-        <Input id="email" name="email" type="email" required placeholder="tu@email.com" />
+        <label htmlFor="email" className="block text-sm font-medium mb-1">{lang.contact.formEmail}</label>
+        <Input id="email" name="email" type="email" required placeholder={lang.contact.formPlaceholderEmail} />
       </div>
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium mb-1">Asunto</label>
-        <Input id="subject" name="subject" required placeholder="¿Sobre qué nos escribes?" />
+        <label htmlFor="subject" className="block text-sm font-medium mb-1">{lang.contact.formSubject}</label>
+        <Input id="subject" name="subject" required placeholder={lang.contact.formPlaceholderSubject} />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">Mensaje</label>
-        <Textarea id="message" name="message" required placeholder="Tu mensaje..." className="min-h-[120px]" />
+        <label htmlFor="message" className="block text-sm font-medium mb-1">{lang.contact.formMessage}</label>
+        <Textarea id="message" name="message" required placeholder={lang.contact.formPlaceholderMessage} className="min-h-[120px]" />
       </div>
       <Button type="submit" disabled={status === 'sending'} className="w-full">
-        {status === 'sending' ? 'Enviando...' : status === 'sent' ? '¡Mensaje enviado!' : 'Enviar mensaje'}
+        {status === 'sending' ? lang.contact.formSending : status === 'sent' ? lang.contact.formSent : lang.contact.formSubmit}
       </Button>
       {status === 'sent' && (
-        <p className="text-sm text-green-600 text-center">Gracias por tu mensaje. Te responderemos pronto.</p>
+        <p className="text-sm text-green-600 text-center">{lang.contact.formSentMsg}</p>
       )}
       {status === 'error' && (
-        <p className="text-sm text-red-600 text-center">Hubo un error. Intenta de nuevo o escríbenos a contacto@tooldev.dev</p>
+        <p className="text-sm text-red-600 text-center">{lang.contact.formError}jonathanguerra278@gmail.com</p>
       )}
     </form>
   );

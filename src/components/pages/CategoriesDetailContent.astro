@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ToolCard from '@/components/tools/ToolCard.astro';
+import { categories, getCategoryBySlug } from '@/lib/categories';
+import { getCollection } from 'astro:content';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  slug: string;
+  locale?: Locale;
+}
+
+const { slug } = Astro.props;
+const { locale = 'es' } = Astro.props;
+const category = getCategoryBySlug(slug!);
+const lang = getTranslations(locale);
+
+const allTools = await getCollection('tools');
+const categoryTools = allTools
+  .filter((t) => t.data.category === slug)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const backHref = locale === 'en' ? '/en/categories' : '/categories';
+---
+
+<BaseLayout title={category?.name ?? (locale === 'en' ? 'Category' : 'Categoría')} description={category?.description} {locale}>
+  <section
+    class="relative overflow-hidden py-16 md:py-20 border-b border-border/50"
+    style={category ? `background: linear-gradient(180deg, light-dark(${category.lightBg}, ${category.darkBg}), transparent)` : ''}
+  >
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    {category && (
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+        style={`background: ${category.color}15`}
+      />
+    )}
+    <div class="container mx-auto px-4 text-center relative">
+      <a href={backHref} class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <Icon name="tabler:chevron-left" class="text-current" width="14" height="14" />
+          {lang.categories.back}
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{category?.name}</h1>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">{category?.description}</p>
+        <p class="text-sm font-medium mt-4" style={category ? `color: ${category.color}` : ''}>
+          {categoryTools.length} {categoryTools.length === 1 ? lang.categories.count_one : lang.categories.count_other}
+        </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      {categoryTools.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categoryTools.map((tool) => (
+            <ToolCard tool={tool} {locale} />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20">
+          <p class="text-muted-foreground text-lg">{lang.categories.empty}</p>
+          <p class="text-muted-foreground text-sm mt-2">{lang.categories.emptySub}</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

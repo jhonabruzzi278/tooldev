@@ -1,138 +1,17 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { getCollection, render } from 'astro:content';
-import { getCategoryName } from '@/lib/categories';
-import CopyForAI from '@/components/tools/CopyForAI';
+import ToolsDetailContent from '@/components/pages/ToolsDetailContent.astro';
+import { getCollection } from 'astro:content';
+import type { Locale } from '@/lib/i18n/translations';
 
 export async function getStaticPaths() {
   const tools = await getCollection('tools');
   return tools.map((tool) => ({
     params: { slug: tool.id },
-    props: { tool },
+    props: { tool, locale: 'es' as Locale },
   }));
 }
 
-const { tool } = Astro.props;
-const { data } = tool;
-const { Content } = await render(tool);
-
-const allTools = await getCollection('tools');
-const relatedTools = allTools.filter(
-  (t) => t.data.category === data.category && t.id !== tool.id
-).slice(0, 3);
-
-const alternativeTools = data.alternatives
-  ? allTools.filter((t) => data.alternatives!.includes(t.id))
-  : [];
+const { tool, locale = 'es' as Locale } = Astro.props;
 ---
 
-<BaseLayout title={data.name} description={data.description}>
-  <article class="py-12">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <header class="mb-8">
-        <div class="flex flex-wrap items-center gap-2 mb-4">
-          <Badge variant="outline">{getCategoryName(data.category)}</Badge>
-          {data.openSource && <Badge variant="secondary">Open Source</Badge>}
-          {data.license && <Badge variant="outline">{data.license}</Badge>}
-          <Badge variant="outline" class="capitalize">{data.pricing}</Badge>
-          <Badge variant="outline" class="capitalize">{data.technicalLevel}</Badge>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">{data.name}</h1>
-        <p class="text-xl text-muted-foreground">{data.description}</p>
-
-        <div class="flex flex-wrap gap-3 mt-6">
-          <Button asChild variant="default">
-            <a href={data.officialSite} target="_blank" rel="noopener noreferrer">
-              Sitio oficial
-            </a>
-          </Button>
-          {data.github && (
-            <Button asChild variant="outline">
-              <a href={data.github} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            </Button>
-          )}
-          <CopyForAI client:load toolName={data.name} toolCategory={getCategoryName(data.category)} toolOpenSource={data.openSource} toolDescription={data.description} toolAlternatives={data.alternatives ?? []} />
-        </div>
-      </header>
-
-      <Separator class="my-8" />
-
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold mb-3">Compatibilidad</h2>
-        <div class="flex flex-wrap gap-2">
-          {data.compatibility.map((platform: string) => (
-            <Badge variant="outline">{platform}</Badge>
-          ))}
-        </div>
-      </div>
-
-      {data.features.length > 0 && (
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-3">Funciones principales</h2>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {data.features.map((feature: string) => (
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <Separator class="my-8" />
-
-      <div class="prose prose-neutral dark:prose-invert max-w-none">
-        <Content />
-      </div>
-
-      {alternativeTools.length > 0 && (
-        <>
-          <Separator class="my-8" />
-          <section>
-            <h2 class="text-2xl font-bold mb-4">Alternativas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {alternativeTools.map((alt) => (
-                <a href={`/tools/${alt.id}`}>
-                  <Card class="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle class="text-lg">{alt.data.name}</CardTitle>
-                      <p class="text-sm text-muted-foreground">{alt.data.description}</p>
-                    </CardHeader>
-                  </Card>
-                </a>
-              ))}
-            </div>
-          </section>
-        </>
-      )}
-
-      {relatedTools.length > 0 && (
-        <>
-          <Separator class="my-8" />
-          <section>
-            <h2 class="text-2xl font-bold mb-4">Herramientas relacionadas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {relatedTools.map((rel) => (
-                <a href={`/tools/${rel.id}`}>
-                  <Card class="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle class="text-lg">{rel.data.name}</CardTitle>
-                      <p class="text-sm text-muted-foreground line-clamp-2">{rel.data.description}</p>
-                    </CardHeader>
-                  </Card>
-                </a>
-              ))}
-            </div>
-          </section>
-        </>
-      )}
-    </div>
-  </article>
-</BaseLayout>
+<ToolsDetailContent tool={tool} {locale} />

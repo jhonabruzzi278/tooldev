@@ -1,0 +1,315 @@
+---
+import { Icon } from 'astro-icon/components';
+import ToolLogo from '@/components/tools/ToolLogo.astro';
+import ToolHowToUse from '@/components/tools/ToolHowToUse.astro';
+import ToolWhenToUse from '@/components/tools/ToolWhenToUse.astro';
+import ToolExamples from '@/components/tools/ToolExamples.astro';
+import ToolTips from '@/components/tools/ToolTips.astro';
+import AnimatedFAQ from '@/components/tools/AnimatedFAQ';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
+import ToolFeedback from '@/components/tools/ToolFeedback.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { Card } from '@/components/ui/card';
+import { getCollection, render } from 'astro:content';
+import { getCategoryName, getCategoryBySlug } from '@/lib/categories';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+import type { CollectionEntry } from 'astro:content';
+import CopyForAI from '@/components/tools/CopyForAI';
+import ToolShareButtons from '@/components/tools/ToolShareButtons';
+import ScreenshotGallery from '@/components/tools/ScreenshotGallery';
+import { existsSync } from 'node:fs';
+
+interface Props {
+  tool: CollectionEntry<'tools'>;
+  locale?: Locale;
+}
+
+const { tool, locale = 'es' } = Astro.props;
+const { data } = tool;
+const { Content } = await render(tool);
+const category = getCategoryBySlug(data.category);
+const lang = getTranslations(locale);
+
+const allTools = await getCollection('tools');
+const relatedTools = allTools.filter(
+  (t) => t.data.category === data.category && t.id !== tool.id
+).slice(0, 3);
+
+const alternativeTools = data.alternatives
+  ? allTools.filter((t) => data.alternatives!.includes(t.id))
+  : [];
+
+const backHref = locale === 'en' ? '/en/tools' : '/tools';
+const screenshotBase = `public/screenshots/${tool.id}`;
+const screenshotCount = (() => {
+  let count = 0;
+  if (existsSync(`${screenshotBase}.webp`)) count++;
+  while (existsSync(`${screenshotBase}-${count + 1}.webp`)) count++;
+  return count;
+})();
+---
+
+<BaseLayout title={data.name} description={data.description} {locale}>
+  <article>
+    <div class="relative overflow-hidden border-b border-border/50 bg-gradient-to-b from-background via-muted/20 to-background">
+      <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+      <div class="container mx-auto px-4 py-12 md:py-16 relative">
+        <a href={backHref} class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <Icon name="tabler:chevron-left" class="text-current" width="14" height="14" />
+          {lang.tools.back}
+        </a>
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          {category && (
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: `light-dark(${category.lightBg}, ${category.darkBg})`, color: category.color }}>
+              {category.name}
+            </span>
+          )}
+          {data.openSource && (
+            <Badge variant="secondary" class="text-xs">{lang.tools.openSource}</Badge>
+          )}
+          <Badge variant="outline" class="text-xs capitalize">{data.pricing}</Badge>
+          <Badge variant="outline" class="text-xs capitalize">{data.technicalLevel}</Badge>
+          {data.license && (
+            <Badge variant="outline" class="text-xs">{data.license}</Badge>
+          )}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 flex items-center gap-3">
+          <ToolLogo toolName={data.name} size={48} />
+          {data.name}
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-2xl">{data.description}</p>
+        <div class="flex flex-wrap items-center gap-4 mt-5">
+          <ToolShareButtons client:load toolName={data.name} toolUrl={Astro.url.href} />
+        </div>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <a
+            href={data.officialSite}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <Icon name="tabler:external-link" class="text-current" width="18" height="18" />
+            {lang.tools.officialSite}
+            <span class="ml-0.5 opacity-60 group-hover:opacity-100 transition-opacity">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+        <div class="lg:col-span-3 lg:order-2">
+          <div class="flex justify-end mb-4">
+            <CopyForAI client:load
+              toolName={data.name}
+              toolCategory={getCategoryName(data.category)}
+              toolOpenSource={data.openSource}
+              toolDescription={data.description}
+              toolAlternatives={data.alternatives ?? []}
+              toolPricing={data.pricing}
+              toolTechnicalLevel={data.technicalLevel}
+              locale={locale}
+            />
+          </div>
+
+          {screenshotCount > 0 && (
+            <ScreenshotGallery
+              client:load
+              toolId={tool.id}
+              toolName={data.name}
+              totalImages={screenshotCount}
+            />
+          )}
+
+          {data.features.length > 0 && (
+            <div class="mb-10 p-6 rounded-xl bg-muted/30 border border-border/50">
+              <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Icon name="tabler:circle-check" class="text-primary" width="18" height="18" />
+                {lang.tools.features}
+              </h2>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {data.features.map((feature: string) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <span class="text-primary shrink-0">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="mb-10 flex flex-wrap gap-2">
+            {data.compatibility.map((platform: string) => (
+              <Badge variant="outline" class="text-xs gap-1 py-1">
+                <Icon name="tabler:device-desktop" class="text-current" width="10" height="10" />
+                {platform}
+              </Badge>
+            ))}
+          </div>
+
+          <div class="prose prose-neutral dark:prose-invert max-w-none">
+            <Content />
+          </div>
+
+          {data.howToUse && (
+            <>
+              <div class="my-10 border-t border-border/50" />
+              <AnimateOnScroll client:load>
+                <ToolHowToUse steps={data.howToUse} title={lang.tools.howToUse + ' ' + data.name} />
+              </AnimateOnScroll>
+            </>
+          )}
+
+          {data.whenToUse && (
+            <AnimateOnScroll client:load delay={0.1}>
+              <ToolWhenToUse cases={data.whenToUse} title={lang.tools.whenToUse} />
+            </AnimateOnScroll>
+          )}
+
+          {data.examples && (
+            <AnimateOnScroll client:load delay={0.15}>
+              <ToolExamples
+                examples={data.examples}
+                title={lang.tools.examples}
+                inputLabel={lang.tools.input}
+                outputLabel={lang.tools.output}
+              />
+            </AnimateOnScroll>
+          )}
+
+          {data.tips && (
+            <AnimateOnScroll client:load delay={0.2}>
+              <ToolTips tips={data.tips} title={lang.tools.tips} />
+            </AnimateOnScroll>
+          )}
+
+          {data.faq && (
+            <AnimatedFAQ client:load items={data.faq} title={lang.tools.faq} />
+          )}
+
+          <ToolFeedback
+            toolName={data.name}
+            reportLabel={lang.tools.reportBroken}
+            feedbackLabel={lang.tools.sendFeedback}
+          />
+
+          {data.tags.length > 0 && (
+            <div class="mt-10 pt-8 border-t border-border/50">
+              <div class="flex flex-wrap gap-2">
+                {data.tags.map((tag: string) => (
+                  <span class="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">#{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <aside class="lg:col-span-1 lg:order-1">
+          <div class="lg:sticky lg:top-24 flex flex-col gap-6">
+            <div class="p-4 rounded-xl border border-border/50 bg-muted/20">
+              <h3 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{lang.tools.info}</h3>
+              <dl class="flex flex-col gap-3 text-sm">
+                <div>
+                  <dt class="text-muted-foreground text-xs">{lang.tools.category}</dt>
+                  <dd class="font-medium">{getCategoryName(data.category)}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted-foreground text-xs">{lang.tools.price}</dt>
+                  <dd class="font-medium capitalize">{data.pricing}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted-foreground text-xs">{lang.tools.level}</dt>
+                  <dd class="font-medium capitalize">{data.technicalLevel}</dd>
+                </div>
+                <div>
+                  <dt class="text-muted-foreground text-xs">{lang.tools.openSource}</dt>
+                  <dd class="font-medium">{data.openSource ? lang.tools.yes : lang.tools.no}</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {alternativeTools.length > 0 && (
+        <>
+          <Separator class="my-10" />
+          <section>
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+              <Icon name="tabler:arrows-shuffle" class="text-primary" width="22" height="22" />
+              <span>{lang.tools.alternatives}</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {alternativeTools.map((alt) => {
+                const altHref = locale === 'en' ? `/en/tools/${alt.id}` : `/tools/${alt.id}`;
+                const altCategory = getCategoryBySlug(alt.data.category);
+                return (
+                <a href={altHref} class="group">
+                  <div class="flex items-start gap-4 p-4 rounded-xl border border-border/50 bg-card hover:shadow-md hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5">
+                    <div class="size-10 rounded-lg shrink-0 flex items-center justify-center bg-muted/50 border border-border/40">
+                      <ToolLogo toolName={alt.data.name} size={20} />
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center gap-2 mb-0.5">
+                        <h3 class="font-semibold text-sm group-hover:text-primary transition-colors">{alt.data.name}</h3>
+                        {altCategory && (
+                          <span class="text-[10px] px-1.5 py-0.5 rounded border border-border/50 text-muted-foreground">{altCategory.name}</span>
+                        )}
+                      </div>
+                      <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{alt.data.description}</p>
+                    </div>
+                    <Icon name="tabler:chevron-right" class="text-muted-foreground/40 group-hover:text-primary transition-colors shrink-0 mt-2" width="16" height="16" />
+                  </div>
+                </a>
+                );
+              })}
+            </div>
+          </section>
+        </>
+      )}
+
+      {relatedTools.length > 0 && (
+        <>
+          <Separator class="my-10" />
+          <section>
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+              <Icon name="tabler:layers-linked" class="text-muted-foreground" width="22" height="22" />
+              <span>{lang.tools.related}</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {relatedTools.map((rel) => {
+                const relHref = locale === 'en' ? `/en/tools/${rel.id}` : `/tools/${rel.id}`;
+                const relCategory = getCategoryBySlug(rel.data.category);
+                return (
+                <a href={relHref} class="group">
+                  <div class="p-4 rounded-xl border border-border/50 bg-card hover:shadow-md hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 h-full flex flex-col">
+                    <div class="flex items-center gap-3 mb-2">
+                      <div class="size-9 rounded-lg shrink-0 flex items-center justify-center bg-muted/50 border border-border/40">
+                        <ToolLogo toolName={rel.data.name} size={18} />
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="font-semibold text-sm group-hover:text-primary transition-colors truncate">{rel.data.name}</h3>
+                        {relCategory && (
+                          <span class="text-[10px] text-muted-foreground">{relCategory.name}</span>
+                        )}
+                      </div>
+                    </div>
+                    <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed flex-1">{rel.data.description}</p>
+                    <div class="flex items-center gap-1 mt-3 text-xs text-muted-foreground/60 group-hover:text-primary/60 transition-colors">
+                      <span>{lang.tools.viewTool}</span>
+                      <Icon name="tabler:arrow-right" class="text-current" width="12" height="12" />
+                    </div>
+                  </div>
+                </a>
+                );
+              })}
+            </div>
+          </section>
+        </>
+      )}
+    </div>
+  </article>
+</BaseLayout>

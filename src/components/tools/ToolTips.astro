@@ -1,0 +1,25 @@
+---
+export interface Tip {
+  text: string;
+}
+
+interface Props {
+  tips: Tip[];
+  title?: string;
+}
+
+const { tips, title = 'Tips y buenas prácticas' } = Astro.props;
+if (!tips || tips.length === 0) return;
+---
+
+<section class="mb-12">
+  <h2 class="text-2xl font-bold mb-6">{title}</h2>
+  <ol class="flex flex-col gap-3">
+    {tips.map((tip, i) => (
+      <li class="flex items-start gap-3 p-4 rounded-xl bg-muted/10 border border-border/30 hover:border-primary/20 transition-colors">
+        <span class="flex-shrink-0 size-6 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-bold text-primary">{i + 1}.</span>
+        <p class="text-sm text-muted-foreground leading-relaxed pt-0.5">{tip.text}</p>
+      </li>
+    ))}
+  </ol>
+</section>

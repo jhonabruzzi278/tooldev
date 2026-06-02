@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import CategoryGrid from '@/components/home/CategoryGrid.astro';
+import ToolShowcase from '@/components/home/ToolShowcase.astro';
+import Benefits from '@/components/home/Benefits.astro';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+---
+
+<BaseLayout title={locale === 'es' ? 'Inicio' : 'Home'} description={lang.site.description} {locale}>
+  <Hero {locale} />
+  <CategoryGrid {locale} />
+  <ToolShowcase {locale} />
+  <Benefits {locale} />
+</BaseLayout>

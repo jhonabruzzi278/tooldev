@@ -1,29 +1,40 @@
 ---
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  locale?: Locale;
 }
 
-const { title, description = 'Descubre, entiende y evalúa herramientas para desarrolladores. Guías, alternativas y recomendaciones reales en español.', ogImage } = Astro.props;
+const { title, description, ogImage, locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+const siteDesc = description || lang.site.description;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} | ToolDev`;
+const fullTitle = `${title} | ${lang.site.name}`;
 const image = ogImage ? new URL(ogImage, Astro.site).href : undefined;
+const htmlLang = locale === 'en' ? 'en' : 'es';
 ---
 
+<meta charset="utf-8" />
 <title>{fullTitle}</title>
-<meta name="description" content={description} />
+<meta name="description" content={siteDesc} />
 <link rel="canonical" href={canonicalURL} />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={description} />
-<meta property="og:locale" content="es_ES" />
-<meta property="og:site_name" content="ToolDev" />
+<meta property="og:description" content={siteDesc} />
+<meta property="og:locale" content={htmlLang === 'en' ? 'en_US' : 'es_ES'} />
+<meta property="og:site_name" content={lang.site.name} />
 {image && <meta property="og:image" content={image} />}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={siteDesc} />
 {image && <meta name="twitter:image" content={image} />}
+
+<link rel="alternate" href={canonicalURL} hreflang={htmlLang} />
+<link rel="alternate" href={locale === 'en' ? canonicalURL.replace('/en/', '/') : canonicalURL.replace(/\/$/, '/en')} hreflang={locale === 'en' ? 'es' : 'en'} />

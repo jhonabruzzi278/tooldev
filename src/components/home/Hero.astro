@@ -1,19 +1,33 @@
 ---
+import HeroReveal from '@/components/ui/HeroReveal';
 import { Button } from '@/components/ui/button';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+const ctaHref = locale === 'en' ? '/en/tools' : '/tools';
 ---
 
-<section class="py-20 md:py-32">
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-      Encuentra la herramienta adecuada
-      <br />
-      <span class="text-muted-foreground">para tu próximo proyecto.</span>
-    </h1>
-    <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-      Guías, alternativas y recomendaciones reales para desarrolladores.
-    </p>
-    <Button asChild size="lg">
-      <a href="/tools">Explorar herramientas</a>
-    </Button>
+<section class="relative overflow-hidden py-20 md:py-28">
+  <div class="absolute inset-0 bg-grid pointer-events-none opacity-40" />
+  <div class="container mx-auto px-4 text-center relative">
+    <HeroReveal client:load>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight">
+        {lang.home.title}
+        <br />
+        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">{lang.home.titleGradient}</span>
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+        {lang.home.subtitle}
+      </p>
+      <Button asChild size="lg" class="h-12 px-8 text-base">
+        <a href={ctaHref}>{lang.home.cta}</a>
+      </Button>
+    </HeroReveal>
   </div>
 </section>

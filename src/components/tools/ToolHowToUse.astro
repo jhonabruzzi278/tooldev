@@ -1,0 +1,32 @@
+---
+export interface HowToStep {
+  step: number;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  steps: HowToStep[];
+  title?: string;
+}
+
+const { steps, title = 'Cómo usar' } = Astro.props;
+if (!steps || steps.length === 0) return;
+---
+
+<section class="mb-12">
+  <h2 class="text-2xl font-bold mb-8">{title}</h2>
+  <div class="flex flex-col gap-6">
+    {steps.map((s) => (
+      <div class="flex gap-5 group">
+        <div class="flex-shrink-0 size-10 rounded-full bg-muted/50 border border-border/50 flex items-center justify-center text-sm font-bold text-muted-foreground group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-colors">
+          {s.step}
+        </div>
+        <div class="min-w-0 pt-1.5">
+          <h3 class="font-semibold text-base mb-1.5">{s.title}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

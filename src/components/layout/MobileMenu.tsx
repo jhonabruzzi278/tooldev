@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Icon } from '@iconify/react';
 import { Button } from '@/components/ui/button';
+import type { Locale } from '@/lib/i18n/translations';
 
 interface NavLink {
   href: string;
@@ -8,9 +10,10 @@ interface NavLink {
 
 interface MobileMenuProps {
   links: NavLink[];
+  locale?: Locale;
 }
 
-export default function MobileMenu({ links }: MobileMenuProps) {
+export default function MobileMenu({ links, locale = 'es' }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,33 +24,28 @@ export default function MobileMenu({ links }: MobileMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Menú"
       >
-        {isOpen ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 6 6 18"/>
-            <path d="m6 6 12 12"/>
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" x2="20" y1="12" y2="12"/>
-            <line x1="4" x2="20" y1="6" y2="6"/>
-            <line x1="4" x2="20" y1="18" y2="18"/>
-          </svg>
-        )}
+        {isOpen ? <Icon icon="tabler:x" width={20} height={20} /> : <Icon icon="tabler:menu-2" width={20} height={20} />}
       </Button>
 
       {isOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-background border-b border-border shadow-lg">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <div className="absolute top-16 left-0 right-0 bg-background border-b border-border shadow-lg z-50">
+          <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg px-3 py-2.5 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href={locale === 'en' ? '/' : '/en'}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg px-3 py-2.5 transition-colors border-t border-border/50 mt-2 pt-3"
+            >
+              {locale === 'en' ? 'Español' : 'English'}
+            </a>
           </nav>
         </div>
       )}

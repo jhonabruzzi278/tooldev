@@ -1,0 +1,17 @@
+---
+import ToolsDetailContent from '@/components/pages/ToolsDetailContent.astro';
+import { getCollection } from 'astro:content';
+import type { Locale } from '@/lib/i18n/translations';
+
+export async function getStaticPaths() {
+  const tools = await getCollection('tools');
+  return tools.map((tool) => ({
+    params: { slug: tool.id },
+    props: { tool, locale: 'en' as Locale },
+  }));
+}
+
+const { tool, locale = 'en' as Locale } = Astro.props;
+---
+
+<ToolsDetailContent tool={tool} {locale} />

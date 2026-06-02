@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ToolCard from '@/components/tools/ToolCard.astro';
+import { getCollection } from 'astro:content';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+
+const tools = await getCollection('tools');
+const sortedTools = tools.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<BaseLayout title={lang.tools.title} description={locale === 'en' ? 'Explore all developer tools.' : 'Explora todas las herramientas para desarrolladores.'} {locale}>
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{lang.tools.title}</h1>
+        <p class="text-lg text-muted-foreground">
+          {sortedTools.length} {lang.tools.subtitle}
+        </p>
+    </div>
+  </section>
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedTools.map((tool) => (
+          <ToolCard tool={tool} {locale} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

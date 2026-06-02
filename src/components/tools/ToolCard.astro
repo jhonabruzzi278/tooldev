@@ -1,34 +1,57 @@
 ---
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Icon } from 'astro-icon/components';
+import ToolLogo from '@/components/tools/ToolLogo.astro';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { getCategoryName } from '@/lib/categories';
+import { getCategoryName, getCategoryBySlug } from '@/lib/categories';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   tool: CollectionEntry<'tools'>;
+  locale?: Locale;
 }
 
-const { tool } = Astro.props;
+const { tool, locale = 'es' } = Astro.props;
 const { data } = tool;
+const category = getCategoryBySlug(data.category);
+const lang = getTranslations(locale);
+const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
 ---
 
-<a href={`/tools/${tool.id}`}>
-  <Card class="h-full hover:shadow-lg transition-shadow cursor-pointer">
-    <CardHeader>
-      <div class="flex items-start justify-between gap-2 mb-2">
-        <CardTitle class="text-xl">{data.name}</CardTitle>
-        <div class="flex gap-1 flex-shrink-0">
+<a href={toolHref} class="group">
+  <Card class="h-full overflow-hidden border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+    {category && (
+      <div class="h-1" style={`background: linear-gradient(90deg, ${category.color}, ${category.color}88)`} />
+    )}
+    <div class="p-5">
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <ToolLogo toolName={data.name} size={24} />
+          <h3 class="font-semibold text-base truncate">{data.name}</h3>
           {data.openSource && (
-            <Badge variant="secondary">Open Source</Badge>
+            <span class="shrink-0 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+              <Icon name="tabler:code" class="text-current" width="10" height="10" />
+              {lang.tools.openSource}
+            </span>
           )}
         </div>
       </div>
-      <Badge variant="outline" class="w-fit mb-2">{getCategoryName(data.category)}</Badge>
-      <CardDescription class="line-clamp-2">{data.description}</CardDescription>
-      <div class="flex items-center gap-2 mt-3">
-        <Badge variant="outline" class="text-xs capitalize">{data.pricing}</Badge>
-        <Badge variant="outline" class="text-xs capitalize">{data.technicalLevel}</Badge>
+
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-medium px-2 py-0.5 rounded-full border border-border/60 text-muted-foreground">{getCategoryName(data.category)}</span>
       </div>
-    </CardHeader>
+
+      <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">{data.description}</p>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.pricing}</Badge>
+        <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.technicalLevel}</Badge>
+        {data.license && (
+          <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 font-normal">{data.license}</Badge>
+        )}
+      </div>
+    </div>
   </Card>
 </a>

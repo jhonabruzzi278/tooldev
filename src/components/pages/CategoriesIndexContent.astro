@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Card } from '@/components/ui/card';
+import { categories } from '@/lib/categories';
+import { getCollection } from 'astro:content';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+
+const tools = await getCollection('tools');
+
+const categoriesWithCount = categories.map((cat) => ({
+  ...cat,
+  count: tools.filter((t) => t.data.category === cat.slug).length,
+}));
+---
+
+<BaseLayout title={lang.categories.title} description={locale === 'en' ? 'Explore developer tools organized by category.' : 'Explora herramientas para desarrolladores organizadas por categoría.'} {locale}>
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{lang.categories.title}</h1>
+        <p class="text-lg text-muted-foreground">{lang.categories.subtitle}</p>
+    </div>
+  </section>
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {categoriesWithCount.map((cat) => {
+          const catHref = locale === 'en' ? `/en/categories/${cat.slug}` : `/categories/${cat.slug}`;
+          return (
+          <a href={catHref} class="group">
+            <div
+              class="relative h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              style={`--cat-color: ${cat.color}; --cat-bg-light: ${cat.lightBg}; --cat-bg-dark: ${cat.darkBg};`}
+            >
+              <div
+                class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={`background: radial-gradient(120px 120px at 20% 20%, color-mix(in oklch, var(--cat-color) 12%, transparent), transparent)`}
+              />
+              <div class="relative">
+                <div
+                  class="size-12 rounded-xl flex items-center justify-center mb-4 text-lg"
+                  style={{ background: `light-dark(var(--cat-bg-light), var(--cat-bg-dark))`, color: `var(--cat-color)` }}
+                >
+                  <Icon name={cat.icon} class="text-current" width="22" height="22" />
+                </div>
+                <h3 class="font-semibold text-lg mb-1">{cat.name}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed mb-4">{cat.description}</p>
+                <p class="text-sm font-medium" style={`color: var(--cat-color)`}>
+                  {cat.count} {cat.count === 1 ? lang.categories.count_one : lang.categories.count_other} <span class="inline-block ml-1 transition-transform group-hover:translate-x-0.5">→</span>
+                </p>
+              </div>
+            </div>
+          </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
