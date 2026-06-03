@@ -1,137 +1,135 @@
 ---
 name: Terraform
-description: Herramienta de infraestructura como código para construir, cambiar y versionar infraestructura cloud de forma segura y eficiente.
+description: Herramienta de infraestructura como código (IaC) de HashiCorp para provisionar y gestionar recursos cloud con archivos de configuración declarativos.
 category: devops
-tags: [iac, infraestructura, cloud, devops, automatizacion, terraform]
-officialSite: https://www.terraform.io
-pricing: freemium
+tags: [iac, infraestructura, cloud, devops, automatización, hashcorp]
+officialSite: https://terraform.io
+github: https://github.com/hashicorp/terraform
+pricing: open-source
 openSource: true
-license: BSL
+license: BUSL-1.1 (antes MPL-2.0)
 technicalLevel: avanzado
-compatibility: [Windows, macOS, Linux]
+compatibility: [macOS, Linux, Windows, Docker]
 featured: false
 features:
-  - Infraestructura como código con HCL declarativo
-  - Plan de ejecución para revisar cambios antes de aplicarlos
-  - Gestión de estado con versionado y locking
-  - Módulos reutilizables y registro público
-  - Soporte multi-cloud (AWS, Azure, GCP, etc.)
-  - Graph de dependencias para planificar cambios
-  - Workspaces para entornos separados
-alternatives: []
-relatedTools: [docker, kubernetes, gitlab]
+  - Infraestructura declarativa con HashiCorp Configuration Language (HCL)
+  - Plan de ejecución para preview de cambios antes de aplicarlos
+  - State management para rastrear recursos gestionados
+  - Proveedores para AWS, Azure, GCP, Kubernetes, GitHub, Cloudflare, 3000+
+  - Módulos reutilizables de la comunidad en Terraform Registry
+  - Workspaces para gestionar múltiples entornos (dev/staging/prod)
+  - Importación de recursos existentes al state
+  - Terraform Cloud para ejecución remota, policy as code y colaboración
+alternatives: [pulumi, cloudformation, bicep, crossplane]
+relatedTools: [kubernetes, docker, ansible, packer, vault]
 howToUse:
   - step: 1
-    title: "Instala Terraform y configura un proveedor cloud"
-    description: "Descarga el binario desde terraform.io o usa `winget install HashiCorp.Terraform`. Crea un archivo `main.tf` y define el proveedor: `provider \"aws\" { region = \"us-east-1\" }`. Configura las credenciales mediante variables de entorno (`AWS_ACCESS_KEY_ID`) o el archivo de credenciales del proveedor."
+    title: "Instala Terraform"
+    description: "Descarga el binario desde terraform.io/downloads o usa tfenv para gestionar versiones (brew install tfenv; tfenv install 1.10). Verifica con terraform --version."
   - step: 2
-    title: "Define recursos de infraestructura en HCL"
-    description: "Declara recursos usando bloques `resource`. Por ejemplo: `resource \"aws_instance\" \"web\" { ami = \"ami-123\" instance_type = \"t2.micro\" }`. Usa variables (`variable`), outputs (`output`) y módulos (`module`) para crear configuraciones reutilizables y parametrizadas."
+    title: "Escribe configuración declarativa"
+    description: "Crea un archivo main.tf con el proveedor y los recursos. Ejemplo: resource 'aws_instance web' { ami = 'ami-123' instance_type = 't3.micro' }. Describe el estado final deseado, no los pasos para llegar."
   - step: 3
-    title: "Planifica y aplica los cambios de forma segura"
-    description: "Ejecuta `terraform plan` para ver un resumen de los cambios propuestos (crear, modificar, destruir) sin aplicarlos. Revisa el diff y ejecuta `terraform apply` para provisionar la infraestructura. Terraform te pedirá confirmación antes de ejecutar."
+    title: "Inicializa y planifica"
+    description: "Ejecuta terraform init para descargar proveedores y módulos. Luego terraform plan para ver qué recursos creará, modificará o eliminará. Revisa el plan antes de aplicar."
   - step: 4
-    title: "Gestiona el estado y destruye recursos cuando no los necesites"
-    description: "Configura un backend remoto (S3, Azure Storage, GCS) para compartir el estado con tu equipo y habilitar locking con DynamoDB. Usa `terraform destroy` para eliminar todos los recursos gestionados y evitar costos innecesarios en la nube."
+    title: "Aplica la infraestructura"
+    description: "Ejecuta terraform apply para crear los recursos reales. Terraform muestra el plan de nuevo y pide confirmación. Usa -auto-approve en CI/CD. Los cambios se registran en el archivo de state (terraform.tfstate)."
 whenToUse:
-  - title: "Infraestructura cloud gestionada como código"
-    description: "Cuando necesitas que servidores, bases de datos, redes y balanceadores estén definidos en archivos versionables en Git. Terraform garantiza que el entorno de staging, producción y desarrollo sean idénticos."
-  - title: "Equipos DevOps con múltiples proveedores cloud"
-    description: "Ideal si trabajas con AWS, Azure, GCP u otros proveedores simultáneamente. Terraform unifica la sintaxis y el flujo de trabajo sin importar el proveedor, con cientos de providers oficiales y comunitarios."
-  - title: "Revisión de cambios de infraestructura antes de aplicar"
-    description: "Perfecto para entornos críticos donde un cambio mal aplicado puede causar downtime. El comando `terraform plan` actúa como un dry-run que muestra exactamente qué recursos se crearán, modificarán o destruirán."
+  - title: "Provisionamiento de infraestructura cloud completa"
+    description: "Para crear y gestionar toda tu infraestructura en AWS, Azure o GCP: VPCs, subnets, instances, bases de datos, load balancers, DNS. Un solo terraform apply despliega entornos completos reproducibles."
+  - title: "Gestión de entornos multi-cloud y multi-entorno"
+    description: "Cuando tienes dev, staging y prod en diferentes cuentas o clouds. Terraform modules + workspaces permiten definir la infraestructura una vez y desplegarla en múltiples entornos con variables diferentes."
+  - title: "Infraestructura como código en equipos"
+    description: "Para equipos que necesitan versionar, revisar y colaborar en cambios de infraestructura via pull requests. Terraform plan en CI permite revisar cambios antes de aplicar, como cualquier PR de código."
 examples:
-  - title: "Servidor web en AWS con Terraform"
+  - title: "Infraestructura base AWS con Terraform"
     code: |
-      provider "aws" {
-        region = "us-east-1"
+      provider "aws" { region = "us-east-1" }
+      resource "aws_vpc" "main" {
+        cidr_block = "10.0.0.0/16"
+        tags = { Name = "prod-vpc" }
       }
-
-      resource "aws_instance" "web_server" {
-        ami           = "ami-0c55b159cbfafe1f0"
-        instance_type = "t2.micro"
-
-        tags = {
-          Name        = "ServidorWeb"
-          Environment = "produccion"
-        }
+      resource "aws_subnet" "public" {
+        vpc_id     = aws_vpc.main.id
+        cidr_block = "10.0.1.0/24"
+        tags = { Name = "prod-public-subnet" }
       }
-
-      output "ip_publica" {
-        value = aws_instance.web_server.public_ip
-      }
-    output: "Terraform provisiona una instancia EC2 t2.micro en AWS y muestra la IP pública como output después de aplicar."
-  - title: "Módulo reutilizable para un bucket S3"
+      output "vpc_id" { value = aws_vpc.main.id }
+    output: "Crea una VPC con una subred pública en AWS. Terraform plan mostrará exactamente qué recursos creará. terraform apply los crea en el orden correcto respetando dependencias."
+  - title: "Módulo reutilizable para grupo de auto-escalado"
     code: |
-      # modules/s3/main.tf
-      variable "bucket_name" {}
-      variable "environment" {}
-
-      resource "aws_s3_bucket" "this" {
-        bucket = "${var.bucket_name}-${var.environment}"
-        acl    = "private"
+      module "web_cluster" {
+        source      = "terraform-aws-modules/autoscaling/aws"
+        version     = "8.0.0"
+        name        = "web-cluster"
+        min_size    = 2
+        max_size    = 10
+        instance_type = "t3.micro"
+        vpc_id      = module.vpc.vpc_id
       }
-
-      # Uso del módulo
-      module "assets" {
-        source      = "./modules/s3"
-        bucket_name = "mi-app"
-        environment = "prod"
-      }
-    output: "Se crea un bucket S3 llamado 'mi-app-prod' usando un módulo reutilizable que puede instanciarse para diferentes entornos."
+    output: "Usa un módulo de la comunidad para crear un auto-scaling group con ELB, security groups y health checks. El módulo encapsula ~30 recursos en 5 líneas de código."
 tips:
-  - text: "Siempre configura un backend remoto (S3 + DynamoDB, Terraform Cloud) para almacenar el estado. Nunca guardes el archivo `terraform.tfstate` solo en local, ya que contiene información sensible y bloquea la colaboración."
-  - text: "Usa `terraform fmt` y `terraform validate` regularmente para mantener un formato consistente y detectar errores de sintaxis antes de planificar."
-  - text: "Organiza tu código en módulos reutilizables. Un módulo para redes (VPC), otro para bases de datos (RDS) y otro para cómputo (EC2/ECS) hace el código mantenible y testeable."
-  - text: "Marca los recursos críticos con `prevent_destroy = true` en el bloque `lifecycle` para evitar eliminaciones accidentales de bases de datos o volúmenes en producción."
-  - text: "Usa `terraform import` para incorporar recursos existentes creados manualmente a la gestión de Terraform sin tener que recrearlos desde cero."
+  - text: "Almacena el state file de forma remota (S3 + DynamoDB locking en AWS, Azure Storage en Azure). Nunca guardes state localmente en proyectos de equipo. El state contiene información sensible y concurrency."
+  - text: "Usa variables y outputs para parametrizar tus configuraciones. Define variables.tf con descripciones, tipos y defaults. Terraform.tfvars para valores específicos de entorno. Así un mismo módulo funciona en dev y prod."
+  - text: "Divide configuraciones grandes en módulos reutilizables: infraestructura base (VPC, networking), compute (ECS/EKS), bases de datos (RDS). Usa el Terraform Registry para empezar con módulos comunitarios probados."
+  - text: "Usa terraform import para adoptar infraestructura existente creada manualmente. Terraform no puede gestionar recursos que no están en state. El comando import trae recursos existentes al state sin modificar nada."
 faq:
-  - question: "¿Qué es el estado (state) de Terraform y por qué es importante?"
-    answer: "El estado es un archivo JSON que mapea los recursos definidos en tu configuración con los recursos reales en la nube. Sin él, Terraform no sabría qué recursos gestiona. Almacenarlo en un backend remoto permite colaboración en equipo y bloqueo para evitar conflictos."
-  - question: "¿Cómo manejo secretos y credenciales de forma segura?"
-    answer: "Nunca hardcodees secretos en archivos .tf. Usa variables de entorno, HashiCorp Vault, AWS Secrets Manager o variables marcadas como `sensitive = true`. Terraform Cloud ofrece manejo de variables sensibles encriptadas."
-  - question: "¿Puedo usar Terraform con Kubernetes?"
-    answer: "Sí. Terraform tiene providers para Kubernetes y Helm que permiten gestionar clústeres, deployments, servicios e ingress. También puedes usar Terraform para crear el clúster (EKS, AKS, GKE) y luego gestionar las aplicaciones dentro de él."
-  - question: "¿Qué diferencia hay entre Terraform y Ansible?"
-    answer: "Terraform es para provisionar infraestructura (crear servidores, redes, bases de datos). Ansible es para gestión de configuración (instalar software, configurar servicios en servidores ya existentes). Se complementan: usa Terraform para crear los recursos y Ansible para configurarlos."
+  - question: "¿Terraform vs Pulumi?"
+    answer: "Terraform usa HCL (lenguaje declarativo propio); Pulumi usa lenguajes de programación reales (TypeScript, Python, Go). Terraform tiene ecosistema más maduro y más módulos comunitarios. Pulumi ofrece más flexibilidad para lógica compleja."
+  - question: "¿Terraform es gratis?"
+    answer: "Terraform CLI es open source. Terraform Cloud tiene tier gratis para hasta 5 usuarios con state remoto, VCS integration y plan remoto. Para equipos grandes, Terraform Cloud tiene planes de pago. Alternativa open source: OpenTofu (fork)."
+  - question: "¿Terraform vs CloudFormation?"
+    answer: "Terraform es multi-cloud (AWS, Azure, GCP, Kubernetes, GitHub, Cloudflare, etc.), CloudFormation solo AWS. Terraform tiene HCL más legible que JSON/YAML de CloudFormation. Terraform plan es superior a Change Sets de CF."
+  - question: "¿Qué es OpenTofu?"
+    answer: "OpenTofu es un fork open source de Terraform creado cuando HashiCorp cambió la licencia de MPL-2.0 a BUSL-1.1. OpenTofu mantiene API compatible con Terraform y es desarrollado por la Linux Foundation. Es 100% gratis y open source."
 publishedAt: 2026-06-01
 ---
 
 ## ¿Qué es?
 
-Terraform es la herramienta de infraestructura como código (IaC) más popular, creada por HashiCorp. Permite definir recursos cloud en archivos de configuración HCL, planificar cambios con dry-run y aplicarlos de forma segura y reproducible.
+Terraform es la herramienta de infraestructura como código más adoptada. Permite definir, provisionar y gestionar recursos cloud usando archivos de configuración declarativos, asegurando que la infraestructura sea reproducible, versionable y auditable.
 
 ## ¿Para qué sirve?
 
-Terraform sirve para provisionar infraestructura cloud (servidores, redes, bases de datos, DNS, etc.) de forma declarativa, versionada y automatizada. Es el estándar para gestionar recursos en AWS, Azure, Google Cloud y cientos de proveedores más.
+Terraform sirve para automatizar la creación y gestión de infraestructura cloud (servidores, redes, bases de datos, DNS, CDN, etc.) como código. Un solo comando despliega entornos completos idénticos en dev, staging y producción.
 
 ## Cuándo usarla
 
-- Cuando necesitas gestionar infraestructura cloud de forma reproducible.
-- Para equipos que versionan su infraestructura como código.
-- Si trabajas con múltiples proveedores cloud.
-- Cuando necesitas revisar cambios de infraestructura antes de aplicarlos.
-- Para automatizar despliegues de entornos completos.
+- Para gestionar infraestructura cloud como código.
+- Para desplegar entornos reproducibles en múltiples clouds.
+- Para automatizar provisionamiento en pipelines CI/CD.
+- Para equipos que necesitan revisión de cambios de infraestructura en PRs.
+- Para gestionar recursos multi-cloud desde un solo tool.
 
 ## Cuándo NO usarla
 
-- Si solo tienes un servidor simple con configuración manual.
-- Para despliegues de aplicaciones sin infraestructura cloud compleja.
-- Cuando tu equipo no tiene experiencia en IaC y la curva es muy alta.
-- Si necesitas gestión de configuración de servidores (usa Ansible o Puppet).
+- Para configurar software dentro de servidores (usa Ansible, Chef o Salt).
+- Para infraestructura de un solo servidor (scripts bash son suficientes).
+- Cuando buscas una solución plug-and-play SaaS (usa la consola web del cloud).
+- Para equipos pequeños sin necesidad de versionar infraestructura.
 
 ## Pros
 
-- Multi-cloud con cientos de proveedores soportados.
-- Plan de cambios para revisión antes de aplicar.
-- Módulos reutilizables que aceleran el desarrollo.
-- Estado versionado para colaboración en equipo.
-- Ecosistema enorme de módulos públicos.
+- Declarativo: describes el estado final, Terraform hace los pasos.
+- Multi-cloud: AWS, Azure, GCP, Kubernetes, GitHub, Cloudflare, 3000+ proveedores.
+- Plan preview: terraform plan muestra cambios exactos antes de aplicar.
+- Módulos reutilizables con registro comunitario.
+- State management con detección de cambios.
 
 ## Contras
 
-- Curva de aprendizaje alta por HCL y conceptos de estado.
-- Gestión de estado compleja en equipos grandes (requiere backend remoto).
-- No es idempotente como Pulumi en ciertos casos.
-- BSL license genera controversia en la comunidad open source.
-- Depuración de errores puede ser críptica.
+- Curva de aprendizaje de HCL.
+- State file es crítico y debe gestionarse con cuidado.
+- Sin lógica procedural compleja (Pulumi es más flexible).
+- Licencia cambió de MPL a BUSL (OpenTofu es el fork open source).
+
+## CLI
+
+```bash
+terraform init                                    # Inicializar proyecto
+terraform plan                                    # Preview de cambios
+terraform apply                                   # Aplicar cambios
+terraform destroy                                 # Destruir recursos
+terraform import aws_instance.web i-12345678      # Importar recurso existente
+```

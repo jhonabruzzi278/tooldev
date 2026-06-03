@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Card } from '@/components/ui/card';
 import { getCollection } from 'astro:content';
 import { categories } from '@/lib/categories';
 import { getTranslations } from '@/lib/i18n/translations';
@@ -18,88 +17,83 @@ const tools = await getCollection('tools');
 const openSourceCount = tools.filter((t) => t.data.openSource).length;
 const freeCount = tools.filter((t) => t.data.pricing === 'gratis' || t.data.pricing === 'open-source').length;
 
-const stats = [
-  { value: tools.length, label: lang.about.statsTools },
-  { value: categories.length, label: lang.about.statsCategories },
-  { value: openSourceCount, label: lang.about.statsOpenSource },
-  { value: freeCount, label: lang.about.statsFree },
-];
-
 const reasons = [
-  { title: locale === 'es' ? 'Curación real' : 'Real curation', desc: lang.aboutReasons.curation },
-  { title: locale === 'es' ? 'Explicaciones prácticas' : 'Practical explanations', desc: lang.aboutReasons.practical },
-  { title: locale === 'es' ? 'Alternativas útiles' : 'Useful alternatives', desc: lang.aboutReasons.alternatives },
-  { title: locale === 'es' ? 'Enfoque para desarrolladores' : 'Developer focus', desc: lang.aboutReasons.devFocus },
-  { title: locale === 'es' ? 'Contenido en español' : 'Spanish content', desc: lang.aboutReasons.spanish },
+  { title: locale === 'es' ? 'Curación real' : 'Real curation', desc: lang.aboutReasons.curation, icon: 'tabler:filter-check' },
+  { title: locale === 'es' ? 'Explicaciones prácticas' : 'Practical explanations', desc: lang.aboutReasons.practical, icon: 'tabler:bulb' },
+  { title: locale === 'es' ? 'Alternativas útiles' : 'Useful alternatives', desc: lang.aboutReasons.alternatives, icon: 'tabler:git-compare' },
+  { title: locale === 'es' ? 'Enfoque para desarrolladores' : 'Developer focus', desc: lang.aboutReasons.devFocus, icon: 'tabler:users' },
+  { title: locale === 'es' ? 'Contenido en español' : 'Spanish content', desc: lang.aboutReasons.spanish, icon: 'tabler:language' },
 ];
 ---
 
 <BaseLayout title={locale === 'en' ? 'About' : 'Acerca de'} description={locale === 'en' ? 'Learn about ToolDev, your reference for discovering developer tools.' : 'Conoce ToolDev, tu referencia para descubrir herramientas de desarrollo.'} {locale}>
-  <section class="relative overflow-hidden py-20 md:py-28">
-    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-    <div class="container mx-auto px-4 text-center relative">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-background/50 backdrop-blur-sm mb-8 text-sm text-muted-foreground">
-          <span class="size-2 rounded-full bg-primary animate-pulse" />
-          {lang.about.badge}
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {lang.about.title} <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">{lang.about.titleGradient}</span>
-        </h1>
-        <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">{lang.about.subtitle}</p>
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-4 max-w-2xl text-center">
+      <p class="text-xs uppercase tracking-widest text-muted-foreground mb-4">{lang.about.badge}</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {lang.about.title} <span class="text-primary">{lang.about.titleGradient}</span>
+      </h1>
+      <p class="text-base text-muted-foreground leading-relaxed">{lang.about.subtitle}</p>
     </div>
   </section>
 
-  <section class="py-12 bg-muted/30 border-y border-border/50">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {stats.map((stat) => (
-          <div class="text-center p-4">
-            <p class="text-4xl md:text-5xl font-bold text-primary mb-1">{stat.value}</p>
-            <p class="text-sm text-muted-foreground">{stat.label}</p>
+  <section class="pb-20">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-center">
+        <div>
+          <p class="text-3xl font-bold">{tools.length}</p>
+          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsTools}</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold">{categories.length}</p>
+          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsCategories}</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold">{openSourceCount}</p>
+          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsOpenSource}</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold">{freeCount}</p>
+          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsFree}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <h2 class="text-2xl font-bold mb-6">{lang.about.missionTitle}</h2>
+      <div class="space-y-4 text-muted-foreground leading-relaxed">
+        <p>{lang.about.missionP1}</p>
+        <p>{lang.about.missionP2}</p>
+        <p>{lang.about.missionP3}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <h2 class="text-2xl font-bold mb-8">{lang.about.reasonsTitle}</h2>
+      <div class="space-y-6">
+        {reasons.map((reason) => (
+          <div class="flex gap-4">
+            <div class="size-8 rounded-md bg-muted flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name={reason.icon} class="text-muted-foreground" width="16" height="16" />
+            </div>
+            <div>
+              <p class="font-medium text-sm mb-0.5">{reason.title}</p>
+              <p class="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-8">{lang.about.missionTitle}</h2>
-      <div class="space-y-5 text-muted-foreground leading-relaxed">
-        <p class="text-lg">{lang.about.missionP1}</p>
-        <p class="text-lg">{lang.about.missionP2}</p>
-        <p class="text-lg">{lang.about.missionP3}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 bg-muted/20 border-y border-border/50">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">{lang.about.reasonsTitle}</h2>
-        <p class="text-muted-foreground">{lang.about.reasonsSubtitle}</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {reasons.map((reason) => (
-          <Card class="p-6 border-border/60 hover:border-primary/20 transition-all duration-300 hover:shadow-md">
-            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <Icon name="tabler:check" class="text-primary" width="16" height="16" />
-            </div>
-            <h3 class="font-semibold mb-1">{reason.title}</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 text-center">
+  <section class="pb-20 text-center">
     <div class="container mx-auto px-4">
-      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-border bg-muted/30">
-        <span class="text-sm text-muted-foreground">{lang.site.developedBy}</span>
-        <span class="font-semibold">Jonathan Guerra</span>
-      </div>
+      <p class="text-xs text-muted-foreground">{lang.site.developedBy}</p>
+      <p class="text-sm font-medium mt-1">Jonathan Guerra</p>
     </div>
   </section>
 </BaseLayout>

@@ -19,7 +19,7 @@ describe('Tools content integrity', () => {
 
   it(`should have ${toolFiles.length} tool markdown files`, () => {
     expect(toolFiles.length).toBeGreaterThan(0);
-    expect(toolFiles.length).toBe(64);
+    expect(toolFiles.length).toBe(68);
   });
 
   it('every tool should have valid required frontmatter fields', () => {

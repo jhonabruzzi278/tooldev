@@ -21,7 +21,7 @@ export default function ContactForm({ locale = 'es' }: ContactFormProps) {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/maqzyyde', {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' },

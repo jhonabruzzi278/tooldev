@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolLogo from '@/components/tools/ToolLogo.astro';
+import LicenseToggle from '@/components/tools/LicenseToggle';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { getCategoryName, getCategoryBySlug } from '@/lib/categories';
@@ -49,7 +50,7 @@ const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
         <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.pricing}</Badge>
         <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.technicalLevel}</Badge>
         {data.license && (
-          <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 font-normal">{data.license}</Badge>
+          <LicenseToggle license={data.license} size="sm" client:load />
         )}
       </div>
     </div>

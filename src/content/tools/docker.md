@@ -1,131 +1,136 @@
 ---
 name: Docker
-description: Plataforma de contenedores que permite empaquetar aplicaciones con todas sus dependencias para ejecutarlas en cualquier entorno.
+description: Plataforma de contenedores para empaquetar, distribuir y ejecutar aplicaciones en entornos aislados y reproducibles.
 category: devops
-tags: [contenedores, docker, devops, despliegue, microservicios, virtualizacion]
-officialSite: https://www.docker.com
+tags: [contenedores, devops, virtualización, despliegue, docker]
+officialSite: https://docker.com
 github: https://github.com/moby/moby
-pricing: freemium
+pricing: open-source
 openSource: true
-license: Apache 2.0
+license: Apache-2.0
 technicalLevel: intermedio
-compatibility: [Windows, macOS, Linux]
+compatibility: [macOS, Linux, Windows, Docker Desktop]
 featured: true
 features:
-  - Contenedores ligeros y portables
-  - Dockerfile para imágenes reproducibles
-  - Docker Compose para multi-contenedor
-  - Docker Hub como registro público
-  - Networking entre contenedores
+  - Contenedores ligeros con aislamiento a nivel de sistema operativo
+  - Dockerfile para definir entornos reproducibles como código
+  - Docker Compose para orquestación multi-contenedor local
+  - Capas de imágenes con caché para builds rápidos
   - Volúmenes para persistencia de datos
-  - Integración con Kubernetes
-alternatives: []
-relatedTools: [postman, github-copilot]
+  - Redes virtuales para comunicación entre contenedores
+  - Docker Hub para distribuir imágenes públicas
+  - Multi-stage builds para imágenes de producción optimizadas
+alternatives: [podman, containerd, buildah, nerdctl]
+relatedTools: [kubernetes, docker-compose, portainer, terraform]
 howToUse:
   - step: 1
-    title: "Instalar Docker"
-    description: "Descarga Docker Desktop desde docker.com para tu sistema operativo. En Linux puedes instalar solo Docker Engine. Verifica la instalación con docker --version y docker run hello-world para confirmar que todo funciona correctamente."
+    title: "Instala Docker"
+    description: "Descarga Docker Desktop para macOS y Windows o instala docker.io en Linux. Verifica con docker --version. Docker Desktop incluye Docker Engine, CLI, Compose y Kubernetes local."
   - step: 2
-    title: "Crear un Dockerfile"
-    description: "Escribe un archivo Dockerfile en la raíz de tu proyecto definiendo la imagen base, copiando el código, instalando dependencias y configurando el comando de inicio. Cada instrucción crea una capa de la imagen para optimizar el cacheo."
+    title: "Crea un Dockerfile"
+    description: "Define tu aplicación en un Dockerfile con FROM, RUN, COPY, EXPOSE y CMD. Usa imágenes base oficiales como node:20-alpine, python:3.12-slim o nginx:alpine para minimizar tamaño."
   - step: 3
-    title: "Construir y ejecutar contenedores"
-    description: "Construye la imagen con docker build -t nombre-app . y ejecútala con docker run -p 3000:3000 nombre-app. Usa flags como -d para modo detached, -v para volúmenes y -e para variables de entorno."
+    title: "Construye y ejecuta"
+    description: "Ejecuta docker build -t mi-app . y luego docker run -p 3000:3000 mi-app. El flag -p mapea puertos del host al contenedor. Usa -d para modo detached (segundo plano)."
   - step: 4
-    title: "Orquestar con Docker Compose"
-    description: "Crea un archivo docker-compose.yml para definir múltiples servicios (app, base de datos, cache). Ejecuta docker compose up para iniciar toda la infraestructura con un solo comando y docker compose down para detenerla."
+    title: "Orquesta con Docker Compose"
+    description: "Crea un docker-compose.yml con servicios, redes y volúmenes. Ejecuta docker compose up -d para levantar tu stack completo: app, base de datos, caché y cola de mensajes con un solo comando."
 whenToUse:
-  - title: "Entornos de desarrollo reproducibles"
-    description: "Cuando tu equipo tiene problemas de 'funciona en mi máquina', Docker garantiza que todos trabajen con las mismas versiones de dependencias, runtime y configuración del sistema operativo."
-  - title: "Arquitectura de microservicios"
-    description: "Cada microservicio se empaqueta en su propio contenedor con sus dependencias específicas, permitiendo despliegue independiente, escalado selectivo y aislamiento de fallos entre servicios."
-  - title: "CI/CD con entornos consistentes"
-    description: "Usa la misma imagen Docker en desarrollo, staging y producción. Las pipelines de CI/CD construyen la imagen una vez y la promueven entre entornos, eliminando diferencias de configuración."
+  - title: "Desarrollo con entornos reproducibles"
+    description: "Para eliminar el clásico 'funciona en mi máquina'. Docker asegura que tu aplicación se ejecute exactamente igual en desarrollo, staging y producción, con todas las dependencias incluidas."
+  - title: "Microservicios y despliegue multi-componente"
+    description: "Cuando tu aplicación tiene múltiples servicios (API, frontend, workers, colas) que necesitas orquestar. Cada servicio en su contenedor con redes aisladas y volúmenes compartidos."
+  - title: "CI/CD y automatización"
+    description: "Para pipelines de integración continua donde cada build corre en un contenedor efímero. Docker proporciona entornos limpios y reproducibles para tests, linting y compilación."
 examples:
-  - title: "Dockerfile para aplicación Node.js"
+  - title: "Dockerfile para app Node.js"
     code: |
-      FROM node:20-alpine
+      FROM node:20-alpine AS build
       WORKDIR /app
       COPY package*.json ./
       RUN npm ci --only=production
       COPY . .
+      FROM node:20-alpine
+      WORKDIR /app
+      COPY --from=build /app .
       EXPOSE 3000
       CMD ["node", "server.js"]
-    output: "Imagen optimizada con Alpine para tamaño mínimo, instalación de producción con npm ci, y exposición del puerto 3000 para la aplicación Node.js."
-  - title: "Docker Compose con app y PostgreSQL"
+    output: "Imagen de producción de solo 150MB con Node.js 20, dependencias instaladas y la app. Multi-stage build separa la compilación de la imagen final para mínimo tamaño."
+  - title: "Docker Compose para stack completo"
     code: |
-      version: '3.8'
       services:
-        app:
-          build: .
+        api:
+          build: ./api
           ports: ["3000:3000"]
-          environment:
-            DATABASE_URL: postgresql://user:pass@db:5432/miapp
-          depends_on: [db]
+          depends_on: [db, redis]
         db:
           image: postgres:16-alpine
-          environment:
-            POSTGRES_USER: user
-            POSTGRES_PASSWORD: pass
-            POSTGRES_DB: miapp
           volumes: ["pgdata:/var/lib/postgresql/data"]
-
-      volumes:
-        pgdata:
-    output: "Levanta una aplicación Node.js junto a PostgreSQL 16. La base de datos persiste datos en un volumen local. La app se conecta usando la variable de entorno DATABASE_URL."
+          environment:
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        redis:
+          image: redis:7-alpine
+      volumes: { pgdata: }
+    output: "Levanta API Node, PostgreSQL y Redis con 3 contenedores. Los datos de PostgreSQL persisten en un volumen nombrado. Variables de entorno via .env file."
 tips:
-  - text: "Usa imágenes Alpine siempre que sea posible para reducir el tamaño de las imágenes y minimizar la superficie de ataque."
-  - text: "Estructura tu Dockerfile con multi-stage builds para separar el entorno de compilación del de producción, resultando en imágenes finales mucho más pequeñas."
-  - text: "No almacenes datos en el sistema de archivos del contenedor; usa volúmenes (docker volume) o bind mounts para datos persistentes y configuraciones."
-  - text: "Ejecuta docker system prune periódicamente para eliminar imágenes, contenedores y volúmenes no utilizados que consumen espacio en disco."
-  - text: "Define healthchecks en tus servicios de Docker Compose para que Docker pueda detectar y reiniciar contenedores que fallen silenciosamente."
+  - text: "Usa .dockerignore para excluir node_modules, .git y archivos temporales del contexto de build. Reduce drásticamente el tiempo de build y evita cache innecesaria."
+  - text: "Combina multi-stage builds con imágenes base slim/alpine. Una imagen típica de producción debe estar entre 100-300MB. Evita imágenes con distros completas (ubuntu:22.04 son ~800MB sin app)."
+  - text: "Etiqueta tus imágenes con versión semver o commit SHA, nunca uses latest en producción. latest es ambigua y puede causar despliegues inconsistentes entre entornos."
+  - text: "Usa healthchecks en tus Dockerfile y en docker-compose.yml. Docker reiniciará contenedores que fallen el healthcheck y Compose respetará depends_on con condition: service_healthy."
 faq:
-  - question: "¿Docker Desktop es gratis?"
-    answer: "Docker Desktop es gratuito para uso personal, educación y pequeñas empresas (menos de 250 empleados y menos de $10M en ingresos). Empresas grandes necesitan una licencia de pago. Docker Engine en Linux siempre es gratuito."
-  - question: "¿Cuál es la diferencia entre una imagen y un contenedor?"
-    answer: "Una imagen es una plantilla inmutable con el sistema de archivos y configuración de la aplicación. Un contenedor es una instancia en ejecución de esa imagen, con su propia capa de escritura, red y procesos aislados."
-  - question: "¿Cómo persisten los datos si los contenedores son efímeros?"
-    answer: "Usa volúmenes (docker volume create) o bind mounts (-v ./data:/app/data). Los volúmenes son gestionados por Docker y persisten aunque el contenedor se elimine. Nunca guardes datos importantes dentro del filesystem del contenedor."
-  - question: "¿Docker Compose reemplaza a Kubernetes?"
-    answer: "No, Docker Compose es para entornos locales y despliegues simples en un solo host. Kubernetes es para orquestación de contenedores a gran escala con múltiples nodos, auto-escalado, rolling updates y balanceo de carga avanzado."
-publishedAt: 2026-05-31
+  - question: "¿Docker es lo mismo que una máquina virtual?"
+    answer: "No. Docker comparte el kernel del sistema operativo anfitrión, mientras que una VM tiene su propio kernel. Los contenedores son más ligeros (MB vs GB) y arrancan en segundos. Las VMs ofrecen mayor aislamiento al tener kernel propio."
+  - question: "¿Docker en producción necesita orquestación?"
+    answer: "Para un solo servidor, docker compose up es suficiente. Para múltiples servidores, necesitas Docker Swarm (incluido) o Kubernetes (estándar de la industria). Kubernetes ofrece auto-escalado, balanceo de carga y rolling updates."
+  - question: "¿Docker es gratis para empresas?"
+    answer: "Docker Engine y Compose son open source y gratis. Docker Desktop requiere licencia comercial para empresas con más de 250 empleados o $10M+ en ingresos. Alternativa: usa podman o colima como remplazo gratis de Docker Desktop."
+publishedAt: 2026-06-01
 ---
 
 ## ¿Qué es?
 
-Docker es una plataforma de contenedorización que permite empaquetar una aplicación junto con todas sus dependencias (librerías, configuraciones, runtime) en una unidad estándar llamada contenedor. Esto garantiza que la aplicación funcione de manera consistente en cualquier entorno, desde tu máquina local hasta servidores de producción.
+Docker es la plataforma de contenedores más utilizada del mundo. Permite empaquetar una aplicación con todas sus dependencias en un contenedor estandarizado que se ejecuta de forma consistente en cualquier sistema con Docker instalado.
 
 ## ¿Para qué sirve?
 
-Docker sirve para eliminar el problema de "funciona en mi máquina", crear entornos de desarrollo reproducibles, desplegar microservicios de forma aislada, escalar aplicaciones horizontalmente y simplificar pipelines de CI/CD con entornos consistentes.
+Docker sirve para eliminar problemas de entorno entre desarrollo y producción, simplificar despliegues, escalar servicios horizontalmente y estandarizar pipelines de CI/CD. Es el bloque fundamental de la infraestructura cloud nativa moderna.
 
 ## Cuándo usarla
 
-- Cuando necesitas garantizar consistencia entre entornos de desarrollo y producción.
-- Para arquitecturas de microservicios donde cada servicio necesita aislamiento.
-- En pipelines de CI/CD para crear builds reproducibles.
-- Cuando quieres probar software sin contaminar tu sistema local.
-- Para escalar aplicaciones horizontalmente de forma eficiente.
+- Para estandarizar entornos de desarrollo en equipos.
+- Para desplegar aplicaciones con múltiples servicios.
+- En pipelines de CI/CD para entornos efímeros.
+- Para microservicios y arquitecturas distribuidas.
+- Cuando necesitas reproducir un bug en el mismo entorno de producción.
 
 ## Cuándo NO usarla
 
-- Para aplicaciones simples que no necesitan aislamiento ni portabilidad.
-- En sistemas con recursos muy limitados donde el overhead de Docker es un problema.
-- Cuando tu equipo no tiene experiencia con contenedores y el proyecto es pequeño.
-- Si solo necesitas virtualización completa (usa máquinas virtuales en su lugar).
+- Para aplicaciones de escritorio nativas con GUI compleja.
+- Cuando el aislamiento de kernel no es suficiente seguridad.
+- Para aplicaciones que requieren acceso directo a hardware especializado.
+- En entornos con restricciones de recursos extremas (kernel compartido).
 
 ## Pros
 
-- Portabilidad total: funciona igual en cualquier sistema operativo o cloud.
-- Ecosistema maduro con Docker Hub, Compose y Swarm.
-- Documentación extensa y comunidad enorme.
-- Imágenes en capas que optimizan almacenamiento y descargas.
-- Integración nativa con Kubernetes y la mayoría de plataformas cloud.
+- Entornos reproducibles en cualquier sistema.
+- Imágenes ligeras con capas cacheables.
+- Ecosistema masivo de imágenes oficiales.
+- Integración nativa con CI/CD y Kubernetes.
+- Aislamiento de procesos con baja sobrecarga.
 
 ## Contras
 
-- Curva de aprendizaje inicial para conceptos como networking y volúmenes.
-- Docker Desktop requiere licencia de pago en empresas grandes.
-- Los contenedores comparten el kernel del host, lo que limita el aislamiento vs VMs.
-- Puede consumir muchos recursos si no se gestionan bien las imágenes.
-- La depuración dentro de contenedores puede ser más compleja que en local.
+- Aislamiento menos seguro que VMs (kernel compartido).
+- Curva de aprendizaje de Dockerfile óptimos.
+- Gestión de redes y volúmenes puede ser compleja.
+- Docker Desktop tiene restricciones de licencia comercial.
+
+## CLI
+
+```bash
+docker build -t mi-app .              # Construir imagen
+docker run -d -p 3000:3000 mi-app     # Ejecutar contenedor
+docker compose up -d                  # Levantar stack
+docker ps                             # Listar contenedores activos
+docker logs -f mi-app                 # Ver logs en tiempo real
+```

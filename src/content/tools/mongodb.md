@@ -1,117 +1,123 @@
 ---
 name: MongoDB
-description: Base de datos NoSQL orientada a documentos con escalabilidad horizontal, consultas flexibles y alta disponibilidad.
+description: Base de datos NoSQL documental orientada a objetos JSON flexibles con escalado horizontal nativo.
 category: backend
-tags: [base-datos, nosql, documental, mongodb, escalable]
-officialSite: https://www.mongodb.com
-pricing: freemium
+tags: [base-de-datos, nosql, documental, backend, json]
+officialSite: https://mongodb.com
+github: https://github.com/mongodb/mongo
+pricing: open-source
 openSource: true
-license: SSPL
+license: MongoDB Server Side Public License (SSPL)
 technicalLevel: intermedio
-compatibility: [Windows, macOS, Linux]
+compatibility: [macOS, Linux, Windows, Docker, MongoDB Atlas]
 featured: false
 features:
-  - Modelo de datos flexible con documentos JSON-like
-  - Consultas ad-hoc con aggregation pipeline
-  - Índices secundarios y text search
-  - Replica sets para alta disponibilidad
-  - Sharding para escalabilidad horizontal
-  - "Atlas: base de datos cloud multi-cloud"
-  - Change streams para eventos en tiempo real
-alternatives: [supabase]
-relatedTools: [node-js, prisma, docker]
+  - Documentos JSON/BSON con esquema flexible
+  - Índices secundarios, compuestos, geoespaciales y de texto
+  - Aggregation Pipeline para transformaciones complejas
+  - Replica Sets con failover automático
+  - Sharding para escalado horizontal distribuido
+  - Change Streams para reaccionar a cambios en tiempo real
+  - Transacciones multi-documento ACID
+  - "MongoDB Atlas: base de datos como servicio multi-cloud"
+alternatives: [firestore, couchbase, postgresql-json, arangodb]
+relatedTools: [mongoose, compass, atlas, redis]
 howToUse:
   - step: 1
-    title: "Instalar MongoDB localmente o en la nube"
-    description: "Para desarrollo local, instala MongoDB Community Server o usa `docker run -p 27017:27017 mongo`. Para producción, crea un clúster gratuito en MongoDB Atlas (cloud.mongodb.com) con un solo clic y obtén la cadena de conexión."
+    title: "Instala MongoDB"
+    description: "Usa brew install mongodb-community (macOS), apt install mongodb (Linux) o docker run -p 27017:27017 mongo:7. Alternativamente, crea un cluster gratis en MongoDB Atlas (500MB, sin tarjeta)."
   - step: 2
-    title: "Conectarse y realizar operaciones CRUD"
-    description: "Conéctate con el driver de tu lenguaje (`npm install mongodb`, `pip install pymongo`). Crea una base de datos, inserta documentos con `insertOne`/`insertMany`, consulta con `find` y filtros, actualiza con `updateOne` usando operadores como `$set`, y elimina con `deleteOne`."
+    title: "Inserta documentos"
+    description: "Conecta con mongosh o tu driver favorito e inserta: db.usuarios.insertOne({ nombre: 'Ana', email: 'ana@mail.com', roles: ['admin'] }). MongoDB asigna automáticamente un _id único."
   - step: 3
-    title: "Crear índices para optimizar consultas"
-    description: "Usa `createIndex({ campo: 1 })` para índices ascendentes o `-1` para descendentes. Para búsquedas de texto usa índices `text`. Monitorea el rendimiento con `explain()` para verificar que tus consultas usen los índices adecuados."
+    title: "Consulta con filtros"
+    description: "Usa db.usuarios.find({ edad: { $gte: 18 }, roles: 'admin' }) con operadores: $gt, $regex, $in, $exists. Los índices aceleran las consultas drásticamente."
   - step: 4
-    title: "Usar el aggregation pipeline para análisis"
-    description: "Construye pipelines de agregación con stages como `$match` (filtrar), `$group` (agrupar), `$sort` (ordenar), `$project` (seleccionar campos) y `$lookup` (unir colecciones). Esto reemplaza la necesidad de joins SQL tradicionales."
+    title: "Agrega y transforma datos"
+    description: "Usa el aggregation pipeline con stages $match, $group, $sort, $project. Ejemplo: db.pedidos.aggregate([{ $match: { total: { $gte: 100 } } }, { $group: { _id: '$usuarioId', total: { $sum: '$total' } } }])"
 whenToUse:
-  - title: "Aplicaciones con esquemas flexibles y evolución rápida"
-    description: "Cuando tu modelo de datos cambia frecuentemente, tienes documentos con campos opcionales o necesitas almacenar datos semiestructurados. MongoDB no requiere migraciones de esquema, lo que acelera el desarrollo iterativo."
-  - title: "Catálogos de productos y sistemas de contenido"
-    description: "Para ecommerce, CMS, catálogos o cualquier sistema donde cada documento puede tener una estructura diferente (productos con atributos variables, artículos con metadatos diversos). El modelo de documentos se adapta naturalmente."
-  - title: "Aplicaciones en tiempo real con Change Streams"
-    description: "Si necesitas notificaciones en tiempo real, sincronización entre servicios o feeds de actividad basados en cambios en la base de datos. Change Streams emite eventos cuando los documentos se insertan, actualizan o eliminan."
+  - title: "Aplicaciones con esquemas evolutivos"
+    description: "Cuando los documentos varían en estructura: perfiles de usuario con diferentes campos, catálogos de productos con atributos variables (categoría, SKU, reviews, etc.). MongoDB no requiere migraciones ALTER TABLE."
+  - title: "Prototipado y startups en fase temprana"
+    description: "MongoDB permite iterar rápido porque cambiar el esquema es tan simple como agregar un campo al JSON. No necesitas definir esquemas ni ejecutar migraciones. Ideal cuando los requirements cambian semanalmente."
+  - title: "Catálogos, logs y datos de series temporales"
+    description: "Para datos que son naturalmente agrupados en documentos: pedidos con items, posts con comentarios, logs con metadata. La aggregation pipeline permite análisis complejos sin joins."
 examples:
-  - title: "Inserción y consulta de documentos"
-    code: |
-      db.productos.insertMany([
-        { nombre: "Laptop", precio: 1200, stock: 15, specs: { ram: "16GB", cpu: "i7" } },
-        { nombre: "Monitor", precio: 350, stock: 30, specs: { tamaño: "27\"", res: "4K" } }
-      ])
-
-      db.productos.find({ precio: { $lt: 1000 } }, { nombre: 1, precio: 1 })
-    output: "Inserta dos documentos con estructuras flexibles en la colección productos. La consulta devuelve solo el Monitor (precio < 1000) mostrando únicamente nombre y precio."
-  - title: "Aggregation pipeline con agrupación"
+  - title: "Agregación de ventas por categoría"
     code: |
       db.ventas.aggregate([
-        { $match: { fecha: { $gte: ISODate("2024-01-01") } } },
-        { $group: { _id: "$categoria", total: { $sum: "$monto" }, cantidad: { $count: {} } } },
+        { $match: { fecha: { $gte: ISODate('2026-01-01') } } },
+        { $unwind: '$items' },
+        { $group: { _id: '$items.categoria', total: { $sum: '$items.precio' }, count: { $sum: 1 } } },
         { $sort: { total: -1 } }
-      ])
-    output: "Agrupa las ventas del año 2024 por categoría, calcula el total vendido y la cantidad de transacciones, ordenando de mayor a menor ingreso total."
+      ]);
+    output: "Agrupa ventas del año por categoría, sumando el total y contando items, ordenado de mayor a menor. Devuelve arrays con categoría, total y cantidad."
+  - title: "Esquema flexible de producto"
+    code: |
+      db.productos.insertMany([
+        { nombre: 'Laptop', precio: 1500, especs: { ram: '32GB', cpu: 'i7' } },
+        { nombre: 'Camiseta', precio: 25, tallas: ['S','M','L','XL'], color: 'rojo' }
+      ]);
+    output: "Documentos de productos con campos completamente distintos. MongoDB no exige que todos los documentos en una colección tengan el mismo esquema. El primer producto tiene especs, el segundo tallas y color."
 tips:
-  - text: "Siempre crea índices para los campos que usas en filtros, ordenamientos y agregaciones. Sin índices, MongoDB hace collection scan (revisa todos los documentos), lo que degrada drásticamente el rendimiento en colecciones grandes."
-  - text: "Usa el operador `$lookup` con moderación. A diferencia de los JOINs SQL, `$lookup` puede ser costoso. Si necesitas joins frecuentes entre colecciones, considera si MongoDB es la base de datos correcta o si debes desnormalizar los datos."
-  - text: "Configura replica sets incluso en desarrollo. Te acostumbrarás a trabajar con el topology correcto y podrás probar Change Streams y transacciones, que solo funcionan en replica sets."
-  - text: "No uses ObjectId como único identificador de negocio. Agrega un campo `slug` o `externalId` para referencias legibles por humanos y URLs amigables."
-  - text: "Monitorea el tamaño de tus documentos con `Object.bsonsize(db.collection.findOne())`. Documentos muy grandes (>16MB) no se pueden insertar. Si tus documentos crecen indefinidamente (logs, arrays), usa colecciones separadas o bucketing."
+  - text: "Diseña tus documentos para que las consultas más frecuentes lean un solo documento (embedding en vez de references). MongoDB es más rápido leyendo un documento grande que haciendo joins (lookups) entre colecciones."
+  - text: "Usa índices compuestos que coincidan exactamente con tus patrones de consulta. Usa explain() para ver si tus queries usan índices. Una collection sin índices hace collection scan en cada consulta."
+  - text: "Mantén los documentos pequeños: < 1MB recomendado. Documentos muy grandes (> 10MB) degradan el rendimiento. Si un documento crece sin límite (ej: array de comentarios), refactoriza a colección separada."
+  - text: "Configura réplica set siempre, incluso en desarrollo. Con replica set habilitas change streams y transacciones. Además, replica set = failover automático. Un solo nodo no es producción."
 faq:
-  - question: "¿MongoDB vs PostgreSQL, cuál elegir?"
-    answer: "Elige MongoDB cuando tus datos son semiestructurados, el esquema cambia frecuentemente, o necesitas escalabilidad horizontal nativa. Elige PostgreSQL cuando necesitas integridad referencial estricta, joins complejos, transacciones ACID robustas o consultas relacionales avanzadas. PostgreSQL también tiene soporte JSON así que en muchos casos modernos PostgreSQL es suficiente."
-  - question: "¿MongoDB soporta transacciones ACID?"
-    answer: "Sí, desde la versión 4.0 MongoDB soporta transacciones multi-documento ACID. Sin embargo, requieren replica sets y tienen un costo de rendimiento mayor que las operaciones atómicas de un solo documento. No abuses de las transacciones: modela tus datos para minimizarlas."
-  - question: "¿Cómo funciona el sharding en MongoDB?"
-    answer: "El sharding distribuye datos entre múltiples servidores (shards) usando una shard key. Cada shard contiene un subconjunto de los datos. Las consultas que incluyen la shard key se enrutan al shard correcto. Una mala elección de shard key puede causar hotspots y degradar el rendimiento."
-  - question: "¿La licencia SSPL es un problema para mi empresa?"
-    answer: "Para la mayoría de empresas que usan MongoDB como servicio (MongoDB Atlas) o internamente sin ofrecer MongoDB como servicio a terceros, la SSPL no es un problema. Si planeas ofrecer MongoDB como servicio cloud, la SSPL te obligaría a abrir el código de tu infraestructura de gestión. Considera alternativas como AWS DocumentDB."
+  - question: "¿MongoDB es ACID?"
+    answer: "Sí, desde MongoDB 4.0 soporta transacciones multi-documento ACID dentro de una réplica set, y desde 4.2 en sharded clusters. Las transacciones garantizan atomicidad, consistencia, aislamiento y durabilidad."
+  - question: "¿MongoDB vs PostgreSQL?"
+    answer: "PostgreSQL es mejor para datos relacionales, joins complejos, integridad referencial y transacciones pesadas. MongoDB es mejor para esquemas flexibles, datos jerárquicos, escalado horizontal nativo y prototipado rápido."
+  - question: "¿MongoDB es gratis?"
+    answer: "MongoDB Community Server es open source. MongoDB Enterprise tiene más features (LDAP, Kerberos, auditoría, encriptación). MongoDB Atlas (cloud) tiene tier gratis de 512MB. La licencia SSPL limita su uso como servicio gestionado."
 publishedAt: 2026-06-01
 ---
 
 ## ¿Qué es?
 
-MongoDB es la base de datos NoSQL más popular del mundo. Almacena datos en documentos JSON-like flexibles (BSON) en lugar de tablas rígidas, permitiendo esquemas dinámicos que evolucionan con la aplicación.
+MongoDB es la base de datos NoSQL documental más popular del mundo. En lugar de tablas y filas, usa documentos JSON flexibles que pueden tener estructuras diferentes dentro de una misma colección.
 
 ## ¿Para qué sirve?
 
-MongoDB sirve para almacenar y consultar datos de aplicaciones web y móviles, catálogos de productos, sistemas de contenido, gaming, IoT, análisis en tiempo real y cualquier aplicación que requiera escalabilidad horizontal y esquemas flexibles.
+MongoDB sirve para almacenar datos con esquemas variables, prototipar aplicaciones rápidamente, manejar catálogos de productos, datos jerárquicos, logs y cualquier escenario donde la flexibilidad del esquema sea más importante que las relaciones rígidas.
 
 ## Cuándo usarla
 
-- Cuando tus datos no tienen un esquema fijo o cambian frecuentemente.
-- Para aplicaciones que necesitan escalar horizontalmente con sharding.
-- Si trabajas con datos JSON y quieres almacenarlos de forma natural.
-- Para prototipado rápido donde la flexibilidad del esquema es clave.
-- Cuando necesitas alta disponibilidad con replica sets.
+- Cuando los datos no tienen un esquema fijo.
+- Para prototipado rápido y startups.
+- Para datos jerárquicos (posts con comentarios, pedidos con items).
+- Cuando necesitas escalar horizontalmente.
+- Para aplicaciones que requieren alta velocidad de escritura.
 
 ## Cuándo NO usarla
 
-- Para aplicaciones con relaciones complejas y transacciones ACID pesadas.
-- Cuando los joins y las restricciones de integridad son críticos.
-- Si tu equipo solo tiene experiencia en SQL y bases relacionales.
-- Para reporting y analytics con consultas altamente complejas.
-- Cuando el tamaño de los documentos es muy grande y afecta rendimiento.
+- Para datos con relaciones complejas y joins frecuentes.
+- Cuando la integridad referencial es crítica (usa PostgreSQL).
+- Para aplicaciones financieras con transacciones pesadas.
+- Si el equipo no está familiarizado con modelado documental.
 
 ## Pros
 
-- Esquema flexible que acelera el desarrollo.
-- Escalabilidad horizontal nativa con sharding.
-- Aggregation pipeline muy potente para análisis.
-- Atlas cloud con despliegue en segundos.
-- Gran ecosistema de drivers y herramientas.
+- Esquema flexible sin migraciones.
+- Escalado horizontal nativo con sharding.
+- Aggregation Pipeline muy potente.
+- Transacciones ACID multi-documento.
+- MongoDB Atlas (DBaaS) multi-cloud.
 
 ## Contras
 
-- Sin joins nativos (hay que hacerlos en aplicación).
-- Rendimiento inferior a SQL en consultas relacionales complejas.
-- La licencia SSPL genera controversia.
-- Consumo de memoria alto comparado con bases SQL.
-- Transacciones ACID limitadas comparado con PostgreSQL.
+- Sin joins nativos (usa $lookup que es más lento).
+- Documentos limitados a 16MB.
+- Modelado documental requiere diseño cuidadoso.
+- Licencia SSPL restrictiva para SaaS.
+
+## CLI
+
+```bash
+mongod                                        # Iniciar servidor
+mongosh                                       # Cliente interactivo
+use mi_bd                                     # Seleccionar/crear BD
+db.usuarios.find({ edad: { $gte: 18 } })      # Consultar
+db.usuarios.createIndex({ email: 1 })         # Crear índice
+```

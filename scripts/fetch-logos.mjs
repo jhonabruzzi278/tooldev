@@ -13,6 +13,7 @@ const NAME_MAP = {
   'PocketBase': 'Pocketbase',
   'shadcn-ui': 'shadcn/ui',
   'Vue.js': 'Vue',
+  'Apache Kafka': 'Apache Kafka',
 };
 
 // Tools not found in SVGL at all; use existing icons if available
@@ -54,10 +55,12 @@ async function main() {
     'Linear','LottieFiles','Midjourney','MongoDB','Motion','Neon','Next.js',
     'Node.js','Notion','Obsidian','OpenAI','Playwright','PocketBase','Postman',
     'Prisma','Qwik','Railway','Raycast','Redis','Remix','Sentry','shadcn-ui',
-    'Slack','Storybook','Stripe','Supabase','Svelte','Tailwind CSS','TensorFlow',
+    'Slack','Storybook','Supabase','Svelte','Tailwind CSS','TensorFlow',
     'Terraform','tRPC','Visual Studio Code','Vite','Vue.js','Zod',
     // Missing from SVGL — may use fallback below
-    'Ansible','ChatGPT','Coolify','Excalidraw','GSAP','Jenkins','PyTorch','Rive',
+    'Ansible','Apache Kafka','ChatGPT','Coolify','Docker','Elasticsearch',
+    'Excalidraw','Grafana','GSAP','Jenkins','MongoDB','Nginx','PostgreSQL',
+    'Prometheus','PyTorch','Redis','Rive','Terraform',
   ];
 
   // Copy existing icons from public/icons/ as fallback

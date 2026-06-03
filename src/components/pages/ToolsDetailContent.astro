@@ -19,6 +19,7 @@ import type { Locale } from '@/lib/i18n/translations';
 import type { CollectionEntry } from 'astro:content';
 import CopyForAI from '@/components/tools/CopyForAI';
 import ToolShareButtons from '@/components/tools/ToolShareButtons';
+import LicenseToggle from '@/components/tools/LicenseToggle';
 import ScreenshotGallery from '@/components/tools/ScreenshotGallery';
 import { existsSync } from 'node:fs';
 
@@ -73,7 +74,7 @@ const screenshotCount = (() => {
           <Badge variant="outline" class="text-xs capitalize">{data.pricing}</Badge>
           <Badge variant="outline" class="text-xs capitalize">{data.technicalLevel}</Badge>
           {data.license && (
-            <Badge variant="outline" class="text-xs">{data.license}</Badge>
+            <LicenseToggle license={data.license} client:load />
           )}
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-4 flex items-center gap-3">
