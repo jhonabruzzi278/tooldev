@@ -18,6 +18,8 @@ Object.defineProperty(window, 'IntersectionObserver', {
   value: MockIntersectionObserver,
 });
 
+Element.prototype.scrollIntoView = () => {};
+
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   configurable: true,

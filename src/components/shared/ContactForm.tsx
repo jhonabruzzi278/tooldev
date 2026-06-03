@@ -63,7 +63,7 @@ export default function ContactForm({ locale = 'es' }: ContactFormProps) {
         <p className="text-sm text-green-600 text-center">{lang.contact.formSentMsg}</p>
       )}
       {status === 'error' && (
-        <p className="text-sm text-red-600 text-center">{lang.contact.formError}jonathanguerra278@gmail.com</p>
+        <p className="text-sm text-red-600 text-center">{lang.contact.formError}</p>
       )}
     </form>
   );
