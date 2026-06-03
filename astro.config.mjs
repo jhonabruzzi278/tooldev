@@ -5,11 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  // Production URL — update when custom domain is set
   site: 'https://tool-dev-rust.vercel.app',
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()]
   },

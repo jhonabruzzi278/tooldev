@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
 import SEOHead from '@/components/shared/SEOHead.astro';
 import type { Locale } from '@/lib/i18n/translations';
+import ChatIA from '@/components/shared/ChatIA';
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
 
 interface Props {
@@ -53,5 +54,6 @@ const { title, description, ogImage, locale = 'es' } = Astro.props;
       <slot />
     </main>
     <Footer locale={locale} />
+    <ChatIA client:load />
   </body>
 </html>
