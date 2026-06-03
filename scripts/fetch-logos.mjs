@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -61,17 +61,32 @@ async function main() {
     'Ansible','Apache Kafka','ChatGPT','Coolify','Docker','Elasticsearch',
     'Excalidraw','Grafana','GSAP','Jenkins','MongoDB','Nginx','PostgreSQL',
     'Prometheus','PyTorch','Redis','Rive','Terraform',
+    // 9 new tools
+    'Squoosh','Fontsource','Tabler Icons','SVGL','Flowbite','BG.Ibelick','Shots.so','Magic UI','HTMLrev',
   ];
 
   // Copy existing icons from public/icons/ as fallback
   if (existsSync(iconsDir)) {
-    for (const file of ['coolify.svg', 'jenkins.svg']) {
-      const srcPath = resolve(iconsDir, file);
-      if (existsSync(srcPath)) {
-        const name = file.replace('.svg', '');
-        const destPath = resolve(logosDir, `${name}.svg`);
+    const iconFiles = readdirSync(iconsDir).filter(f => f.endsWith('.svg'));
+    for (const file of iconFiles) {
+      let name = file.replace('.svg', '').toLowerCase();
+      // Map icon filenames to expected logo names
+      const nameMap = {
+        'squosh': 'Squoosh',
+        'fontsource': 'Fontsource',
+        'flowbite': 'Flowbite',
+        'coolify': 'Coolify',
+        'jenkins': 'Jenkins',
+        'rive': 'Rive',
+        'prometheus-logo.7aa022e5': 'Prometheus',
+        'jenkins-logo-svg_001': 'Jenkins',
+      };
+      const logoName = nameMap[name] || name.charAt(0).toUpperCase() + name.slice(1);
+      const destPath = resolve(logosDir, `${logoName}.svg`);
+      if (!existsSync(destPath)) {
+        const srcPath = resolve(iconsDir, file);
         writeFileSync(destPath, readFileSync(srcPath, 'utf-8'));
-        console.log(`  COPY: ${name} from public/icons/`);
+        console.log(`  COPY: ${logoName} from public/icons/`);
       }
     }
   }
