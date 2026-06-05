@@ -21,6 +21,7 @@ import CopyForAI from '@/components/tools/CopyForAI';
 import ToolShareButtons from '@/components/tools/ToolShareButtons';
 import LicenseToggle from '@/components/tools/LicenseToggle';
 import ScreenshotGallery from '@/components/tools/ScreenshotGallery';
+import FavoriteButton from '@/components/tools/FavoriteButton';
 import { existsSync } from 'node:fs';
 
 interface Props {
@@ -84,6 +85,7 @@ const screenshotCount = (() => {
         <p class="text-lg text-muted-foreground max-w-2xl">{data.description}</p>
         <div class="flex flex-wrap items-center gap-4 mt-5">
           <ToolShareButtons client:load toolName={data.name} toolUrl={Astro.url.href} />
+          <FavoriteButton client:load toolId={tool.id} variant="button" />
         </div>
         <div class="flex flex-wrap gap-3 mt-4">
           <a

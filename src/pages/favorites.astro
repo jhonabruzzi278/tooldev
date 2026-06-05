@@ -1,0 +1,8 @@
+---
+import FavoritesContent from '@/components/pages/FavoritesContent.astro';
+import type { Locale } from '@/lib/i18n/translations';
+
+const locale = (Astro.currentLocale as Locale) || 'es';
+---
+
+<FavoritesContent {locale} />

@@ -1,0 +1,90 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ToolCard from '@/components/tools/ToolCard.astro';
+import { getCollection } from 'astro:content';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+
+const allTools = await getCollection('tools');
+---
+
+<BaseLayout 
+  title={locale === 'en' ? 'Favorites' : 'Favoritos'} 
+  description={locale === 'en' ? 'Your favorite developer tools.' : 'Tus herramientas de desarrollo favoritas.'} 
+  {locale}
+>
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {locale === 'en' ? 'Your Favorites' : 'Tus Favoritos'}
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        {locale === 'en' 
+          ? 'Tools you have saved for quick access' 
+          : 'Herramientas que has guardado para acceso rápido'}
+      </p>
+    </div>
+  </section>
+  
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div id="favorites-container">
+        <p class="text-center text-muted-foreground py-12" id="no-favorites-message">
+          {locale === 'en' 
+            ? 'You haven\'t saved any tools yet. Browse the catalog and click the heart icon to add tools here.' 
+            : 'Aún no has guardado herramientas. Explora el catálogo y haz clic en el ícono de corazón para agregar herramientas aquí.'}
+        </p>
+        <div id="favorites-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ toolIds: allTools.map(t => t.id) }}>
+    const FAVORITES_KEY = 'tooldev-favorites';
+    
+    function getFavorites() {
+      try {
+        const stored = localStorage.getItem(FAVORITES_KEY);
+        return stored ? JSON.parse(stored) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function renderFavorites() {
+      const favorites = getFavorites();
+      const container = document.getElementById('favorites-grid');
+      const noMessage = document.getElementById('no-favorites-message');
+      
+      if (favorites.length === 0) {
+        container?.classList.add('hidden');
+        noMessage?.classList.remove('hidden');
+        return;
+      }
+
+      container?.classList.remove('hidden');
+      noMessage?.classList.add('hidden');
+      
+      const favoriteTools = toolIds.filter(id => favorites.includes(id));
+      
+      if (favoriteTools.length === 0) {
+        container?.classList.add('hidden');
+        noMessage?.classList.remove('hidden');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderFavorites);
+    
+    const observer = new MutationObserver(renderFavorites);
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
+</BaseLayout>
