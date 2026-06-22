@@ -27,15 +27,15 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
       <div className="w-full flex flex-col items-center gap-2 mb-2">
         <div className="flex items-center gap-0 rounded-xl border border-border/60 bg-muted/30 overflow-hidden w-full max-w-lg">
           {/* Label */}
-          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border/60 shrink-0">
-            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-emerald-500 shrink-0" />
-            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-0">
+          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border/60 bg-muted/50 shrink-0">
+            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 font-mono bg-emerald-500/15 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border-0">
               skill
             </Badge>
           </div>
 
           {/* Command */}
-          <span className="flex-1 px-3 py-2.5 text-sm font-mono text-foreground/80 select-all truncate">
+          <span className="flex-1 px-3 py-2.5 text-sm font-mono text-foreground/70 dark:text-foreground/80 select-all truncate">
             {command}
           </span>
 

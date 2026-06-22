@@ -55,20 +55,22 @@ export default function ThemeToggle() {
   };
 
   const getIcon = () => {
-    if (mode === 'auto') {
-      return isDark ? 'tabler:device-desktop' : 'tabler:device-desktop';
-    }
-    return isDark ? 'tabler:sun' : 'tabler:moon';
+    if (mode === 'light') return 'tabler:sun';
+    if (mode === 'dark') return 'tabler:moon';
+    // auto: muestra el icono del tema activo del sistema
+    return 'tabler:device-desktop';
   };
 
-  const getLabel = () => {
-    if (mode === 'auto') {
-      return isDark 
-        ? 'Tema automático (oscuro) - Clic para modo claro' 
-        : 'Tema automático (claro) - Clic para modo oscuro';
-    }
-    return isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+  const getTooltip = () => {
+    const labels: Record<ThemeMode, string> = {
+      light: 'Modo claro — clic para modo oscuro',
+      dark: 'Modo oscuro — clic para modo automático',
+      auto: `Modo automático (${isDark ? 'oscuro' : 'claro'}) — clic para modo claro`,
+    };
+    return labels[mode];
   };
+
+  const getLabel = () => getTooltip();
 
   return (
     <Button
@@ -76,9 +78,13 @@ export default function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       aria-label={getLabel()}
-      title={getLabel()}
+      title={getTooltip()}
+      className="relative"
     >
       <Icon icon={getIcon()} width={20} height={20} />
+      {mode === 'auto' && (
+        <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-primary" />
+      )}
     </Button>
   );
 }
