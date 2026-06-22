@@ -63,6 +63,15 @@ export const categories: Category[] = [
     lightBg: 'oklch(0.94 0.04 85 / 0.3)',
     darkBg: 'oklch(0.28 0.08 85 / 0.2)',
   },
+  {
+    slug: 'agentes',
+    name: 'Agentes IA',
+    description: 'Asistentes de código, agentes autónomos y editores potenciados con inteligencia artificial.',
+    icon: 'tabler:robot',
+    color: 'oklch(0.55 0.22 225)',
+    lightBg: 'oklch(0.92 0.04 225 / 0.3)',
+    darkBg: 'oklch(0.25 0.08 225 / 0.2)',
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {

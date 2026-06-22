@@ -86,9 +86,9 @@ const screenshotCount = (() => {
           {data.name}
         </h1>
         <p class="text-lg text-muted-foreground max-w-2xl">{data.description}</p>
-        <div class="flex flex-wrap items-center gap-4 mt-5">
+        <div class="flex flex-wrap items-center gap-3 mt-5">
           <ToolShareButtons client:load toolName={data.name} toolUrl={Astro.url.href} />
-          <FavoriteButton client:load toolId={tool.id} variant="button" />
+          <FavoriteButton client:load toolId={tool.id} variant="button" size="md" />
         </div>
         <div class="flex flex-wrap gap-3 mt-4">
           <a

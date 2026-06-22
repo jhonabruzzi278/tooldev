@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { isFavorite, toggleFavorite } from '@/lib/favorites';
 
 interface FavoriteButtonProps {
@@ -17,6 +17,7 @@ export default function FavoriteButton({
   className = ''
 }: FavoriteButtonProps) {
   const [isFav, setIsFav] = useState(false);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     setIsFav(isFavorite(toolId));
@@ -27,44 +28,54 @@ export default function FavoriteButton({
     e.stopPropagation();
     const newState = toggleFavorite(toolId);
     setIsFav(newState);
+    setAnimating(true);
+    setTimeout(() => setAnimating(false), 400);
   };
 
   const iconSize = size === 'sm' ? 16 : size === 'lg' ? 24 : 20;
 
   if (variant === 'button') {
     return (
-      <Button
-        variant={isFav ? 'default' : 'outline'}
-        size={size === 'sm' ? 'sm' : 'default'}
+      <button
         onClick={handleToggle}
-        className={`gap-2 ${className}`}
+        className={cn(
+          'inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-medium transition-all duration-200',
+          isFav
+            ? 'bg-red-500/10 border-red-500/30 text-red-500 hover:bg-red-500/20'
+            : 'bg-background border-border text-muted-foreground hover:border-red-400/50 hover:text-red-500',
+          animating && 'scale-95',
+          className
+        )}
         aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
       >
-        <Icon 
-          icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'} 
-          width={iconSize} 
-          height={iconSize} 
+        <Icon
+          icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'}
+          width={iconSize}
+          height={iconSize}
+          className={cn('transition-transform duration-200', animating && 'scale-125')}
         />
         {isFav ? 'Guardado' : 'Guardar'}
-      </Button>
+      </button>
     );
   }
 
   return (
     <button
       onClick={handleToggle}
-      className={`p-1.5 rounded-full transition-all hover:scale-110 ${
-        isFav 
-          ? 'text-red-500 hover:text-red-600' 
-          : 'text-muted-foreground hover:text-red-500'
-      } ${className}`}
+      className={cn(
+        'p-1.5 rounded-full transition-all duration-200',
+        isFav ? 'text-red-500 hover:text-red-600' : 'text-muted-foreground hover:text-red-500',
+        animating && 'scale-125',
+        className
+      )}
       aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
     >
-      <Icon 
-        icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'} 
-        width={iconSize} 
-        height={iconSize} 
+      <Icon
+        icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'}
+        width={iconSize}
+        height={iconSize}
       />
     </button>
   );
 }
+

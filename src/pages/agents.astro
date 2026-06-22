@@ -1,0 +1,337 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { Badge } from '@/components/ui/badge';
+
+const agents = [
+  {
+    id: 'claude',
+    name: 'Claude',
+    maker: 'Anthropic',
+    description: 'Asistente de IA con razonamiento avanzado, análisis de código, escritura y respuestas largas precisas.',
+    icon: 'tabler:brain',
+    color: '#D97706',
+    tags: ['código', 'análisis', 'escritura'],
+    installCmd: 'npx tooldev-skills install claude',
+    docsUrl: 'https://docs.anthropic.com',
+    skillSlug: 'claude',
+    available: false,
+  },
+  {
+    id: 'kiro',
+    name: 'Kiro',
+    maker: 'Amazon Web Services',
+    description: 'IDE con IA integrada para spec-driven development. Genera requisitos, diseño y tareas automáticamente.',
+    icon: 'tabler:rocket',
+    color: '#6366F1',
+    tags: ['ide', 'specs', 'tareas'],
+    installCmd: 'npx tooldev-skills install kiro',
+    docsUrl: 'https://kiro.dev',
+    skillSlug: 'kiro',
+    available: false,
+  },
+  {
+    id: 'cursor',
+    name: 'Cursor',
+    maker: 'Cursor',
+    description: 'Editor de código con IA que entiende tu codebase completo. Ideal para refactoring y generación de código.',
+    icon: 'tabler:cursor-text',
+    color: '#10B981',
+    tags: ['editor', 'código', 'refactor'],
+    installCmd: 'npx tooldev-skills install cursor',
+    docsUrl: 'https://cursor.sh',
+    skillSlug: 'cursor',
+    available: false,
+  },
+  {
+    id: 'codex',
+    name: 'Codex',
+    maker: 'OpenAI',
+    description: 'Agente de código de OpenAI que puede ejecutar tareas de ingeniería completas en un sandbox seguro.',
+    icon: 'tabler:code',
+    color: '#059669',
+    tags: ['código', 'agente', 'automatización'],
+    installCmd: 'npx tooldev-skills install codex',
+    docsUrl: 'https://openai.com/codex',
+    skillSlug: 'codex',
+    available: false,
+  },
+  {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    maker: 'GitHub',
+    description: 'Asistente de código integrado en VS Code y GitHub. Sugerencias inline, chat y pull request summaries.',
+    icon: 'tabler:git-branch',
+    color: '#8B5CF6',
+    tags: ['vscode', 'sugerencias', 'github'],
+    installCmd: 'npx tooldev-skills install github-copilot',
+    docsUrl: 'https://github.com/features/copilot',
+    skillSlug: 'github-copilot',
+    available: false,
+  },
+  {
+    id: 'gemini',
+    name: 'Gemini',
+    maker: 'Google',
+    description: 'Modelo multimodal de Google. Ideal para análisis de imágenes, código, documentos extensos y tareas complejas.',
+    icon: 'tabler:sparkles',
+    color: '#4285F4',
+    tags: ['multimodal', 'análisis', 'google'],
+    installCmd: 'npx tooldev-skills install gemini',
+    docsUrl: 'https://gemini.google.com',
+    skillSlug: 'gemini',
+    available: false,
+  },
+];
+---
+
+<BaseLayout
+  title="Agentes de IA"
+  description="Instala skills de agentes de IA en tu proyecto. Configuración y guías para Claude, Kiro, Cursor, Codex, Copilot y más."
+  locale="es"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-4">
+        <Icon name="tabler:robot" width="14" height="14" class="text-current" />
+        Agentes de IA
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Instala knowledge de herramientas<br class="hidden md:block" />
+        <span class="text-primary">en tu agente favorito</span>
+      </h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Cada agente puede usar skills de ToolDev para conocer mejor las herramientas que usas.
+        Instala con un solo comando.
+      </p>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="py-10 border-b border-border/50 bg-muted/20">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 text-center">¿Cómo funciona?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="flex flex-col items-center text-center gap-2 p-4">
+          <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">1</div>
+          <p class="text-sm font-medium">Elige tu agente</p>
+          <p class="text-xs text-muted-foreground">Selecciona el asistente de IA que usas en tu día a día</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-2 p-4">
+          <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">2</div>
+          <p class="text-sm font-medium">Copia el comando</p>
+          <p class="text-xs text-muted-foreground">Ejecuta el comando npx en la raíz de tu proyecto</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-2 p-4">
+          <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">3</div>
+          <p class="text-sm font-medium">Tu agente aprende</p>
+          <p class="text-xs text-muted-foreground">El archivo SKILL.md se instala en .agents/skills/ y tu agente lo detecta automáticamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de agentes -->
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">Agentes disponibles</h2>
+        <Badge variant="secondary" class="text-xs">{agents.length} agentes</Badge>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {agents.map((agent) => (
+          <div class="group relative flex flex-col p-5 rounded-xl border border-border/50 bg-card hover:shadow-md hover:border-primary/30 transition-all duration-300">
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <div class="size-10 rounded-xl flex items-center justify-center" style={`background: ${agent.color}15; border: 1px solid ${agent.color}30`}>
+                  <Icon name={agent.icon} class="text-current" width="20" height="20" style={`color: ${agent.color}`} />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-sm">{agent.name}</h3>
+                  <p class="text-[11px] text-muted-foreground">{agent.maker}</p>
+                </div>
+              </div>
+              {agent.available ? (
+                <Badge class="text-[10px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">Disponible</Badge>
+              ) : (
+                <Badge variant="secondary" class="text-[10px]">Próximamente</Badge>
+              )}
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs text-muted-foreground leading-relaxed mb-3 flex-1">
+              {agent.description}
+            </p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1 mb-4">
+              {agent.tags.map((tag) => (
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Install command -->
+            <div class="flex items-center gap-0 rounded-lg border border-border/60 bg-muted/30 overflow-hidden text-xs font-mono mb-3">
+              <div class="flex items-center gap-1.5 px-2.5 py-2 border-r border-border/60 shrink-0">
+                <Icon name="tabler:terminal-2" width="12" height="12" class="text-emerald-500" />
+              </div>
+              <span class="flex-1 px-2.5 py-2 text-foreground/70 truncate select-all">
+                {agent.installCmd}
+              </span>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-2">
+              <a
+                href={agent.docsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-border/60 text-xs text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+              >
+                <Icon name="tabler:external-link" width="12" height="12" class="text-current" />
+                Documentación
+              </a>
+              <a
+                href="/skills"
+                class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-primary/10 border border-primary/20 text-xs text-primary hover:bg-primary/20 transition-colors"
+              >
+                <Icon name="tabler:info-circle" width="12" height="12" class="text-current" />
+                Cómo instalar
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Planes de precios Kiro -->
+      <div class="mt-12">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="size-8 rounded-xl flex items-center justify-center bg-indigo-500/10 border border-indigo-500/20">
+            <Icon name="tabler:rocket" width="16" height="16" class="text-indigo-500" />
+          </div>
+          <div>
+            <h2 class="text-xl font-bold">Planes de Kiro</h2>
+            <p class="text-xs text-muted-foreground">Precios verificados desde <a href="https://kiro.dev/pricing/" target="_blank" rel="noopener noreferrer" class="underline hover:text-foreground">kiro.dev/pricing</a></p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
+          <!-- Free -->
+          <div class="flex flex-col p-4 rounded-xl border border-border/50 bg-card">
+            <div class="mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Free</span>
+              <div class="flex items-end gap-1 mt-1">
+                <span class="text-2xl font-bold">$0</span>
+                <span class="text-xs text-muted-foreground mb-1">/mes</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-xs text-muted-foreground flex-1">
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />50 créditos/mes</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Chat y vibe coding</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:x" width="12" height="12" class="text-muted-foreground/40 mt-0.5 shrink-0" />Sin specs</li>
+            </ul>
+            <div class="mt-3 pt-3 border-t border-border/50">
+              <span class="text-[10px] text-muted-foreground">Trial: 500 créditos por 14 días</span>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div class="flex flex-col p-4 rounded-xl border border-border/50 bg-card">
+            <div class="mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Pro</span>
+              <div class="flex items-end gap-1 mt-1">
+                <span class="text-2xl font-bold">$19</span>
+                <span class="text-xs text-muted-foreground mb-1">/mes</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-xs text-muted-foreground flex-1">
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />1,000 créditos/mes</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Specs incluidas</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Hooks y steering</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Todos los modelos</li>
+            </ul>
+          </div>
+
+          <!-- Pro+ -->
+          <div class="flex flex-col p-4 rounded-xl border-2 border-indigo-500/40 bg-indigo-500/5 relative">
+            <div class="absolute -top-2.5 left-1/2 -translate-x-1/2">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500 text-white">Popular</span>
+            </div>
+            <div class="mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Pro+</span>
+              <div class="flex items-end gap-1 mt-1">
+                <span class="text-2xl font-bold">$39</span>
+                <span class="text-xs text-muted-foreground mb-1">/mes</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-xs text-muted-foreground flex-1">
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />2,000 créditos/mes</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Todo lo de Pro</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Subagentes custom</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Powers</li>
+            </ul>
+            <div class="mt-3 pt-3 border-t border-indigo-500/20">
+              <span class="text-[10px] text-indigo-400">Recomendado para startups</span>
+            </div>
+          </div>
+
+          <!-- Pro Max -->
+          <div class="flex flex-col p-4 rounded-xl border border-border/50 bg-card">
+            <div class="mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Pro Max</span>
+              <div class="flex items-end gap-1 mt-1">
+                <span class="text-2xl font-bold">$100</span>
+                <span class="text-xs text-muted-foreground mb-1">/mes</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-xs text-muted-foreground flex-1">
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />5,000 créditos/mes</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Todo lo de Pro+</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Modelos premium</li>
+            </ul>
+          </div>
+
+          <!-- Power -->
+          <div class="flex flex-col p-4 rounded-xl border border-border/50 bg-card">
+            <div class="mb-3">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Power</span>
+              <div class="flex items-end gap-1 mt-1">
+                <span class="text-2xl font-bold">$200</span>
+                <span class="text-xs text-muted-foreground mb-1">/mes</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-1.5 text-xs text-muted-foreground flex-1">
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Créditos enterprise</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Todo de Pro Max</li>
+              <li class="flex items-start gap-1.5"><Icon name="tabler:check" width="12" height="12" class="text-emerald-500 mt-0.5 shrink-0" />Uso intensivo</li>
+            </ul>
+            <div class="mt-3 pt-3 border-t border-border/50">
+              <span class="text-[10px] text-muted-foreground">Estudiantes: 1K créditos/mes gratis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 p-6 rounded-xl border border-border/50 bg-muted/20 text-center">
+        <Icon name="tabler:bulb" width="28" height="28" class="text-primary mx-auto mb-2" />
+        <h3 class="font-semibold mb-1">¿Usas otro agente?</h3>
+        <p class="text-sm text-muted-foreground mb-4">
+          Las skills de ToolDev son archivos markdown estándar compatibles con cualquier agente que soporte el formato SKILL.md.
+        </p>
+        <a
+          href="/skills"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+        >
+          <Icon name="tabler:terminal-2" width="16" height="16" class="text-current" />
+          Ver cómo instalar skills
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

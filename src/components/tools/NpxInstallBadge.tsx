@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 
 interface NpxInstallBadgeProps {
@@ -21,36 +24,66 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
   };
 
   return (
-    <div className="w-full flex flex-col items-center gap-1.5 mb-2">
-      <div className="flex items-center gap-2 rounded-xl border border-border/60 bg-muted/40 px-4 py-2.5 text-sm font-mono w-full max-w-md justify-between">
-        <div className="flex items-center gap-2 min-w-0">
-          <Icon icon="tabler:terminal-2" width={15} height={15} className="text-muted-foreground shrink-0" />
-          <span className="text-foreground/80 select-all truncate">{command}</span>
+    <TooltipProvider>
+      <div className="w-full flex flex-col items-center gap-2 mb-2">
+        <div className="flex items-center gap-0 rounded-xl border border-border/60 bg-muted/30 overflow-hidden w-full max-w-lg">
+          {/* Label */}
+          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border/60 shrink-0">
+            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-emerald-500 shrink-0" />
+            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-0">
+              skill
+            </Badge>
+          </div>
+
+          {/* Command */}
+          <span className="flex-1 px-3 py-2.5 text-sm font-mono text-foreground/80 select-all truncate">
+            {command}
+          </span>
+
+          {/* Copy button */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleCopy}
+                className={cn(
+                  'h-full px-3 rounded-none border-l border-border/60 shrink-0 transition-colors',
+                  copied
+                    ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+                aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
+              >
+                <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{copied ? (locale === 'en' ? 'Copied!' : '¡Copiado!') : (locale === 'en' ? 'Copy command' : 'Copiar comando')}</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Help link */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <a
+                href={skillsHref}
+                className="h-full px-3 py-2.5 border-l border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors flex items-center shrink-0"
+                aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
+              >
+                <Icon icon="tabler:help-circle" width={14} height={14} />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
-        <div className="flex items-center gap-1 shrink-0">
-          <button
-            onClick={handleCopy}
-            className={cn(
-              'p-1.5 rounded-md hover:bg-muted transition-colors',
-              copied ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground hover:text-foreground'
-            )}
-            aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando de instalación'}
-          >
-            <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
-          </button>
-          <a
-            href={skillsHref}
-            className="p-1.5 rounded-md hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
-            aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
-            title={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
-          >
-            <Icon icon="tabler:help-circle" width={14} height={14} />
-          </a>
-        </div>
+
+        <p className="text-[11px] text-muted-foreground">
+          {locale === 'en' ? 'Install AI skill for this tool in your project' : 'Instala la skill de IA de esta herramienta en tu proyecto'}
+        </p>
       </div>
-      <span className="text-[11px] text-muted-foreground">
-        {locale === 'en' ? 'Install AI skill for this tool' : 'Instalar skill de IA para esta herramienta'}
-      </span>
-    </div>
+    </TooltipProvider>
   );
 }
