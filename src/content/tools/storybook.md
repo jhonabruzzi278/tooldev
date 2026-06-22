@@ -4,12 +4,14 @@ description: Taller frontend para desarrollar, documentar y testear componentes 
 category: frontend
 tags: [componentes, ui, documentacion, testing, frontend, design-system]
 officialSite: https://storybook.js.org
+github: https://github.com/storybookjs/storybook
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Desarrollo aislado de componentes con hot-reload
   - Documentación visual automática con MDX

@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: principiante
 compatibility: ["Web"]
 featured: false
+verified: true
 features:
   - Snippets de fondos listos para copiar y pegar
   - Compatible con Tailwind CSS y CSS vanilla

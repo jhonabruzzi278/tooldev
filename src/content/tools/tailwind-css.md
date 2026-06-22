@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: true
+verified: true
 features:
   - Clases utilitarias para diseño rápido sin escribir CSS
   - Sistema de diseño completamente personalizable

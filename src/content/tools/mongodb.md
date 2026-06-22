@@ -11,6 +11,7 @@ license: MongoDB Server Side Public License (SSPL)
 technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker, MongoDB Atlas]
 featured: false
+verified: true
 features:
   - Documentos JSON/BSON con esquema flexible
   - Índices secundarios, compuestos, geoespaciales y de texto

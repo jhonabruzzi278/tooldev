@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolLogo from '@/components/tools/ToolLogo.astro';
+import VerifiedBadge from '@/components/tools/VerifiedBadge.astro';
 import LicenseToggle from '@/components/tools/LicenseToggle';
 import FavoriteButton from '@/components/tools/FavoriteButton';
 import { Card } from '@/components/ui/card';
@@ -41,6 +42,7 @@ const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
               {lang.tools.openSource}
             </span>
           )}
+          {data.verified && <VerifiedBadge locale={locale} />}
         </div>
       </div>
 

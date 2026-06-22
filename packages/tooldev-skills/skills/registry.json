@@ -1,0 +1,260 @@
+[
+  {
+    "slug": "animejs",
+    "name": "Anime.js",
+    "category": "frontend",
+    "description": "Librería de animación JavaScript ligera y potente para crear animaciones web fluidas con una API simple y expresiva."
+  },
+  {
+    "slug": "apache-kafka",
+    "name": "Apache Kafka",
+    "category": "backend",
+    "description": "Plataforma distribuida de streaming de eventos para pipelines de datos en tiempo real y aplicaciones de streaming."
+  },
+  {
+    "slug": "astro",
+    "name": "Astro",
+    "category": "frontend",
+    "description": "Framework web moderno que genera sitios estáticos ultra rápidos con islas de interactividad y soporte para múltiples frameworks."
+  },
+  {
+    "slug": "bgibelick",
+    "name": "BG.Ibelick",
+    "category": "diseno",
+    "description": "Colección de snippets modernos de fondos CSS con Tailwind CSS y CSS vanilla, listos para copiar y pegar en proyectos web."
+  },
+  {
+    "slug": "bun",
+    "name": "Bun",
+    "category": "backend",
+    "description": "Runtime JavaScript todo-en-uno con bundler, test runner, package manager y alta velocidad de ejecución."
+  },
+  {
+    "slug": "claudekit",
+    "name": "ClaudeKit",
+    "category": "frontend",
+    "description": "Librería de componentes React optimizada para construir interfaces de chat e interacción con Claude AI, con componentes de conversación y streaming."
+  },
+  {
+    "slug": "deno",
+    "name": "Deno",
+    "category": "backend",
+    "description": "Runtime moderno de JavaScript/TypeScript con seguridad por defecto, estándares web y herramientas integradas."
+  },
+  {
+    "slug": "docker",
+    "name": "Docker",
+    "category": "devops",
+    "description": "Plataforma de contenedores para empaquetar, distribuir y ejecutar aplicaciones en entornos aislados y reproducibles."
+  },
+  {
+    "slug": "drizzle-orm",
+    "name": "Drizzle ORM",
+    "category": "backend",
+    "description": "ORM TypeScript ligero y tipado con SQL-like API, rendimiento nativo y zero-dependency runtime."
+  },
+  {
+    "slug": "elasticsearch",
+    "name": "Elasticsearch",
+    "category": "backend",
+    "description": "Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda全文."
+  },
+  {
+    "slug": "fireworks-ai",
+    "name": "Fireworks AI",
+    "category": "ia",
+    "description": "Plataforma de inferencia rápida para ejecutar modelos LLM open-source y modelos generativos de IA con latencia ultra baja y APIs compatibles con OpenAI."
+  },
+  {
+    "slug": "flowbite",
+    "name": "Flowbite",
+    "category": "frontend",
+    "description": "Biblioteca de componentes UI basada en Tailwind CSS con más de 400 componentes interactivos, temas y soporte multi-framework."
+  },
+  {
+    "slug": "fontsource",
+    "name": "Fontsource",
+    "category": "frontend",
+    "description": "Paquetería NPM para auto-hospedar más de 1500 fuentes open source con versionado, sin dependencia externa de CDN."
+  },
+  {
+    "slug": "grafana",
+    "name": "Grafana",
+    "category": "devops",
+    "description": "Plataforma open source de observabilidad y dashboards para métricas, logs y trazas con soporte para múltiples fuentes de datos."
+  },
+  {
+    "slug": "hono",
+    "name": "Hono",
+    "category": "backend",
+    "description": "Framework web ultraligero para edge computing y entornos serverless con máxima velocidad y rendimiento."
+  },
+  {
+    "slug": "kubernetes",
+    "name": "Kubernetes",
+    "category": "devops",
+    "description": "Plataforma open source para orquestar contenedores, automatizar despliegues, escalado y gestión de aplicaciones."
+  },
+  {
+    "slug": "magic-ui",
+    "name": "Magic UI",
+    "category": "frontend",
+    "description": "Biblioteca de componentes React animados con Framer Motion y Tailwind CSS para landing pages y interfaces modernas."
+  },
+  {
+    "slug": "mongodb",
+    "name": "MongoDB",
+    "category": "backend",
+    "description": "Base de datos NoSQL documental orientada a objetos JSON flexibles con escalado horizontal nativo."
+  },
+  {
+    "slug": "nextjs",
+    "name": "Next.js",
+    "category": "frontend",
+    "description": "Framework React full-stack con renderizado híbrido, rutas anidadas y optimización automática."
+  },
+  {
+    "slug": "nginx",
+    "name": "Nginx",
+    "category": "devops",
+    "description": "Servidor web, reverse proxy y balanceador de carga de alto rendimiento usado por millones de sitios en producción."
+  },
+  {
+    "slug": "nodejs",
+    "name": "Node.js",
+    "category": "backend",
+    "description": "Entorno de ejecución JavaScript del lado del servidor basado en V8, ideal para APIs, microservicios y herramientas CLI."
+  },
+  {
+    "slug": "playwright",
+    "name": "Playwright",
+    "category": "frontend",
+    "description": "Framework de testing E2E multiplataforma de Microsoft para navegadores modernos con una sola API."
+  },
+  {
+    "slug": "postgresql",
+    "name": "PostgreSQL",
+    "category": "backend",
+    "description": "Sistema de base de datos relacional open source avanzado con soporte para consultas complejas, extensiones y alto rendimiento."
+  },
+  {
+    "slug": "prometheus",
+    "name": "Prometheus",
+    "category": "devops",
+    "description": "Sistema de monitoreo y alerta open source con modelo de datos basado en series temporales y consultas PromQL."
+  },
+  {
+    "slug": "react-bits",
+    "name": "React Bits",
+    "category": "frontend",
+    "description": "Colección de componentes React animados e interactivos diseñados para UIs modernas con efectos visuales atractivos y código limpio."
+  },
+  {
+    "slug": "redis",
+    "name": "Redis",
+    "category": "backend",
+    "description": "Almacén de estructura de datos en memoria de código abierto usado como caché, base de datos y message broker."
+  },
+  {
+    "slug": "remix",
+    "name": "Remix",
+    "category": "frontend",
+    "description": "Framework web full-stack con estándares web, renderizado híbrido y experiencias de usuario rápidas y resilientes."
+  },
+  {
+    "slug": "shadcn-ui",
+    "name": "shadcn-ui",
+    "category": "frontend",
+    "description": "Colección de componentes UI reutilizables construidos con Radix UI y Tailwind CSS, copiables directamente al proyecto."
+  },
+  {
+    "slug": "shader-gradient",
+    "name": "Shader Gradient",
+    "category": "frontend",
+    "description": "Herramienta para crear fondos de gradientes 3D animados y hermosos usando shaders WebGL, con componente React listo para integrar."
+  },
+  {
+    "slug": "snyk",
+    "name": "Snyk",
+    "category": "devops",
+    "description": "Plataforma de seguridad para desarrolladores que encuentra y corrige vulnerabilidades en código, dependencias, contenedores e infraestructura como código."
+  },
+  {
+    "slug": "squoosh",
+    "name": "Squoosh",
+    "category": "frontend",
+    "description": "Compresor de imágenes en el navegador con preview en vivo, múltiples codecs y procesamiento local sin subida a servidores."
+  },
+  {
+    "slug": "storybook",
+    "name": "Storybook",
+    "category": "frontend",
+    "description": "Taller frontend para desarrollar, documentar y testear componentes UI de forma aislada con hot-reload."
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "category": "backend",
+    "description": "Plataforma open source que reemplaza Firebase con PostgreSQL, autenticación, almacenamiento y funciones serverless."
+  },
+  {
+    "slug": "svelte",
+    "name": "Svelte",
+    "category": "frontend",
+    "description": "Framework UI que compila componentes a JavaScript vanilla, eliminando el Virtual DOM para apps ultrarrápidas."
+  },
+  {
+    "slug": "svgl",
+    "name": "SVGL",
+    "category": "diseno",
+    "description": "Biblioteca de logos SVG de tecnologías y empresas populares, con API REST, categorización y soporte para modo claro/oscuro."
+  },
+  {
+    "slug": "tabler-icons",
+    "name": "Tabler Icons",
+    "category": "diseno",
+    "description": "Biblioteca open source de más de 6100 iconos SVG con diseño consistente, licencia MIT y soporte para React, Vue y SVG plano."
+  },
+  {
+    "slug": "tailwind-css",
+    "name": "Tailwind CSS",
+    "category": "frontend",
+    "description": "Framework de CSS utilitario que permite construir diseños modernos y responsivos rápidamente usando clases predefinidas."
+  },
+  {
+    "slug": "tensorflow",
+    "name": "TensorFlow",
+    "category": "ia",
+    "description": "Framework open source de machine learning para construir, entrenar y desplegar modelos de IA a escala."
+  },
+  {
+    "slug": "terraform",
+    "name": "Terraform",
+    "category": "devops",
+    "description": "Herramienta de infraestructura como código (IaC) de HashiCorp para provisionar y gestionar recursos cloud con archivos de configuración declarativos."
+  },
+  {
+    "slug": "trpc",
+    "name": "tRPC",
+    "category": "backend",
+    "description": "Framework para construir APIs end-to-end typesafe con TypeScript automático entre cliente y servidor."
+  },
+  {
+    "slug": "vite",
+    "name": "Vite",
+    "category": "frontend",
+    "description": "Entorno de desarrollo frontend ultrarrápido con HMR instantáneo, build optimizado y soporte nativo para ESM."
+  },
+  {
+    "slug": "vuejs",
+    "name": "Vue.js",
+    "category": "frontend",
+    "description": "Framework progresivo para construir interfaces de usuario con un enfoque reactivo, simple y flexible."
+  },
+  {
+    "slug": "zod",
+    "name": "Zod",
+    "category": "backend",
+    "description": "Biblioteca TypeScript-first para validación de esquemas con inferencia de tipos automática y composición declarativa."
+  }
+]

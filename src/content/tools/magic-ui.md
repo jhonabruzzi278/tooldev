@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [React, "Next.js", "Tailwind CSS"]
 featured: false
+verified: true
 features:
   - Componentes animados con Framer Motion y Tailwind CSS
   - Compatible con shadcn/ui (usa el mismo CLI y patrones)

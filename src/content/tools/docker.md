@@ -11,6 +11,7 @@ license: Apache-2.0
 technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker Desktop]
 featured: true
+verified: true
 features:
   - Contenedores ligeros con aislamiento a nivel de sistema operativo
   - Dockerfile para definir entornos reproducibles como código

@@ -50,6 +50,7 @@ interface CopyForAIProps {
   toolExamples: Example[];
   toolTips: Tip[];
   toolFaq: FAQItem[];
+  toolVerified?: boolean;
   locale?: Locale;
 }
 
@@ -72,6 +73,7 @@ export default function CopyForAI({
   toolExamples,
   toolTips,
   toolFaq,
+  toolVerified = false,
   locale = 'es',
 }: CopyForAIProps) {
   const [copied, setCopied] = useState(false);
@@ -182,6 +184,13 @@ export default function CopyForAI({
     lines.push('- **Official Site Unreachable:** Verify the URL at ' + toolOfficialSite);
     if (toolGithub) lines.push('- **Source Code Issues:** Check the repository at ' + toolGithub + ' for known issues and discussions.');
     lines.push('- **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.');
+
+    // Installation (only for verified tools)
+    if (toolVerified) {
+      lines.push('');
+      lines.push('## Installation');
+      lines.push(`npx tooldev-skills install ${skillName}`);
+    }
 
     return lines.join('\n');
   };

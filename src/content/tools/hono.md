@@ -4,12 +4,14 @@ description: Framework web ultraligero para edge computing y entornos serverless
 category: backend
 tags: [framework, edge, serverless, api, javascript, typescript, http]
 officialSite: https://hono.dev
+github: https://github.com/honojs/hono
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web, Node.js, Deno, Bun, Cloudflare]
 featured: false
+verified: true
 features:
   - Framework ultraligero (~12 KB) con rendimiento excepcional
   - Soporte para múltiples runtimes (Node.js, Deno, Bun, Cloudflare Workers)

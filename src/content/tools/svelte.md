@@ -4,12 +4,14 @@ description: Framework UI que compila componentes a JavaScript vanilla, eliminan
 category: frontend
 tags: [javascript, framework, compiler, frontend, reactivo, web]
 officialSite: https://svelte.dev
+github: https://github.com/sveltejs/svelte
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Compilador que genera JavaScript vanilla óptimo
   - Reactividad con $state, $derived y $effect (runes)

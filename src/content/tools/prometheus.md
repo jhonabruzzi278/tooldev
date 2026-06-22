@@ -11,6 +11,7 @@ license: Apache-2.0
 technicalLevel: intermedio
 compatibility: [macOS, Linux, Docker]
 featured: false
+verified: true
 features:
   - Modelo de datos multi-dimensional con etiquetas
   - PromQL para consultas flexibles de series temporales

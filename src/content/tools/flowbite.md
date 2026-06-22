@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", React, Vue, Svelte, Angular, Laravel, Django, Astro]
 featured: false
+verified: true
 features:
   - Más de 400 componentes UI interactivos
   - "5 temas predefinidos: Default, Minimal, Enterprise, Playful, Mono"

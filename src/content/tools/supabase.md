@@ -11,6 +11,7 @@ license: Apache 2.0
 technicalLevel: intermedio
 compatibility: [Web, iOS, Android]
 featured: false
+verified: true
 features:
   - Base de datos PostgreSQL con API REST y Realtime
   - Autenticación integrada con múltiples proveedores

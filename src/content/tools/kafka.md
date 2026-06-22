@@ -11,6 +11,7 @@ license: Apache-2.0
 technicalLevel: avanzado
 compatibility: [macOS, Linux, Docker, Confluent Cloud]
 featured: false
+verified: true
 features:
   - Publicación/suscripción a flujos de registros (topics)
   - Almacenamiento durable y replicado en disco

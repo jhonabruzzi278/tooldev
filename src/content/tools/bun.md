@@ -4,12 +4,14 @@ description: Runtime JavaScript todo-en-uno con bundler, test runner, package ma
 category: backend
 tags: [javascript, runtime, bundler, test, npm, typescript]
 officialSite: https://bun.sh
+github: https://github.com/oven-sh/bun
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux]
 featured: false
+verified: true
 features:
   - Runtime JavaScript con arranque ultrarrápido
   - Package manager nativo compatible con npm packages

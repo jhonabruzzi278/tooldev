@@ -18,8 +18,10 @@ import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
 import type { CollectionEntry } from 'astro:content';
 import CopyForAI from '@/components/tools/CopyForAI';
+import NpxInstallBadge from '@/components/tools/NpxInstallBadge';
 import ToolShareButtons from '@/components/tools/ToolShareButtons';
 import LicenseToggle from '@/components/tools/LicenseToggle';
+import VerifiedBadge from '@/components/tools/VerifiedBadge.astro';
 import ScreenshotGallery from '@/components/tools/ScreenshotGallery';
 import FavoriteButton from '@/components/tools/FavoriteButton';
 import { existsSync } from 'node:fs';
@@ -72,6 +74,7 @@ const screenshotCount = (() => {
           {data.openSource && (
             <Badge variant="secondary" class="text-xs">{lang.tools.openSource}</Badge>
           )}
+          {data.verified && <VerifiedBadge locale={locale} />}
           <Badge variant="outline" class="text-xs capitalize">{data.pricing}</Badge>
           <Badge variant="outline" class="text-xs capitalize">{data.technicalLevel}</Badge>
           {data.license && (
@@ -105,6 +108,11 @@ const screenshotCount = (() => {
     <div class="container mx-auto px-4 py-12 max-w-4xl">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
         <div class="lg:col-span-3 lg:order-2">
+          {data.verified && (
+            <div class="flex justify-center mb-4">
+              <NpxInstallBadge client:load toolName={data.name} locale={locale} />
+            </div>
+          )}
           <div class="flex justify-end mb-4">
             <CopyForAI client:load
               toolName={data.name}
@@ -125,6 +133,7 @@ const screenshotCount = (() => {
               toolExamples={data.examples ?? []}
               toolTips={data.tips ?? []}
               toolFaq={data.faq ?? []}
+              toolVerified={data.verified}
               locale={locale}
             />
           </div>

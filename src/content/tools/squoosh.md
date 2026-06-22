@@ -11,6 +11,7 @@ license: Apache-2.0
 technicalLevel: principiante
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Compresión local en el navegador sin subir archivos a servidores
   - Comparación lado a lado con preview en tiempo real

@@ -11,6 +11,7 @@ license: Apache 2.0
 technicalLevel: avanzado
 compatibility: [Linux, macOS, Windows]
 featured: false
+verified: true
 features:
   - Orquestación automática de contenedores
   - Auto-escalado horizontal y vertical

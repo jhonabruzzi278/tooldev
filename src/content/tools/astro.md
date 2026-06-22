@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux, Web]
 featured: true
+verified: true
 features:
   - Generación estática por defecto con cero JavaScript
   - Islas de arquitectura para interactividad selectiva

@@ -4,12 +4,14 @@ description: Framework para construir APIs end-to-end typesafe con TypeScript au
 category: backend
 tags: [api, typescript, rpc, fullstack, realtime, framework]
 officialSite: https://trpc.io
+github: https://github.com/trpc/trpc
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
+verified: true
 features:
   - Tipos TypeScript inferidos automáticamente del servidor al cliente
   - Sin necesidad de generar schemas o código duplicado

@@ -11,6 +11,7 @@ license: AGPL-3.0
 technicalLevel: intermedio
 compatibility: [Web, Docker, macOS, Linux, Windows]
 featured: false
+verified: true
 features:
   - Dashboards interactivos con paneles personalizables
   - Múltiples fuentes de datos (Prometheus, InfluxDB, Elasticsearch, CloudWatch, SQL)

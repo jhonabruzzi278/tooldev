@@ -4,12 +4,14 @@ description: Framework web full-stack con estándares web, renderizado híbrido 
 category: frontend
 tags: [react, framework, fullstack, ssr, javascript, typescript, web-standards]
 officialSite: https://remix.run
+github: https://github.com/remix-run/remix
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Enrutamiento anidado con layouts por archivo
   - Cargas de datos paralelas con Loaders y Actions

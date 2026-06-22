@@ -11,6 +11,7 @@ license: PostgreSQL
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux, Docker]
 featured: false
+verified: true
 features:
   - Soporte completo de SQL con ventanas, CTE y funciones agregadas
   - Extensiones potentes como PostGIS, pgvector y TimescaleDB

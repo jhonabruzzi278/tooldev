@@ -4,12 +4,14 @@ description: Framework de testing E2E multiplataforma de Microsoft para navegado
 category: frontend
 tags: [testing, e2e, automation, browser, javascript, typescript, microsoft]
 officialSite: https://playwright.dev
+github: https://github.com/microsoft/playwright
 pricing: gratis
 openSource: true
 license: Apache-2.0
 technicalLevel: intermedio
 compatibility: ["Web", Windows, macOS, Linux]
 featured: false
+verified: true
 features:
   - Test en Chromium, Firefox y WebKit con una sola API
   - Espera automática sin timeouts flaky ni sleeps manuales

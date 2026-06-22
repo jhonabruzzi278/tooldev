@@ -1,0 +1,38 @@
+{
+  "name": "tooldev-skills",
+  "version": "1.0.0",
+  "description": "Install AI skill files from ToolDev verified tools into your project with a single command",
+  "type": "module",
+  "bin": {
+    "tooldev-skills": "bin/tooldev-skills.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "README.md"
+  ],
+  "keywords": [
+    "ai",
+    "skills",
+    "kiro",
+    "cursor",
+    "copilot",
+    "developer-tools",
+    "cli",
+    "tooldev"
+  ],
+  "author": "ToolDev",
+  "license": "MIT",
+  "homepage": "https://tooldev.dev/skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathanfedev/tooldev"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathanfedev/tooldev/issues"
+  },
+  "dependencies": {}
+}

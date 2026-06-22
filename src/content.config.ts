@@ -17,6 +17,7 @@ const tools = defineCollection({
     technicalLevel: z.enum(['principiante', 'intermedio', 'avanzado']),
     compatibility: z.array(z.string()),
     featured: z.boolean().default(false),
+    verified: z.boolean().default(false),
     screenshots: z.array(z.string()).optional(),
     features: z.array(z.string()),
     alternatives: z.array(z.string()).optional(),

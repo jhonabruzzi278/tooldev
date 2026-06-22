@@ -11,6 +11,7 @@ license: Redis Source Available License
 technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker]
 featured: false
+verified: true
 features:
   - "Estructuras de datos nativas: strings, hashes, lists, sets, sorted sets, streams, bitmaps"
   - Persistencia opcional RDB (snapshots) y AOF (append-only file)

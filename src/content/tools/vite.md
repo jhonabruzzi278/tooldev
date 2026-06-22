@@ -4,12 +4,14 @@ description: Entorno de desarrollo frontend ultrarrápido con HMR instantáneo, 
 category: frontend
 tags: [bundler, dev-server, hmr, build, javascript, typescript]
 officialSite: https://vite.dev
+github: https://github.com/vitejs/vite
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Dev server con HMR instantáneo y ESM nativo
   - Build con Rollup optimizado para producción

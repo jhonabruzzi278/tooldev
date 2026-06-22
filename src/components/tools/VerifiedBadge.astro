@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const lang = getTranslations(locale);
+---
+
+<span class="shrink-0 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+  <Icon name="tabler:shield-check" class="text-current" width="10" height="10" />
+  {lang.tools.verified}
+</span>

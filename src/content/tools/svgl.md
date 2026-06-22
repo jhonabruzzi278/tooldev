@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: principiante
 compatibility: ["Web", Figma, "VS Code", "React"]
 featured: false
+verified: true
 features:
   - Más de 650 logos SVG de tecnologías y empresas populares
   - API RESTful para acceso programático a todos los logos

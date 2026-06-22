@@ -1,0 +1,92 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<BaseLayout title="AI Skills" description="Learn how to install skill files for your AI code assistant using npx tooldev-skills." locale="en">
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        AI Skills
+      </h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Install verified tool knowledge directly into your AI code assistant with a single command.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="prose prose-neutral dark:prose-invert max-w-none">
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:help-circle" class="text-primary" width="24" height="24" />
+          What is a Skill?
+        </h2>
+        <p>
+          A <strong>skill</strong> is a structured markdown file (<code>SKILL.md</code>) containing all relevant information about a tool: what it is, how to use it, when to use it, examples, tips and FAQ. This file is optimized for consumption by AI code assistants (like Kiro, Cursor, Copilot, etc.), giving them specialized context about the tool.
+        </p>
+        <p>
+          When you install a skill in your project, your AI assistant can use that information as a reference to give you better answers, generate more accurate code, and guide you correctly when using the tool.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:terminal-2" class="text-primary" width="24" height="24" />
+          How to Install a Skill
+        </h2>
+        <p>From your project root, run:</p>
+        <pre><code>npx tooldev-skills install &lt;slug&gt;</code></pre>
+        <p>
+          This copies the skill file to <code>.agents/skills/&lt;slug&gt;/SKILL.md</code> in your project. Your AI code assistant detects it automatically.
+        </p>
+
+        <h3>Example:</h3>
+        <pre><code>npx tooldev-skills install tailwind-css</code></pre>
+        <p>Result: Creates <code>.agents/skills/tailwind-css/SKILL.md</code> with all Tailwind CSS knowledge.</p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:list" class="text-primary" width="24" height="24" />
+          Other Available Commands
+        </h2>
+        
+        <h3>List all available skills</h3>
+        <pre><code>npx tooldev-skills list</code></pre>
+        <p>Shows a table of all available skills: slug, name and category.</p>
+
+        <h3>Search skills by keyword</h3>
+        <pre><code>npx tooldev-skills search &lt;query&gt;</code></pre>
+        <p>Searches across name, slug, category and description. Case-insensitive.</p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:shield-check" class="text-emerald-600 dark:text-emerald-400" width="24" height="24" />
+          Which tools have Skills?
+        </h2>
+        <p>
+          Only tools marked as <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Verified</span> have generated skill files. This means the tool has solid official documentation and validated content.
+        </p>
+        <p>
+          You can identify verified tools by the green badge on cards and detail pages across the catalog.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:folder" class="text-primary" width="24" height="24" />
+          Where are they installed?
+        </h2>
+        <p>
+          Files are installed to <code>.agents/skills/&lt;slug&gt;/SKILL.md</code> inside your project. This is the standard location that assistants like Kiro look for to load skills automatically.
+        </p>
+        <p>
+          You can commit these files to your repository so your entire team has access to the knowledge.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:refresh" class="text-primary" width="24" height="24" />
+          Updating Skills
+        </h2>
+        <p>
+          To update a skill, simply run the <code>install</code> command again. The existing file will be overwritten with the latest version.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

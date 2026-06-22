@@ -1,0 +1,92 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<BaseLayout title="Skills para IA" description="Aprende cómo instalar archivos de skill para tu asistente de código IA usando npx tooldev-skills." locale="es">
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+    <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
+    <div class="container mx-auto px-4 text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Skills para IA
+      </h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Instala conocimiento verificado de herramientas directamente en tu asistente de código IA con un solo comando.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="prose prose-neutral dark:prose-invert max-w-none">
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:help-circle" class="text-primary" width="24" height="24" />
+          ¿Qué es una Skill?
+        </h2>
+        <p>
+          Una <strong>skill</strong> es un archivo markdown estructurado (<code>SKILL.md</code>) que contiene toda la información relevante de una herramienta: qué es, cómo usarla, cuándo usarla, ejemplos, tips y preguntas frecuentes. Este archivo está optimizado para ser consumido por asistentes de código IA (como Kiro, Cursor, Copilot, etc.), dándoles contexto especializado sobre la herramienta.
+        </p>
+        <p>
+          Cuando instalas una skill en tu proyecto, tu asistente de IA puede usar esa información como referencia para darte mejores respuestas, generar código más preciso y guiarte correctamente al usar la herramienta.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:terminal-2" class="text-primary" width="24" height="24" />
+          Cómo instalar una Skill
+        </h2>
+        <p>Desde la raíz de tu proyecto, ejecuta:</p>
+        <pre><code>npx tooldev-skills install &lt;slug&gt;</code></pre>
+        <p>
+          Esto copia el archivo de skill a <code>.agents/skills/&lt;slug&gt;/SKILL.md</code> en tu proyecto. Tu asistente de código lo detecta automáticamente.
+        </p>
+
+        <h3>Ejemplo:</h3>
+        <pre><code>npx tooldev-skills install tailwind-css</code></pre>
+        <p>Resultado: Se crea <code>.agents/skills/tailwind-css/SKILL.md</code> con toda la información de Tailwind CSS.</p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:list" class="text-primary" width="24" height="24" />
+          Otros comandos disponibles
+        </h2>
+        
+        <h3>Listar todas las skills disponibles</h3>
+        <pre><code>npx tooldev-skills list</code></pre>
+        <p>Muestra una tabla con todas las skills disponibles: slug, nombre y categoría.</p>
+
+        <h3>Buscar skills por palabra clave</h3>
+        <pre><code>npx tooldev-skills search &lt;query&gt;</code></pre>
+        <p>Busca en nombre, slug, categoría y descripción. La búsqueda es insensible a mayúsculas.</p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:shield-check" class="text-emerald-600 dark:text-emerald-400" width="24" height="24" />
+          ¿Qué herramientas tienen Skills?
+        </h2>
+        <p>
+          Solo las herramientas marcadas como <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Verificada</span> tienen archivos de skill generados. Esto significa que la herramienta tiene documentación oficial sólida y contenido validado.
+        </p>
+        <p>
+          Puedes identificar herramientas verificadas por el badge verde en las tarjetas y páginas de detalle del catálogo.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:folder" class="text-primary" width="24" height="24" />
+          ¿Dónde se instalan?
+        </h2>
+        <p>
+          Los archivos se instalan en <code>.agents/skills/&lt;slug&gt;/SKILL.md</code> dentro de tu proyecto. Esta es la ubicación estándar que asistentes como Kiro buscan para cargar skills automáticamente.
+        </p>
+        <p>
+          Puedes commitear estos archivos a tu repositorio para que todo tu equipo tenga acceso al conocimiento.
+        </p>
+
+        <h2 class="flex items-center gap-2">
+          <Icon name="tabler:refresh" class="text-primary" width="24" height="24" />
+          Actualizar skills
+        </h2>
+        <p>
+          Para actualizar una skill, simplemente vuelve a ejecutar el comando <code>install</code>. El archivo existente se sobrescribe con la versión más reciente.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -4,12 +4,14 @@ description: Colección de componentes UI reutilizables construidos con Radix UI
 category: frontend
 tags: [ui, components, react, tailwind-css, radix, design-system]
 officialSite: https://ui.shadcn.com
+github: https://github.com/shadcn-ui/ui
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: ["Web"]
 featured: false
+verified: true
 features:
   - Componentes accesibles (WAI-ARIA) vía Radix UI
   - Estilizados con Tailwind CSS y CSS variables

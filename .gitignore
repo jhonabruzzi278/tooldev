@@ -27,3 +27,15 @@ pnpm-debug.log*
 
 # opencode
 .opencode/
+
+# installed skills (generated locally, not source)
+.agents/
+
+# editor settings
+.vscode/
+
+# npm auth
+.npmrc
+
+# Kiro IDE specs
+.kiro/

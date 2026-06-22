@@ -11,6 +11,7 @@ license: BSD-2
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux, Docker]
 featured: false
+verified: true
 features:
   - Servidor HTTP/S estático y dinámico de alto rendimiento
   - Reverse proxy con balanceo de carga (round-robin, least_conn, IP hash)

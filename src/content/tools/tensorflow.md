@@ -11,6 +11,7 @@ license: Apache 2.0
 technicalLevel: avanzado
 compatibility: [Windows, macOS, Linux, Web]
 featured: false
+verified: true
 features:
   - API Keras para construcción rápida de modelos
   - Ejecución eager para debugging interactivo

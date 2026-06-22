@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: principiante
 compatibility: ["Web", React, Vue, Angular, Svelte, Astro, "Node.js"]
 featured: false
+verified: true
 features:
   - Más de 1500 fuentes open source empaquetadas como paquetes NPM individuales
   - "Auto-hospedado: sin llamadas a Google Fonts ni CDNs externos"

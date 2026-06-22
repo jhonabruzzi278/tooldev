@@ -14,10 +14,16 @@ const NAME_MAP = {
   'shadcn-ui': 'shadcn/ui',
   'Vue.js': 'Vue',
   'Apache Kafka': 'Apache Kafka',
+  'Anime.js': 'Anime',
 };
 
 // Tools not found in SVGL at all; use existing icons if available
-const MISSING_TOOLS = ['Ansible', 'ChatGPT', 'Coolify', 'Excalidraw', 'GSAP', 'Jenkins', 'PyTorch', 'Rive'];
+const MISSING_TOOLS = [
+  'Ansible', 'ChatGPT', 'Coolify', 'Excalidraw', 'GSAP', 'Jenkins', 'PyTorch', 'Rive',
+  '21st.dev', 'Shader Gradient', 'React Bits', 'Motion Sites', 'ClaudeKit',
+  'Footer.design', 'Brave Brand', 'Higgsfield AI', 'Fireworks AI', 'Luma Labs',
+  'Wispr Flow', 'FreeConvert', 'Osmo', 'ImprovMX', 'Land-book', 'Jitter',
+];
 
 function sanitizeFilename(name) {
   return name.replace(/[/\\?%*:|"<>]/g, '-');
@@ -63,6 +69,10 @@ async function main() {
     'Prometheus','PyTorch','Redis','Rive','Terraform',
     // 9 new tools
     'Squoosh','Fontsource','Tabler Icons','SVGL','Flowbite','BG.Ibelick','Shots.so','Magic UI','HTMLrev',
+    // 22 new tools
+    '21st.dev','Anime.js','Shader Gradient','React Bits','Motion Sites','ClaudeKit',
+    'Spline','Jitter','SVGator','Dribbble','Behance','Land-book','Footer.design','Brave Brand',
+    'Higgsfield AI','Fireworks AI','Luma Labs','Snyk','Wispr Flow','FreeConvert','Osmo','ImprovMX',
   ];
 
   // Copy existing icons from public/icons/ as fallback

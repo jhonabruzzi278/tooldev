@@ -4,12 +4,14 @@ description: Entorno de ejecución JavaScript del lado del servidor basado en V8
 category: backend
 tags: [javascript, runtime, servidor, api, backend, npm]
 officialSite: https://nodejs.org
+github: https://github.com/nodejs/node
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux]
 featured: false
+verified: true
 features:
   - Motor V8 de Google con rendimiento excepcional
   - "npm: el registro de paquetes más grande del mundo"

@@ -4,12 +4,14 @@ description: Framework progresivo para construir interfaces de usuario con un en
 category: frontend
 tags: [javascript, framework, reactivo, spa, frontend, web]
 officialSite: https://vuejs.org
+github: https://github.com/vuejs/core
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: principiante
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Sistema reactivo con composición API
   - Componentes de un solo archivo (SFC) con scoped CSS

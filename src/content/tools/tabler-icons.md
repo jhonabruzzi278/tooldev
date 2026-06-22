@@ -11,6 +11,7 @@ license: MIT
 technicalLevel: principiante
 compatibility: ["Web", React, Vue, Angular, Svelte, Figma]
 featured: false
+verified: true
 features:
   - Más de 6100 iconos SVG de alta calidad
   - Grid consistente de 24x24px con trazo de 2px

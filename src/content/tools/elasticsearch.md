@@ -11,6 +11,7 @@ license: Elastic License 2.0
 technicalLevel: avanzado
 compatibility: [macOS, Linux, Windows, Docker]
 featured: false
+verified: true
 features:
   - Búsqueda全文 con análisis de lenguaje natural en múltiples idiomas
   - Indexación invertida para búsquedas de baja latencia

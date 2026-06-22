@@ -4,12 +4,14 @@ description: Framework React full-stack con renderizado híbrido, rutas anidadas
 category: frontend
 tags: [react, framework, ssr, ssg, fullstack, javascript, typescript]
 officialSite: https://nextjs.org
+github: https://github.com/vercel/next.js
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
 featured: false
+verified: true
 features:
   - Renderizado híbrido (SSR, SSG, ISR) en una sola aplicación
   - File-based routing con layouts anidados

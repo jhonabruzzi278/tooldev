@@ -4,12 +4,14 @@ description: Runtime moderno de JavaScript/TypeScript con seguridad por defecto,
 category: backend
 tags: [runtime, javascript, typescript, server, web-standards, deno]
 officialSite: https://deno.com
+github: https://github.com/denoland/deno
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", Windows, macOS, Linux]
 featured: false
+verified: true
 features:
   - Seguridad por defecto (sin permisos de red/archivo)
   - TypeScript nativo sin configuración adicional

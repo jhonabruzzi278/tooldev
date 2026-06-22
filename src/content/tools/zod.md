@@ -4,12 +4,14 @@ description: Biblioteca TypeScript-first para validación de esquemas con infere
 category: backend
 tags: [validation, schema, typescript, types, data, runtime]
 officialSite: https://zod.dev
+github: https://github.com/colinhacks/zod
 pricing: gratis
 openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
+verified: true
 features:
   - Inferencia de tipos TypeScript automática desde esquemas
   - Validación en runtime para datos externos no confiables

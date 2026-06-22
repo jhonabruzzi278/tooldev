@@ -4,12 +4,14 @@ description: ORM TypeScript ligero y tipado con SQL-like API, rendimiento nativo
 category: backend
 tags: [orm, database, typescript, sql, postgresql, mysql, sqlite]
 officialSite: https://orm.drizzle.team
+github: https://github.com/drizzle-team/drizzle-orm
 pricing: gratis
 openSource: true
 license: Apache-2.0
 technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
+verified: true
 features:
   - ORM TypeScript tipado con inferencia completa
   - SQL-like API que se siente como escribir SQL nativo
