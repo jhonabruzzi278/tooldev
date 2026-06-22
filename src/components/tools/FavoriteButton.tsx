@@ -43,7 +43,6 @@ export default function FavoriteButton({
           isFav
             ? 'bg-red-500/10 border-red-500/30 text-red-500 hover:bg-red-500/20'
             : 'bg-background border-border text-muted-foreground hover:border-red-400/50 hover:text-red-500',
-          animating && 'scale-95',
           className
         )}
         aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
@@ -52,7 +51,7 @@ export default function FavoriteButton({
           icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'}
           width={iconSize}
           height={iconSize}
-          className={cn('transition-transform duration-200', animating && 'scale-125')}
+          className={cn('transition-transform duration-300', animating && 'scale-125')}
         />
         {isFav ? 'Guardado' : 'Guardar'}
       </button>
@@ -65,7 +64,6 @@ export default function FavoriteButton({
       className={cn(
         'p-1.5 rounded-full transition-all duration-200',
         isFav ? 'text-red-500 hover:text-red-600' : 'text-muted-foreground hover:text-red-500',
-        animating && 'scale-125',
         className
       )}
       aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
@@ -74,6 +72,7 @@ export default function FavoriteButton({
         icon={isFav ? 'tabler:heart-filled' : 'tabler:heart'}
         width={iconSize}
         height={iconSize}
+        className={cn('transition-transform duration-300', animating && 'scale-125')}
       />
     </button>
   );

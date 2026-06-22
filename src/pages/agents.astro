@@ -14,7 +14,6 @@ const agents = [
     tags: ['código', 'análisis', 'escritura'],
     installCmd: 'npx tooldev-skills install claude',
     docsUrl: 'https://docs.anthropic.com',
-    skillSlug: 'claude',
     available: false,
   },
   {
@@ -27,7 +26,6 @@ const agents = [
     tags: ['ide', 'specs', 'tareas'],
     installCmd: 'npx tooldev-skills install kiro',
     docsUrl: 'https://kiro.dev',
-    skillSlug: 'kiro',
     available: false,
   },
   {
@@ -40,7 +38,6 @@ const agents = [
     tags: ['editor', 'código', 'refactor'],
     installCmd: 'npx tooldev-skills install cursor',
     docsUrl: 'https://cursor.sh',
-    skillSlug: 'cursor',
     available: false,
   },
   {
@@ -53,7 +50,6 @@ const agents = [
     tags: ['código', 'agente', 'automatización'],
     installCmd: 'npx tooldev-skills install codex',
     docsUrl: 'https://openai.com/codex',
-    skillSlug: 'codex',
     available: false,
   },
   {
@@ -66,7 +62,6 @@ const agents = [
     tags: ['vscode', 'sugerencias', 'github'],
     installCmd: 'npx tooldev-skills install github-copilot',
     docsUrl: 'https://github.com/features/copilot',
-    skillSlug: 'github-copilot',
     available: false,
   },
   {
@@ -79,7 +74,6 @@ const agents = [
     tags: ['multimodal', 'análisis', 'google'],
     installCmd: 'npx tooldev-skills install gemini',
     docsUrl: 'https://gemini.google.com',
-    skillSlug: 'gemini',
     available: false,
   },
 ];
@@ -180,8 +174,11 @@ const agents = [
               <div class="flex items-center gap-1.5 px-2.5 py-2 border-r border-border/60 shrink-0">
                 <Icon name="tabler:terminal-2" width="12" height="12" class="text-emerald-500" />
               </div>
-              <span class="flex-1 px-2.5 py-2 text-foreground/70 truncate select-all">
+              <span class="flex-1 px-2.5 py-2 text-foreground/40 truncate select-all line-through">
                 {agent.installCmd}
+              </span>
+              <span class="px-2 py-1 text-[10px] text-muted-foreground border-l border-border/60 shrink-0">
+                pronto
               </span>
             </div>
 

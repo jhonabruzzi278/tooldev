@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
@@ -43,12 +42,10 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
           {/* Copy button */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="sm"
+              <button
                 onClick={handleCopy}
                 className={cn(
-                  'h-full px-3 rounded-none border-l border-border/60 shrink-0 transition-colors',
+                  'px-3 py-2.5 border-l border-border/60 shrink-0 transition-colors hover:bg-muted/50',
                   copied
                     ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10'
                     : 'text-muted-foreground hover:text-foreground'
@@ -56,7 +53,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
                 aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
               >
                 <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
-              </Button>
+              </button>
             </TooltipTrigger>
             <TooltipContent>
               <p>{copied ? (locale === 'en' ? 'Copied!' : '¡Copiado!') : (locale === 'en' ? 'Copy command' : 'Copiar comando')}</p>
