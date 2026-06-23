@@ -3,7 +3,7 @@ name: SVGator
 description: Herramienta profesional de animación SVG con editor visual que permite crear animaciones vectoriales complejas sin código.
 category: diseno
 tags: [svg, animacion, vectorial, diseño, web, editor-visual]
-officialSite: https://www.svgator.com
+officialSite: https://www.svgator.com/
 pricing: freemium
 openSource: false
 technicalLevel: intermedio

@@ -3,7 +3,7 @@ name: Wispr Flow
 description: Herramienta de dictado por voz potenciada por IA que transcribe y escribe en tu estilo personal, funcionando en cualquier aplicación del sistema.
 category: productividad
 tags: [dictado, voz, transcripcion, escritura, ia, productividad, accesibilidad, texto]
-officialSite: https://wispr.flow
+officialSite: https://wisprflow.ai/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

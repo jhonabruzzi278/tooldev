@@ -1,4 +1,4 @@
----
+﻿---
 name: Figma
 description: Herramienta de diseño colaborativo basada en navegador para crear interfaces, prototipos y sistemas de diseño en equipo.
 category: diseno
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Windows, macOS, Linux, Web]
 featured: true
+screenshots:
+  - /screenshots/figma.webp
 features:
   - Diseño vectorial en tiempo real en el navegador
   - Prototipado interactivo con animaciones

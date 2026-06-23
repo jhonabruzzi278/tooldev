@@ -1,4 +1,4 @@
----
+﻿---
 name: Kiro
 description: IDE con IA de Amazon diseñado para desarrollo guiado por specs. Combina un flujo estructurado de requisitos, diseño y tareas con un agente autónomo que implementa código mientras el desarrollador mantiene el control.
 category: agentes
@@ -10,6 +10,9 @@ technicalLevel: intermedio
 compatibility: [macOS, Windows, Linux, iOS]
 featured: true
 verified: false
+screenshots:
+  - /screenshots/kiro.png
+  - /screenshots/kiro1.png
 features:
   - Spec-driven development con flujo Requirements → Design → Tasks
   - Agente autónomo (Auto) que implementa tareas completas de forma autónoma

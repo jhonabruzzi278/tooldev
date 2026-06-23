@@ -1,4 +1,4 @@
----
+﻿---
 name: Bun
 description: Runtime JavaScript todo-en-uno con bundler, test runner, package manager y alta velocidad de ejecución.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/bun.webp
 features:
   - Runtime JavaScript con arranque ultrarrápido
   - Package manager nativo compatible con npm packages

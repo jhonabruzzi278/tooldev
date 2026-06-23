@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 interface Props {
   locale?: Locale;
@@ -13,40 +14,50 @@ const lang = getTranslations(locale);
 
 <section class="py-16 border-t border-border/50">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.benefitsTitle}</h2>
-      <p class="text-muted-foreground">{lang.home.benefitsSubtitle}</p>
-    </div>
+    <AnimateOnScroll client:load>
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.benefitsTitle}</h2>
+        <p class="text-muted-foreground">{lang.home.benefitsSubtitle}</p>
+      </div>
+    </AnimateOnScroll>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-      <div class="text-center">
-        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-          <Icon name="tabler:bulb" class="text-primary" width="24" height="24" />
+      <AnimateOnScroll client:load delay={0.05}>
+        <div class="text-center">
+          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+            <Icon name="tabler:bulb" class="text-primary" width="24" height="24" />
+          </div>
+          <h3 class="font-semibold text-base mb-1">{lang.benefits.realTitle}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.realDesc}</p>
         </div>
-        <h3 class="font-semibold text-base mb-1">{lang.benefits.realTitle}</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.realDesc}</p>
-      </div>
-      <div class="text-center">
-        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-          <Icon name="tabler:arrows-shuffle" class="text-primary" width="24" height="24" />
+      </AnimateOnScroll>
+      <AnimateOnScroll client:load delay={0.1}>
+        <div class="text-center">
+          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+            <Icon name="tabler:arrows-shuffle" class="text-primary" width="24" height="24" />
+          </div>
+          <h3 class="font-semibold text-base mb-1">{lang.benefits.altTitle}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.altDesc}</p>
         </div>
-        <h3 class="font-semibold text-base mb-1">{lang.benefits.altTitle}</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.altDesc}</p>
-      </div>
-      <div class="text-center">
-        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-          <Icon name="tabler:world" class="text-primary" width="24" height="24" />
+      </AnimateOnScroll>
+      <AnimateOnScroll client:load delay={0.15}>
+        <div class="text-center">
+          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+            <Icon name="tabler:world" class="text-primary" width="24" height="24" />
+          </div>
+          <h3 class="font-semibold text-base mb-1">{lang.benefits.langTitle}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.langDesc}</p>
         </div>
-        <h3 class="font-semibold text-base mb-1">{lang.benefits.langTitle}</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.langDesc}</p>
-      </div>
-      <div class="text-center">
-        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-          <Icon name="tabler:compass" class="text-primary" width="24" height="24" />
+      </AnimateOnScroll>
+      <AnimateOnScroll client:load delay={0.2}>
+        <div class="text-center">
+          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+            <Icon name="tabler:compass" class="text-primary" width="24" height="24" />
+          </div>
+          <h3 class="font-semibold text-base mb-1">{lang.benefits.curatedTitle}</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.curatedDesc}</p>
         </div>
-        <h3 class="font-semibold text-base mb-1">{lang.benefits.curatedTitle}</h3>
-        <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.curatedDesc}</p>
-      </div>
+      </AnimateOnScroll>
     </div>
   </div>
 </section>

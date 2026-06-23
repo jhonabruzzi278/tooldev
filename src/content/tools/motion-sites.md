@@ -3,7 +3,7 @@ name: Motion Sites
 description: Colección curada de sitios web con animaciones y motion design excepcionales, sirviendo como fuente de inspiración para desarrolladores y diseñadores.
 category: frontend
 tags: [animación, inspiración, motion-design, web, galería, referencia, diseño, ux]
-officialSite: https://www.motion.dev
+officialSite: https://motionsites.ai/
 pricing: gratis
 openSource: false
 technicalLevel: principiante

@@ -1,4 +1,4 @@
----
+﻿---
 name: Next.js
 description: Framework React full-stack con renderizado híbrido, rutas anidadas y optimización automática.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/next-js.webp
 features:
   - Renderizado híbrido (SSR, SSG, ISR) en una sola aplicación
   - File-based routing con layouts anidados

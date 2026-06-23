@@ -3,8 +3,8 @@ name: ClaudeKit
 description: Librería de componentes React optimizada para construir interfaces de chat e interacción con Claude AI, con componentes de conversación y streaming.
 category: frontend
 tags: [react, ia, claude, chat, componentes, streaming, typescript, antropic]
-officialSite: https://claudekit.dev
-github: https://github.com/anthropics/claude-code-sdk-python
+officialSite: https://github.com/claudekit
+github: https://github.com/claudekit
 pricing: open-source
 openSource: true
 license: MIT

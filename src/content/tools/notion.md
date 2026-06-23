@@ -1,4 +1,4 @@
----
+﻿---
 name: Notion
 description: Espacio de trabajo unificado para notas, documentación, gestión de proyectos y bases de datos colaborativas.
 category: productividad
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Windows, macOS, Web, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/notion.webp
 features:
   - Editor de texto enriquecido con bloques versátiles
   - Bases de datos relacionales con vistas variadas

@@ -47,13 +47,22 @@ const alternativeTools = data.alternatives
   : [];
 
 const backHref = locale === 'en' ? '/en/tools' : '/tools';
-const screenshotBase = `public/screenshots/${tool.id}`;
-const screenshotCount = (() => {
-  let count = 0;
-  if (existsSync(`${screenshotBase}.webp`)) count++;
-  while (existsSync(`${screenshotBase}-${count + 1}.webp`)) count++;
-  return count;
-})();
+
+// Usa el array de screenshots del frontmatter si existe, si no usa detección legacy con existsSync
+const screenshotPaths: string[] = data.screenshots && data.screenshots.length > 0
+  ? data.screenshots
+  : (() => {
+      const base = `public/screenshots/${tool.id}`;
+      const paths: string[] = [];
+      if (existsSync(`${base}.webp`)) paths.push(`/screenshots/${tool.id}.webp`);
+      let i = 2;
+      while (existsSync(`${base}-${i}.webp`)) {
+        paths.push(`/screenshots/${tool.id}-${i}.webp`);
+        i++;
+      }
+      return paths;
+    })();
+const screenshotCount = screenshotPaths.length;
 ---
 
 <BaseLayout title={data.name} description={data.description} {locale}>
@@ -144,6 +153,7 @@ const screenshotCount = (() => {
               toolId={tool.id}
               toolName={data.name}
               totalImages={screenshotCount}
+              screenshotPaths={screenshotPaths}
             />
           )}
 

@@ -3,7 +3,7 @@ name: Dribbble
 description: Plataforma líder para diseñadores donde compartir, descubrir e inspirarse con trabajo creativo de la comunidad global de diseño.
 category: diseno
 tags: [inspiracion, diseño, portafolio, comunidad, ui, ux]
-officialSite: https://dribbble.com
+officialSite: https://dribbble.com/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

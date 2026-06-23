@@ -1,4 +1,4 @@
----
+﻿---
 name: Codex
 description: Agente de ingeniería de software de OpenAI que ejecuta tareas de código en un entorno sandbox seguro. Lee tu codebase, escribe código, ejecuta tests y crea pull requests de forma completamente autónoma.
 category: agentes
@@ -10,6 +10,9 @@ technicalLevel: intermedio
 compatibility: [Web, API, CLI, macOS, Windows, Linux]
 featured: false
 verified: false
+screenshots:
+  - /screenshots/codex.png
+  - /screenshots/codex1.png
 features:
   - Agente autónomo que ejecuta tareas completas de código end-to-end
   - Sandbox seguro con acceso a internet deshabilitado por defecto

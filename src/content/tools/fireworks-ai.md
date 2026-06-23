@@ -3,7 +3,7 @@ name: Fireworks AI
 description: Plataforma de inferencia rápida para ejecutar modelos LLM open-source y modelos generativos de IA con latencia ultra baja y APIs compatibles con OpenAI.
 category: ia
 tags: [inferencia, llm, api, modelos, open-source, generativa, rendimiento, produccion]
-officialSite: https://fireworks.ai
+officialSite: https://fireworks.ai/
 github: https://github.com/fw-ai
 pricing: freemium
 openSource: false

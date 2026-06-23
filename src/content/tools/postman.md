@@ -1,4 +1,4 @@
----
+﻿---
 name: Postman
 description: Plataforma líder para diseñar, probar y documentar APIs REST de forma colaborativa.
 category: backend
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Windows, macOS, Linux, Web]
 featured: true
+screenshots:
+  - /screenshots/postman.webp
 features:
   - Editor de peticiones HTTP con historial
   - Colecciones y entornos reutilizables

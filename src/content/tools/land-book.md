@@ -3,7 +3,7 @@ name: Land-book
 description: Galería curada de diseños de landing pages para inspiración con categorización detallada y referencias visuales de alta calidad.
 category: diseno
 tags: [inspiracion, landing-page, diseño, galeria, web, referencia]
-officialSite: https://land-book.com
+officialSite: https://land-book.com/
 pricing: gratis
 openSource: false
 technicalLevel: principiante

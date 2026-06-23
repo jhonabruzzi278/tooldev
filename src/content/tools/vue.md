@@ -1,4 +1,4 @@
----
+﻿---
 name: Vue.js
 description: Framework progresivo para construir interfaces de usuario con un enfoque reactivo, simple y flexible.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: principiante
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/vue.webp
 features:
   - Sistema reactivo con composición API
   - Componentes de un solo archivo (SFC) con scoped CSS

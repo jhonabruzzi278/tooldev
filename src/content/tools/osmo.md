@@ -3,7 +3,7 @@ name: Osmo
 description: Plataforma de IA para diseño de aromas y olfacción digital que utiliza machine learning para predecir, crear y digitalizar olores.
 category: productividad
 tags: [olfaccion, aromas, ia, machine-learning, quimica, diseno, sensorial, investigacion]
-officialSite: https://www.osmo.ai
+officialSite: https://www.osmo.supply/plans
 pricing: pago
 openSource: false
 technicalLevel: avanzado

@@ -3,7 +3,7 @@ name: Jitter
 description: Herramienta de motion design para crear animaciones profesionales directamente en el navegador sin software pesado.
 category: diseno
 tags: [animacion, motion-design, video, navegador, diseño, ui]
-officialSite: https://jitter.video
+officialSite: https://jitter.video/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

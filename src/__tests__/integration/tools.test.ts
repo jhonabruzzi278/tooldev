@@ -19,18 +19,18 @@ describe('Tools content integrity', () => {
 
   it(`should have ${toolFiles.length} tool markdown files`, () => {
     expect(toolFiles.length).toBeGreaterThan(0);
-    expect(toolFiles.length).toBe(99);
+    expect(toolFiles.length).toBe(102);
   });
 
   it('every tool should have valid required frontmatter fields', () => {
-    const validCategories = ['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad'];
+    const validCategories = ['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad', 'agentes'];
     const validPricing = ['gratis', 'freemium', 'pago', 'open-source'];
     const validLevels = ['principiante', 'intermedio', 'avanzado'];
     const failures: string[] = [];
 
     for (const file of toolFiles) {
       const content = readFileSync(join(toolsDir, file), 'utf-8');
-      const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+      const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
       if (!fmMatch) { failures.push(`${file}: no frontmatter`); continue; }
 
       const fm = fmMatch[1];

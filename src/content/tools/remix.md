@@ -1,4 +1,4 @@
----
+﻿---
 name: Remix
 description: Framework web full-stack con estándares web, renderizado híbrido y experiencias de usuario rápidas y resilientes.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/remix.webp
 features:
   - Enrutamiento anidado con layouts por archivo
   - Cargas de datos paralelas con Loaders y Actions

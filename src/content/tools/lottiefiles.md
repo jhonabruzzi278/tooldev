@@ -3,7 +3,7 @@ name: LottieFiles
 description: Plataforma de animaciones ligeras vectoriales Lottie para web, móvil y aplicaciones, con reproductor y editor integrado.
 category: frontend
 tags: [animacion, lottie, json, motion, ui, vector]
-officialSite: https://lottiefiles.com
+officialSite: https://lottiefiles.com/
 pricing: freemium
 openSource: false
 license: Propietaria

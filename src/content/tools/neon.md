@@ -1,4 +1,4 @@
----
+﻿---
 name: Neon
 description: Base de datos serverless PostgreSQL con branching, escalado automático y storage separado de cómputo.
 category: backend
@@ -10,6 +10,8 @@ license: Apache-2.0
 technicalLevel: intermedio
 compatibility: ["Web", API, SQL]
 featured: false
+screenshots:
+  - /screenshots/neon.webp
 features:
   - Postgres serverless con escalado automático a cero
   - Branching de bases de datos como ramas de git

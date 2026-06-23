@@ -1,4 +1,4 @@
----
+﻿---
 name: Svelte
 description: Framework UI que compila componentes a JavaScript vanilla, eliminando el Virtual DOM para apps ultrarrápidas.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/svelte.webp
 features:
   - Compilador que genera JavaScript vanilla óptimo
   - Reactividad con $state, $derived y $effect (runes)

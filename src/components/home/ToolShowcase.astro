@@ -5,6 +5,8 @@ import { getCategoryBySlug } from '@/lib/categories';
 import { Icon } from 'astro-icon/components';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
+import StaggerReveal from '@/components/ui/StaggerReveal';
 
 interface Props {
   locale?: Locale;
@@ -19,26 +21,29 @@ const featuredTools = allTools.filter((t) => t.data.featured);
 
 <section class="py-16">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.featuredTitle}</h2>
-      <p class="text-muted-foreground">{lang.home.featuredSubtitle}</p>
-    </div>
+    <AnimateOnScroll client:load>
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.featuredTitle}</h2>
+        <p class="text-muted-foreground">{lang.home.featuredSubtitle}</p>
+      </div>
+    </AnimateOnScroll>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <StaggerReveal client:load className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {featuredTools.map((tool) => {
         const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
         const category = getCategoryBySlug(tool.data.category);
-        const screenshotPath = `/screenshots/${tool.id}.webp`;
+        const screenshotPath = tool.data.screenshots?.[0] ?? `/screenshots/${tool.id}.webp`;
 
         return (
           <a href={toolHref} class="group block">
-            <div class="rounded-xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-md">
-              <div class="relative aspect-[16/10] bg-muted/20">
+            <div class="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+              <div class="relative aspect-[16/10] bg-muted/20 overflow-hidden">
                 <img
                   src={screenshotPath}
-                  alt={tool.data.name}
-                  class="w-full h-full object-cover"
+                  alt={`Captura de ${tool.data.name}`}
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="p-4">
@@ -54,13 +59,15 @@ const featuredTools = allTools.filter((t) => t.data.featured);
           </a>
         );
       })}
-    </div>
+    </StaggerReveal>
 
-    <div class="text-center mt-8">
-      <a href={locale === 'en' ? '/en/tools' : '/tools'} class="text-base text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
-        {lang.home.featuredAllFull}
-        <Icon name="tabler:arrow-right" width="16" height="16" />
-      </a>
-    </div>
+    <AnimateOnScroll client:load delay={0.2}>
+      <div class="text-center mt-8">
+        <a href={locale === 'en' ? '/en/tools' : '/tools'} class="text-base text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group">
+          {lang.home.featuredAllFull}
+          <Icon name="tabler:arrow-right" width="16" height="16" class="group-hover:translate-x-0.5 transition-transform" />
+        </a>
+      </div>
+    </AnimateOnScroll>
   </div>
 </section>

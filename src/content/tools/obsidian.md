@@ -1,4 +1,4 @@
----
+﻿---
 name: Obsidian
 description: Base de conocimiento personal con markdown, graph view, plugins y vinculación bidireccional para pensamiento conectado.
 category: productividad
@@ -9,13 +9,15 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Windows, macOS, Linux, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/obsidian.webp
 features:
   - Editor markdown con vista previa en vivo
   - Graph view para visualizar conexiones entre notas
   - Backlinks y vinculación bidireccional
   - Canvas para lluvia de ideas visual
   - Plugins comunitarios y temas personalizables
-  - Búsqueda全文 con operadores avanzados
+  - Búsqueda con operadores avanzados
   - Sincronización y publicación opcionales (pago)
 alternatives: [notion]
 relatedTools: [notion, linear, github]

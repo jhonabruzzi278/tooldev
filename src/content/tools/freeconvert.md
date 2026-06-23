@@ -3,7 +3,7 @@ name: FreeConvert
 description: Herramienta online de conversión de archivos que soporta más de 1500 formatos incluyendo video, audio, imágenes, documentos y ebooks.
 category: productividad
 tags: [conversion, archivos, formatos, video, audio, imagenes, documentos, online]
-officialSite: https://www.freeconvert.com
+officialSite: https://www.freeconvert.com/video-compressor
 pricing: freemium
 openSource: false
 technicalLevel: principiante

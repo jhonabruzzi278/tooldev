@@ -1,4 +1,4 @@
----
+﻿---
 name: Appwrite
 description: Plataforma backend-as-a-service open-source con autenticación, bases de datos, almacenamiento y funciones serverless.
 category: backend
@@ -10,6 +10,8 @@ license: BSD-3-Clause
 technicalLevel: intermedio
 compatibility: ["Web", "iOS", Android, Flutter, React Native]
 featured: false
+screenshots:
+  - /screenshots/appwrite.webp
 features:
   - Autenticación multi-proveedor (email, OAuth, SMS, magic links)
   - Base de datos en tiempo real con GraphQL y REST

@@ -1,4 +1,4 @@
----
+﻿---
 name: Kubernetes
 description: Plataforma open source para orquestar contenedores, automatizar despliegues, escalado y gestión de aplicaciones.
 category: devops
@@ -12,6 +12,8 @@ technicalLevel: avanzado
 compatibility: [Linux, macOS, Windows]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/kubernetes.webp
 features:
   - Orquestación automática de contenedores
   - Auto-escalado horizontal y vertical

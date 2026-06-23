@@ -1,4 +1,4 @@
----
+﻿---
 name: Qwik
 description: Framework web resumible con rendimiento instantáneo de carga, diseñado para cualquier sitio o aplicación.
 category: frontend
@@ -10,6 +10,9 @@ license: MIT
 technicalLevel: avanzado
 compatibility: ["Web"]
 featured: false
+screenshots:
+  - /screenshots/qwik.webp
+  - /screenshots/qwik-2.webp
 features:
   - Resumable en lugar de hidratación para carga instantánea
   - Lazy loading extremo de JavaScript

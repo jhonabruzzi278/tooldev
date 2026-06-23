@@ -1,4 +1,4 @@
----
+﻿---
 name: Canva
 description: Plataforma de diseño gráfico online para crear presentaciones, redes sociales, logos y materiales visuales sin experiencia previa.
 category: diseno
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Web, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/canva.webp
 features:
   - Editor drag-and-drop con miles de plantillas
   - Biblioteca de fotos, iconos y fuentes integrada

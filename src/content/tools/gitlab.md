@@ -1,4 +1,4 @@
----
+﻿---
 name: GitLab
 description: Plataforma DevOps completa con repositorios Git, CI/CD integrado, registro de contenedores y gestión de proyectos.
 category: devops
@@ -10,6 +10,9 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [Web, Windows, macOS, Linux]
 featured: false
+screenshots:
+  - /screenshots/gitlab.webp
+  - /screenshots/gitlab-2.webp
 features:
   - Repositorios Git ilimitados públicos y privados
   - CI/CD con pipelines automatizados y runners

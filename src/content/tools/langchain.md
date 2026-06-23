@@ -1,4 +1,4 @@
----
+﻿---
 name: LangChain
 description: Framework para construir aplicaciones con LLMs mediante cadenas, agentes, herramientas y memoria modular.
 category: ia
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: avanzado
 compatibility: ["Web", API, Python, JavaScript]
 featured: false
+screenshots:
+  - /screenshots/langchain.webp
 features:
   - Cadenas (chains) modulares para orquestar prompts y LLMs
   - Agentes autónomos con acceso a herramientas externas

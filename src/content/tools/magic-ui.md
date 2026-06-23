@@ -1,4 +1,4 @@
----
+﻿---
 name: Magic UI
 description: Biblioteca de componentes React animados con Framer Motion y Tailwind CSS para landing pages y interfaces modernas.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [React, "Next.js", "Tailwind CSS"]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/magicui.png
 features:
   - Componentes animados con Framer Motion y Tailwind CSS
   - Compatible con shadcn/ui (usa el mismo CLI y patrones)

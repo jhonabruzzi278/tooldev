@@ -1,4 +1,4 @@
----
+﻿---
 name: Visual Studio Code
 description: Editor de código fuente ligero pero potente con soporte para cientos de extensiones y lenguajes.
 category: productividad
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: principiante
 compatibility: [Windows, macOS, Linux]
 featured: true
+screenshots:
+  - /screenshots/visual-studio-code.webp
 features:
   - IntelliSense con autocompletado inteligente
   - Terminal integrada con soporte múltiple

@@ -41,8 +41,8 @@ export default function FavoriteButton({
         className={cn(
           'inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-medium transition-all duration-200',
           isFav
-            ? 'bg-red-500/10 border-red-500/30 text-red-500 hover:bg-red-500/20'
-            : 'bg-background border-border text-muted-foreground hover:border-red-400/50 hover:text-red-500',
+            ? 'bg-destructive/10 border-destructive/30 text-destructive hover:bg-destructive/20'
+            : 'bg-background border-border text-muted-foreground hover:border-destructive/50 hover:text-destructive',
           className
         )}
         aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
@@ -63,7 +63,7 @@ export default function FavoriteButton({
       onClick={handleToggle}
       className={cn(
         'p-1.5 rounded-full transition-all duration-200',
-        isFav ? 'text-red-500 hover:text-red-600' : 'text-muted-foreground hover:text-red-500',
+        isFav ? 'text-destructive hover:text-destructive/80' : 'text-muted-foreground hover:text-destructive',
         className
       )}
       aria-label={isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}

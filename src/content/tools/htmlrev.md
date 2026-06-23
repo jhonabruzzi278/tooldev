@@ -1,4 +1,4 @@
----
+﻿---
 name: HTMLrev
 description: Biblioteca curada de más de 1500 plantillas HTML gratuitas para sitios web, landing pages, portfolios y dashboards.
 category: frontend
@@ -10,6 +10,9 @@ license: Propietaria
 technicalLevel: principiante
 compatibility: ["Web"]
 featured: false
+screenshots:
+  - /screenshots/htmlrevprimero.png
+  - /screenshots/htmlrev.png
 features:
   - Más de 1500 plantillas HTML gratuitas curadas manualmente
   - "Categorizadas por tipo: landing pages, portfolios, blogs, ecommerce, dashboards"

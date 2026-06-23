@@ -1,4 +1,4 @@
----
+﻿---
 name: Node.js
 description: Entorno de ejecución JavaScript del lado del servidor basado en V8, ideal para APIs, microservicios y herramientas CLI.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/node-js.webp
 features:
   - Motor V8 de Google con rendimiento excepcional
   - "npm: el registro de paquetes más grande del mundo"

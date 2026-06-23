@@ -3,7 +3,7 @@ name: Spline
 description: Herramienta de diseño 3D para crear experiencias web interactivas y escenas tridimensionales directamente en el navegador.
 category: diseno
 tags: [3d, diseño, interactivo, web, animacion, modelado]
-officialSite: https://spline.design
+officialSite: https://spline.design/
 pricing: freemium
 openSource: false
 technicalLevel: intermedio

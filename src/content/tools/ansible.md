@@ -1,4 +1,4 @@
----
+﻿---
 name: Ansible
 description: Motor de automatización IT para configuración, aprovisionamiento, despliegue y orquestación sin agentes.
 category: devops
@@ -10,6 +10,8 @@ license: GPL-3.0
 technicalLevel: intermedio
 compatibility: [Linux, macOS, Windows (control node)]
 featured: false
+screenshots:
+  - /screenshots/ansible.webp
 features:
   - Automatización sin agentes (solo SSH)
   - Playbooks en YAML legibles y versionables

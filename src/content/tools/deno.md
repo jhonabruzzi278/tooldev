@@ -1,4 +1,4 @@
----
+﻿---
 name: Deno
 description: Runtime moderno de JavaScript/TypeScript con seguridad por defecto, estándares web y herramientas integradas.
 category: backend
@@ -12,6 +12,11 @@ technicalLevel: intermedio
 compatibility: ["Web", Windows, macOS, Linux]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/deno.webp
+  - /screenshots/deno-2.webp
+  - /screenshots/deno-3.webp
+  - /screenshots/deno-4.webp
 features:
   - Seguridad por defecto (sin permisos de red/archivo)
   - TypeScript nativo sin configuración adicional

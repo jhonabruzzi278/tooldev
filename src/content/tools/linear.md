@@ -1,4 +1,4 @@
----
+﻿---
 name: Linear
 description: Herramienta de gestión de proyectos moderna y ultrarrápida para equipos de ingeniería y producto.
 category: productividad
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Web, macOS, Windows, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/linear.webp
 features:
   - Gestión de issues con keyboard-first
   - Roadmaps visuales con timelines automáticos

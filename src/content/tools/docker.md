@@ -1,4 +1,4 @@
----
+﻿---
 name: Docker
 description: Plataforma de contenedores para empaquetar, distribuir y ejecutar aplicaciones en entornos aislados y reproducibles.
 category: devops
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker Desktop]
 featured: true
 verified: true
+screenshots:
+  - /screenshots/docker.webp
 features:
   - Contenedores ligeros con aislamiento a nivel de sistema operativo
   - Dockerfile para definir entornos reproducibles como código

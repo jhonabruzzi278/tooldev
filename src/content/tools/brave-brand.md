@@ -3,7 +3,7 @@ name: Brave Brand
 description: Plataforma de recursos de identidad de marca y diseño branding con guías, plantillas e inspiración para crear marcas memorables.
 category: diseno
 tags: [branding, identidad, diseño, marca, recursos, inspiracion]
-officialSite: https://www.bravebrand.co
+officialSite: https://playground.bravebrand.com/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

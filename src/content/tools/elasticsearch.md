@@ -1,6 +1,6 @@
----
+﻿---
 name: Elasticsearch
-description: Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda全文.
+description: Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda.
 category: backend
 tags: [búsqueda, análisis, logs, lucene, backend, open-source]
 officialSite: https://elastic.co/elasticsearch
@@ -13,7 +13,7 @@ compatibility: [macOS, Linux, Windows, Docker]
 featured: false
 verified: true
 features:
-  - Búsqueda全文 con análisis de lenguaje natural en múltiples idiomas
+  - Búsqueda con análisis de lenguaje natural en múltiples idiomas
   - Indexación invertida para búsquedas de baja latencia
   - Agregaciones en tiempo real para análisis de datos
   - Escalado horizontal con sharding y replicación automática
@@ -32,19 +32,19 @@ howToUse:
     description: "Envía documentos JSON via API REST: POST /productos/_doc/ { título, descripción, precio }. Elasticsearch los indexa automáticamente y están disponibles para búsqueda en ~1 segundo."
   - step: 3
     title: "Ejecuta búsquedas"
-    description: "Usa GET /productos/_search con query body para búsqueda全文, filtros y agregaciones. El motor scoring de Lucene ordena resultados por relevancia usando TF-IDF y BM25."
+    description: "Usa GET /productos/_search con query body para búsqueda, filtros y agregaciones. El motor scoring de Lucene ordena resultados por relevancia usando TF-IDF y BM25."
   - step: 4
     title: "Escala para producción"
     description: "Configura índices con múltiples shards primarios y de réplica. Usa ILM (Index Lifecycle Management) para rotar índices y optimizar almacenamiento. Monitorea con Elastic APM y Kibana."
 whenToUse:
-  - title: "Búsqueda全文 para aplicaciones"
+  - title: "Búsqueda para aplicaciones"
     description: "Para agregar búsqueda rápida y relevante en e-commerce, documentación, blogs o cualquier catálogo. Elasticsearch entiende tildes, sinónimos, prefijos y errores tipográficos."
   - title: "Centralización y análisis de logs"
     description: "Como parte del ELK Stack para recolectar, procesar y visualizar logs de servidores, aplicaciones y servicios. Ideal para debugging y monitoreo de sistemas distribuidos."
   - title: "Análisis en tiempo real de datos estructurados"
     description: "Para agregaciones rápidas sobre millones de documentos: ventas por hora, usuarios activos por región, latencia promedio por servicio. Elasticsearch responde en milisegundos sin pre-agregar."
 examples:
-  - title: "Búsqueda全文 con filtros y scoring"
+  - title: "Búsqueda con filtros y scoring"
     code: |
       GET /productos/_search
       {
@@ -88,7 +88,7 @@ faq:
   - question: "¿Elasticsearch es gratis?"
     answer: "Elasticsearch es open source con licencia Elastic License 2.0. Incluye todas las funcionalidades básicas de búsqueda y análisis. Las características avanzadas como Machine Learning, seguridad y alertas requieren suscripción Elastic (parte del stack gratis en despliegues pequeños)."
   - question: "¿Cuándo usar Elasticsearch vs PostgreSQL?"
-    answer: "Elasticsearch para búsqueda全文 y análisis en tiempo real sobre grandes volúmenes de datos no estructurados. PostgreSQL para datos relacionales con integridad transaccional. Se complementan: PostgreSQL como fuente de verdad, Elasticsearch para búsqueda."
+    answer: "Elasticsearch para búsqueda y análisis en tiempo real sobre grandes volúmenes de datos no estructurados. PostgreSQL para datos relacionales con integridad transaccional. Se complementan: PostgreSQL como fuente de verdad, Elasticsearch para búsqueda."
   - question: "¿Qué diferencia hay entre Elasticsearch y Meilisearch?"
     answer: "Elasticsearch es más potente y flexible: agregaciones, geo, ML, cluster multi-nodo. Meilisearch es más simple y rápido de configurar con buenos defaults, ideal para búsqueda en proyectos más pequeños. Elasticsearch requiere más expertise operacional."
 publishedAt: 2026-06-01
@@ -100,7 +100,7 @@ Elasticsearch es un motor de búsqueda y análisis distribuido construido sobre 
 
 ## ¿Para qué sirve?
 
-Elasticsearch sirve para búsqueda全文 en aplicaciones (e-commerce, documentación, SaaS), centralización de logs y métricas, análisis en tiempo real de datos estructurados, y detección de anomalías con machine learning.
+Elasticsearch sirve para búsqueda en aplicaciones (e-commerce, documentación, SaaS), centralización de logs y métricas, análisis en tiempo real de datos estructurados, y detección de anomalías con machine learning.
 
 ## Cuándo usarla
 
@@ -119,7 +119,7 @@ Elasticsearch sirve para búsqueda全文 en aplicaciones (e-commerce, documentac
 
 ## Pros
 
-- Búsqueda全文 ultra rápida con scoring BM25.
+- Búsqueda ultra rápida con scoring BM25.
 - Escalado horizontal casi lineal.
 - API RESTful sencilla.
 - Ecosistema ELK completo para logs.

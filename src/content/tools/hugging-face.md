@@ -1,4 +1,4 @@
----
+﻿---
 name: Hugging Face
 description: Plataforma líder para modelos de machine learning, datasets, spaces y la comunidad de IA más grande del mundo.
 category: ia
@@ -10,6 +10,8 @@ license: Apache-2.0
 technicalLevel: avanzado
 compatibility: [Web]
 featured: false
+screenshots:
+  - /screenshots/hugging-face.webp
 features:
   - Hub de modelos con más de 500,000 modelos pre-entrenados
   - Datasets públicos para entrenamiento y evaluación

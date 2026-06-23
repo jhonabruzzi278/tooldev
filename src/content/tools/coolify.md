@@ -1,4 +1,4 @@
----
+﻿---
 name: Coolify
 description: Plataforma PaaS auto-gestionada con deploy de aplicaciones, bases de datos y servicios sin configurar servidores manualmente.
 category: devops
@@ -10,6 +10,8 @@ license: Apache-2.0
 technicalLevel: intermedio
 compatibility: ["Web", Linux, macOS, Windows]
 featured: false
+screenshots:
+  - /screenshots/coolify.webp
 features:
   - Despliegue de aplicaciones con un clic desde Git
   - Soporte para Node.js, Python, PHP, Go, Rust, Static, Dockerfile

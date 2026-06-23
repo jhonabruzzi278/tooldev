@@ -1,4 +1,4 @@
----
+﻿---
 name: tRPC
 description: Framework para construir APIs end-to-end typesafe con TypeScript automático entre cliente y servidor.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/trpc.png
 features:
   - Tipos TypeScript inferidos automáticamente del servidor al cliente
   - Sin necesidad de generar schemas o código duplicado

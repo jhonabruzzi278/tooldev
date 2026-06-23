@@ -1,9 +1,9 @@
----
+﻿---
 name: React Bits
 description: Colección de componentes React animados e interactivos diseñados para UIs modernas con efectos visuales atractivos y código limpio.
 category: frontend
 tags: [react, componentes, animación, ui, interactivo, efectos, moderno, typescript]
-officialSite: https://reactbits.dev
+officialSite: https://reactbits.dev/
 github: https://github.com/DavidHDev/react-bits
 pricing: open-source
 openSource: true
@@ -11,6 +11,8 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [React, Next.js, Vite, TypeScript]
 verified: true
+screenshots:
+  - /screenshots/reactbits.dev.png
 features:
   - Componentes animados listos para copiar y usar en proyectos React
   - Efectos de texto como typewriter, gradient text y split animations

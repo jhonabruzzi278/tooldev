@@ -1,4 +1,4 @@
----
+﻿---
 name: Jenkins
 description: Servidor de automatización CI/CD extensible para construir, probar y desplegar software de forma continua.
 category: devops
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: avanzado
 compatibility: [Linux, Windows, macOS, Docker, Kubernetes]
 featured: false
+screenshots:
+  - /screenshots/jenkins.webp
 features:
   - Pipelines como código con Jenkinsfile
   - Cientos de plugins para integración con todo

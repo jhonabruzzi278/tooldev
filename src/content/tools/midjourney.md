@@ -1,4 +1,4 @@
----
+﻿---
 name: Midjourney
 description: Generador de imágenes por IA con calidad artística superior, control de estilos y composición mediante prompts.
 category: ia
@@ -9,6 +9,9 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Web, Discord]
 featured: false
+screenshots:
+  - /screenshots/midjourney.webp
+  - /screenshots/midjourney-2.webp
 features:
   - Generación de imágenes fotorrealistas por IA
   - Control de estilos con parámetros avanzados

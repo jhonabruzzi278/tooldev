@@ -3,7 +3,7 @@ name: Footer.design
 description: Galería curada de diseños de footers de sitios web con patrones, estilos y referencias para inspirar mejores diseños de pie de página.
 category: diseno
 tags: [inspiracion, footer, diseño, galeria, web, patrones]
-officialSite: https://www.footer.design
+officialSite: https://www.footer.design/
 pricing: gratis
 openSource: false
 technicalLevel: principiante

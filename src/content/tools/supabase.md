@@ -1,4 +1,4 @@
----
+﻿---
 name: Supabase
 description: Plataforma open source que reemplaza Firebase con PostgreSQL, autenticación, almacenamiento y funciones serverless.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web, iOS, Android]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/supabase.webp
 features:
   - Base de datos PostgreSQL con API REST y Realtime
   - Autenticación integrada con múltiples proveedores

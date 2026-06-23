@@ -1,9 +1,9 @@
----
+﻿---
 name: Anime.js
 description: Librería de animación JavaScript ligera y potente para crear animaciones web fluidas con una API simple y expresiva.
 category: frontend
 tags: [animación, javascript, css, svg, dom, web, rendimiento, motion]
-officialSite: https://animejs.com
+officialSite: https://animejs.com/
 github: https://github.com/juliangarnier/anime
 pricing: open-source
 openSource: true
@@ -11,6 +11,9 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux, Web, React, Vue, Svelte]
 verified: true
+screenshots:
+  - /screenshots/Anime.js.png
+  - /screenshots/Anime.js1.png
 features:
   - Animación de propiedades CSS, SVG, atributos DOM y objetos JavaScript
   - Sistema de timeline para secuencias de animación complejas

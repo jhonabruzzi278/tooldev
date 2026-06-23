@@ -1,4 +1,4 @@
----
+﻿---
 name: Biome
 description: Linter y formatter unificado escrito en Rust, compatible con ESLint y Prettier, con velocidad 10x más rápida.
 category: frontend
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: intermedio
 compatibility: ["Web"]
 featured: false
+screenshots:
+  - /screenshots/biome.webp
 features:
   - Linter y formatter en una sola herramienta sin configuración
   - Soporte nativo para TypeScript, JSX, TSX, JSON y CSS

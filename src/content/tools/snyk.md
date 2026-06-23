@@ -3,7 +3,7 @@ name: Snyk
 description: Plataforma de seguridad para desarrolladores que encuentra y corrige vulnerabilidades en código, dependencias, contenedores e infraestructura como código.
 category: devops
 tags: [seguridad, vulnerabilidades, dependencias, contenedores, iac, sca, devsecops, cicd]
-officialSite: https://snyk.io
+officialSite: https://snyk.io/es/
 github: https://github.com/snyk/snyk
 pricing: freemium
 openSource: true

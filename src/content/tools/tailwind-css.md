@@ -1,4 +1,4 @@
----
+﻿---
 name: Tailwind CSS
 description: Framework de CSS utilitario que permite construir diseños modernos y responsivos rápidamente usando clases predefinidas.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: true
 verified: true
+screenshots:
+  - /screenshots/tailwind-css.webp
 features:
   - Clases utilitarias para diseño rápido sin escribir CSS
   - Sistema de diseño completamente personalizable

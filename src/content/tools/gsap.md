@@ -1,4 +1,4 @@
----
+﻿---
 name: GSAP
 description: Biblioteca de animaciones JavaScript profesional de alto rendimiento para la web, compatible con todos los navegadores modernos.
 category: frontend
@@ -10,6 +10,8 @@ license: Standard
 technicalLevel: intermedio
 compatibility: ["Web"]
 featured: false
+screenshots:
+  - /screenshots/gsap.webp
 features:
   - Animaciones de alto rendimiento con 60fps estables
   - Timeline para secuencias complejas y sincronización

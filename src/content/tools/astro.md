@@ -1,4 +1,4 @@
----
+﻿---
 name: Astro
 description: Framework web moderno que genera sitios estáticos ultra rápidos con islas de interactividad y soporte para múltiples frameworks.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux, Web]
 featured: true
 verified: true
+screenshots:
+  - /screenshots/astro.webp
 features:
   - Generación estática por defecto con cero JavaScript
   - Islas de arquitectura para interactividad selectiva

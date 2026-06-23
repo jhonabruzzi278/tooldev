@@ -1,4 +1,4 @@
----
+﻿---
 name: MongoDB
 description: Base de datos NoSQL documental orientada a objetos JSON flexibles con escalado horizontal nativo.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker, MongoDB Atlas]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/mongodb.webp
 features:
   - Documentos JSON/BSON con esquema flexible
   - Índices secundarios, compuestos, geoespaciales y de texto

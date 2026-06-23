@@ -1,4 +1,4 @@
----
+﻿---
 name: Storybook
 description: Taller frontend para desarrollar, documentar y testear componentes UI de forma aislada con hot-reload.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/storybook.webp
 features:
   - Desarrollo aislado de componentes con hot-reload
   - Documentación visual automática con MDX

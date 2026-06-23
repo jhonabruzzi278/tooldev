@@ -3,7 +3,7 @@ name: Behance
 description: Plataforma de Adobe para mostrar y descubrir trabajo creativo con proyectos completos, casos de estudio y networking profesional.
 category: diseno
 tags: [portafolio, diseño, creatividad, adobe, comunidad, inspiracion]
-officialSite: https://www.behance.net
+officialSite: https://www.behance.net/
 pricing: gratis
 openSource: false
 technicalLevel: principiante

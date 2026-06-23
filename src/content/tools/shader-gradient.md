@@ -1,9 +1,9 @@
----
+﻿---
 name: Shader Gradient
 description: Herramienta para crear fondos de gradientes 3D animados y hermosos usando shaders WebGL, con componente React listo para integrar.
 category: frontend
 tags: [gradiente, webgl, shaders, 3d, animación, react, diseño, fondos]
-officialSite: https://www.shadergradient.co
+officialSite: https://shadergradient.co/
 github: https://github.com/ruucm/shadergradient
 pricing: open-source
 openSource: true
@@ -11,6 +11,8 @@ license: MIT
 technicalLevel: intermedio
 compatibility: [React, Next.js, Web, Three.js]
 verified: true
+screenshots:
+  - /screenshots/shadergradient.co.png
 features:
   - Editor visual interactivo para diseñar gradientes 3D en tiempo real
   - Componente React listo para usar con props configurables

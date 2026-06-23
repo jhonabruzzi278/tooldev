@@ -1,4 +1,4 @@
----
+﻿---
 name: ChatGPT
 description: Asistente de IA conversacional con generación de texto, análisis, código, traducción y razonamiento avanzado.
 category: ia
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Web, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/chatgpt.webp
 features:
   - Conversación natural con contexto continuo
   - Generación y depuración de código en múltiples lenguajes

@@ -1,4 +1,4 @@
----
+﻿---
 name: PocketBase
 description: Backend open-source todo-en-uno con base de datos SQLite embebida, autenticación, archivos y UI admin.
 category: backend
@@ -10,6 +10,10 @@ license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", API]
 featured: false
+screenshots:
+  - /screenshots/pocketbase.webp
+  - /screenshots/pocketbase-2.webp
+  - /screenshots/pocketbase-3.webp
 features:
   - Base de datos SQLite embebida (sin dependencias externas)
   - Autenticación con email, OAuth2, OIDC y magic links

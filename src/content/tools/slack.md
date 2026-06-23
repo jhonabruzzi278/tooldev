@@ -1,4 +1,4 @@
----
+﻿---
 name: Slack
 description: Plataforma de comunicación empresarial con canales, mensajería directa, integraciones y automatizaciones.
 category: productividad
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [Web, Windows, macOS, Linux, iOS, Android]
 featured: false
+screenshots:
+  - /screenshots/slack.webp
 features:
   - Canales temáticos para equipos y proyectos
   - Mensajería directa con hilos de conversación

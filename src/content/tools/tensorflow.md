@@ -1,4 +1,4 @@
----
+﻿---
 name: TensorFlow
 description: Framework open source de machine learning para construir, entrenar y desplegar modelos de IA a escala.
 category: ia
@@ -12,6 +12,8 @@ technicalLevel: avanzado
 compatibility: [Windows, macOS, Linux, Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/tensorflow.webp
 features:
   - API Keras para construcción rápida de modelos
   - Ejecución eager para debugging interactivo

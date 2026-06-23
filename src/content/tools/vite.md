@@ -1,4 +1,4 @@
----
+﻿---
 name: Vite
 description: Entorno de desarrollo frontend ultrarrápido con HMR instantáneo, build optimizado y soporte nativo para ESM.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [Web]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/vite.webp
 features:
   - Dev server con HMR instantáneo y ESM nativo
   - Build con Rollup optimizado para producción

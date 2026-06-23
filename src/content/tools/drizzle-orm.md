@@ -1,4 +1,4 @@
----
+﻿---
 name: Drizzle ORM
 description: ORM TypeScript ligero y tipado con SQL-like API, rendimiento nativo y zero-dependency runtime.
 category: backend
@@ -12,6 +12,9 @@ technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/drizzle-orm.webp
+  - /screenshots/drizzle-orm-2.webp
 features:
   - ORM TypeScript tipado con inferencia completa
   - SQL-like API que se siente como escribir SQL nativo

@@ -1,4 +1,4 @@
----
+﻿---
 name: Railway
 description: Plataforma de despliegue serverless con infraestructura simplificada, escalado automático y zero-config.
 category: devops
@@ -10,6 +10,9 @@ license: Propietaria
 technicalLevel: principiante
 compatibility: ["Web", API]
 featured: false
+screenshots:
+  - /screenshots/railway.webp
+  - /screenshots/railway-2.webp
 features:
   - Despliegue zero-config desde GitHub
   - Escalado automático horizontal

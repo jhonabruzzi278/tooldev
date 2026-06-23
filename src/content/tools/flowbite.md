@@ -1,4 +1,4 @@
----
+﻿---
 name: Flowbite
 description: Biblioteca de componentes UI basada en Tailwind CSS con más de 400 componentes interactivos, temas y soporte multi-framework.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: ["Web", React, Vue, Svelte, Angular, Laravel, Django, Astro]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/flowbite.png
 features:
   - Más de 400 componentes UI interactivos
   - "5 temas predefinidos: Default, Minimal, Enterprise, Playful, Mono"

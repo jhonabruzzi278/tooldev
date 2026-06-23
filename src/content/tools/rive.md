@@ -1,4 +1,4 @@
----
+﻿---
 name: Rive
 description: Herramienta de diseño y animación interactiva en tiempo real para interfaces, juegos y experiencias web.
 category: frontend
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", "iOS", Android, Flutter, React Native]
 featured: false
+screenshots:
+  - /screenshots/rive.webp
 features:
   - Animaciones vectoriales en tiempo real con state machine
   - Editor visual de animación con línea de tiempo

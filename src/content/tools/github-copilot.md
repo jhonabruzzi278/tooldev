@@ -1,4 +1,4 @@
----
+﻿---
 name: GitHub Copilot
 description: Asistente de programación impulsado por IA que sugiere código y funciones completas directamente en tu editor.
 category: ia
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: principiante
 compatibility: [VS Code, JetBrains, Neovim, Visual Studio, Xcode]
 featured: true
+screenshots:
+  - /screenshots/github-copilot.webp
 features:
   - Autocompletado de código con IA en tiempo real
   - Chat integrado para preguntas sobre código

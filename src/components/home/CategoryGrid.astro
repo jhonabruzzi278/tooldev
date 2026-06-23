@@ -4,6 +4,8 @@ import { categories } from '@/lib/categories';
 import { getCollection } from 'astro:content';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
+import StaggerReveal from '@/components/ui/StaggerReveal';
 
 interface Props {
   locale?: Locale;
@@ -22,17 +24,19 @@ const categoriesWithCount = categories.map((cat) => ({
 
 <section class="py-16">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.categories.homeTitle}</h2>
-      <p class="text-muted-foreground">{lang.categories.homeSubtitle}</p>
-    </div>
+    <AnimateOnScroll client:load>
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.categories.homeTitle}</h2>
+        <p class="text-muted-foreground">{lang.categories.homeSubtitle}</p>
+      </div>
+    </AnimateOnScroll>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <StaggerReveal client:load className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {categoriesWithCount.map((cat) => {
         const catHref = locale === 'en' ? `/en/categories/${cat.slug}` : `/categories/${cat.slug}`;
         return (
         <a href={catHref} class="group block">
-          <div class="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-border/80 hover:bg-muted/20 transition-colors">
+          <div class="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-muted/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
             <div class="size-10 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `light-dark(${cat.lightBg}, ${cat.darkBg})`, color: cat.color }}>
               <Icon name={cat.icon} class="text-current" width="20" height="20" />
             </div>
@@ -40,11 +44,11 @@ const categoriesWithCount = categories.map((cat) => ({
               <div class="font-medium text-base">{cat.name}</div>
               <div class="text-sm text-muted-foreground">{cat.count} {cat.count === 1 ? lang.categories.count_one : lang.categories.count_other}</div>
             </div>
-            <Icon name="tabler:chevron-right" class="text-muted-foreground shrink-0" width="18" height="18" />
+            <Icon name="tabler:chevron-right" class="text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0" width="18" height="18" />
           </div>
         </a>
         );
       })}
-    </div>
+    </StaggerReveal>
   </div>
 </section>

@@ -1,4 +1,4 @@
----
+﻿---
 name: shadcn-ui
 description: Colección de componentes UI reutilizables construidos con Radix UI y Tailwind CSS, copiables directamente al proyecto.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: ["Web"]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/shadcn-ui.webp
 features:
   - Componentes accesibles (WAI-ARIA) vía Radix UI
   - Estilizados con Tailwind CSS y CSS variables

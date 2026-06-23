@@ -3,7 +3,7 @@ name: ImprovMX
 description: Servicio de reenvío de email para dominios personalizados que permite recibir correos en tu dominio propio sin necesidad de hosting de email.
 category: backend
 tags: [email, reenvio, dominio, dns, forwarding, smtp, correo, infraestructura]
-officialSite: https://improvmx.com
+officialSite: https://improvmx.com/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

@@ -1,6 +1,6 @@
----
+﻿---
 name: elasticsearch
-description: Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda全文. Úsala cuando el usuario mencione o pregunte sobre búsqueda, análisis, logs, lucene.
+description: Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda. Úsala cuando el usuario mencione o pregunte sobre búsqueda, análisis, logs, lucene.
 ---
 
 # Elasticsearch
@@ -21,7 +21,7 @@ description: Motor de búsqueda y análisis distribuido basado en Lucene para da
 - **Alternatives:** meilisearch, typesense, algolia, solr
 
 ## Features
-- Búsqueda全文 con análisis de lenguaje natural en múltiples idiomas
+- Búsqueda con análisis de lenguaje natural en múltiples idiomas
 - Indexación invertida para búsquedas de baja latencia
 - Agregaciones en tiempo real para análisis de datos
 - Escalado horizontal con sharding y replicación automática
@@ -38,18 +38,18 @@ Descarga desde elastic.co o usa docker run -p 9200:9200 docker.elastic.co/elasti
 Envía documentos JSON via API REST: POST /productos/_doc/ { título, descripción, precio }. Elasticsearch los indexa automáticamente y están disponibles para búsqueda en ~1 segundo.
 
 ### 3. Ejecuta búsquedas
-Usa GET /productos/_search con query body para búsqueda全文, filtros y agregaciones. El motor scoring de Lucene ordena resultados por relevancia usando TF-IDF y BM25.
+Usa GET /productos/_search con query body para búsqueda, filtros y agregaciones. El motor scoring de Lucene ordena resultados por relevancia usando TF-IDF y BM25.
 
 ### 4. Escala para producción
 Configura índices con múltiples shards primarios y de réplica. Usa ILM (Index Lifecycle Management) para rotar índices y optimizar almacenamiento. Monitorea con Elastic APM y Kibana.
 
 ## When to Use
-- **Búsqueda全文 para aplicaciones:** Para agregar búsqueda rápida y relevante en e-commerce, documentación, blogs o cualquier catálogo. Elasticsearch entiende tildes, sinónimos, prefijos y errores tipográficos.
+- **Búsqueda para aplicaciones:** Para agregar búsqueda rápida y relevante en e-commerce, documentación, blogs o cualquier catálogo. Elasticsearch entiende tildes, sinónimos, prefijos y errores tipográficos.
 - **Centralización y análisis de logs:** Como parte del ELK Stack para recolectar, procesar y visualizar logs de servidores, aplicaciones y servicios. Ideal para debugging y monitoreo de sistemas distribuidos.
 - **Análisis en tiempo real de datos estructurados:** Para agregaciones rápidas sobre millones de documentos: ventas por hora, usuarios activos por región, latencia promedio por servicio. Elasticsearch responde en milisegundos sin pre-agregar.
 
 ## Examples
-### Búsqueda全文 con filtros y scoring
+### Búsqueda con filtros y scoring
 ```
 GET /productos/_search
 {
@@ -96,7 +96,7 @@ tput: "Agrupa errores HTTP por hora y muestra los 5 endpoints con más errores e
 
 ## FAQ
 - **¿Elasticsearch es gratis?** Elasticsearch es open source con licencia Elastic License 2.0. Incluye todas las funcionalidades básicas de búsqueda y análisis. Las características avanzadas como Machine Learning, seguridad y alertas requieren suscripción Elastic (parte del stack gratis en despliegues pequeños).
-- **¿Cuándo usar Elasticsearch vs PostgreSQL?** Elasticsearch para búsqueda全文 y análisis en tiempo real sobre grandes volúmenes de datos no estructurados. PostgreSQL para datos relacionales con integridad transaccional. Se complementan: PostgreSQL como fuente de verdad, Elasticsearch para búsqueda.
+- **¿Cuándo usar Elasticsearch vs PostgreSQL?** Elasticsearch para búsqueda y análisis en tiempo real sobre grandes volúmenes de datos no estructurados. PostgreSQL para datos relacionales con integridad transaccional. Se complementan: PostgreSQL como fuente de verdad, Elasticsearch para búsqueda.
 - **¿Qué diferencia hay entre Elasticsearch y Meilisearch?** Elasticsearch es más potente y flexible: agregaciones, geo, ML, cluster multi-nodo. Meilisearch es más simple y rápido de configurar con buenos defaults, ideal para búsqueda en proyectos más pequeños. Elasticsearch requiere más expertise operacional.
 
 ## Troubleshooting

@@ -1,4 +1,4 @@
----
+﻿---
 name: Playwright
 description: Framework de testing E2E multiplataforma de Microsoft para navegadores modernos con una sola API.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: ["Web", Windows, macOS, Linux]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/playwright.webp
 features:
   - Test en Chromium, Firefox y WebKit con una sola API
   - Espera automática sin timeouts flaky ni sleeps manuales

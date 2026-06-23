@@ -1,4 +1,4 @@
----
+﻿---
 name: Redis
 description: Almacén de estructura de datos en memoria de código abierto usado como caché, base de datos y message broker.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: [macOS, Linux, Windows, Docker]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/redis.webp
 features:
   - "Estructuras de datos nativas: strings, hashes, lists, sets, sorted sets, streams, bitmaps"
   - Persistencia opcional RDB (snapshots) y AOF (append-only file)

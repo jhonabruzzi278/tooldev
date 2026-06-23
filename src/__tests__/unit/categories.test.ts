@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { categories, getCategoryBySlug, getCategoryName } from '@/lib/categories';
 
 describe('categories', () => {
-  it('should have exactly 6 categories', () => {
-    expect(categories).toHaveLength(6);
+  it('should have exactly 7 categories', () => {
+    expect(categories).toHaveLength(7);
   });
 
   it('should have all required properties on each category', () => {

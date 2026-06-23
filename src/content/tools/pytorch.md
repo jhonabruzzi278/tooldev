@@ -1,4 +1,4 @@
----
+﻿---
 name: PyTorch
 description: Framework de deep learning open source con computación dinámica, ideal para investigación y producción.
 category: ia
@@ -10,6 +10,8 @@ license: BSD
 technicalLevel: avanzado
 compatibility: [Windows, macOS, Linux]
 featured: false
+screenshots:
+  - /screenshots/pytorch.webp
 features:
   - Tensores con aceleración GPU nativa (CUDA)
   - Autograd con diferenciación automática

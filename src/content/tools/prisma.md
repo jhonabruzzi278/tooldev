@@ -1,4 +1,4 @@
----
+﻿---
 name: Prisma
 description: ORM moderno para TypeScript y Node.js con schema declarativo, migraciones, y cliente autogenerado type-safe.
 category: backend
@@ -10,6 +10,8 @@ license: Apache-2.0
 technicalLevel: intermedio
 compatibility: [Windows, macOS, Linux]
 featured: false
+screenshots:
+  - /screenshots/prisma.webp
 features:
   - Schema declarativo con modelo de datos visual
   - Cliente autogenerado con tipos TypeScript completos

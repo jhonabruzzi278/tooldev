@@ -1,4 +1,4 @@
----
+﻿---
 name: BG.Ibelick
 description: Colección de snippets modernos de fondos CSS con Tailwind CSS y CSS vanilla, listos para copiar y pegar en proyectos web.
 category: diseno
@@ -12,6 +12,9 @@ technicalLevel: principiante
 compatibility: ["Web"]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/BG.Ibelick.png
+  - /screenshots/BG.Ibelick2.png
 features:
   - Snippets de fondos listos para copiar y pegar
   - Compatible con Tailwind CSS y CSS vanilla

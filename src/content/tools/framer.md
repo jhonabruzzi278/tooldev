@@ -1,4 +1,4 @@
----
+﻿---
 name: Framer
 description: Herramienta de diseño interactivo para prototipado avanzado con animaciones, componentes y publicación web.
 category: diseno
@@ -9,6 +9,8 @@ openSource: false
 technicalLevel: intermedio
 compatibility: [Web, macOS, Windows]
 featured: false
+screenshots:
+  - /screenshots/framer.webp
 features:
   - Editor visual con diseño responsive y auto-layout
   - Animaciones y transiciones avanzadas

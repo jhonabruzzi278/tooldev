@@ -3,7 +3,7 @@ name: Higgsfield AI
 description: Plataforma de generación de video con IA para crear videos realistas de humanos con control avanzado de movimiento y expresiones.
 category: ia
 tags: [video, generacion, ia, humanos, deepfake, movimiento, expresiones, contenido]
-officialSite: https://higgsfield.ai
+officialSite: https://higgsfield.ai/
 pricing: freemium
 openSource: false
 technicalLevel: principiante

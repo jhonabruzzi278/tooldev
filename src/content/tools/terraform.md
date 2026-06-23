@@ -1,4 +1,4 @@
----
+﻿---
 name: Terraform
 description: Herramienta de infraestructura como código (IaC) de HashiCorp para provisionar y gestionar recursos cloud con archivos de configuración declarativos.
 category: devops
@@ -12,6 +12,8 @@ technicalLevel: avanzado
 compatibility: [macOS, Linux, Windows, Docker]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/terraform.webp
 features:
   - Infraestructura declarativa con HashiCorp Configuration Language (HCL)
   - Plan de ejecución para preview de cambios antes de aplicarlos

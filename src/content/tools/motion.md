@@ -1,4 +1,4 @@
----
+﻿---
 name: Motion
 description: Biblioteca de animaciones moderna para React con API declarativa, layout animations y gesture support.
 category: frontend
@@ -10,6 +10,8 @@ license: MIT
 technicalLevel: intermedio
 compatibility: ["Web"]
 featured: false
+screenshots:
+  - /screenshots/motion.webp
 features:
   - API declarativa de animaciones para React
   - Layout animations con FLIP automático

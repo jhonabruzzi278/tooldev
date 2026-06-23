@@ -1,13 +1,15 @@
----
+﻿---
 name: 21st.dev
 description: Marketplace de componentes UI impulsado por IA que genera y comparte componentes React listos para producción con diseño moderno.
 category: frontend
 tags: [componentes, react, ui, ia, marketplace, diseño, producción]
-officialSite: https://21st.dev
+officialSite: https://21st.dev/
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
 compatibility: [React, Next.js, Tailwind CSS]
+screenshots:
+  - /screenshots/21st.dev.png
 features:
   - Generación de componentes UI con inteligencia artificial
   - Marketplace con componentes listos para copiar y usar

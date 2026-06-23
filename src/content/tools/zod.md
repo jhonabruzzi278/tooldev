@@ -1,4 +1,4 @@
----
+﻿---
 name: Zod
 description: Biblioteca TypeScript-first para validación de esquemas con inferencia de tipos automática y composición declarativa.
 category: backend
@@ -12,6 +12,8 @@ technicalLevel: intermedio
 compatibility: ["Web", Node.js, Deno, Bun]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/zod.webp
 features:
   - Inferencia de tipos TypeScript automática desde esquemas
   - Validación en runtime para datos externos no confiables

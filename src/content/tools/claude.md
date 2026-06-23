@@ -1,4 +1,4 @@
----
+﻿---
 name: Claude
 description: Asistente de IA de Anthropic con capacidades avanzadas de razonamiento, codificación y análisis de documentos. Destaca por seguir instrucciones complejas con precisión y mantener conversaciones largas con alta coherencia.
 category: agentes
@@ -11,6 +11,8 @@ technicalLevel: principiante
 compatibility: [Web, API, macOS, Windows, iOS, Android]
 featured: true
 verified: false
+screenshots:
+  - /screenshots/claude.webp
 features:
   - Razonamiento avanzado con modelos Claude 3.5 Sonnet y Claude 3 Opus
   - Contexto de hasta 200K tokens (libros enteros en una sola conversación)

@@ -1,4 +1,4 @@
----
+﻿---
 name: Fontsource
 description: Paquetería NPM para auto-hospedar más de 1500 fuentes open source con versionado, sin dependencia externa de CDN.
 category: frontend
@@ -12,6 +12,8 @@ technicalLevel: principiante
 compatibility: ["Web", React, Vue, Angular, Svelte, Astro, "Node.js"]
 featured: false
 verified: true
+screenshots:
+  - /screenshots/fontsource.png
 features:
   - Más de 1500 fuentes open source empaquetadas como paquetes NPM individuales
   - "Auto-hospedado: sin llamadas a Google Fonts ni CDNs externos"

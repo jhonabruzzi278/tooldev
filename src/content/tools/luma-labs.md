@@ -3,7 +3,7 @@ name: Luma Labs
 description: Plataforma de IA para captura y generación 3D utilizando Neural Radiance Fields (NeRF) que transforma fotos y videos en modelos tridimensionales de alta calidad.
 category: ia
 tags: [3d, nerf, captura, generacion, modelos, fotogrametria, realidad-aumentada, escenas]
-officialSite: https://lumalabs.ai
+officialSite: https://lumalabs.ai/
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
