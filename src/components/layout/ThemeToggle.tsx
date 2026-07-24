@@ -81,7 +81,7 @@ export default function ThemeToggle() {
     >
       <Icon icon={getIcon()} width={20} height={20} />
       {mode === 'auto' && (
-        <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-primary" />
+        <span className="absolute bottom-0.5 right-0.5 size-1.5 rounded-full bg-accent-lime ring-2 ring-background" />
       )}
     </Button>
   );
