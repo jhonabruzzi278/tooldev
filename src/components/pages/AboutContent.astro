@@ -27,43 +27,44 @@ const reasons = [
 ---
 
 <BaseLayout title={locale === 'en' ? 'About' : 'Acerca de'} description={locale === 'en' ? 'Learn about ToolDev, your reference for discovering developer tools.' : 'Conoce ToolDev, tu referencia para descubrir herramientas de desarrollo.'} {locale}>
-  <section class="py-20 md:py-28">
-    <div class="container mx-auto px-4 max-w-2xl text-center">
-      <p class="text-xs uppercase tracking-widest text-muted-foreground mb-4">{lang.about.badge}</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        {lang.about.title} <span class="text-primary">{lang.about.titleGradient}</span>
+  <section class="py-20 md:py-28 font-mono border-b border-border">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <p class="kicker mb-4">// {lang.about.badge.toUpperCase()}</p>
+      <h1 class="text-3xl md:text-4xl font-normal mb-4">
+        {lang.about.title} <span class="text-accent-lime">{lang.about.titleGradient}</span>
       </h1>
-      <p class="text-base text-muted-foreground leading-relaxed">{lang.about.subtitle}</p>
+      <p class="text-sm text-muted-foreground leading-relaxed">{lang.about.subtitle}</p>
     </div>
   </section>
 
-  <section class="pb-20">
+  <section class="py-16 border-b border-border font-mono">
     <div class="container mx-auto px-4 max-w-3xl">
-      <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-center">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
         <div>
-          <p class="text-3xl font-bold">{tools.length}</p>
-          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsTools}</p>
+          <p class="text-xl md:text-2xl">{tools.length}</p>
+          <p class="text-[10px] text-muted-foreground uppercase tracking-widest">{lang.about.statsTools}</p>
         </div>
         <div>
-          <p class="text-3xl font-bold">{categories.length}</p>
-          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsCategories}</p>
+          <p class="text-xl md:text-2xl">{categories.length}</p>
+          <p class="text-[10px] text-muted-foreground uppercase tracking-widest">{lang.about.statsCategories}</p>
         </div>
         <div>
-          <p class="text-3xl font-bold">{openSourceCount}</p>
-          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsOpenSource}</p>
+          <p class="text-xl md:text-2xl">{openSourceCount}</p>
+          <p class="text-[10px] text-muted-foreground uppercase tracking-widest">{lang.about.statsOpenSource}</p>
         </div>
         <div>
-          <p class="text-3xl font-bold">{freeCount}</p>
-          <p class="text-xs text-muted-foreground uppercase tracking-wider">{lang.about.statsFree}</p>
+          <p class="text-xl md:text-2xl">{freeCount}</p>
+          <p class="text-[10px] text-muted-foreground uppercase tracking-widest">{lang.about.statsFree}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="pb-20">
+  <section class="py-16 border-b border-border font-mono">
     <div class="container mx-auto px-4 max-w-2xl">
-      <h2 class="text-2xl font-bold mb-6">{lang.about.missionTitle}</h2>
-      <div class="space-y-4 text-muted-foreground leading-relaxed">
+      <p class="kicker mb-4">// MISION</p>
+      <h2 class="text-xl mb-6">{lang.about.missionTitle}</h2>
+      <div class="space-y-4 text-sm text-muted-foreground leading-relaxed">
         <p>{lang.about.missionP1}</p>
         <p>{lang.about.missionP2}</p>
         <p>{lang.about.missionP3}</p>
@@ -71,18 +72,17 @@ const reasons = [
     </div>
   </section>
 
-  <section class="pb-20">
+  <section class="py-16 font-mono">
     <div class="container mx-auto px-4 max-w-2xl">
-      <h2 class="text-2xl font-bold mb-8">{lang.about.reasonsTitle}</h2>
+      <p class="kicker mb-4">// RAZONES</p>
+      <h2 class="text-xl mb-8">{lang.about.reasonsTitle}</h2>
       <div class="space-y-6">
         {reasons.map((reason) => (
           <div class="flex gap-4">
-            <div class="size-8 rounded-md bg-muted flex items-center justify-center shrink-0 mt-0.5">
-              <Icon name={reason.icon} class="text-muted-foreground" width="16" height="16" />
-            </div>
+            <Icon name={reason.icon} class="text-accent-lime shrink-0 mt-0.5" width="18" height="18" />
             <div>
-              <p class="font-medium text-sm mb-0.5">{reason.title}</p>
-              <p class="text-sm text-muted-foreground leading-relaxed">{reason.desc}</p>
+              <p class="text-sm mb-0.5">{reason.title}</p>
+              <p class="text-xs text-muted-foreground leading-relaxed">{reason.desc}</p>
             </div>
           </div>
         ))}
@@ -90,10 +90,10 @@ const reasons = [
     </div>
   </section>
 
-  <section class="pb-20 text-center">
+  <section class="pb-20 text-center font-mono">
     <div class="container mx-auto px-4">
       <p class="text-xs text-muted-foreground">{lang.site.developedBy}</p>
-      <p class="text-sm font-medium mt-1">Jonathan Guerra</p>
+      <p class="text-sm mt-1">Jonathan Guerra</p>
     </div>
   </section>
 </BaseLayout>

@@ -3,6 +3,8 @@ import HeroReveal from '@/components/ui/HeroReveal';
 import { Button } from '@/components/ui/button';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
+import { categories } from '@/lib/categories';
+import { getCollection } from 'astro:content';
 
 interface Props {
   locale?: Locale;
@@ -11,23 +13,45 @@ interface Props {
 const { locale = 'es' } = Astro.props;
 const lang = getTranslations(locale);
 const ctaHref = locale === 'en' ? '/en/tools' : '/tools';
+
+const tools = await getCollection('tools');
+const verifiedCount = tools.filter((t) => t.data.verified).length;
+const latestUpdate = tools.reduce((max, t) => (t.data.publishedAt > max ? t.data.publishedAt : max), tools[0].data.publishedAt);
+const updatedLabel = latestUpdate.toLocaleDateString(locale === 'en' ? 'en-US' : 'es-ES', { month: 'short', year: 'numeric' }).toUpperCase();
+
+const stats = [
+  { value: tools.length, label: lang.home.statsResources },
+  { value: categories.length, label: lang.home.statsCategories },
+  { value: verifiedCount, label: lang.home.statsVerified },
+  { value: updatedLabel, label: lang.home.statsUpdated },
+];
 ---
 
-<section class="relative overflow-hidden py-20 md:py-28">
+<section class="relative overflow-hidden py-16 md:py-24 font-mono">
   <div class="absolute inset-0 bg-grid pointer-events-none opacity-40" />
-  <div class="container mx-auto px-4 text-center relative">
+  <div class="container mx-auto px-4 relative">
     <HeroReveal client:load>
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight">
+      <p class="kicker mb-4">{lang.home.kicker}</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-5 leading-[1.05] max-w-4xl">
         {lang.home.title}
         <br />
-        <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">{lang.home.titleGradient}</span>
+        <span class="text-accent-lime">{lang.home.titleGradient}</span>
       </h1>
-      <p class="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+      <p class="text-base md:text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
         {lang.home.subtitle}
       </p>
-      <Button asChild size="lg" class="h-12 px-8 text-base">
+      <Button asChild size="lg" class="h-11 px-6 text-sm rounded-[3px] font-mono">
         <a href={ctaHref}>{lang.home.cta}</a>
       </Button>
+
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-border pt-8 max-w-2xl">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-xl md:text-2xl text-foreground">{stat.value}</div>
+            <div class="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
     </HeroReveal>
   </div>
 </section>

@@ -26,42 +26,34 @@ const backHref = locale === 'en' ? '/en/categories' : '/categories';
 ---
 
 <BaseLayout title={category?.name ?? (locale === 'en' ? 'Category' : 'Categoría')} description={category?.description} {locale}>
-  <section
-    class="relative overflow-hidden py-16 md:py-20 border-b border-border/50"
-    style={category ? `background: linear-gradient(180deg, light-dark(${category.lightBg}, ${category.darkBg}), transparent)` : ''}
-  >
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border font-mono">
     <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
-    {category && (
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl pointer-events-none"
-        style={`background: ${category.color}15`}
-      />
-    )}
-    <div class="container mx-auto px-4 text-center relative">
-      <a href={backHref} class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <Icon name="tabler:chevron-left" class="text-current" width="14" height="14" />
+    <div class="container mx-auto px-4 relative">
+      <a href={backHref} class="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <Icon name="tabler:chevron-left" class="text-current" width="12" height="12" />
           {lang.categories.back}
         </a>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">{category?.name}</h1>
-        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">{category?.description}</p>
-        <p class="text-sm font-medium mt-4" style={category ? `color: ${category.color}` : ''}>
+        <p class="kicker mb-4">{category?.icon ? `// ${category.name.toUpperCase()}` : ''}</p>
+        <h1 class="text-3xl md:text-4xl font-normal mb-3">{category?.name}</h1>
+        <p class="text-sm text-muted-foreground max-w-2xl mb-4">{category?.description}</p>
+        <p class="text-xs text-muted-foreground uppercase tracking-widest">
           {categoryTools.length} {categoryTools.length === 1 ? lang.categories.count_one : lang.categories.count_other}
         </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-12 font-mono">
     <div class="container mx-auto px-4">
       {categoryTools.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categoryTools.map((tool) => (
             <ToolCard tool={tool} {locale} />
           ))}
         </div>
       ) : (
         <div class="text-center py-20">
-          <p class="text-muted-foreground text-lg">{lang.categories.empty}</p>
-          <p class="text-muted-foreground text-sm mt-2">{lang.categories.emptySub}</p>
+          <p class="text-muted-foreground text-sm">{lang.categories.empty}</p>
+          <p class="text-muted-foreground text-xs mt-2">{lang.categories.emptySub}</p>
         </div>
       )}
     </div>

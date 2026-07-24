@@ -12,51 +12,36 @@ const { locale = 'es' } = Astro.props;
 const lang = getTranslations(locale);
 ---
 
-<section class="py-16 border-t border-border/50">
+<section class="py-16 border-t border-border font-mono">
   <div class="container mx-auto px-4">
     <AnimateOnScroll client:load>
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.benefitsTitle}</h2>
-        <p class="text-muted-foreground">{lang.home.benefitsSubtitle}</p>
+      <p class="kicker mb-4">{lang.home.benefitsKicker}</p>
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-normal mb-2">{lang.home.benefitsTitle}</h2>
+        <p class="text-sm text-muted-foreground">{lang.home.benefitsSubtitle}</p>
       </div>
     </AnimateOnScroll>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-      <AnimateOnScroll client:load delay={0.05}>
-        <div class="text-center">
-          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <Icon name="tabler:bulb" class="text-primary" width="24" height="24" />
-          </div>
-          <h3 class="font-semibold text-base mb-1">{lang.benefits.realTitle}</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.realDesc}</p>
-        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-border">
+      <AnimateOnScroll client:load delay={0.05} className="border-r border-b border-border p-5">
+        <Icon name="tabler:bulb" class="text-accent-lime mb-3" width="20" height="20" />
+        <h3 class="text-sm mb-1">{lang.benefits.realTitle}</h3>
+        <p class="text-xs text-muted-foreground leading-relaxed">{lang.benefits.realDesc}</p>
       </AnimateOnScroll>
-      <AnimateOnScroll client:load delay={0.1}>
-        <div class="text-center">
-          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <Icon name="tabler:arrows-shuffle" class="text-primary" width="24" height="24" />
-          </div>
-          <h3 class="font-semibold text-base mb-1">{lang.benefits.altTitle}</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.altDesc}</p>
-        </div>
+      <AnimateOnScroll client:load delay={0.1} className="border-r border-b border-border p-5">
+        <Icon name="tabler:arrows-shuffle" class="text-accent-lime mb-3" width="20" height="20" />
+        <h3 class="text-sm mb-1">{lang.benefits.altTitle}</h3>
+        <p class="text-xs text-muted-foreground leading-relaxed">{lang.benefits.altDesc}</p>
       </AnimateOnScroll>
-      <AnimateOnScroll client:load delay={0.15}>
-        <div class="text-center">
-          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <Icon name="tabler:world" class="text-primary" width="24" height="24" />
-          </div>
-          <h3 class="font-semibold text-base mb-1">{lang.benefits.langTitle}</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.langDesc}</p>
-        </div>
+      <AnimateOnScroll client:load delay={0.15} className="border-r border-b border-border p-5">
+        <Icon name="tabler:world" class="text-accent-lime mb-3" width="20" height="20" />
+        <h3 class="text-sm mb-1">{lang.benefits.langTitle}</h3>
+        <p class="text-xs text-muted-foreground leading-relaxed">{lang.benefits.langDesc}</p>
       </AnimateOnScroll>
-      <AnimateOnScroll client:load delay={0.2}>
-        <div class="text-center">
-          <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <Icon name="tabler:compass" class="text-primary" width="24" height="24" />
-          </div>
-          <h3 class="font-semibold text-base mb-1">{lang.benefits.curatedTitle}</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">{lang.benefits.curatedDesc}</p>
-        </div>
+      <AnimateOnScroll client:load delay={0.2} className="border-r border-b border-border p-5">
+        <Icon name="tabler:compass" class="text-accent-lime mb-3" width="20" height="20" />
+        <h3 class="text-sm mb-1">{lang.benefits.curatedTitle}</h3>
+        <p class="text-xs text-muted-foreground leading-relaxed">{lang.benefits.curatedDesc}</p>
       </AnimateOnScroll>
     </div>
   </div>

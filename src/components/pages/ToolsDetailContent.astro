@@ -9,9 +9,6 @@ import AnimatedFAQ from '@/components/tools/AnimatedFAQ';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 import ToolFeedback from '@/components/tools/ToolFeedback.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { Card } from '@/components/ui/card';
 import { getCollection, render } from 'astro:content';
 import { getCategoryName, getCategoryBySlug } from '@/lib/categories';
 import { getTranslations } from '@/lib/i18n/translations';
@@ -66,35 +63,35 @@ const screenshotCount = screenshotPaths.length;
 ---
 
 <BaseLayout title={data.name} description={data.description} {locale}>
-  <article>
-    <div class="relative overflow-hidden border-b border-border/50 bg-gradient-to-b from-background via-muted/20 to-background">
+  <article class="font-mono">
+    <div class="relative overflow-hidden border-b border-border">
       <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
       <div class="container mx-auto px-4 py-12 md:py-16 relative">
-        <a href={backHref} class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <Icon name="tabler:chevron-left" class="text-current" width="14" height="14" />
+        <a href={backHref} class="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <Icon name="tabler:chevron-left" class="text-current" width="12" height="12" />
           {lang.tools.back}
         </a>
         <div class="flex flex-wrap items-center gap-2 mb-4">
           {category && (
-            <span class="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: `light-dark(${category.lightBg}, ${category.darkBg})`, color: category.color }}>
+            <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
               {category.name}
             </span>
           )}
           {data.openSource && (
-            <Badge variant="secondary" class="text-xs">{lang.tools.openSource}</Badge>
+            <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">{lang.tools.openSource}</span>
           )}
           {data.verified && <VerifiedBadge locale={locale} />}
-          <Badge variant="outline" class="text-xs capitalize">{data.pricing}</Badge>
-          <Badge variant="outline" class="text-xs capitalize">{data.technicalLevel}</Badge>
+          <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">{data.pricing}</span>
+          <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">{data.technicalLevel}</span>
           {data.license && (
             <LicenseToggle license={data.license} client:load />
           )}
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 flex items-center gap-3">
-          <ToolLogo toolName={data.name} size={48} />
+        <h1 class="text-3xl md:text-4xl font-normal mb-4 flex items-center gap-3">
+          <ToolLogo toolName={data.name} size={40} />
           {data.name}
         </h1>
-        <p class="text-lg text-muted-foreground max-w-2xl">{data.description}</p>
+        <p class="text-sm md:text-base text-muted-foreground max-w-2xl">{data.description}</p>
         <div class="flex flex-wrap items-center gap-3 mt-5">
           <ToolShareButtons client:load toolName={data.name} toolUrl={Astro.url.href} />
           <FavoriteButton client:load toolId={tool.id} variant="button" size="md" />
@@ -104,11 +101,11 @@ const screenshotCount = screenshotPaths.length;
             href={data.officialSite}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300"
+            class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-[3px] bg-primary text-primary-foreground text-sm hover:opacity-90 transition-opacity"
           >
-            <Icon name="tabler:external-link" class="text-current" width="18" height="18" />
+            <Icon name="tabler:external-link" class="text-current" width="16" height="16" />
             {lang.tools.officialSite}
-            <span class="ml-0.5 opacity-60 group-hover:opacity-100 transition-opacity">→</span>
+            <span class="ml-0.5">→</span>
           </a>
         </div>
       </div>
@@ -158,15 +155,12 @@ const screenshotCount = screenshotPaths.length;
           )}
 
           {data.features.length > 0 && (
-            <div class="mb-10 p-6 rounded-xl bg-muted/30 border border-border/50">
-              <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                <Icon name="tabler:circle-check" class="text-primary" width="18" height="18" />
-                {lang.tools.features}
-              </h2>
+            <div class="mb-10 p-6 border border-border">
+              <p class="kicker mb-4">{lang.tools.features}</p>
               <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {data.features.map((feature: string) => (
                   <li class="flex items-start gap-2 text-sm">
-                    <span class="text-primary shrink-0">✓</span>
+                    <span class="text-accent-lime shrink-0">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -176,10 +170,10 @@ const screenshotCount = screenshotPaths.length;
 
           <div class="mb-10 flex flex-wrap gap-2">
             {data.compatibility.map((platform: string) => (
-              <Badge variant="outline" class="text-xs gap-1 py-1">
+              <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground inline-flex items-center gap-1">
                 <Icon name="tabler:device-desktop" class="text-current" width="10" height="10" />
                 {platform}
-              </Badge>
+              </span>
             ))}
           </div>
 
@@ -230,10 +224,10 @@ const screenshotCount = screenshotPaths.length;
           />
 
           {data.tags.length > 0 && (
-            <div class="mt-10 pt-8 border-t border-border/50">
+            <div class="mt-10 pt-8 border-t border-border">
               <div class="flex flex-wrap gap-2">
                 {data.tags.map((tag: string) => (
-                  <span class="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground">#{tag}</span>
+                  <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">#{tag}</span>
                 ))}
               </div>
             </div>
@@ -242,24 +236,24 @@ const screenshotCount = screenshotPaths.length;
 
         <aside class="lg:col-span-1 lg:order-1">
           <div class="lg:sticky lg:top-24 flex flex-col gap-6">
-            <div class="p-4 rounded-xl border border-border/50 bg-muted/20">
-              <h3 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">{lang.tools.info}</h3>
+            <div class="p-4 border border-border">
+              <p class="kicker mb-3">{lang.tools.info}</p>
               <dl class="flex flex-col gap-3 text-sm">
                 <div>
                   <dt class="text-muted-foreground text-xs">{lang.tools.category}</dt>
-                  <dd class="font-medium">{getCategoryName(data.category)}</dd>
+                  <dd>{getCategoryName(data.category)}</dd>
                 </div>
                 <div>
                   <dt class="text-muted-foreground text-xs">{lang.tools.price}</dt>
-                  <dd class="font-medium capitalize">{data.pricing}</dd>
+                  <dd class="capitalize">{data.pricing}</dd>
                 </div>
                 <div>
                   <dt class="text-muted-foreground text-xs">{lang.tools.level}</dt>
-                  <dd class="font-medium capitalize">{data.technicalLevel}</dd>
+                  <dd class="capitalize">{data.technicalLevel}</dd>
                 </div>
                 <div>
                   <dt class="text-muted-foreground text-xs">{lang.tools.openSource}</dt>
-                  <dd class="font-medium">{data.openSource ? lang.tools.yes : lang.tools.no}</dd>
+                  <dd>{data.openSource ? lang.tools.yes : lang.tools.no}</dd>
                 </div>
               </dl>
             </div>
@@ -269,33 +263,26 @@ const screenshotCount = screenshotPaths.length;
 
       {alternativeTools.length > 0 && (
         <>
-          <Separator class="my-10" />
-          <section>
-            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Icon name="tabler:arrows-shuffle" class="text-primary" width="22" height="22" />
-              <span>{lang.tools.alternatives}</span>
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="my-10 border-t border-border" />
+          <section class="font-mono">
+            <p class="kicker mb-4">{lang.tools.alternatives}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 border-t border-l border-border">
               {alternativeTools.map((alt) => {
                 const altHref = locale === 'en' ? `/en/tools/${alt.id}` : `/tools/${alt.id}`;
                 const altCategory = getCategoryBySlug(alt.data.category);
                 return (
-                <a href={altHref} class="group">
-                  <div class="flex items-start gap-4 p-4 rounded-xl border border-border/50 bg-card hover:shadow-md hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5">
-                    <div class="size-10 rounded-lg shrink-0 flex items-center justify-center bg-muted/50 border border-border/40">
-                      <ToolLogo toolName={alt.data.name} size={20} />
+                <a href={altHref} class="group flex items-start gap-4 p-4 border-r border-b border-border hover:bg-muted/40 transition-colors">
+                  <ToolLogo toolName={alt.data.name} size={20} />
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-0.5">
+                      <h3 class="text-sm truncate">{alt.data.name}</h3>
+                      {altCategory && (
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">{altCategory.name}</span>
+                      )}
                     </div>
-                    <div class="min-w-0 flex-1">
-                      <div class="flex items-center gap-2 mb-0.5">
-                        <h3 class="font-semibold text-sm group-hover:text-primary transition-colors">{alt.data.name}</h3>
-                        {altCategory && (
-                          <span class="text-[10px] px-1.5 py-0.5 rounded border border-border/50 text-muted-foreground">{altCategory.name}</span>
-                        )}
-                      </div>
-                      <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{alt.data.description}</p>
-                    </div>
-                    <Icon name="tabler:chevron-right" class="text-muted-foreground/40 group-hover:text-primary transition-colors shrink-0 mt-2" width="16" height="16" />
+                    <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{alt.data.description}</p>
                   </div>
+                  <Icon name="tabler:arrow-up-right" class="text-muted-foreground/50 group-hover:text-accent-lime transition-colors shrink-0 mt-1" width="14" height="14" />
                 </a>
                 );
               })}
@@ -306,35 +293,28 @@ const screenshotCount = screenshotPaths.length;
 
       {relatedTools.length > 0 && (
         <>
-          <Separator class="my-10" />
-          <section>
-            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Icon name="tabler:layers-linked" class="text-muted-foreground" width="22" height="22" />
-              <span>{lang.tools.related}</span>
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="my-10 border-t border-border" />
+          <section class="font-mono">
+            <p class="kicker mb-4">{lang.tools.related}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
               {relatedTools.map((rel) => {
                 const relHref = locale === 'en' ? `/en/tools/${rel.id}` : `/tools/${rel.id}`;
                 const relCategory = getCategoryBySlug(rel.data.category);
                 return (
-                <a href={relHref} class="group">
-                  <div class="p-4 rounded-xl border border-border/50 bg-card hover:shadow-md hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5 h-full flex flex-col">
-                    <div class="flex items-center gap-3 mb-2">
-                      <div class="size-9 rounded-lg shrink-0 flex items-center justify-center bg-muted/50 border border-border/40">
-                        <ToolLogo toolName={rel.data.name} size={18} />
-                      </div>
-                      <div class="min-w-0">
-                        <h3 class="font-semibold text-sm group-hover:text-primary transition-colors truncate">{rel.data.name}</h3>
-                        {relCategory && (
-                          <span class="text-[10px] text-muted-foreground">{relCategory.name}</span>
-                        )}
-                      </div>
+                <a href={relHref} class="group h-full flex flex-col p-4 border-r border-b border-border hover:bg-muted/40 transition-colors">
+                  <div class="flex items-center gap-3 mb-2">
+                    <ToolLogo toolName={rel.data.name} size={18} />
+                    <div class="min-w-0">
+                      <h3 class="text-sm truncate">{rel.data.name}</h3>
+                      {relCategory && (
+                        <span class="text-[10px] text-muted-foreground">{relCategory.name}</span>
+                      )}
                     </div>
-                    <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed flex-1">{rel.data.description}</p>
-                    <div class="flex items-center gap-1 mt-3 text-xs text-muted-foreground/60 group-hover:text-primary/60 transition-colors">
-                      <span>{lang.tools.viewTool}</span>
-                      <Icon name="tabler:arrow-right" class="text-current" width="12" height="12" />
-                    </div>
+                  </div>
+                  <p class="text-xs text-muted-foreground line-clamp-2 leading-relaxed flex-1">{rel.data.description}</p>
+                  <div class="flex items-center gap-1 mt-3 text-xs text-muted-foreground group-hover:text-accent-lime transition-colors">
+                    <span>{lang.tools.viewTool}</span>
+                    <Icon name="tabler:arrow-right" class="text-current" width="12" height="12" />
                   </div>
                 </a>
                 );

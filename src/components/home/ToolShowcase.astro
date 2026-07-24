@@ -17,44 +17,50 @@ const lang = getTranslations(locale);
 
 const allTools = await getCollection('tools');
 const featuredTools = allTools.filter((t) => t.data.featured);
+
+const pricingLabel: Record<string, string> = {
+  gratis: locale === 'en' ? 'FREE' : 'GRATIS',
+  freemium: 'FREEMIUM',
+  pago: locale === 'en' ? 'PAID' : 'PAGO',
+  'open-source': 'OPEN SOURCE',
+};
 ---
 
-<section class="py-16">
+<section class="py-16 border-t border-border font-mono">
   <div class="container mx-auto px-4">
     <AnimateOnScroll client:load>
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">{lang.home.featuredTitle}</h2>
-        <p class="text-muted-foreground">{lang.home.featuredSubtitle}</p>
+      <p class="kicker mb-4">{lang.home.featuredKicker}</p>
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-normal mb-2">{lang.home.featuredTitle}</h2>
+        <p class="text-sm text-muted-foreground">{lang.home.featuredSubtitle}</p>
       </div>
     </AnimateOnScroll>
 
-    <StaggerReveal client:load className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <StaggerReveal client:load className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
       {featuredTools.map((tool) => {
         const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
         const category = getCategoryBySlug(tool.data.category);
-        const screenshotPath = tool.data.screenshots?.[0] ?? `/screenshots/${tool.id}.webp`;
 
         return (
-          <a href={toolHref} class="group block">
-            <div class="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-              <div class="relative aspect-[16/10] bg-muted/20 overflow-hidden">
-                <img
-                  src={screenshotPath}
-                  alt={`Captura de ${tool.data.name}`}
-                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="p-4">
-                <div class="flex items-center gap-2 mb-2">
-                  <ToolLogo toolName={tool.data.name} size={22} />
-                  <h3 class="font-semibold text-base truncate">{tool.data.name}</h3>
-                </div>
-                {category && (
-                  <span class="text-sm text-muted-foreground">{category.name}</span>
-                )}
-              </div>
+          <a href={toolHref} class="group relative block border-r border-b border-border p-5 hover:bg-muted/40 transition-colors">
+            {tool.data.verified && (
+              <span class="absolute top-3 right-3 text-accent-lime text-sm" aria-hidden="true">✦</span>
+            )}
+            <div class="flex items-center gap-2 mb-3">
+              <ToolLogo toolName={tool.data.name} size={18} />
+              <h3 class="text-sm truncate">{tool.data.name}</h3>
+              <Icon name="tabler:arrow-up-right" class="text-muted-foreground/50 group-hover:text-accent-lime transition-colors shrink-0 ml-auto" width="14" height="14" />
+            </div>
+            <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">{tool.data.description}</p>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
+                {pricingLabel[tool.data.pricing] ?? tool.data.pricing}
+              </span>
+              {category && (
+                <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
+                  {category.name}
+                </span>
+              )}
             </div>
           </a>
         );
@@ -62,10 +68,10 @@ const featuredTools = allTools.filter((t) => t.data.featured);
     </StaggerReveal>
 
     <AnimateOnScroll client:load delay={0.2}>
-      <div class="text-center mt-8">
-        <a href={locale === 'en' ? '/en/tools' : '/tools'} class="text-base text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group">
+      <div class="mt-8">
+        <a href={locale === 'en' ? '/en/tools' : '/tools'} class="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group">
           {lang.home.featuredAllFull}
-          <Icon name="tabler:arrow-right" width="16" height="16" class="group-hover:translate-x-0.5 transition-transform" />
+          <Icon name="tabler:arrow-right" width="14" height="14" class="group-hover:translate-x-0.5 transition-transform" />
         </a>
       </div>
     </AnimateOnScroll>

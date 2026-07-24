@@ -18,8 +18,8 @@ export default function AnimatedFAQ({ items, title = "Preguntas frecuentes" }: A
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold mb-6">{title}</h2>
+    <section className="mb-12 font-mono">
+      <p className="kicker mb-6">{title}</p>
       <div className="flex flex-col gap-2">
         {items.map((faq, i) => (
           <motion.div
@@ -28,13 +28,13 @@ export default function AnimatedFAQ({ items, title = "Preguntas frecuentes" }: A
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: i * 0.08 }}
-            className="rounded-xl border border-border/50 bg-muted/5 overflow-hidden"
+            className="border border-border overflow-hidden"
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full cursor-pointer px-5 py-4 font-medium text-sm flex items-center justify-between gap-3 select-none text-left"
+              className="w-full cursor-pointer px-5 py-4 text-sm flex items-center justify-between gap-3 select-none text-left"
             >
-              <span className={cn("transition-colors", openIndex === i && "text-primary")}>
+              <span className={cn("transition-colors", openIndex === i && "text-accent-lime")}>
                 {faq.question}
               </span>
               <motion.svg

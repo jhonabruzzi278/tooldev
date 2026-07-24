@@ -18,21 +18,22 @@ const allTools = await getCollection('tools');
   description={locale === 'en' ? 'Your favorite developer tools.' : 'Tus herramientas de desarrollo favoritas.'} 
   {locale}
 >
-  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border/50">
+  <section class="relative overflow-hidden py-16 md:py-20 border-b border-border font-mono">
     <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
-    <div class="container mx-auto px-4 text-center relative">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+    <div class="container mx-auto px-4 relative">
+      <p class="kicker mb-4">// {locale === 'en' ? 'FAVORITES' : 'FAVORITOS'}</p>
+      <h1 class="text-3xl md:text-4xl font-normal mb-3">
         {locale === 'en' ? 'Your Favorites' : 'Tus Favoritos'}
       </h1>
-      <p class="text-lg text-muted-foreground">
-        {locale === 'en' 
-          ? 'Tools you have saved for quick access' 
+      <p class="text-sm text-muted-foreground">
+        {locale === 'en'
+          ? 'Tools you have saved for quick access'
           : 'Herramientas que has guardado para acceso rápido'}
       </p>
     </div>
   </section>
-  
-  <section class="py-12">
+
+  <section class="py-12 font-mono">
     <div class="container mx-auto px-4">
       <FavoritesList
         client:load

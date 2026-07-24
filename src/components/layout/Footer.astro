@@ -17,26 +17,25 @@ const navLinks = [
 ];
 ---
 
-<footer class="relative border-t border-border bg-muted/30">
-  <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
-  <div class="container mx-auto px-4 py-16 relative">
+<footer class="relative border-t border-border font-mono">
+  <div class="container mx-auto px-4 py-14 relative">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
       <div class="md:col-span-5">
-        <a href={locale === 'en' ? '/en' : '/'} class="flex items-center gap-2 font-bold text-xl tracking-tight mb-4">
-          <span class="size-7 rounded-lg bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold">T</span>
-          {lang.site.name.slice(0, 4)}<span class="text-muted-foreground">{lang.site.name.slice(4)}</span>
+        <a href={locale === 'en' ? '/en' : '/'} class="flex items-center gap-1.5 text-sm tracking-tight mb-4">
+          <span class="text-accent-lime">&gt;</span>
+          {lang.site.name}
         </a>
-        <p class="text-sm text-muted-foreground leading-relaxed max-w-sm">
+        <p class="text-xs text-muted-foreground leading-relaxed max-w-sm">
           {lang.site.footer}
         </p>
       </div>
 
       <div class="md:col-span-3">
-        <h3 class="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">{lang.nav.tools}</h3>
+        <h3 class="kicker mb-4">{lang.nav.tools}</h3>
         <ul class="flex flex-col gap-3">
           {navLinks.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-muted-foreground/80 hover:text-foreground transition-colors">
+              <a href={link.href} class="text-xs text-muted-foreground hover:text-foreground transition-colors">
                 {link.label}
               </a>
             </li>
@@ -45,10 +44,10 @@ const navLinks = [
       </div>
 
       <div class="md:col-span-4">
-        <h3 class="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">{lang.contact.infoTitle}</h3>
+        <h3 class="kicker mb-4">{lang.contact.infoTitle}</h3>
         <ul class="flex flex-col gap-3">
           <li>
-            <a href="mailto:jonathanguerra278@gmail.com" class="text-sm text-muted-foreground/80 hover:text-foreground transition-colors">
+            <a href="mailto:jonathanguerra278@gmail.com" class="text-xs text-muted-foreground hover:text-foreground transition-colors">
               jonathanguerra278@gmail.com
             </a>
           </li>
@@ -56,12 +55,12 @@ const navLinks = [
       </div>
     </div>
 
-    <div class="mt-16 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-muted-foreground/60">
+    <div class="mt-14 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
+      <p>
         © {new Date().getFullYear()} {lang.site.name}. {lang.site.rights}
       </p>
-      <p class="text-sm text-muted-foreground/60">
-        {lang.site.developedBy} <span class="font-medium text-foreground/80">Jonathan Guerra</span>
+      <p>
+        {lang.site.developedBy} <span class="text-foreground">Jonathan Guerra</span>
       </p>
     </div>
   </div>

@@ -1,11 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolLogo from '@/components/tools/ToolLogo.astro';
-import VerifiedBadge from '@/components/tools/VerifiedBadge.astro';
 import LicenseToggle from '@/components/tools/LicenseToggle';
 import FavoriteButton from '@/components/tools/FavoriteButton';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { getCategoryName, getCategoryBySlug } from '@/lib/categories';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
@@ -21,44 +18,46 @@ const { data } = tool;
 const category = getCategoryBySlug(data.category);
 const lang = getTranslations(locale);
 const toolHref = locale === 'en' ? `/en/tools/${tool.id}` : `/tools/${tool.id}`;
+
+const pricingLabel: Record<string, string> = {
+  gratis: locale === 'en' ? 'FREE' : 'GRATIS',
+  freemium: 'FREEMIUM',
+  pago: locale === 'en' ? 'PAID' : 'PAGO',
+  'open-source': 'OPEN SOURCE',
+};
 ---
 
-<a href={toolHref} class="group relative">
-  <Card class="h-full overflow-hidden border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+<a href={toolHref} class="group relative block h-full border border-border p-5 hover:bg-muted/40 transition-colors font-mono">
+  {data.verified && (
+    <span class="absolute top-4 right-11 text-accent-lime text-sm" aria-hidden="true">✦</span>
+  )}
+  <div class="absolute top-3 right-3 z-10">
+    <FavoriteButton client:load toolId={tool.id} size="sm" />
+  </div>
+  <div class="flex items-center gap-2 mb-3 pr-16">
+    <ToolLogo toolName={data.name} size={20} />
+    <h3 class="text-sm truncate">{data.name}</h3>
+  </div>
+
+  <p class="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-4">{data.description}</p>
+
+  <div class="flex items-center gap-2 flex-wrap">
+    <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
+      {pricingLabel[data.pricing] ?? data.pricing}
+    </span>
     {category && (
-      <div class="h-1" style={`background: linear-gradient(90deg, ${category.color}, ${category.color}88)`} />
+      <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
+        {getCategoryName(data.category)}
+      </span>
     )}
-    <div class="absolute top-4 right-4 z-10">
-      <FavoriteButton client:load toolId={tool.id} size="sm" />
-    </div>
-    <div class="p-5">
-      <div class="flex items-start justify-between gap-3 mb-3">
-        <div class="flex items-center gap-2 min-w-0">
-          <ToolLogo toolName={data.name} size={24} />
-          <h3 class="font-semibold text-base truncate">{data.name}</h3>
-          {data.openSource && (
-            <span class="shrink-0 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <Icon name="tabler:code" class="text-current" width="10" height="10" />
-              {lang.tools.openSource}
-            </span>
-          )}
-          {data.verified && <VerifiedBadge locale={locale} />}
-        </div>
-      </div>
-
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-xs font-medium px-2 py-0.5 rounded-full border border-border/60 text-muted-foreground">{getCategoryName(data.category)}</span>
-      </div>
-
-      <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">{data.description}</p>
-
-      <div class="flex items-center gap-2 flex-wrap">
-        <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.pricing}</Badge>
-        <Badge variant="outline" class="text-[10px] px-1.5 py-0 h-4 capitalize font-normal">{data.technicalLevel}</Badge>
-        {data.license && (
-          <LicenseToggle license={data.license} size="sm" client:load />
-        )}
-      </div>
-    </div>
-  </Card>
+    {data.openSource && (
+      <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground inline-flex items-center gap-1">
+        <Icon name="tabler:code" class="text-current" width="10" height="10" />
+        {lang.tools.openSource}
+      </span>
+    )}
+    {data.license && (
+      <LicenseToggle license={data.license} size="sm" client:load />
+    )}
+  </div>
 </a>
