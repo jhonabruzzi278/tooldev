@@ -1,4 +1,4 @@
-﻿---
+---
 name: Anime.js
 description: Librería de animación JavaScript ligera y potente para crear animaciones web fluidas con una API simple y expresiva.
 category: frontend

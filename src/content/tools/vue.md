@@ -1,4 +1,4 @@
-﻿---
+---
 name: Vue.js
 description: Framework progresivo para construir interfaces de usuario con un enfoque reactivo, simple y flexible.
 category: frontend

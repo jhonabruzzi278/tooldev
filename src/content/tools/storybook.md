@@ -1,4 +1,4 @@
-﻿---
+---
 name: Storybook
 description: Taller frontend para desarrollar, documentar y testear componentes UI de forma aislada con hot-reload.
 category: frontend

@@ -1,4 +1,4 @@
-﻿---
+---
 name: Next.js
 description: Framework React full-stack con renderizado híbrido, rutas anidadas y optimización automática.
 category: frontend

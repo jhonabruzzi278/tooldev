@@ -1,4 +1,4 @@
-﻿---
+---
 name: Obsidian
 description: Base de conocimiento personal con markdown, graph view, plugins y vinculación bidireccional para pensamiento conectado.
 category: productividad

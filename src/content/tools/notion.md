@@ -1,4 +1,4 @@
-﻿---
+---
 name: Notion
 description: Espacio de trabajo unificado para notas, documentación, gestión de proyectos y bases de datos colaborativas.
 category: productividad

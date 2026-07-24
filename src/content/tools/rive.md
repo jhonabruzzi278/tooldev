@@ -1,4 +1,4 @@
-﻿---
+---
 name: Rive
 description: Herramienta de diseño y animación interactiva en tiempo real para interfaces, juegos y experiencias web.
 category: frontend

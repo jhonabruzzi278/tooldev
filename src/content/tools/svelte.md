@@ -1,4 +1,4 @@
-﻿---
+---
 name: Svelte
 description: Framework UI que compila componentes a JavaScript vanilla, eliminando el Virtual DOM para apps ultrarrápidas.
 category: frontend

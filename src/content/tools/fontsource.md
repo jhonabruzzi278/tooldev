@@ -1,4 +1,4 @@
-﻿---
+---
 name: Fontsource
 description: Paquetería NPM para auto-hospedar más de 1500 fuentes open source con versionado, sin dependencia externa de CDN.
 category: frontend

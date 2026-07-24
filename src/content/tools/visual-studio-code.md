@@ -1,4 +1,4 @@
-﻿---
+---
 name: Visual Studio Code
 description: Editor de código fuente ligero pero potente con soporte para cientos de extensiones y lenguajes.
 category: productividad

@@ -1,4 +1,4 @@
-﻿---
+---
 name: GSAP
 description: Biblioteca de animaciones JavaScript profesional de alto rendimiento para la web, compatible con todos los navegadores modernos.
 category: frontend

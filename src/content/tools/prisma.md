@@ -1,4 +1,4 @@
-﻿---
+---
 name: Prisma
 description: ORM moderno para TypeScript y Node.js con schema declarativo, migraciones, y cliente autogenerado type-safe.
 category: backend

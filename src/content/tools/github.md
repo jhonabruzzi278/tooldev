@@ -1,4 +1,4 @@
-﻿---
+---
 name: GitHub
 description: Plataforma líder de desarrollo colaborativo con control de versiones Git, CI/CD y gestión de proyectos.
 category: devops

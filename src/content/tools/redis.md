@@ -1,4 +1,4 @@
-﻿---
+---
 name: Redis
 description: Almacén de estructura de datos en memoria de código abierto usado como caché, base de datos y message broker.
 category: backend

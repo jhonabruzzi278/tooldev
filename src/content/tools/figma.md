@@ -1,4 +1,4 @@
-﻿---
+---
 name: Figma
 description: Herramienta de diseño colaborativo basada en navegador para crear interfaces, prototipos y sistemas de diseño en equipo.
 category: diseno

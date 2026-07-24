@@ -1,4 +1,4 @@
-﻿---
+---
 name: Codex
 description: Agente de ingeniería de software de OpenAI que ejecuta tareas de código en un entorno sandbox seguro. Lee tu codebase, escribe código, ejecuta tests y crea pull requests de forma completamente autónoma.
 category: agentes

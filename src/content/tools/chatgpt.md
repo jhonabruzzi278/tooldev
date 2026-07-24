@@ -1,4 +1,4 @@
-﻿---
+---
 name: ChatGPT
 description: Asistente de IA conversacional con generación de texto, análisis, código, traducción y razonamiento avanzado.
 category: ia

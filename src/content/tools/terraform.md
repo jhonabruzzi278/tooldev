@@ -1,4 +1,4 @@
-﻿---
+---
 name: Terraform
 description: Herramienta de infraestructura como código (IaC) de HashiCorp para provisionar y gestionar recursos cloud con archivos de configuración declarativos.
 category: devops

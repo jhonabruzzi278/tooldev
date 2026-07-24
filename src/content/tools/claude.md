@@ -1,4 +1,4 @@
-﻿---
+---
 name: Claude
 description: Asistente de IA de Anthropic con capacidades avanzadas de razonamiento, codificación y análisis de documentos. Destaca por seguir instrucciones complejas con precisión y mantener conversaciones largas con alta coherencia.
 category: agentes

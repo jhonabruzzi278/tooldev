@@ -1,4 +1,4 @@
-﻿---
+---
 name: Canva
 description: Plataforma de diseño gráfico online para crear presentaciones, redes sociales, logos y materiales visuales sin experiencia previa.
 category: diseno

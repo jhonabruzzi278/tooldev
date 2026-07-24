@@ -1,4 +1,4 @@
-﻿---
+---
 name: Node.js
 description: Entorno de ejecución JavaScript del lado del servidor basado en V8, ideal para APIs, microservicios y herramientas CLI.
 category: backend

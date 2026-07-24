@@ -16,7 +16,7 @@ description: Herramienta para crear fondos de gradientes 3D animados y hermosos 
 - **License:** MIT
 - **Technical Level:** intermedio
 - **Compatibility:** React, Next.js, Web, Three.js
-- **Official Site:** https://www.shadergradient.co
+- **Official Site:** https://shadergradient.co/
 - **GitHub:** https://github.com/ruucm/shadergradient
 - **Alternatives:** mesh-gradient, css-gradient-generator
 
@@ -83,6 +83,6 @@ tput: "Un fondo animado con efecto de agua ondulante usando tres colores que se 
 - **¿Cómo ajusto el gradiente para que sea responsive?** El canvas se adapta automáticamente al contenedor padre. Usa CSS width: 100% y height: 100% en el ShaderGradientCanvas y ajusta cameraZoom para diferentes breakpoints si necesitas control fino del encuadre.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://www.shadergradient.co
+- **Official Site Unreachable:** Verify the URL at https://shadergradient.co/
 - **Source Code Issues:** Check the repository at https://github.com/ruucm/shadergradient for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

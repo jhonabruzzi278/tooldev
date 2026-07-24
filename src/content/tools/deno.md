@@ -1,4 +1,4 @@
-﻿---
+---
 name: Deno
 description: Runtime moderno de JavaScript/TypeScript con seguridad por defecto, estándares web y herramientas integradas.
 category: backend

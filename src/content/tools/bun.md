@@ -1,4 +1,4 @@
-﻿---
+---
 name: Bun
 description: Runtime JavaScript todo-en-uno con bundler, test runner, package manager y alta velocidad de ejecución.
 category: backend

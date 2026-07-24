@@ -1,4 +1,4 @@
-﻿---
+---
 name: Docker
 description: Plataforma de contenedores para empaquetar, distribuir y ejecutar aplicaciones en entornos aislados y reproducibles.
 category: devops

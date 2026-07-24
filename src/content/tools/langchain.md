@@ -1,4 +1,4 @@
-﻿---
+---
 name: LangChain
 description: Framework para construir aplicaciones con LLMs mediante cadenas, agentes, herramientas y memoria modular.
 category: ia

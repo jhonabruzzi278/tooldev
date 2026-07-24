@@ -1,4 +1,4 @@
-﻿---
+---
 name: Playwright
 description: Framework de testing E2E multiplataforma de Microsoft para navegadores modernos con una sola API.
 category: frontend

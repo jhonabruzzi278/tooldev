@@ -1,4 +1,4 @@
-﻿---
+---
 name: PocketBase
 description: Backend open-source todo-en-uno con base de datos SQLite embebida, autenticación, archivos y UI admin.
 category: backend

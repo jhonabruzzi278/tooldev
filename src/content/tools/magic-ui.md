@@ -1,4 +1,4 @@
-﻿---
+---
 name: Magic UI
 description: Biblioteca de componentes React animados con Framer Motion y Tailwind CSS para landing pages y interfaces modernas.
 category: frontend

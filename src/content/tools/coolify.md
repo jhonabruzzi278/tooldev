@@ -1,4 +1,4 @@
-﻿---
+---
 name: Coolify
 description: Plataforma PaaS auto-gestionada con deploy de aplicaciones, bases de datos y servicios sin configurar servidores manualmente.
 category: devops

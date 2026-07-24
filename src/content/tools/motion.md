@@ -1,4 +1,4 @@
-﻿---
+---
 name: Motion
 description: Biblioteca de animaciones moderna para React con API declarativa, layout animations y gesture support.
 category: frontend

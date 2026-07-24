@@ -1,4 +1,4 @@
-﻿---
+---
 name: Neon
 description: Base de datos serverless PostgreSQL con branching, escalado automático y storage separado de cómputo.
 category: backend

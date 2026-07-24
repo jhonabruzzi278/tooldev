@@ -16,8 +16,8 @@ description: Librería de componentes React optimizada para construir interfaces
 - **License:** MIT
 - **Technical Level:** avanzado
 - **Compatibility:** React, Next.js, TypeScript, Node.js
-- **Official Site:** https://claudekit.dev
-- **GitHub:** https://github.com/anthropics/claude-code-sdk-python
+- **Official Site:** https://github.com/claudekit
+- **GitHub:** https://github.com/claudekit
 - **Alternatives:** vercel-ai-sdk, langchain-js
 
 ## Features
@@ -85,6 +85,6 @@ tput: "Una interfaz de chat completa con historial de mensajes scrolleable y cam
 - **¿Es seguro usar ClaudeKit en producción?** Sí, siempre que implementes la llamada a la API en el servidor. Nunca expongas tu API key de Anthropic en el código del cliente. Usa API routes, middleware de rate limiting y validación de entrada para producción.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://claudekit.dev
-- **Source Code Issues:** Check the repository at https://github.com/anthropics/claude-code-sdk-python for known issues.
+- **Official Site Unreachable:** Verify the URL at https://github.com/claudekit
+- **Source Code Issues:** Check the repository at https://github.com/claudekit for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

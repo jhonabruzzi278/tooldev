@@ -14,7 +14,7 @@ description: Plataforma de inferencia rápida para ejecutar modelos LLM open-sou
 - **Pricing:** freemium
 - **Technical Level:** avanzado
 - **Compatibility:** Web, Linux, macOS, Windows
-- **Official Site:** https://fireworks.ai
+- **Official Site:** https://fireworks.ai/
 - **GitHub:** https://github.com/fw-ai
 
 ## Features
@@ -77,6 +77,6 @@ tput: "Respuesta generada por Llama 3.1 70B con latencia típica de 200-400ms pa
 - **¿Fireworks AI es adecuado para producción?** Sí, está diseñado para cargas de trabajo de producción con SLAs de disponibilidad, escalado automático, rate limiting configurable y monitoreo integrado. Muchas empresas lo usan como backend de inferencia para aplicaciones con millones de usuarios.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://fireworks.ai
+- **Official Site Unreachable:** Verify the URL at https://fireworks.ai/
 - **Source Code Issues:** Check the repository at https://github.com/fw-ai for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

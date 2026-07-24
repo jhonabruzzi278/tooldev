@@ -10,7 +10,7 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 
 - Unificar decenas de herramientas técnicas en una experiencia de navegación clara y bilingüe.
 - Presentar información detallada (features, capturas, FAQ, alternativas) sin saturar la interfaz.
-- Mantener consistencia visual entre 64 herramientas distribuidas en 6 categorías.
+- Mantener consistencia visual entre 102 herramientas distribuidas en 7 categorías.
 - Garantizar SEO, accesibilidad y rendimiento en un sitio 100% estático.
 
 ### La Solución
@@ -25,9 +25,9 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 ### Resultados
 
 - **150 páginas generadas** en build estático (~7s), incluyendo versiones en ambos idiomas.
-- **43 tests automatizados** (unitarios, integración, componentes) con Vitest.
+- **131 tests automatizados** (unitarios, integración, componentes) con Vitest — todos pasando, con CI en GitHub Actions y coverage medido (ver [`aidlc-docs/testing/`](./aidlc-docs/testing/)).
 - **Navegación intuitiva** entre categorías (Frontend, Backend, DevOps, IA, Diseño, Productividad).
-- **64 herramientas documentadas** con capturas, features, alternativas y FAQ.
+- **102 herramientas documentadas** con capturas, features, alternativas y FAQ.
 - **SEO optimizado** con metadatos, sitemap y datos estructurados.
 - **100% responsivo** con Tailwind CSS v4 y componentes shadcn/ui.
 
@@ -68,7 +68,7 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 - **Render API**: Actualizado a `render(entry)` para Astro v6.
 - **Rutas dinámicas**: `[slug]` generadas correctamente en `static` output.
 - **i18n centralizado**: Traducciones en `src/lib/i18n/translations.ts` con tipado completo.
-- **Tests**: 43 tests (unitarios, integración, componentes) con Vitest.
+- **Tests**: 110 tests (unitarios, integración, componentes) con Vitest.
 
 ### Estado Técnico
 
@@ -78,7 +78,7 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 - ✅ SEO completo (canonical, OG, Twitter, JSON-LD, Sitemap).
 - ✅ Modo oscuro adaptativo en todos los componentes.
 - ✅ i18n ES/EN con rutas internacionalizadas.
-- ✅ Tests: 9 suites, 43 tests — todos pasando.
+- ✅ Tests: 18 suites, 131 tests — todos pasando. CI en GitHub Actions con coverage.
 - ✅ Accesibilidad: skip link, aria-current, prefers-reduced-motion.
 
 ## Estructura del Proyecto
@@ -140,6 +140,20 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 npm install
 npm run dev
 ```
+
+## 📋 Documentación del Proyecto (AI-DLC)
+
+Este proyecto sigue la metodología AI-DLC. Estado actual: **LATE CONSTRUCTION** (sitio live en producción; Operations pendiente de instrumentar).
+
+Documentación completa en [`/aidlc-docs/`](./aidlc-docs/):
+- [Requirements](./aidlc-docs/requirements/) — Intent, Requirements, Stakeholders
+- [User Stories](./aidlc-docs/story-artifacts/) — Stories + Acceptance Criteria (consolidados de `.kiro/specs/`)
+- [Architecture](./aidlc-docs/design-artifacts/ARCHITECTURE.md) — Domain Model, Logical Design, ADRs
+- [Testing Strategy](./aidlc-docs/testing/TEST_STRATEGY.md) — estado real: 131/131 tests, coverage 49.89%
+- [Deployment](./aidlc-docs/deployment/) — checklist + CI en GitHub Actions
+- [Operations](./aidlc-docs/operations/) — pendiente (placeholders con roadmap)
+
+Última auditoría: 2026-07-23
 
 ## Licencia
 

@@ -1,4 +1,4 @@
-﻿---
+---
 name: Linear
 description: Herramienta de gestión de proyectos moderna y ultrarrápida para equipos de ingeniería y producto.
 category: productividad

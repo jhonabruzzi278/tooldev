@@ -1,4 +1,4 @@
-﻿---
+---
 name: Hono
 description: Framework web ultraligero para edge computing y entornos serverless con máxima velocidad y rendimiento.
 category: backend

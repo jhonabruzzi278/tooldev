@@ -1,4 +1,4 @@
-﻿---
+---
 name: Framer
 description: Herramienta de diseño interactivo para prototipado avanzado con animaciones, componentes y publicación web.
 category: diseno

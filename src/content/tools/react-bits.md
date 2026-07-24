@@ -1,4 +1,4 @@
-﻿---
+---
 name: React Bits
 description: Colección de componentes React animados e interactivos diseñados para UIs modernas con efectos visuales atractivos y código limpio.
 category: frontend

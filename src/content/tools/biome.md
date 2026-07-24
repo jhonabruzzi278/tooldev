@@ -1,4 +1,4 @@
-﻿---
+---
 name: Biome
 description: Linter y formatter unificado escrito en Rust, compatible con ESLint y Prettier, con velocidad 10x más rápida.
 category: frontend

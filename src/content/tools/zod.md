@@ -1,4 +1,4 @@
-﻿---
+---
 name: Zod
 description: Biblioteca TypeScript-first para validación de esquemas con inferencia de tipos automática y composición declarativa.
 category: backend

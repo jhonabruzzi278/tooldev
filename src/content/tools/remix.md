@@ -1,4 +1,4 @@
-﻿---
+---
 name: Remix
 description: Framework web full-stack con estándares web, renderizado híbrido y experiencias de usuario rápidas y resilientes.
 category: frontend

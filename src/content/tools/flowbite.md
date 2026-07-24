@@ -1,4 +1,4 @@
-﻿---
+---
 name: Flowbite
 description: Biblioteca de componentes UI basada en Tailwind CSS con más de 400 componentes interactivos, temas y soporte multi-framework.
 category: frontend

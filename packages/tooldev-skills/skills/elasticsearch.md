@@ -1,4 +1,4 @@
-﻿---
+---
 name: elasticsearch
 description: Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda. Úsala cuando el usuario mencione o pregunte sobre búsqueda, análisis, logs, lucene.
 ---

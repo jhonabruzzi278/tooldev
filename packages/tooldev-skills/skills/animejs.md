@@ -16,7 +16,7 @@ description: Librería de animación JavaScript ligera y potente para crear anim
 - **License:** MIT
 - **Technical Level:** intermedio
 - **Compatibility:** Windows, macOS, Linux, Web, React, Vue, Svelte
-- **Official Site:** https://animejs.com
+- **Official Site:** https://animejs.com/
 - **GitHub:** https://github.com/juliangarnier/anime
 - **Alternatives:** gsap, framer-motion
 
@@ -89,6 +89,6 @@ tput: "El título, subtítulo y botón aparecen en secuencia solapada creando un
 - **¿Cuál es el impacto en rendimiento de Anime.js?** Anime.js es muy eficiente para animaciones web típicas. Usa requestAnimationFrame internamente y permite animar propiedades que no causan reflow (transform, opacity) para mantener 60fps. Para cientos de elementos simultáneos, considera Canvas o WebGL.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://animejs.com
+- **Official Site Unreachable:** Verify the URL at https://animejs.com/
 - **Source Code Issues:** Check the repository at https://github.com/juliangarnier/anime for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

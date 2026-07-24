@@ -1,4 +1,4 @@
-﻿---
+---
 name: PyTorch
 description: Framework de deep learning open source con computación dinámica, ideal para investigación y producción.
 category: ia

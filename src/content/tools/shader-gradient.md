@@ -1,4 +1,4 @@
-﻿---
+---
 name: Shader Gradient
 description: Herramienta para crear fondos de gradientes 3D animados y hermosos usando shaders WebGL, con componente React listo para integrar.
 category: frontend

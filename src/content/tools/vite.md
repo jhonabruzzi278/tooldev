@@ -1,4 +1,4 @@
-﻿---
+---
 name: Vite
 description: Entorno de desarrollo frontend ultrarrápido con HMR instantáneo, build optimizado y soporte nativo para ESM.
 category: frontend

@@ -16,7 +16,7 @@ description: Colección de componentes React animados e interactivos diseñados 
 - **License:** MIT
 - **Technical Level:** intermedio
 - **Compatibility:** React, Next.js, Vite, TypeScript
-- **Official Site:** https://reactbits.dev
+- **Official Site:** https://reactbits.dev/
 - **GitHub:** https://github.com/DavidHDev/react-bits
 - **Alternatives:** framer-motion, aceternity-ui
 
@@ -80,6 +80,6 @@ tput: "Un título hero donde las palabras aparecen una por una con efecto de esc
 - **¿Puedo contribuir componentes a React Bits?** Sí, el proyecto es open-source con licencia MIT. Puedes hacer fork del repositorio, añadir tus componentes siguiendo las convenciones del proyecto y abrir un pull request para que sea revisado por la comunidad.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://reactbits.dev
+- **Official Site Unreachable:** Verify the URL at https://reactbits.dev/
 - **Source Code Issues:** Check the repository at https://github.com/DavidHDev/react-bits for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

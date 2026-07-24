@@ -1,4 +1,4 @@
-﻿---
+---
 name: Drizzle ORM
 description: ORM TypeScript ligero y tipado con SQL-like API, rendimiento nativo y zero-dependency runtime.
 category: backend

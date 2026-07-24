@@ -1,4 +1,4 @@
-﻿---
+---
 name: Slack
 description: Plataforma de comunicación empresarial con canales, mensajería directa, integraciones y automatizaciones.
 category: productividad

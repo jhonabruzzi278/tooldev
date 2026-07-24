@@ -16,7 +16,7 @@ description: Plataforma de seguridad para desarrolladores que encuentra y corrig
 - **License:** Apache-2.0
 - **Technical Level:** intermedio
 - **Compatibility:** Windows, macOS, Linux, Web
-- **Official Site:** https://snyk.io
+- **Official Site:** https://snyk.io/es/
 - **GitHub:** https://github.com/snyk/snyk
 
 ## Features
@@ -98,6 +98,6 @@ tput: "Pipeline de CI que bloquea merges cuando se detectan vulnerabilidades de 
 - **¿Cómo maneja Snyk los falsos positivos?** Puedes marcar vulnerabilidades como no aplicables usando archivos de política .snyk o desde la interfaz web. Snyk también proporciona contexto de explotabilidad para ayudarte a priorizar qué vulnerabilidades son realmente riesgosas en tu contexto específico.
 
 ## Troubleshooting
-- **Official Site Unreachable:** Verify the URL at https://snyk.io
+- **Official Site Unreachable:** Verify the URL at https://snyk.io/es/
 - **Source Code Issues:** Check the repository at https://github.com/snyk/snyk for known issues.
 - **Version Mismatch:** Always refer to the official docs for the latest version-specific guidance.

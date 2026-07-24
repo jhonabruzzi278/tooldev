@@ -1,4 +1,4 @@
-﻿---
+---
 name: Appwrite
 description: Plataforma backend-as-a-service open-source con autenticación, bases de datos, almacenamiento y funciones serverless.
 category: backend

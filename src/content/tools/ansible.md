@@ -1,4 +1,4 @@
-﻿---
+---
 name: Ansible
 description: Motor de automatización IT para configuración, aprovisionamiento, despliegue y orquestación sin agentes.
 category: devops

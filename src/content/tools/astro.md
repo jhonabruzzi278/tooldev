@@ -1,4 +1,4 @@
-﻿---
+---
 name: Astro
 description: Framework web moderno que genera sitios estáticos ultra rápidos con islas de interactividad y soporte para múltiples frameworks.
 category: frontend

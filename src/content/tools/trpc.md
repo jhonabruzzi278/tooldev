@@ -1,4 +1,4 @@
-﻿---
+---
 name: tRPC
 description: Framework para construir APIs end-to-end typesafe con TypeScript automático entre cliente y servidor.
 category: backend

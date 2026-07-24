@@ -1,4 +1,4 @@
-﻿---
+---
 name: Kubernetes
 description: Plataforma open source para orquestar contenedores, automatizar despliegues, escalado y gestión de aplicaciones.
 category: devops

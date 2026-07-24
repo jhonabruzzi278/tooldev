@@ -1,4 +1,4 @@
-﻿---
+---
 name: Midjourney
 description: Generador de imágenes por IA con calidad artística superior, control de estilos y composición mediante prompts.
 category: ia

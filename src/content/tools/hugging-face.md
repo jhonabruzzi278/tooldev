@@ -1,4 +1,4 @@
-﻿---
+---
 name: Hugging Face
 description: Plataforma líder para modelos de machine learning, datasets, spaces y la comunidad de IA más grande del mundo.
 category: ia

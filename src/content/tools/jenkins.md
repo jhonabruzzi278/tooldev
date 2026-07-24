@@ -1,4 +1,4 @@
-﻿---
+---
 name: Jenkins
 description: Servidor de automatización CI/CD extensible para construir, probar y desplegar software de forma continua.
 category: devops

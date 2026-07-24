@@ -1,4 +1,4 @@
-﻿---
+---
 name: GitHub Copilot
 description: Asistente de programación impulsado por IA que sugiere código y funciones completas directamente en tu editor.
 category: ia

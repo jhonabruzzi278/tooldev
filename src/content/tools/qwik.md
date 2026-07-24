@@ -1,4 +1,4 @@
-﻿---
+---
 name: Qwik
 description: Framework web resumible con rendimiento instantáneo de carga, diseñado para cualquier sitio o aplicación.
 category: frontend

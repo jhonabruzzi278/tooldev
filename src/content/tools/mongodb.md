@@ -1,4 +1,4 @@
-﻿---
+---
 name: MongoDB
 description: Base de datos NoSQL documental orientada a objetos JSON flexibles con escalado horizontal nativo.
 category: backend

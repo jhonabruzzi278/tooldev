@@ -1,4 +1,4 @@
-﻿---
+---
 name: Railway
 description: Plataforma de despliegue serverless con infraestructura simplificada, escalado automático y zero-config.
 category: devops

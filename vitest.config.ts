@@ -11,8 +11,15 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     coverage: {
       provider: 'v8',
+      reporter: ['text', 'json-summary', 'html'],
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/__tests__/**', 'src/content/**', 'src/pages/**'],
+      thresholds: {
+        statements: 45,
+        branches: 30,
+        functions: 30,
+        lines: 48,
+      },
     },
   },
   resolve: {
