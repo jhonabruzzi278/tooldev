@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer.astro';
 import SEOHead from '@/components/shared/SEOHead.astro';
 import type { Locale } from '@/lib/i18n/translations';
 import ChatIA from '@/components/shared/ChatIA';
-import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
+import geistMonoLatin from '@fontsource/geist-mono/files/geist-mono-latin-400-normal.woff2';
 
 interface Props {
   title: string;
@@ -22,11 +22,13 @@ const { title, description, ogImage, locale = 'es' } = Astro.props;
     <SEOHead {title} {description} {ogImage} {locale} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={geistMonoLatin} as="font" type="font/woff2" crossorigin />
     <link rel="preconnect" href="https://api.svgl.app" />
     <script is:inline>
       const theme = localStorage.getItem('theme');
-      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldBeDark = theme === 'dark' || (theme !== 'light' && prefersDark);
+      if (shouldBeDark) {
         document.documentElement.classList.add('dark');
       }
     </script>

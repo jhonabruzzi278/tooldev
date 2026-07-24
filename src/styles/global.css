@@ -5,32 +5,13 @@
 @import "@fontsource/geist-mono/500.css";
 @import "@fontsource/geist-mono/600.css";
 @import "@fontsource/geist-mono/700.css";
-/* inter-latin-ext-wght-normal */
-@font-face {
-  font-family: 'Inter Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url(@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
-
-/* inter-latin-wght-normal */
-@font-face {
-  font-family: 'Inter Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url(@fontsource-variable/inter/files/inter-latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
     --font-heading: var(--font-mono);
-    --font-sans: 'Geist Mono', 'Inter Variable', ui-monospace, monospace;
+    --font-sans: 'Geist Mono', ui-monospace, monospace;
     --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -158,72 +139,65 @@
     @apply font-sans;
   }
 
-  .prose {
-    --tw-prose-body: oklch(0.4 0.03 280);
-    --tw-prose-headings: oklch(0.15 0.03 280);
-    --tw-prose-links: oklch(0.45 0.24 265);
-    --tw-prose-bold: oklch(0.15 0.03 280);
-    --tw-prose-quotes: oklch(0.4 0.03 280);
-    --tw-prose-quote-borders: oklch(0.45 0.24 265);
-    --tw-prose-code: oklch(0.15 0.03 280);
-    --tw-prose-hr: oklch(0.9 0.015 280);
-    --tw-prose-th-borders: oklch(0.9 0.015 280);
-    --tw-prose-td-borders: oklch(0.9 0.015 280);
-    --tw-prose-bullets: oklch(0.45 0.24 265);
-  }
+}
 
-  .prose h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.25rem;
-  }
+/*
+ * Unlayered on purpose: @tailwindcss/typography registers .prose's own
+ * --tw-prose-* defaults in a higher-precedence layer than @layer base, so an
+ * override placed in base is silently shadowed. Unlayered rules always beat
+ * layered ones regardless of order, which is what actually makes this win.
+ */
+.prose {
+  --tw-prose-body: var(--muted-foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--accent-lime);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--muted-foreground);
+  --tw-prose-quote-borders: var(--accent-lime);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+  --tw-prose-bullets: var(--accent-lime);
+}
 
-  .prose h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
 
-  .prose p {
-    line-height: 1.75;
-    margin-bottom: 1rem;
-  }
+.prose h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
-  .prose ul {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
+.prose p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
 
-  .prose li {
-    margin-top: 0.375rem;
-    margin-bottom: 0.375rem;
-    line-height: 1.65;
-  }
+.prose ul {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
 
-  .prose li::marker {
-    color: var(--tw-prose-bullets);
-  }
+.prose li {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.65;
+}
 
-  .prose strong {
-    font-weight: 600;
-  }
+.prose li::marker {
+  color: var(--tw-prose-bullets);
+}
 
-  .dark .prose {
-    --tw-prose-body: oklch(0.8 0.02 280);
-    --tw-prose-headings: oklch(0.96 0.01 280);
-    --tw-prose-links: oklch(0.7 0.22 265);
-    --tw-prose-bold: oklch(0.96 0.01 280);
-    --tw-prose-quotes: oklch(0.8 0.02 280);
-    --tw-prose-quote-borders: oklch(0.55 0.2 265);
-    --tw-prose-code: oklch(0.96 0.01 280);
-    --tw-prose-hr: oklch(0.28 0.03 280);
-    --tw-prose-th-borders: oklch(0.28 0.03 280);
-    --tw-prose-td-borders: oklch(0.28 0.03 280);
-    --tw-prose-bullets: oklch(0.7 0.22 265);
-  }
+.prose strong {
+  font-weight: 600;
 }
 
 @utility kicker {

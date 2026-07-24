@@ -79,7 +79,7 @@ export default function LicenseToggle({ license, size = "md", className }: Licen
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute z-50 mt-1 left-0"
           >
-            <Card size="sm" className="w-72 p-3 text-xs leading-relaxed shadow-lg">
+            <Card size="sm" className="w-72 p-3 text-xs leading-relaxed rounded-[3px] ring-0 border border-border font-mono">
               {info ? (
                 <>
                   <p className="text-muted-foreground">{info.explanation}</p>
@@ -88,7 +88,7 @@ export default function LicenseToggle({ license, size = "md", className }: Licen
                       href={info.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 mt-2 text-primary hover:underline"
+                      className="inline-flex items-center gap-1 mt-2 text-accent-lime hover:underline"
                     >
                       Más información
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

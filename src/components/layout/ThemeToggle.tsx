@@ -12,13 +12,11 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem('theme') as ThemeMode | null;
     const currentMode = stored || 'auto';
     setMode(currentMode);
-    
-    if (currentMode === 'auto') {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setIsDark(document.documentElement.classList.contains('dark') || prefersDark);
-    } else {
-      setIsDark(currentMode === 'dark');
-    }
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = currentMode === 'dark' || (currentMode === 'auto' && prefersDark);
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle('dark', shouldBeDark);
   }, []);
 
   useEffect(() => {

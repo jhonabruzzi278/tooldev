@@ -37,7 +37,7 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
 
   return (
     <>
-      <div className="relative mb-8 rounded-xl overflow-hidden border border-border/50 bg-muted/20 shadow-sm group">
+      <div className="relative mb-8 overflow-hidden border border-border font-mono group">
         <img
           src={images[current]}
           alt={`${toolName} ${current + 1}`}
@@ -51,14 +51,14 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
           <>
             <button
               onClick={prev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 size-9 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/90 border border-border/40 shadow-sm"
+              className="absolute left-2 top-1/2 -translate-y-1/2 size-9 rounded-[3px] bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background border border-border"
               aria-label="Imagen anterior"
             >
               <Icon icon="tabler:arrow-left" width={18} height={18} />
             </button>
             <button
               onClick={next}
-              className="absolute right-2 top-1/2 -translate-y-1/2 size-9 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/90 border border-border/40 shadow-sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 size-9 rounded-[3px] bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background border border-border"
               aria-label="Imagen siguiente"
             >
               <Icon icon="tabler:arrow-right" width={18} height={18} />
@@ -70,8 +70,8 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
                   key={i}
                   onClick={() => setCurrent(i)}
                   aria-label={`Ver imagen ${i + 1}`}
-                  className={`size-2 rounded-full transition-all ${
-                    i === current ? 'bg-primary w-4' : 'bg-background/60 hover:bg-background/80'
+                  className={`size-2 rounded-[2px] transition-all ${
+                    i === current ? 'bg-accent-lime w-4' : 'bg-background/60 hover:bg-background/80'
                   }`}
                 />
               ))}
@@ -81,7 +81,7 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
 
         <button
           onClick={() => setLightbox(true)}
-          className="absolute top-3 right-3 size-8 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80 border border-border/30 shadow-sm"
+          className="absolute top-3 right-3 size-8 rounded-[3px] bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background border border-border"
           aria-label="Ampliar imagen"
         >
               <Icon icon="tabler:zoom-in" width={16} height={16} />
@@ -95,7 +95,7 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
         >
           <button
             onClick={() => setLightbox(false)}
-            className="absolute top-4 right-4 size-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
+            className="absolute top-4 right-4 size-10 rounded-[3px] bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
             aria-label="Cerrar"
           >
             <Icon icon="tabler:x" width={22} height={22} />
@@ -105,14 +105,14 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); prev(); }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
+                className="absolute left-4 top-1/2 -translate-y-1/2 size-12 rounded-[3px] bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
                 aria-label="Imagen anterior"
               >
                 <Icon icon="tabler:arrow-left" width={24} height={24} />
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); next(); }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
+                className="absolute right-4 top-1/2 -translate-y-1/2 size-12 rounded-[3px] bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-background/40 transition-colors text-white"
                 aria-label="Imagen siguiente"
               >
                 <Icon icon="tabler:arrow-right" width={24} height={24} />
@@ -123,7 +123,7 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
           <img
             src={images[current]}
             alt={`${toolName} — captura ${current + 1} de ${count}`}
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl"
+            className="max-w-[90vw] max-h-[85vh] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
 
@@ -134,7 +134,7 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
                   key={i}
                   onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
                   aria-label={`Ver imagen ${i + 1}`}
-                  className={`size-2.5 rounded-full transition-all ${
+                  className={`size-2.5 rounded-[2px] transition-all ${
                     i === current ? 'bg-white w-5' : 'bg-white/40 hover:bg-white/60'
                   }`}
                 />

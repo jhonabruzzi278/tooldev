@@ -28,13 +28,13 @@ export default function MobileMenu({ links, locale = 'es' }: MobileMenuProps) {
       </Button>
 
       {isOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-background border-b border-border shadow-lg z-50">
+        <div className="absolute top-14 left-0 right-0 bg-background border-b border-border z-50 font-mono">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg px-3 py-2.5 transition-colors"
+                className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-[3px] px-3 py-2.5 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -42,7 +42,7 @@ export default function MobileMenu({ links, locale = 'es' }: MobileMenuProps) {
             ))}
             <a
               href={locale === 'en' ? '/' : '/en'}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg px-3 py-2.5 transition-colors border-t border-border/50 mt-2 pt-3"
+              className="text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-[3px] px-3 py-2.5 transition-colors border-t border-border mt-2 pt-3"
             >
               {locale === 'en' ? 'Español' : 'English'}
             </a>

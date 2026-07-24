@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 
@@ -24,18 +23,18 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
 
   return (
     <TooltipProvider>
-      <div className="w-full flex flex-col items-center gap-2 mb-2">
-        <div className="flex items-center gap-0 rounded-xl border border-border/60 bg-muted/30 overflow-hidden w-full max-w-lg">
+      <div className="w-full flex flex-col items-center gap-2 mb-2 font-mono">
+        <div className="flex items-center gap-0 border border-border overflow-hidden w-full max-w-lg">
           {/* Label */}
-          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border/60 bg-muted/50 shrink-0">
-            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-emerald-600 dark:text-emerald-400 shrink-0" />
-            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 font-mono bg-emerald-500/15 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border-0">
+          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border shrink-0">
+            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-accent-lime shrink-0" />
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
               skill
-            </Badge>
+            </span>
           </div>
 
           {/* Command */}
-          <span className="flex-1 px-3 py-2.5 text-sm font-mono text-foreground/70 dark:text-foreground/80 select-all truncate">
+          <span className="flex-1 px-3 py-2.5 text-sm text-foreground/70 dark:text-foreground/80 select-all truncate">
             {command}
           </span>
 
@@ -45,9 +44,9 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
               <button
                 onClick={handleCopy}
                 className={cn(
-                  'px-3 py-2.5 border-l border-border/60 shrink-0 transition-colors hover:bg-muted/50',
+                  'px-3 py-2.5 border-l border-border shrink-0 transition-colors hover:bg-muted/40',
                   copied
-                    ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10'
+                    ? 'text-accent-lime'
                     : 'text-muted-foreground hover:text-foreground'
                 )}
                 aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
@@ -65,7 +64,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
             <TooltipTrigger asChild>
               <a
                 href={skillsHref}
-                className="h-full px-3 py-2.5 border-l border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors flex items-center shrink-0"
+                className="h-full px-3 py-2.5 border-l border-border text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors flex items-center shrink-0"
                 aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
               >
                 <Icon icon="tabler:help-circle" width={14} height={14} />
