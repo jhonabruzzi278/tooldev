@@ -60,4 +60,12 @@ const pricingLabel: Record<string, string> = {
       <LicenseToggle license={data.license} size="sm" client:load />
     )}
   </div>
+
+  {data.tags.length > 0 && (
+    <div class="flex items-center gap-2 flex-wrap mt-3 pt-3 border-t border-border">
+      {data.tags.slice(0, 3).map((tag: string) => (
+        <span class="text-[10px] px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">{tag}</span>
+      ))}
+    </div>
+  )}
 </a>

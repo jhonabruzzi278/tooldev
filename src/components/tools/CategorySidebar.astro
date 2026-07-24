@@ -1,0 +1,62 @@
+---
+import { Icon } from 'astro-icon/components';
+import { categories } from '@/lib/categories';
+import { getCollection } from 'astro:content';
+import { getTranslations } from '@/lib/i18n/translations';
+import type { Locale } from '@/lib/i18n/translations';
+
+interface Props {
+  locale?: Locale;
+  activeSlug?: string;
+}
+
+const { locale = 'es', activeSlug } = Astro.props;
+const lang = getTranslations(locale);
+
+const tools = await getCollection('tools');
+const categoriesWithCount = categories.map((cat) => ({
+  ...cat,
+  count: tools.filter((t) => t.data.category === cat.slug).length,
+}));
+
+const allHref = locale === 'en' ? '/en/categories' : '/categories';
+const contactHref = locale === 'en' ? '/en/contact' : '/contact';
+---
+
+<aside class="font-mono">
+  <p class="kicker mb-4">{lang.home.categoriesKicker}</p>
+  <nav class="flex flex-col border border-border">
+    <a
+      href={allHref}
+      class={`flex items-center justify-between gap-2 px-3 py-2.5 text-sm border-b border-border transition-colors ${!activeSlug ? 'bg-muted/60 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'}`}
+    >
+      <span class="flex items-center gap-2 min-w-0">
+        <Icon name="tabler:grid-dots" width="16" height="16" class={`shrink-0 ${!activeSlug ? 'text-accent-lime' : 'text-current'}`} />
+        <span class="truncate">{lang.categories.allTools}</span>
+      </span>
+      <span class="text-xs text-muted-foreground tabular-nums shrink-0">{tools.length}</span>
+    </a>
+    {categoriesWithCount.map((cat, i) => {
+      const href = locale === 'en' ? `/en/categories/${cat.slug}` : `/categories/${cat.slug}`;
+      const isActive = activeSlug === cat.slug;
+      return (
+        <a
+          href={href}
+          class={`flex items-center justify-between gap-2 px-3 py-2.5 text-sm transition-colors ${i < categoriesWithCount.length - 1 ? 'border-b border-border' : ''} ${isActive ? 'bg-muted/60 text-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'}`}
+        >
+          <span class="flex items-center gap-2 min-w-0">
+            <Icon name={cat.icon} width="16" height="16" class={`shrink-0 ${isActive ? 'text-accent-lime' : 'text-current'}`} />
+            <span class="truncate">{cat.name}</span>
+          </span>
+          <span class="text-xs text-muted-foreground tabular-nums shrink-0">{cat.count}</span>
+        </a>
+      );
+    })}
+  </nav>
+
+  <a href={contactHref} class="mt-4 flex flex-col gap-1 border border-dashed border-border p-3 hover:border-accent-lime transition-colors">
+    <span class="text-[10px] uppercase tracking-wider text-accent-lime">AD*</span>
+    <span class="text-xs">{lang.categories.sponsorTitle}</span>
+    <span class="text-[10px] text-muted-foreground">{lang.categories.sponsorCta} →</span>
+  </a>
+</aside>

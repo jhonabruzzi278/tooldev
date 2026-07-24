@@ -1,8 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Card } from '@/components/ui/card';
-import { categories } from '@/lib/categories';
+import ToolCard from '@/components/tools/ToolCard.astro';
+import CategorySidebar from '@/components/tools/CategorySidebar.astro';
 import { getCollection } from 'astro:content';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
@@ -14,12 +13,9 @@ interface Props {
 const { locale = 'es' } = Astro.props;
 const lang = getTranslations(locale);
 
-const tools = await getCollection('tools');
-
-const categoriesWithCount = categories.map((cat) => ({
-  ...cat,
-  count: tools.filter((t) => t.data.category === cat.slug).length,
-}));
+const tools = (await getCollection('tools')).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
 ---
 
 <BaseLayout title={lang.categories.title} description={locale === 'en' ? 'Explore developer tools organized by category.' : 'Explora herramientas para desarrolladores organizadas por categoría.'} {locale}>
@@ -31,22 +27,21 @@ const categoriesWithCount = categories.map((cat) => ({
       <p class="text-sm text-muted-foreground">{lang.categories.subtitle}</p>
     </div>
   </section>
+
   <section class="py-12 font-mono">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
-        {categoriesWithCount.map((cat) => {
-          const catHref = locale === 'en' ? `/en/categories/${cat.slug}` : `/categories/${cat.slug}`;
-          return (
-          <a href={catHref} class="group block border-r border-b border-border p-6 hover:bg-muted/40 transition-colors">
-            <Icon name={cat.icon} class="text-accent-lime mb-4" width="20" height="20" />
-            <h3 class="text-sm mb-1">{cat.name}</h3>
-            <p class="text-xs text-muted-foreground leading-relaxed mb-4">{cat.description}</p>
-            <p class="text-xs text-muted-foreground">
-              {cat.count} {cat.count === 1 ? lang.categories.count_one : lang.categories.count_other} <span class="inline-block ml-1 text-accent-lime transition-transform group-hover:translate-x-0.5">→</span>
-            </p>
-          </a>
-          );
-        })}
+      <div class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8">
+        <CategorySidebar {locale} />
+        <div>
+          <p class="text-sm text-muted-foreground mb-6">
+            <span class="text-foreground">{tools.length}</span> {tools.length === 1 ? lang.categories.foundOne : lang.categories.foundOther}
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {tools.map((tool) => (
+              <ToolCard tool={tool} {locale} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>
