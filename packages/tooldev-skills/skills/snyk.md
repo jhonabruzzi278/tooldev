@@ -11,7 +11,7 @@ description: Plataforma de seguridad para desarrolladores que encuentra y corrig
 - Es una herramienta open source — verifica la licencia antes de uso comercial.
 
 ## Key Information
-- **Category:** devops
+- **Category:** seguridad
 - **Pricing:** freemium
 - **License:** Apache-2.0
 - **Technical Level:** intermedio

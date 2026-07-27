@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { categories, getCategoryBySlug, getCategoryName } from '@/lib/categories';
 
 describe('categories', () => {
-  it('should have exactly 7 categories', () => {
-    expect(categories).toHaveLength(7);
+  it('should have exactly 17 categories', () => {
+    expect(categories).toHaveLength(17);
   });
 
   it('should have all required properties on each category', () => {
@@ -33,6 +33,17 @@ describe('categories', () => {
     expect(slugs).toContain('ia');
     expect(slugs).toContain('diseno');
     expect(slugs).toContain('productividad');
+    expect(slugs).toContain('agentes');
+    expect(slugs).toContain('hosting');
+    expect(slugs).toContain('auth');
+    expect(slugs).toContain('email');
+    expect(slugs).toContain('observabilidad');
+    expect(slugs).toContain('cicd');
+    expect(slugs).toContain('seguridad');
+    expect(slugs).toContain('analytics');
+    expect(slugs).toContain('apis');
+    expect(slugs).toContain('cms');
+    expect(slugs).toContain('media');
   });
 
   it('getCategoryBySlug should return correct category', () => {

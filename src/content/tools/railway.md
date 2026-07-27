@@ -1,7 +1,7 @@
 ---
 name: Railway
 description: Plataforma de despliegue serverless con infraestructura simplificada, escalado automático y zero-config.
-category: devops
+category: hosting
 tags: [deploy, hosting, serverless, cloud, devops, platform, paas]
 officialSite: https://railway.com
 pricing: freemium

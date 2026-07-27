@@ -45,6 +45,12 @@ const pricingLabel: Record<string, string> = {
     <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
       {pricingLabel[data.pricing] ?? data.pricing}
     </span>
+    {data.featured && (
+      <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-accent-lime/40 text-accent-lime inline-flex items-center gap-1">
+        <Icon name="tabler:star" class="text-current" width="10" height="10" />
+        {lang.tools.featured}
+      </span>
+    )}
     {category && (
       <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-border text-muted-foreground">
         {getCategoryName(data.category)}

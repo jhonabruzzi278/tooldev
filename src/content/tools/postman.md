@@ -1,7 +1,7 @@
 ---
 name: Postman
 description: Plataforma líder para diseñar, probar y documentar APIs REST de forma colaborativa.
-category: backend
+category: apis
 tags: [api, rest, testing, http, colaboracion, documentacion]
 officialSite: https://www.postman.com
 pricing: freemium

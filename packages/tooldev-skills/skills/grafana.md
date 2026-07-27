@@ -11,7 +11,7 @@ description: Plataforma open source de observabilidad y dashboards para métrica
 - Es una herramienta open source — verifica la licencia antes de uso comercial.
 
 ## Key Information
-- **Category:** devops
+- **Category:** observabilidad
 - **Pricing:** open-source
 - **License:** AGPL-3.0
 - **Technical Level:** intermedio

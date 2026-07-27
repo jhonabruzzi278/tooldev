@@ -1,7 +1,7 @@
 ---
 name: Coolify
 description: Plataforma PaaS auto-gestionada con deploy de aplicaciones, bases de datos y servicios sin configurar servidores manualmente.
-category: devops
+category: hosting
 tags: [paas, deploy, self-hosted, docker, devops, hosting]
 officialSite: https://coolify.io
 pricing: freemium

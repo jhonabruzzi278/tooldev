@@ -10,7 +10,7 @@ openSource: true
 license: Apache 2.0
 technicalLevel: intermedio
 compatibility: [Web, iOS, Android]
-featured: false
+featured: true
 verified: true
 screenshots:
   - /screenshots/supabase.webp

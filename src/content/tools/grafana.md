@@ -1,7 +1,7 @@
 ---
 name: Grafana
 description: Plataforma open source de observabilidad y dashboards para métricas, logs y trazas con soporte para múltiples fuentes de datos.
-category: devops
+category: observabilidad
 tags: [monitoreo, dashboards, métricas, observabilidad, devops, open-source]
 officialSite: https://grafana.com
 github: https://github.com/grafana/grafana

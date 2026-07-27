@@ -1,7 +1,7 @@
 ---
 name: Jenkins
 description: Servidor de automatización CI/CD extensible para construir, probar y desplegar software de forma continua.
-category: devops
+category: cicd
 tags: [devops, ci, cd, automatizacion, pipelines, integracion]
 officialSite: https://www.jenkins.io
 pricing: gratis

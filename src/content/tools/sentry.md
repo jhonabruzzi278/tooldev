@@ -1,7 +1,7 @@
 ---
 name: Sentry
 description: Plataforma de monitoreo de aplicaciones con detección de errores, rendimiento y trazabilidad distribuida.
-category: devops
+category: observabilidad
 tags: [monitoring, errors, performance, debugging, observability, apm]
 officialSite: https://sentry.io
 pricing: freemium
@@ -9,7 +9,7 @@ openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: ["Web", "iOS", Android, Node.js, Python, Go, Rust]
-featured: false
+featured: true
 features:
   - Captura de errores con stack traces completos y contexto
   - Trazabilidad distribuida entre servicios (tracing)

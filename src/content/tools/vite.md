@@ -10,7 +10,7 @@ openSource: true
 license: MIT
 technicalLevel: intermedio
 compatibility: [Web]
-featured: false
+featured: true
 verified: true
 screenshots:
   - /screenshots/vite.webp

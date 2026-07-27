@@ -1,14 +1,14 @@
 ---
 name: GitHub
 description: Plataforma líder de desarrollo colaborativo con control de versiones Git, CI/CD y gestión de proyectos.
-category: devops
+category: cicd
 tags: [git, control-versiones, colaboracion, ci-cd, codigo, opensource]
 officialSite: https://github.com
 pricing: freemium
 openSource: false
 technicalLevel: principiante
 compatibility: [Web, Windows, macOS, Linux]
-featured: false
+featured: true
 screenshots:
   - /screenshots/github.webp
 features:

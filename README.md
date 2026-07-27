@@ -10,7 +10,7 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 
 - Unificar decenas de herramientas técnicas en una experiencia de navegación clara y bilingüe.
 - Presentar información detallada (features, capturas, FAQ, alternativas) sin saturar la interfaz.
-- Mantener consistencia visual entre 102 herramientas distribuidas en 7 categorías.
+- Mantener consistencia visual entre 196 herramientas distribuidas en 7 categorías.
 - Garantizar SEO, accesibilidad y rendimiento en un sitio 100% estático.
 
 ### La Solución
@@ -24,10 +24,10 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 
 ### Resultados
 
-- **150 páginas generadas** en build estático (~7s), incluyendo versiones en ambos idiomas.
+- **422 páginas generadas** en build estático, incluyendo versiones en ambos idiomas.
 - **131 tests automatizados** (unitarios, integración, componentes) con Vitest — todos pasando, con CI en GitHub Actions y coverage medido (ver [`aidlc-docs/testing/`](./aidlc-docs/testing/)).
 - **Navegación intuitiva** entre categorías (Frontend, Backend, DevOps, IA, Diseño, Productividad).
-- **102 herramientas documentadas** con capturas, features, alternativas y FAQ.
+- **196 herramientas documentadas** con capturas, features, alternativas y FAQ.
 - **SEO optimizado** con metadatos, sitemap y datos estructurados.
 - **100% responsivo** con Tailwind CSS v4 y componentes shadcn/ui.
 
@@ -68,11 +68,11 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 - **Render API**: Actualizado a `render(entry)` para Astro v6.
 - **Rutas dinámicas**: `[slug]` generadas correctamente en `static` output.
 - **i18n centralizado**: Traducciones en `src/lib/i18n/translations.ts` con tipado completo.
-- **Tests**: 110 tests (unitarios, integración, componentes) con Vitest.
+- **Tests**: 131 tests (unitarios, integración, componentes) con Vitest.
 
 ### Estado Técnico
 
-- ✅ Build validado: **150 páginas generadas** (~7s).
+- ✅ Build validado: **422 páginas generadas**.
 - ✅ Rutas dinámicas `[slug]` generadas correctamente.
 - ✅ Content Collections migradas a Astro v6.
 - ✅ SEO completo (canonical, OG, Twitter, JSON-LD, Sitemap).
@@ -102,7 +102,7 @@ ToolDev es un sitio estático orientado a desarrolladores que buscan descubrir, 
 │   │   └── ui/         # shadcn/ui components + HeroReveal, AnimateOnScroll
 │   ├── content/
 │   │   ├── config.ts   # Content Collections schema
-│   │   └── tools/      # 64 herramientas en markdown
+│   │   └── tools/      # 196 herramientas en markdown
 │   ├── layouts/        # BaseLayout
 │   ├── lib/
 │   │   ├── i18n/       # Traducciones ES/EN

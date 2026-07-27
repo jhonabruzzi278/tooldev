@@ -19,11 +19,11 @@ describe('Tools content integrity', () => {
 
   it(`should have ${toolFiles.length} tool markdown files`, () => {
     expect(toolFiles.length).toBeGreaterThan(0);
-    expect(toolFiles.length).toBe(102);
+    expect(toolFiles.length).toBe(196);
   });
 
   it('every tool should have valid required frontmatter fields', () => {
-    const validCategories = ['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad', 'agentes'];
+    const validCategories = ['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad', 'agentes', 'hosting', 'auth', 'email', 'observabilidad', 'cicd', 'seguridad', 'analytics', 'apis', 'cms', 'media'];
     const validPricing = ['gratis', 'freemium', 'pago', 'open-source'];
     const validLevels = ['principiante', 'intermedio', 'avanzado'];
     const failures: string[] = [];

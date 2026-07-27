@@ -1,7 +1,7 @@
 ---
 name: Clerk
 description: Plataforma moderna de autenticación y gestión de usuarios con componentes UI y API completas.
-category: backend
+category: auth
 tags: [authentication, auth, users, security, saas, user-management]
 officialSite: https://clerk.com
 pricing: freemium

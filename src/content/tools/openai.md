@@ -9,7 +9,7 @@ openSource: false
 license: Propietaria
 technicalLevel: intermedio
 compatibility: ["Web", API, Python, Node.js, Go]
-featured: false
+featured: true
 features:
   - Modelos GPT-4 y GPT-4o para texto y razonamiento multimodal
   - DALL-E 3 para generación de imágenes desde descripciones

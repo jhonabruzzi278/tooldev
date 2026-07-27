@@ -11,7 +11,7 @@ description: Sistema de monitoreo y alerta open source con modelo de datos basad
 - Es una herramienta open source — verifica la licencia antes de uso comercial.
 
 ## Key Information
-- **Category:** devops
+- **Category:** observabilidad
 - **Pricing:** open-source
 - **License:** Apache-2.0
 - **Technical Level:** intermedio

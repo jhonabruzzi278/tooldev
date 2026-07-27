@@ -80,7 +80,7 @@
   {
     "slug": "grafana",
     "name": "Grafana",
-    "category": "devops",
+    "category": "observabilidad",
     "description": "Plataforma open source de observabilidad y dashboards para métricas, logs y trazas con soporte para múltiples fuentes de datos."
   },
   {
@@ -140,7 +140,7 @@
   {
     "slug": "prometheus",
     "name": "Prometheus",
-    "category": "devops",
+    "category": "observabilidad",
     "description": "Sistema de monitoreo y alerta open source con modelo de datos basado en series temporales y consultas PromQL."
   },
   {
@@ -176,7 +176,7 @@
   {
     "slug": "snyk",
     "name": "Snyk",
-    "category": "devops",
+    "category": "seguridad",
     "description": "Plataforma de seguridad para desarrolladores que encuentra y corrige vulnerabilidades en código, dependencias, contenedores e infraestructura como código."
   },
   {

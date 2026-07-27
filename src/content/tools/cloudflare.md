@@ -9,7 +9,7 @@ openSource: false
 license: Propietaria
 technicalLevel: intermedio
 compatibility: ["Web", API, Workers, Pages]
-featured: false
+featured: true
 features:
   - CDN global con 330+ ciudades y caché inteligente
   - DNS autoritativo rápido con DNSSEC y protección

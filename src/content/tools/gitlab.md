@@ -1,7 +1,7 @@
 ---
 name: GitLab
 description: Plataforma DevOps completa con repositorios Git, CI/CD integrado, registro de contenedores y gestión de proyectos.
-category: devops
+category: cicd
 tags: [git, ci-cd, devops, repositorios, colaboracion, pipelines]
 officialSite: https://gitlab.com
 pricing: freemium

@@ -73,6 +73,23 @@ async function main() {
     '21st.dev','Anime.js','Shader Gradient','React Bits','Motion Sites','ClaudeKit',
     'Spline','Jitter','SVGator','Dribbble','Behance','Land-book','Footer.design','Brave Brand',
     'Higgsfield AI','Fireworks AI','Luma Labs','Snyk','Wispr Flow','FreeConvert','Osmo','ImprovMX',
+    // 94 tools added from itsfree.dev comparison (2026-07-21)
+    'Vercel','Netlify','Render','Cloud 66','deployment.io','Appish','Deno Deploy',
+    'GitHub Actions','CircleCI','Buildkite','Codecov','SonarCloud','Dependabot',
+    'GitGuardian','Socket','Mozilla Observatory','Have I Been Pwned',
+    'UptimeRobot','Better Stack','Uptime.com','Checkly','healthchecks.io','New Relic',
+    'Logtail','Axiom','Turso','Upstash','CockroachDB','Aiven',
+    'Auth0','WorkOS','Kinde','Stytch','Descope','Logto',
+    'InsForge','Resend','Brevo','Mailjet','Mailtrap','Formspree','Tally','Web3Forms',
+    'Pipedream','Beeceptor','MockAPI','Abstract API','IPinfo','JSONPlaceholder',
+    'Open-Meteo','OpenGraph.to','Hoppscotch','Sanity','Contentful','Storyblok',
+    'Hygraph','DatoCMS','Prismic',
+    'Google AI Studio','NVIDIA NIM','Groq','Cerebras','Mistral AI','OpenRouter',
+    'Cloudflare Workers AI','Pollinations.AI','Braintrust','Langfuse','Keywords AI',
+    'Portkey','Comet Opik','NotebookLM','Stitch','CodeRabbit','Freebuff','Jules',
+    'Umami','Ahrefs Web Analytics','PostHog','Mixpanel','Amplitude','Google Analytics',
+    'Cloudflare Web Analytics','Microsoft Clarity','Trello','Miro','ClickUp','Discord',
+    'Penpot','tldraw','Fontshare','Cloudinary','ImageKit','Uploadcare',
   ];
 
   // Copy existing icons from public/icons/ as fallback

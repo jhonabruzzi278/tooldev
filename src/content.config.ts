@@ -7,7 +7,7 @@ const tools = defineCollection({
   schema: z.object({
     name: z.string(),
     description: z.string(),
-    category: z.enum(['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad', 'agentes']),
+    category: z.enum(['frontend', 'backend', 'devops', 'ia', 'diseno', 'productividad', 'agentes', 'hosting', 'auth', 'email', 'observabilidad', 'cicd', 'seguridad', 'analytics', 'apis', 'cms', 'media']),
     tags: z.array(z.string()),
     officialSite: z.string().url(),
     github: z.string().url().optional(),

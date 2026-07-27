@@ -8,7 +8,7 @@ pricing: freemium
 openSource: false
 technicalLevel: principiante
 compatibility: [Windows, macOS, Web, iOS, Android]
-featured: false
+featured: true
 screenshots:
   - /screenshots/notion.webp
 features:

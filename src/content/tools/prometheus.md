@@ -1,7 +1,7 @@
 ---
 name: Prometheus
 description: Sistema de monitoreo y alerta open source con modelo de datos basado en series temporales y consultas PromQL.
-category: devops
+category: observabilidad
 tags: [monitoreo, métricas, alertas, series-temporales, devops, open-source]
 officialSite: https://prometheus.io
 github: https://github.com/prometheus/prometheus

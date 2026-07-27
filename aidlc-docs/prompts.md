@@ -1,5 +1,31 @@
 # AI Prompts Used (Audit Trail)
 
+## Sesión: Categorías granulares + sección destacadas
+
+**Fecha:** 2026-07-27
+**Prompt:** "Categorías más granulares (ellos usan 14 vs tus 7), fecha de última revisión del catálogo, sección de recomendados — implementa esto y luego commitea y pushea."
+**Unit/Bolt:** Mejoras estructurales desde itsfree.dev.
+**Resumen:**
+- **17 categorías** (antes 7): añadidas hosting, auth, email, observabilidad, cicd, seguridad, analytics, apis, cms, media en `categories.ts` + enum Zod + tests; migradas 76 tools con script (76/76 OK).
+- **Última revisión:** ya existía en Hero (`statsUpdated`, calculada de max `publishedAt`) — verificada, muestra JUL 2026.
+- **Destacadas:** sección ToolShowcase movida antes de CategoryGrid (más prominencia), kickers renumerados, badge `featured` (★) en ToolCard con i18n ES/EN, curaduría ampliada de 10 → 22 destacadas.
+- Verificación: 131/131 tests ✅, build ✅ con páginas `/categories/<nueva>` (ES+EN) para las 10 nuevas.
+- Commit + push solicitados por el usuario.
+
+## Sesión: Importación masiva desde itsfree.dev
+
+**Fecha:** 2026-07-21
+**Prompt:** "https://itsfree.dev/es analiza esta web y con las mejoras que estén documentadas actualiza mi proyecto. Quiero que revises todas las herramientas de ese proyecto y si no las tengo las agregues a mi proyecto."
+**Unit/Bolt:** Expansión de catálogo — comparativa itsfree.dev (110 recursos) vs ToolDev (102 tools).
+**Resumen:**
+- Analizado itsfree.dev (directorio de midu.dev: 110 recursos, 14 categorías, foco en free tiers reales).
+- Comparativa: 94 herramientas ausentes en ToolDev → **creadas 94 nuevas fichas** (102 → 196) con agentes paralelos en 5 batches por categoría, cada una con datos reales de free tier extraídos de itsfree.dev (jul 2026).
+- No importadas: 13 ya existentes (cloudflare, supabase, neon, clerk, figma, linear, notion, slack, canva, hugging-face, github, sentry), 3 con equivalente (mongodb→Atlas, grafana→Grafana Cloud, gitlab→GitLab CI/CD), 1 eliminada deliberadamente (Excalidraw, commit 39ab053).
+- Fix: sección `whenToUse` faltante en 18 fichas del batch IA (re-generada); 4 features con `:` sin comillas corregidas (clickup, imagekit, sonarcloud, uploadcare); BOM eliminado en clickup.md.
+- `tools.test.ts` actualizado (102 → 196); `fetch-logos.mjs` ampliado con los 94 nombres; README actualizado (196 tools, 422 páginas, 131 tests).
+- **Verificación real:** validador YAML/Zod propio (196/196 ALL VALID), `npx vitest run` → 131/131 ✅, `npm run build` → 422 páginas ✅.
+**Artefactos actualizados:** 00_PROJECT_METADATA.md, testing/TEST_COVERAGE_REPORT.md
+
 ## Sesión: Análisis Inicial AI-DLC
 
 **Fecha:** 2026-07-20
