@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { cn } from '@/lib/utils';
 
 interface NpxInstallBadgeProps {
   toolName: string;
@@ -24,9 +23,9 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
   return (
     <TooltipProvider>
       <div className="w-full flex flex-col items-center gap-2 mb-2 font-mono">
-        <div className="flex items-center gap-0 border border-border overflow-hidden w-full max-w-lg">
+        <div className="flex items-center gap-0 border border-foreground/45 bg-muted overflow-hidden w-full max-w-lg">
           {/* Label */}
-          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-border shrink-0">
+          <div className="flex items-center gap-2 px-3 py-2.5 border-r border-foreground/20 shrink-0">
             <Icon icon="tabler:terminal-2" width={14} height={14} className="text-accent-lime shrink-0" />
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
               skill
@@ -44,12 +43,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
               render={
                 <button
                   onClick={handleCopy}
-                  className={cn(
-                    'px-3 py-2.5 border-l border-border shrink-0 transition-colors hover:bg-muted/40',
-                    copied
-                      ? 'text-accent-lime'
-                      : 'text-muted-foreground hover:text-foreground'
-                  )}
+                  className="px-3 py-2.5 border-l border-foreground/20 shrink-0 bg-accent-lime text-accent-lime-foreground hover:bg-accent-lime/85 transition-colors"
                   aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
                 />
               }
@@ -67,7 +61,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
               render={
                 <a
                   href={skillsHref}
-                  className="h-full px-3 py-2.5 border-l border-border text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors flex items-center shrink-0"
+                  className="h-full px-3 py-2.5 border-l border-foreground/20 text-foreground/70 hover:text-accent-lime hover:bg-background/60 transition-colors flex items-center shrink-0"
                   aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
                 />
               }

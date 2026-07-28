@@ -69,7 +69,7 @@ function FavoriteCard({ tool, locale, onRemove }: FavoriteCardProps) {
             {pricingLabel}
           </span>
           {tool.featured && (
-            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border border-accent-lime/40 text-accent-lime inline-flex items-center gap-1">
+            <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] bg-accent-lime text-accent-lime-foreground font-semibold inline-flex items-center gap-1">
               <Icon icon="tabler:star" width={10} height={10} />
               {locale === 'en' ? 'Featured' : 'Destacada'}
             </span>
