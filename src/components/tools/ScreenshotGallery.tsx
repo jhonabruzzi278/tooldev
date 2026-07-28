@@ -81,10 +81,11 @@ export default function ScreenshotGallery({ toolId, toolName, totalImages, scree
 
         <button
           onClick={() => setLightbox(true)}
-          className="absolute top-3 right-3 size-9 rounded-[3px] bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-background hover:border-accent-lime/50 border border-border shadow-sm"
-          aria-label="Ampliar imagen"
+          className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-2 rounded-[3px] bg-black/70 text-white border border-white/20 hover:bg-black/90 hover:border-white/40 hover:scale-105 transition-all shadow-lg backdrop-blur-sm"
+          aria-label="Ampliar captura de pantalla"
         >
           <Icon icon="tabler:zoom-in" width={18} height={18} />
+          <span className="text-[10px] uppercase tracking-wider font-medium">Ampliar</span>
         </button>
       </div>
 

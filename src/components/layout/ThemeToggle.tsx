@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
-import { Button } from '@/components/ui/button';
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    setIsDark(root.classList.contains('dark'));
+    setMounted(true);
+    setIsDark(document.documentElement.classList.contains('dark'));
   }, []);
 
   const toggleTheme = () => {
@@ -18,15 +18,27 @@ export default function ThemeToggle() {
     setIsDark(nextDark);
   };
 
+  // Avoid hydration mismatch: render a neutral placeholder until mounted
+  if (!mounted) {
+    return (
+      <button
+        className="inline-flex items-center justify-center size-9 rounded-[3px] border border-border bg-background text-muted-foreground"
+        aria-label="Cambiar tema"
+        disabled
+      >
+        <Icon icon="tabler:sun" width={22} height={22} />
+      </button>
+    );
+  }
+
   return (
-    <Button
-      variant="ghost"
-      size="icon"
+    <button
       onClick={toggleTheme}
+      className="inline-flex items-center justify-center size-9 rounded-[3px] border border-border bg-background text-accent-lime hover:bg-muted hover:border-foreground/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
       title={isDark ? 'Modo oscuro — clic para modo claro' : 'Modo claro — clic para modo oscuro'}
     >
-      <Icon icon={isDark ? 'tabler:moon' : 'tabler:sun'} width={20} height={20} />
-    </Button>
+      <Icon icon={isDark ? 'tabler:moon' : 'tabler:sun'} width={22} height={22} />
+    </button>
   );
 }
