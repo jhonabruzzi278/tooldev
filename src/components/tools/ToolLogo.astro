@@ -13,8 +13,11 @@ const logosDir = 'public/logos';
 const localMap: Record<string, string> = {};
 if (existsSync(logosDir)) {
   for (const file of readdirSync(logosDir)) {
-    if (file.endsWith('.svg')) {
-      const name = file.slice(0, -4);
+    const extIdx = file.lastIndexOf('.');
+    if (extIdx <= 0) continue;
+    const ext = file.slice(extIdx + 1).toLowerCase();
+    if (['svg', 'webp', 'png', 'jpg', 'jpeg', 'ico', 'gif'].includes(ext)) {
+      const name = file.slice(0, extIdx);
       localMap[name] = `/logos/${encodeURIComponent(file)}`;
     }
   }
@@ -25,6 +28,11 @@ const src = localMap[toolName];
 
 {
   src && (
-    <img src={src} alt={toolName} width={size} height={size} class={className || undefined} loading="lazy" decoding="async" />
+    <span
+      class={`inline-flex items-center justify-center shrink-0 overflow-hidden ${className || ''}`}
+      style={{ width: `${size}px`, height: `${size}px` }}
+    >
+      <img src={src} alt={toolName} class="max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
+    </span>
   )
 }
