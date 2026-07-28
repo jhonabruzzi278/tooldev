@@ -1,7 +1,9 @@
 ---
+import { Icon } from 'astro-icon/components';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import FavoritesList from '@/components/tools/FavoritesList';
 import { getCollection } from 'astro:content';
+import { getLogoMap } from '@/lib/logos';
 import type { Locale } from '@/lib/i18n/translations';
 
 interface Props {
@@ -11,20 +13,24 @@ interface Props {
 const { locale = 'es' } = Astro.props;
 
 const allTools = await getCollection('tools');
+const logoMap = getLogoMap();
 ---
 
-<BaseLayout 
-  title={locale === 'en' ? 'Favorites' : 'Favoritos'} 
-  description={locale === 'en' ? 'Your favorite developer tools.' : 'Tus herramientas de desarrollo favoritas.'} 
+<BaseLayout
+  title={locale === 'en' ? 'Favorites' : 'Favoritos'}
+  description={locale === 'en' ? 'Your favorite developer tools.' : 'Tus herramientas de desarrollo favoritas.'}
   {locale}
 >
   <section class="relative overflow-hidden py-16 md:py-20 border-b border-border font-mono">
     <div class="absolute inset-0 bg-grid pointer-events-none opacity-30" />
     <div class="container mx-auto px-4 relative">
       <p class="kicker mb-4">// {locale === 'en' ? 'FAVORITES' : 'FAVORITOS'}</p>
-      <h1 class="text-3xl md:text-4xl font-normal mb-3">
-        {locale === 'en' ? 'Your Favorites' : 'Tus Favoritos'}
-      </h1>
+      <div class="flex items-center gap-3 mb-3">
+        <Icon name="tabler:heart-filled" class="text-accent-lime" width="28" height="28" />
+        <h1 class="text-3xl md:text-4xl font-normal">
+          {locale === 'en' ? 'Your Favorites' : 'Tus Favoritos'}
+        </h1>
+      </div>
       <p class="text-sm text-muted-foreground">
         {locale === 'en'
           ? 'Tools you have saved for quick access'
@@ -43,6 +49,11 @@ const allTools = await getCollection('tools');
           description: t.data.description,
           category: t.data.category,
           slug: t.id,
+          pricing: t.data.pricing,
+          openSource: t.data.openSource,
+          featured: t.data.featured,
+          verified: t.data.verified,
+          logo: logoMap[t.data.name],
         }))}
         locale={locale}
       />

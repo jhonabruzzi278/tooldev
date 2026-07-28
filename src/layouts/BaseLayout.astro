@@ -27,7 +27,7 @@ const { title, description, ogImage, locale = 'es' } = Astro.props;
     <script is:inline>
       const theme = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const shouldBeDark = theme === 'dark' || (!theme && prefersDark);
+      const shouldBeDark = theme === 'dark' || (theme !== 'light' && prefersDark);
       if (shouldBeDark) {
         document.documentElement.classList.add('dark');
       }

@@ -1,5 +1,5 @@
 ---
-import { readdirSync, existsSync } from 'node:fs';
+import { getLogoMap } from '@/lib/logos';
 
 interface Props {
   toolName: string;
@@ -9,21 +9,7 @@ interface Props {
 
 const { toolName, size = 20, class: className } = Astro.props;
 
-const logosDir = 'public/logos';
-const localMap: Record<string, string> = {};
-if (existsSync(logosDir)) {
-  for (const file of readdirSync(logosDir)) {
-    const extIdx = file.lastIndexOf('.');
-    if (extIdx <= 0) continue;
-    const ext = file.slice(extIdx + 1).toLowerCase();
-    if (['svg', 'webp', 'png', 'jpg', 'jpeg', 'ico', 'gif'].includes(ext)) {
-      const name = file.slice(0, extIdx);
-      localMap[name] = `/logos/${encodeURIComponent(file)}`;
-    }
-  }
-}
-
-const src = localMap[toolName];
+const src = getLogoMap()[toolName];
 ---
 
 {
