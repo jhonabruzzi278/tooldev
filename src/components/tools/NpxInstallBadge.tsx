@@ -26,7 +26,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
         <div className="flex items-center gap-0 border border-foreground/45 bg-muted overflow-hidden w-full max-w-lg">
           {/* Label */}
           <div className="flex items-center gap-2 px-3 py-2.5 border-r border-foreground/20 shrink-0">
-            <Icon icon="tabler:terminal-2" width={14} height={14} className="text-accent-lime shrink-0" />
+            <Icon icon="tabler:package" width={14} height={14} className="text-accent-lime shrink-0" />
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
               skill
             </span>
@@ -43,12 +43,12 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
               render={
                 <button
                   onClick={handleCopy}
-                  className="px-3 py-2.5 border-l border-foreground/20 shrink-0 bg-accent-lime text-accent-lime-foreground hover:bg-accent-lime/85 transition-colors"
+                  className="px-3 py-2.5 border-l border-foreground/20 shrink-0 text-accent-lime hover:bg-accent-lime/10 transition-colors"
                   aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
                 />
               }
             >
-              <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
+              <Icon icon={copied ? 'tabler:clipboard-check-filled' : 'tabler:clipboard-copy'} width={14} height={14} />
             </TooltipTrigger>
             <TooltipContent>
               <p>{copied ? (locale === 'en' ? 'Copied!' : '¡Copiado!') : (locale === 'en' ? 'Copy command' : 'Copiar comando')}</p>
@@ -66,7 +66,7 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
                 />
               }
             >
-              <Icon icon="tabler:help-circle" width={14} height={14} />
+              <Icon icon="tabler:help-circle-filled" width={14} height={14} />
             </TooltipTrigger>
             <TooltipContent>
               <p>{locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}</p>

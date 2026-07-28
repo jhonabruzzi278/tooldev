@@ -22,11 +22,11 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="inline-flex items-center justify-center size-9 rounded-[3px] border border-border bg-muted text-muted-foreground"
+        className="inline-flex items-center justify-center size-9 rounded-full border-2 border-border bg-background text-muted-foreground"
         aria-label="Cambiar tema"
         disabled
       >
-        <Icon icon="tabler:sun" width={22} height={22} />
+        <Icon icon="tabler:contrast-2" width={20} height={20} />
       </button>
     );
   }
@@ -34,11 +34,11 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="inline-flex items-center justify-center size-9 rounded-[3px] border border-accent-lime bg-accent-lime text-accent-lime-foreground hover:bg-accent-lime/85 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="inline-flex items-center justify-center size-9 rounded-full border-2 border-accent-lime bg-accent-lime/10 text-accent-lime hover:bg-accent-lime/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
       title={isDark ? 'Modo oscuro — clic para modo claro' : 'Modo claro — clic para modo oscuro'}
     >
-      <Icon icon={isDark ? 'tabler:moon' : 'tabler:sun'} width={22} height={22} />
+      <Icon icon={isDark ? 'tabler:contrast-2-filled' : 'tabler:contrast-2'} width={20} height={20} />
     </button>
   );
 }

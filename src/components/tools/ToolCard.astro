@@ -46,8 +46,8 @@ const pricingLabel: Record<string, string> = {
       {pricingLabel[data.pricing] ?? data.pricing}
     </span>
     {data.featured && (
-      <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] bg-accent-lime text-accent-lime-foreground font-semibold inline-flex items-center gap-1">
-        <Icon name="tabler:star" class="text-current" width="10" height="10" />
+      <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-[2px] border-2 border-accent-lime bg-accent-lime/10 text-accent-lime font-semibold inline-flex items-center gap-1">
+        <Icon name="tabler:sparkles-filled" class="text-current" width="10" height="10" />
         {lang.tools.featured}
       </span>
     )}
