@@ -1,6 +1,8 @@
 export type Locale = 'es' | 'en';
 
-export const translations: Record<Locale, Record<string, string | Record<string, string>>> = {
+type TranslationDict = Record<string, string | Record<string, string>>;
+
+export const translations = {
   es: {
     site: {
       name: 'ToolDev',
@@ -307,7 +309,7 @@ export const translations: Record<Locale, Record<string, string | Record<string,
       spanish: 'All content is originally written in Spanish for the Spanish-speaking community.',
     },
   },
-};
+} satisfies Record<Locale, TranslationDict>;
 
 export function getTranslations(locale: Locale) {
   return translations[locale] ?? translations.es;

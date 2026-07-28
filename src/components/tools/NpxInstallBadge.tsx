@@ -40,19 +40,21 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
 
           {/* Copy button */}
           <Tooltip>
-            <TooltipTrigger asChild>
-              <button
-                onClick={handleCopy}
-                className={cn(
-                  'px-3 py-2.5 border-l border-border shrink-0 transition-colors hover:bg-muted/40',
-                  copied
-                    ? 'text-accent-lime'
-                    : 'text-muted-foreground hover:text-foreground'
-                )}
-                aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
-              >
-                <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
-              </button>
+            <TooltipTrigger
+              render={
+                <button
+                  onClick={handleCopy}
+                  className={cn(
+                    'px-3 py-2.5 border-l border-border shrink-0 transition-colors hover:bg-muted/40',
+                    copied
+                      ? 'text-accent-lime'
+                      : 'text-muted-foreground hover:text-foreground'
+                  )}
+                  aria-label={locale === 'en' ? 'Copy install command' : 'Copiar comando'}
+                />
+              }
+            >
+              <Icon icon={copied ? 'tabler:check' : 'tabler:copy'} width={14} height={14} />
             </TooltipTrigger>
             <TooltipContent>
               <p>{copied ? (locale === 'en' ? 'Copied!' : '¡Copiado!') : (locale === 'en' ? 'Copy command' : 'Copiar comando')}</p>
@@ -61,14 +63,16 @@ export default function NpxInstallBadge({ toolName, locale = 'es' }: NpxInstallB
 
           {/* Help link */}
           <Tooltip>
-            <TooltipTrigger asChild>
-              <a
-                href={skillsHref}
-                className="h-full px-3 py-2.5 border-l border-border text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors flex items-center shrink-0"
-                aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
-              >
-                <Icon icon="tabler:help-circle" width={14} height={14} />
-              </a>
+            <TooltipTrigger
+              render={
+                <a
+                  href={skillsHref}
+                  className="h-full px-3 py-2.5 border-l border-border text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors flex items-center shrink-0"
+                  aria-label={locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}
+                />
+              }
+            >
+              <Icon icon="tabler:help-circle" width={14} height={14} />
             </TooltipTrigger>
             <TooltipContent>
               <p>{locale === 'en' ? 'What are Skills?' : '¿Qué son las Skills?'}</p>

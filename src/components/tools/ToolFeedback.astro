@@ -1,11 +1,10 @@
 ---
 interface Props {
-  toolName: string;
   reportLabel?: string;
   feedbackLabel?: string;
 }
 
-const { toolName, reportLabel = 'Reportar error', feedbackLabel = 'Enviar feedback' } = Astro.props;
+const { reportLabel = 'Reportar error', feedbackLabel = 'Enviar feedback' } = Astro.props;
 ---
 
 <div class="mt-12 pt-8 border-t border-border font-mono">
