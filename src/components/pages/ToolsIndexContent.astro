@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ToolCard from '@/components/tools/ToolCard.astro';
+import ToolsSkillFilter from '@/components/tools/ToolsSkillFilter';
 import { getCollection } from 'astro:content';
 import { getTranslations } from '@/lib/i18n/translations';
 import type { Locale } from '@/lib/i18n/translations';
@@ -15,6 +16,7 @@ const lang = getTranslations(locale);
 
 const tools = await getCollection('tools');
 const sortedTools = tools.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const skillToolsCount = sortedTools.filter((t) => t.data.verified).length;
 ---
 
 <BaseLayout title={lang.tools.title} description={locale === 'en' ? 'Explore all developer tools.' : 'Explora todas las herramientas para desarrolladores.'} {locale}>
@@ -32,7 +34,15 @@ const sortedTools = tools.sort((a, b) => b.data.publishedAt.getTime() - a.data.p
   </section>
   <section class="py-12 font-mono">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ToolsSkillFilter
+        client:load
+        totalCount={sortedTools.length}
+        skillCount={skillToolsCount}
+        gridSelector="#tools-grid"
+        label={lang.tools.skillFilter}
+        locale={locale}
+      />
+      <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sortedTools.map((tool) => (
           <ToolCard tool={tool} {locale} />
         ))}

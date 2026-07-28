@@ -27,7 +27,7 @@ const pricingLabel: Record<string, string> = {
 };
 ---
 
-<a href={toolHref} class="group relative block h-full border border-border p-5 hover:bg-muted/40 transition-colors font-mono">
+<a href={toolHref} data-verified={data.verified ? 'true' : 'false'} class="group relative block h-full border border-border p-5 hover:bg-muted/40 transition-colors font-mono">
   {data.verified && (
     <span class="absolute top-4 right-11 text-accent-lime text-sm" aria-hidden="true">✦</span>
   )}

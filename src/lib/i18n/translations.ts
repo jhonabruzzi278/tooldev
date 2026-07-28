@@ -92,6 +92,7 @@ export const translations = {
       featured: 'Destacada',
       installSkill: 'Instalar skill vía npx',
       skillsExplainer: '¿Qué son las Skills?',
+      skillFilter: 'Con skill instalable',
     },
     about: {
       badge: 'Sobre nosotros',
@@ -245,6 +246,7 @@ export const translations = {
       featured: 'Featured',
       installSkill: 'Install skill via npx',
       skillsExplainer: 'What are Skills?',
+      skillFilter: 'Has installable skill',
     },
     about: {
       badge: 'About us',
