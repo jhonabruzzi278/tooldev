@@ -1,56 +1,105 @@
 ---
 name: ClickUp
-description: Tareas, documentos, objetivos y proyectos en un espacio configurable.
+description: 'Tareas, documentos, objetivos y proyectos en un espacio configurable.'
 category: productividad
-tags: [tasks, docs, goals, project-management, kanban]
-officialSite: https://clickup.com
+tags:
+  - tasks
+  - docs
+  - goals
+  - project-management
+  - kanban
+officialSite: 'https://clickup.com'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web]
+compatibility:
+  - Web
 featured: false
 verified: false
 features:
-  - Tareas con subtareas, campos personalizados y prioridades
-  - "Múltiples vistas: lista, Kanban, calendario, Gantt y tabla"
+  - 'Tareas con subtareas, campos personalizados y prioridades'
+  - 'Múltiples vistas: lista, Kanban, calendario, Gantt y tabla'
   - Documentos colaborativos integrados en el espacio de trabajo
   - Objetivos y seguimiento de metas del equipo
   - Automatizaciones para flujos de trabajo repetitivos
-  - Chat, whiteboards y time tracking integrados
-alternatives: [notion, trello, linear]
-relatedTools: [slack, miro]
+  - 'Chat, whiteboards y time tracking integrados'
+alternatives:
+  - notion
+  - trello
+  - linear
+relatedTools:
+  - slack
+  - miro
 howToUse:
   - step: 1
-    title: "Estructurar el workspace"
-    description: "Regístrate en clickup.com y organiza tu espacio con la jerarquía de ClickUp: Spaces para áreas o equipos, Folders para proyectos y Lists para agrupar tareas relacionadas."
+    title: Estructurar el workspace
+    description: >-
+      Regístrate en clickup.com y organiza tu espacio con la jerarquía de
+      ClickUp: Spaces para áreas o equipos, Folders para proyectos y Lists para
+      agrupar tareas relacionadas.
   - step: 2
-    title: "Crear y gestionar tareas"
-    description: "Añade tareas con responsables, prioridades, fechas y campos personalizados. Alterna entre vistas de lista, tablero Kanban, calendario o Gantt según lo que necesites visualizar."
+    title: Crear y gestionar tareas
+    description: >-
+      Añade tareas con responsables, prioridades, fechas y campos
+      personalizados. Alterna entre vistas de lista, tablero Kanban, calendario
+      o Gantt según lo que necesites visualizar.
   - step: 3
-    title: "Centralizar docs y automatizar"
-    description: "Crea documentos colaborativos vinculados a tus proyectos y configura automatizaciones para cambiar estados, asignar personas o enviar notificaciones cuando ocurran eventos concretos."
+    title: Centralizar docs y automatizar
+    description: >-
+      Crea documentos colaborativos vinculados a tus proyectos y configura
+      automatizaciones para cambiar estados, asignar personas o enviar
+      notificaciones cuando ocurran eventos concretos.
 whenToUse:
-  - title: "Unificar tareas y documentación en un solo sitio"
-    description: "Cuando quieres que la planificación, las tareas y los documentos del proyecto vivan juntos en lugar de saltar entre varias herramientas."
-  - title: "Equipos que necesitan vistas flexibles"
-    description: "Ideal si cada perfil prefiere ver el trabajo de forma distinta: Kanban para unos, Gantt para planificación, tabla para datos."
-  - title: "Gestión de proyectos con presupuesto ajustado"
-    description: "Su plan gratuito con tareas y miembros ilimitados lo hace muy competitivo para equipos que no pueden pagar herramientas premium."
+  - title: Unificar tareas y documentación en un solo sitio
+    description: >-
+      Cuando quieres que la planificación, las tareas y los documentos del
+      proyecto vivan juntos en lugar de saltar entre varias herramientas.
+  - title: Equipos que necesitan vistas flexibles
+    description: >-
+      Ideal si cada perfil prefiere ver el trabajo de forma distinta: Kanban
+      para unos, Gantt para planificación, tabla para datos.
+  - title: Gestión de proyectos con presupuesto ajustado
+    description: >-
+      Su plan gratuito con tareas y miembros ilimitados lo hace muy competitivo
+      para equipos que no pueden pagar herramientas premium.
 tips:
-  - text: "No actives todas las funciones (ClickApps) desde el principio: empieza simple y habilita time tracking, sprints o campos personalizados solo cuando los necesites."
-  - text: "Define estados de tarea coherentes por Space antes de invitar al equipo: un flujo de estados claro evita tableros caóticos después."
-  - text: "Usa las relaciones entre tareas para dependencias y vincula los docs relevantes a cada lista para que el contexto viaje con el trabajo."
-  - text: "Aprovecha las plantillas de proyecto para flujos repetibles: configurar una buena plantilla una vez ahorra horas en cada nuevo proyecto."
+  - text: >-
+      No actives todas las funciones (ClickApps) desde el principio: empieza
+      simple y habilita time tracking, sprints o campos personalizados solo
+      cuando los necesites.
+  - text: >-
+      Define estados de tarea coherentes por Space antes de invitar al equipo:
+      un flujo de estados claro evita tableros caóticos después.
+  - text: >-
+      Usa las relaciones entre tareas para dependencias y vincula los docs
+      relevantes a cada lista para que el contexto viaje con el trabajo.
+  - text: >-
+      Aprovecha las plantillas de proyecto para flujos repetibles: configurar
+      una buena plantilla una vez ahorra horas en cada nuevo proyecto.
 faq:
-  - question: "¿Qué incluye el plan gratuito de ClickUp?"
-    answer: "El plan Free Forever incluye tareas y miembros ilimitados, 100 MB de almacenamiento, documentos colaborativos y tableros Kanban, suficiente para equipos pequeños de forma permanente."
-  - question: "¿ClickUp puede sustituir a Notion?"
-    answer: "Parcialmente: sus docs colaborativos cubren documentación de proyectos, pero Notion sigue siendo más flexible para bases de datos y wikis complejas. ClickUp es más fuerte en gestión de tareas."
-  - question: "¿ClickUp sirve para equipos de desarrollo?"
-    answer: "Sí, incluye sprints, puntos de estimación, integración con GitHub y vistas ágiles. Equipos muy técnicos a veces prefieren Linear por su velocidad y enfoque en issues."
-  - question: "¿Por qué dicen que ClickUp va lento a veces?"
-    answer: "Al cargar tantas funciones en una sola app, espacios muy grandes o con muchas vistas pueden sentirse pesados. Reducir ClickApps activos y simplificar vistas mejora el rendimiento."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de ClickUp?
+    answer: >-
+      El plan Free Forever incluye tareas y miembros ilimitados, 100 MB de
+      almacenamiento, documentos colaborativos y tableros Kanban, suficiente
+      para equipos pequeños de forma permanente.
+  - question: ¿ClickUp puede sustituir a Notion?
+    answer: >-
+      Parcialmente: sus docs colaborativos cubren documentación de proyectos,
+      pero Notion sigue siendo más flexible para bases de datos y wikis
+      complejas. ClickUp es más fuerte en gestión de tareas.
+  - question: ¿ClickUp sirve para equipos de desarrollo?
+    answer: >-
+      Sí, incluye sprints, puntos de estimación, integración con GitHub y vistas
+      ágiles. Equipos muy técnicos a veces prefieren Linear por su velocidad y
+      enfoque en issues.
+  - question: ¿Por qué dicen que ClickUp va lento a veces?
+    answer: >-
+      Al cargar tantas funciones en una sola app, espacios muy grandes o con
+      muchas vistas pueden sentirse pesados. Reducir ClickApps activos y
+      simplificar vistas mejora el rendimiento.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/clickup.webp
 ---
 
 ## ¿Qué es?

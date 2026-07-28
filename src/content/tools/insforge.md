@@ -1,13 +1,23 @@
 ---
 name: InsForge
-description: Backend nativo para agentes con base de datos, auth, storage, funciones y acceso a modelos.
+description: >-
+  Backend nativo para agentes con base de datos, auth, storage, funciones y
+  acceso a modelos.
 category: backend
-tags: [backend, agents, postgres, auth, storage, functions]
-officialSite: https://insforge.dev
+tags:
+  - backend
+  - agents
+  - postgres
+  - auth
+  - storage
+  - functions
+officialSite: 'https://insforge.dev'
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
@@ -17,27 +27,47 @@ features:
   - Funciones serverless para lógica de negocio
   - Acceso a modelos de IA mediante créditos
   - SDK y endpoints pensados para agentes autónomos
-alternatives: [supabase, appwrite, pocketbase]
-relatedTools: [postman]
+alternatives:
+  - supabase
+  - appwrite
+  - pocketbase
+relatedTools:
+  - postman
 howToUse:
   - step: 1
-    title: "Crea un proyecto"
-    description: "Regístrate en insforge.dev y crea un proyecto nuevo. Obtendrás la URL del proyecto y una API key que usarán tanto tu aplicación como tus agentes para conectarse al backend."
+    title: Crea un proyecto
+    description: >-
+      Regístrate en insforge.dev y crea un proyecto nuevo. Obtendrás la URL del
+      proyecto y una API key que usarán tanto tu aplicación como tus agentes
+      para conectarse al backend.
   - step: 2
-    title: "Define tablas y activa auth"
-    description: "Crea las tablas de Postgres desde el dashboard o vía API, activa la autenticación de usuarios y configura el storage. InsForge expone APIs automáticas sobre cada recurso que definas."
+    title: Define tablas y activa auth
+    description: >-
+      Crea las tablas de Postgres desde el dashboard o vía API, activa la
+      autenticación de usuarios y configura el storage. InsForge expone APIs
+      automáticas sobre cada recurso que definas.
   - step: 3
-    title: "Conecta tu agente o app"
-    description: "Instala el SDK o llama a la API directamente con tu clave. Los agentes pueden leer y escribir datos, ejecutar funciones y consumir modelos de IA usando los créditos incluidos en tu plan."
+    title: Conecta tu agente o app
+    description: >-
+      Instala el SDK o llama a la API directamente con tu clave. Los agentes
+      pueden leer y escribir datos, ejecutar funciones y consumir modelos de IA
+      usando los créditos incluidos en tu plan.
 whenToUse:
-  - title: "Backends para agentes de IA"
-    description: "Cuando construyes agentes que necesitan persistencia, autenticación y acceso a modelos sin montar infraestructura propia ni integrar varios servicios por separado."
-  - title: "Prototipos full-stack rápidos"
-    description: "Para validar una idea con base de datos, auth y funciones en minutos, sin configurar servidores ni proveedores distintos para cada pieza del backend."
+  - title: Backends para agentes de IA
+    description: >-
+      Cuando construyes agentes que necesitan persistencia, autenticación y
+      acceso a modelos sin montar infraestructura propia ni integrar varios
+      servicios por separado.
+  - title: Prototipos full-stack rápidos
+    description: >-
+      Para validar una idea con base de datos, auth y funciones en minutos, sin
+      configurar servidores ni proveedores distintos para cada pieza del
+      backend.
 examples:
-  - title: "Crear un registro vía API"
-    code: |
-      const res = await fetch('https://tu-proyecto.insforge.app/api/database/records/tasks', {
+  - title: Crear un registro vía API
+    code: >
+      const res = await
+      fetch('https://tu-proyecto.insforge.app/api/database/records/tasks', {
         method: 'POST',
         headers: {
           'Authorization': 'Bearer TU_API_KEY',
@@ -45,20 +75,37 @@ examples:
         },
         body: JSON.stringify({ title: 'Primera tarea', done: false })
       })
+
       const data = await res.json()
-    output: "Devuelve el registro creado en la tabla tasks con su id generado."
+    output: Devuelve el registro creado en la tabla tasks con su id generado.
 tips:
-  - text: "Guarda la API key en variables de entorno y usa claves distintas para desarrollo y producción."
-  - text: "Aprovecha que es Postgres real: cuando la API automática se quede corta, consulta la base de datos con SQL directamente."
-  - text: "Vigila el consumo de créditos de modelos en el dashboard para no quedarte sin cuota a mitad de un prototipo."
+  - text: >-
+      Guarda la API key en variables de entorno y usa claves distintas para
+      desarrollo y producción.
+  - text: >-
+      Aprovecha que es Postgres real: cuando la API automática se quede corta,
+      consulta la base de datos con SQL directamente.
+  - text: >-
+      Vigila el consumo de créditos de modelos en el dashboard para no quedarte
+      sin cuota a mitad de un prototipo.
 faq:
-  - question: "¿Qué incluye el plan gratuito de InsForge?"
-    answer: "El plan developer gratuito incluye Postgres, autenticación, storage, funciones y créditos de modelos limitados, suficiente para prototipos y proyectos pequeños."
-  - question: "¿InsForge usa una base de datos real?"
-    answer: "Sí, cada proyecto se apoya en una base de datos Postgres gestionada, con APIs automáticas y acceso directo cuando lo necesitas."
-  - question: "¿En qué se diferencia de Supabase?"
-    answer: "InsForge está orientado a agentes de IA como clientes de primera clase, integrando acceso a modelos y herramientas pensadas para flujos autónomos además del backend clásico."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de InsForge?
+    answer: >-
+      El plan developer gratuito incluye Postgres, autenticación, storage,
+      funciones y créditos de modelos limitados, suficiente para prototipos y
+      proyectos pequeños.
+  - question: ¿InsForge usa una base de datos real?
+    answer: >-
+      Sí, cada proyecto se apoya en una base de datos Postgres gestionada, con
+      APIs automáticas y acceso directo cuando lo necesitas.
+  - question: ¿En qué se diferencia de Supabase?
+    answer: >-
+      InsForge está orientado a agentes de IA como clientes de primera clase,
+      integrando acceso a modelos y herramientas pensadas para flujos autónomos
+      además del backend clásico.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/insforge.webp
 ---
 
 ## ¿Qué es?

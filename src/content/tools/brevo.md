@@ -1,13 +1,21 @@
 ---
 name: Brevo
-description: Email transaccional, campañas y gestión de contactos en una plataforma.
+description: 'Email transaccional, campañas y gestión de contactos en una plataforma.'
 category: email
-tags: [email, marketing, transactional, campaigns, crm]
-officialSite: https://www.brevo.com
+tags:
+  - email
+  - marketing
+  - transactional
+  - campaigns
+  - crm
+officialSite: 'https://www.brevo.com'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API, SMTP]
+compatibility:
+  - Web
+  - API
+  - SMTP
 featured: false
 verified: false
 features:
@@ -16,26 +24,43 @@ features:
   - Gestión de contactos con segmentación
   - Automatizaciones de marketing por comportamiento
   - SMS y WhatsApp en canales adicionales
-  - Estadísticas de aperturas, clics y entregas
-alternatives: [mailjet, resend, mailtrap]
-relatedTools: [tally]
+  - 'Estadísticas de aperturas, clics y entregas'
+alternatives:
+  - mailjet
+  - resend
+  - mailtrap
+relatedTools:
+  - tally
 howToUse:
   - step: 1
-    title: "Crea tu cuenta y obtén las claves"
-    description: "Regístrate en brevo.com y genera una API key o credenciales SMTP desde el panel de SMTP y API. Verifica tu dominio de envío para mejorar la entregabilidad."
+    title: Crea tu cuenta y obtén las claves
+    description: >-
+      Regístrate en brevo.com y genera una API key o credenciales SMTP desde el
+      panel de SMTP y API. Verifica tu dominio de envío para mejorar la
+      entregabilidad.
   - step: 2
-    title: "Importa tus contactos"
-    description: "Sube tu lista de contactos por CSV o vía API, créales atributos personalizados y organiza segmentos para las campañas de marketing."
+    title: Importa tus contactos
+    description: >-
+      Sube tu lista de contactos por CSV o vía API, créales atributos
+      personalizados y organiza segmentos para las campañas de marketing.
   - step: 3
-    title: "Envía transaccionales o campañas"
-    description: "Usa la API transactional para emails de tu app (confirmaciones, recibos) y el editor de campañas para newsletters, midiendo aperturas y clics en el panel."
+    title: Envía transaccionales o campañas
+    description: >-
+      Usa la API transactional para emails de tu app (confirmaciones, recibos) y
+      el editor de campañas para newsletters, midiendo aperturas y clics en el
+      panel.
 whenToUse:
-  - title: "Marketing y transaccional en un solo sitio"
-    description: "Cuando quieres enviar tanto los emails de tu aplicación como newsletters y campañas sin pagar ni integrar dos plataformas distintas."
-  - title: "Equipos sin recursos de desarrollo"
-    description: "Si el equipo de marketing necesita crear campañas con editor visual mientras desarrollo usa la API transaccional, todo sobre la misma base de contactos."
+  - title: Marketing y transaccional en un solo sitio
+    description: >-
+      Cuando quieres enviar tanto los emails de tu aplicación como newsletters y
+      campañas sin pagar ni integrar dos plataformas distintas.
+  - title: Equipos sin recursos de desarrollo
+    description: >-
+      Si el equipo de marketing necesita crear campañas con editor visual
+      mientras desarrollo usa la API transaccional, todo sobre la misma base de
+      contactos.
 examples:
-  - title: "Enviar un email transaccional con la API"
+  - title: Enviar un email transaccional con la API
     code: |
       const res = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
@@ -50,19 +75,35 @@ examples:
           htmlContent: '<p>Gracias por registrarte</p>'
         })
       })
-    output: "Devuelve el messageId del email en cola para su envío."
+    output: Devuelve el messageId del email en cola para su envío.
 tips:
-  - text: "El plan gratuito limita a 300 emails al día: programa los envíos transaccionales con prioridad para no agotar la cuota con campañas."
-  - text: "Verifica tu dominio con SPF y DKIM desde el primer día para evitar la carpeta de spam."
-  - text: "Usa los atributos de contacto para personalizar asuntos y contenido sin duplicar plantillas."
+  - text: >-
+      El plan gratuito limita a 300 emails al día: programa los envíos
+      transaccionales con prioridad para no agotar la cuota con campañas.
+  - text: >-
+      Verifica tu dominio con SPF y DKIM desde el primer día para evitar la
+      carpeta de spam.
+  - text: >-
+      Usa los atributos de contacto para personalizar asuntos y contenido sin
+      duplicar plantillas.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Brevo?"
-    answer: "El plan gratuito incluye 300 emails al día, contactos ilimitados, email transaccional y las herramientas básicas de campañas."
-  - question: "¿Brevo cobra por contactos o por emails?"
-    answer: "Los planes se tarifan principalmente por volumen de emails enviados, no por número de contactos almacenados, que es ilimitado incluso en el plan gratuito."
-  - question: "¿Antes se llamaba Sendinblue?"
-    answer: "Sí, Brevo es el nuevo nombre de Sendinblue desde 2023. La plataforma mantiene el email marketing y transaccional, y ha añadido CRM y más canales."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Brevo?
+    answer: >-
+      El plan gratuito incluye 300 emails al día, contactos ilimitados, email
+      transaccional y las herramientas básicas de campañas.
+  - question: ¿Brevo cobra por contactos o por emails?
+    answer: >-
+      Los planes se tarifan principalmente por volumen de emails enviados, no
+      por número de contactos almacenados, que es ilimitado incluso en el plan
+      gratuito.
+  - question: ¿Antes se llamaba Sendinblue?
+    answer: >-
+      Sí, Brevo es el nuevo nombre de Sendinblue desde 2023. La plataforma
+      mantiene el email marketing y transaccional, y ha añadido CRM y más
+      canales.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/brevo.webp
 ---
 
 ## ¿Qué es?

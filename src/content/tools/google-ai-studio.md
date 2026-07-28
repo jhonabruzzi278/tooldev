@@ -1,41 +1,69 @@
 ---
 name: Google AI Studio
-description: Playground web gratuito de Google para probar modelos Gemini, experimentar con prompts y generar claves API para desarrollo.
+description: >-
+  Playground web gratuito de Google para probar modelos Gemini, experimentar con
+  prompts y generar claves API para desarrollo.
 category: ia
-tags: [gemini, api, playground, prompts, google]
-officialSite: https://aistudio.google.com
+tags:
+  - gemini
+  - api
+  - playground
+  - prompts
+  - google
+officialSite: 'https://aistudio.google.com'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
   - Playground web para probar modelos Gemini sin escribir código
   - Generación de claves API gratuitas para la API de Gemini
-  - Ajuste de parámetros como temperatura, top-p y top-k
-  - Soporte para prompts multimodales con texto, imágenes, audio y vídeo
+  - 'Ajuste de parámetros como temperatura, top-p y top-k'
+  - 'Soporte para prompts multimodales con texto, imágenes, audio y vídeo'
   - Historial de prompts y comparación de respuestas entre modelos
   - Acceso anticipado a modelos Gemini experimentales
-alternatives: [openai, claude, mistral-ai]
-relatedTools: [notebooklm, stitch, jules]
+alternatives:
+  - openai
+  - claude
+  - mistral-ai
+relatedTools:
+  - notebooklm
+  - stitch
+  - jules
 howToUse:
   - step: 1
-    title: "Accede con tu cuenta de Google"
-    description: "Entra en aistudio.google.com e inicia sesión con tu cuenta de Google. No hace falta tarjeta ni configurar facturación para empezar a usar el playground."
+    title: Accede con tu cuenta de Google
+    description: >-
+      Entra en aistudio.google.com e inicia sesión con tu cuenta de Google. No
+      hace falta tarjeta ni configurar facturación para empezar a usar el
+      playground.
   - step: 2
-    title: "Prueba prompts en el playground"
-    description: "Selecciona un modelo Gemini, escribe tu prompt y ajusta parámetros como la temperatura. Puedes subir imágenes o documentos para prompts multimodales y guardar tus experimentos."
+    title: Prueba prompts en el playground
+    description: >-
+      Selecciona un modelo Gemini, escribe tu prompt y ajusta parámetros como la
+      temperatura. Puedes subir imágenes o documentos para prompts multimodales
+      y guardar tus experimentos.
   - step: 3
-    title: "Genera una clave API e intégrala"
-    description: "Haz clic en Get API key para crear una clave gratuita. Úsala en tu aplicación con el SDK oficial de Google AI o con llamadas REST directas a la API de Gemini."
+    title: Genera una clave API e intégrala
+    description: >-
+      Haz clic en Get API key para crear una clave gratuita. Úsala en tu
+      aplicación con el SDK oficial de Google AI o con llamadas REST directas a
+      la API de Gemini.
 whenToUse:
-  - title: "Prototipar prompts con modelos Gemini"
-    description: "Cuando quieres iterar sobre prompts y parámetros con feedback inmediato antes de escribir el código de integración."
-  - title: "Obtener una clave API de Gemini sin coste"
-    description: "Cuando necesitas credenciales para la API de Gemini en desarrollo sin configurar facturación en Google Cloud."
+  - title: Prototipar prompts con modelos Gemini
+    description: >-
+      Cuando quieres iterar sobre prompts y parámetros con feedback inmediato
+      antes de escribir el código de integración.
+  - title: Obtener una clave API de Gemini sin coste
+    description: >-
+      Cuando necesitas credenciales para la API de Gemini en desarrollo sin
+      configurar facturación en Google Cloud.
 examples:
-  - title: "Llamada básica a la API de Gemini"
+  - title: Llamada básica a la API de Gemini
     code: |
       const res = await fetch(
         'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
@@ -48,19 +76,38 @@ examples:
         }
       )
       const data = await res.json()
-    output: "Devuelve un JSON con el texto generado por Gemini en candidates[0].content.parts[0].text."
+    output: >-
+      Devuelve un JSON con el texto generado por Gemini en
+      candidates[0].content.parts[0].text.
 tips:
-  - text: "Usa los prompts estructurados para definir instrucciones del sistema y ejemplos de entrada y salida que mejoren la consistencia de las respuestas."
-  - text: "Prueba el mismo prompt en varios modelos Gemini desde el playground para comparar calidad y velocidad antes de elegir uno para producción."
-  - text: "Las claves API gratuitas tienen límites de peticiones por minuto y por día; revisa la página de rate limits si tu aplicación empieza a crecer."
+  - text: >-
+      Usa los prompts estructurados para definir instrucciones del sistema y
+      ejemplos de entrada y salida que mejoren la consistencia de las
+      respuestas.
+  - text: >-
+      Prueba el mismo prompt en varios modelos Gemini desde el playground para
+      comparar calidad y velocidad antes de elegir uno para producción.
+  - text: >-
+      Las claves API gratuitas tienen límites de peticiones por minuto y por
+      día; revisa la página de rate limits si tu aplicación empieza a crecer.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Google AI Studio?"
-    answer: "AI Studio es gratis; además, algunos modelos de la API de Gemini incluyen cuota gratuita con límites específicos de peticiones por minuto y por día según el modelo."
-  - question: "¿Necesito una tarjeta de crédito para empezar?"
-    answer: "No. Google AI Studio y la generación de claves API funcionan con solo una cuenta de Google, sin configurar facturación."
-  - question: "¿Qué diferencia hay con Vertex AI?"
-    answer: "AI Studio es la herramienta gratuita y rápida para prototipado; Vertex AI es la plataforma empresarial de Google Cloud con MLOps, más controles y facturación por uso."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Google AI Studio?
+    answer: >-
+      AI Studio es gratis; además, algunos modelos de la API de Gemini incluyen
+      cuota gratuita con límites específicos de peticiones por minuto y por día
+      según el modelo.
+  - question: ¿Necesito una tarjeta de crédito para empezar?
+    answer: >-
+      No. Google AI Studio y la generación de claves API funcionan con solo una
+      cuenta de Google, sin configurar facturación.
+  - question: ¿Qué diferencia hay con Vertex AI?
+    answer: >-
+      AI Studio es la herramienta gratuita y rápida para prototipado; Vertex AI
+      es la plataforma empresarial de Google Cloud con MLOps, más controles y
+      facturación por uso.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/google-ai-studio.webp
 ---
 
 ## ¿Qué es?

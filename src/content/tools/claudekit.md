@@ -1,49 +1,92 @@
 ---
 name: ClaudeKit
-description: Librería de componentes React optimizada para construir interfaces de chat e interacción con Claude AI, con componentes de conversación y streaming.
+description: >-
+  Librería de componentes React optimizada para construir interfaces de chat e
+  interacción con Claude AI, con componentes de conversación y streaming.
 category: frontend
-tags: [react, ia, claude, chat, componentes, streaming, typescript, antropic]
-officialSite: https://github.com/claudekit
-github: https://github.com/claudekit
+tags:
+  - react
+  - ia
+  - claude
+  - chat
+  - componentes
+  - streaming
+  - typescript
+  - antropic
+officialSite: 'https://github.com/claudekit'
+github: 'https://github.com/claudekit'
 pricing: open-source
 openSource: true
 license: MIT
 technicalLevel: avanzado
-compatibility: [React, Next.js, TypeScript, Node.js]
+compatibility:
+  - React
+  - Next.js
+  - TypeScript
+  - Node.js
 verified: true
 features:
   - Componentes de chat optimizados para interacción con Claude AI
   - Soporte nativo para streaming de respuestas en tiempo real
   - Renderizado de markdown con syntax highlighting en respuestas
-  - Componentes de entrada con soporte multimodal (texto, imágenes, archivos)
+  - 'Componentes de entrada con soporte multimodal (texto, imágenes, archivos)'
   - Gestión de estado de conversación con hooks dedicados
   - Tematización flexible con CSS variables y dark mode
   - TypeScript-first con tipos completos para la API de Anthropic
   - Manejo de errores y estados de carga integrados
-alternatives: [vercel-ai-sdk, langchain-js]
-relatedTools: [21st-dev, react-bits]
+alternatives:
+  - vercel-ai-sdk
+  - langchain-js
+relatedTools:
+  - 21st-dev
+  - react-bits
 howToUse:
   - step: 1
-    title: "Instala ClaudeKit y configura la API key"
-    description: "Ejecuta npm install claudekit @anthropic-ai/sdk para instalar la librería y el SDK oficial de Anthropic. Configura tu API key como variable de entorno ANTHROPIC_API_KEY en tu archivo .env.local."
+    title: Instala ClaudeKit y configura la API key
+    description: >-
+      Ejecuta npm install claudekit @anthropic-ai/sdk para instalar la librería
+      y el SDK oficial de Anthropic. Configura tu API key como variable de
+      entorno ANTHROPIC_API_KEY en tu archivo .env.local.
   - step: 2
-    title: "Implementa el proveedor de conversación"
-    description: "Envuelve tu aplicación con el ClaudeProvider pasando la configuración del modelo (claude-3-sonnet, claude-3-opus, etc.), system prompt y opciones de streaming. Esto inicializa el contexto de conversación disponible para todos los componentes hijos."
+    title: Implementa el proveedor de conversación
+    description: >-
+      Envuelve tu aplicación con el ClaudeProvider pasando la configuración del
+      modelo (claude-3-sonnet, claude-3-opus, etc.), system prompt y opciones de
+      streaming. Esto inicializa el contexto de conversación disponible para
+      todos los componentes hijos.
   - step: 3
-    title: "Construye la interfaz de chat con componentes"
-    description: "Usa los componentes MessageList, MessageBubble e InputArea para construir la interfaz de conversación. MessageList renderiza el historial con streaming automático, y InputArea maneja la captura de texto, archivos e imágenes."
+    title: Construye la interfaz de chat con componentes
+    description: >-
+      Usa los componentes MessageList, MessageBubble e InputArea para construir
+      la interfaz de conversación. MessageList renderiza el historial con
+      streaming automático, y InputArea maneja la captura de texto, archivos e
+      imágenes.
   - step: 4
-    title: "Personaliza el comportamiento con hooks"
-    description: "Usa hooks como useConversation, useStreaming y useClaudeResponse para construir interfaces custom más allá de los componentes predeterminados. Los hooks exponen control total sobre el estado de la conversación, envío de mensajes y manejo de respuestas parciales."
+    title: Personaliza el comportamiento con hooks
+    description: >-
+      Usa hooks como useConversation, useStreaming y useClaudeResponse para
+      construir interfaces custom más allá de los componentes predeterminados.
+      Los hooks exponen control total sobre el estado de la conversación, envío
+      de mensajes y manejo de respuestas parciales.
 whenToUse:
-  - title: "Aplicaciones de chat con Claude AI"
-    description: "Cuando construyes una aplicación que necesita interfaz de conversación con Claude, como chatbots de soporte, asistentes de código, herramientas de escritura o cualquier producto que integre inteligencia artificial conversacional."
-  - title: "Prototipos rápidos de interfaces IA"
-    description: "Para crear MVPs y prototipos de productos con IA conversacional sin invertir semanas en componentes de chat custom. ClaudeKit proporciona la UI lista para que te enfoques en la lógica de negocio."
-  - title: "Dashboards internos con asistente IA"
-    description: "Para equipos que necesitan integrar un asistente IA dentro de herramientas internas, CRMs o paneles de administración donde los usuarios interactúan con Claude para obtener insights o realizar tareas."
+  - title: Aplicaciones de chat con Claude AI
+    description: >-
+      Cuando construyes una aplicación que necesita interfaz de conversación con
+      Claude, como chatbots de soporte, asistentes de código, herramientas de
+      escritura o cualquier producto que integre inteligencia artificial
+      conversacional.
+  - title: Prototipos rápidos de interfaces IA
+    description: >-
+      Para crear MVPs y prototipos de productos con IA conversacional sin
+      invertir semanas en componentes de chat custom. ClaudeKit proporciona la
+      UI lista para que te enfoques en la lógica de negocio.
+  - title: Dashboards internos con asistente IA
+    description: >-
+      Para equipos que necesitan integrar un asistente IA dentro de herramientas
+      internas, CRMs o paneles de administración donde los usuarios interactúan
+      con Claude para obtener insights o realizar tareas.
 examples:
-  - title: "Chat básico con streaming de respuestas"
+  - title: Chat básico con streaming de respuestas
     code: |
       import { ClaudeProvider, MessageList, InputArea } from 'claudekit';
 
@@ -64,22 +107,50 @@ examples:
           </ClaudeProvider>
         );
       }
-    output: "Una interfaz de chat completa con historial de mensajes scrolleable y campo de entrada con soporte para archivos, conectada a Claude con streaming de respuestas en tiempo real."
+    output: >-
+      Una interfaz de chat completa con historial de mensajes scrolleable y
+      campo de entrada con soporte para archivos, conectada a Claude con
+      streaming de respuestas en tiempo real.
 tips:
-  - text: "Configura el system prompt del ClaudeProvider de forma específica para tu caso de uso; un prompt bien definido mejora dramáticamente la calidad de las respuestas en tu interfaz."
-  - text: "Usa el hook useStreaming con onToken callback para implementar efectos visuales personalizados durante la generación de respuestas, como indicadores de escritura animados."
-  - text: "Implementa la API route de Anthropic en el servidor (Next.js API routes o Express) y pasa el endpoint a ClaudeProvider; nunca expongas tu API key en el cliente."
-  - text: "Aprovecha el componente CodeBlock incluido para renderizar código con syntax highlighting cuando Claude genera snippets en sus respuestas."
+  - text: >-
+      Configura el system prompt del ClaudeProvider de forma específica para tu
+      caso de uso; un prompt bien definido mejora dramáticamente la calidad de
+      las respuestas en tu interfaz.
+  - text: >-
+      Usa el hook useStreaming con onToken callback para implementar efectos
+      visuales personalizados durante la generación de respuestas, como
+      indicadores de escritura animados.
+  - text: >-
+      Implementa la API route de Anthropic en el servidor (Next.js API routes o
+      Express) y pasa el endpoint a ClaudeProvider; nunca expongas tu API key en
+      el cliente.
+  - text: >-
+      Aprovecha el componente CodeBlock incluido para renderizar código con
+      syntax highlighting cuando Claude genera snippets en sus respuestas.
 faq:
-  - question: "¿Necesito mi propia API key de Anthropic para usar ClaudeKit?"
-    answer: "Sí, ClaudeKit es una librería de UI que se conecta a la API de Anthropic. Necesitas una API key de Anthropic con créditos disponibles. La librería no incluye acceso a la API de forma gratuita."
-  - question: "¿ClaudeKit funciona con modelos que no son de Anthropic?"
-    answer: "No, está diseñado específicamente para la API de Anthropic y los modelos Claude. Si necesitas soporte multi-proveedor, considera Vercel AI SDK que soporta OpenAI, Anthropic y otros."
-  - question: "¿Cómo manejo el streaming en Next.js App Router?"
-    answer: "Crea una API route con ReadableStream que conecte al SDK de Anthropic con streaming habilitado. ClaudeKit consume el stream automáticamente cuando apuntas el provider a tu endpoint de API."
-  - question: "¿Es seguro usar ClaudeKit en producción?"
-    answer: "Sí, siempre que implementes la llamada a la API en el servidor. Nunca expongas tu API key de Anthropic en el código del cliente. Usa API routes, middleware de rate limiting y validación de entrada para producción."
-publishedAt: 2025-06-15
+  - question: ¿Necesito mi propia API key de Anthropic para usar ClaudeKit?
+    answer: >-
+      Sí, ClaudeKit es una librería de UI que se conecta a la API de Anthropic.
+      Necesitas una API key de Anthropic con créditos disponibles. La librería
+      no incluye acceso a la API de forma gratuita.
+  - question: ¿ClaudeKit funciona con modelos que no son de Anthropic?
+    answer: >-
+      No, está diseñado específicamente para la API de Anthropic y los modelos
+      Claude. Si necesitas soporte multi-proveedor, considera Vercel AI SDK que
+      soporta OpenAI, Anthropic y otros.
+  - question: ¿Cómo manejo el streaming en Next.js App Router?
+    answer: >-
+      Crea una API route con ReadableStream que conecte al SDK de Anthropic con
+      streaming habilitado. ClaudeKit consume el stream automáticamente cuando
+      apuntas el provider a tu endpoint de API.
+  - question: ¿Es seguro usar ClaudeKit en producción?
+    answer: >-
+      Sí, siempre que implementes la llamada a la API en el servidor. Nunca
+      expongas tu API key de Anthropic en el código del cliente. Usa API routes,
+      middleware de rate limiting y validación de entrada para producción.
+publishedAt: 2025-06-15T00:00:00.000Z
+screenshots:
+  - /screenshots/claudekit.webp
 ---
 
 ## ¿Qué es?

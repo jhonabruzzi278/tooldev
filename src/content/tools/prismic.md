@@ -2,12 +2,19 @@
 name: Prismic
 description: CMS para construir páginas con slices reutilizables y previews visuales.
 category: cms
-tags: [headless-cms, slices, pages, previews, content]
-officialSite: https://prismic.io
+tags:
+  - headless-cms
+  - slices
+  - pages
+  - previews
+  - content
+officialSite: 'https://prismic.io'
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
@@ -16,26 +23,45 @@ features:
   - Previews visuales de borradores
   - API REST con CDN global
   - Versionado y planificación de publicaciones
-  - Integraciones con Next.js, Nuxt y SvelteKit
-alternatives: [sanity, contentful, storyblok, hygraph, datocms]
-relatedTools: [postman]
+  - 'Integraciones con Next.js, Nuxt y SvelteKit'
+alternatives:
+  - sanity
+  - contentful
+  - storyblok
+  - hygraph
+  - datocms
+relatedTools:
+  - postman
 howToUse:
   - step: 1
-    title: "Modela slices con Slice Machine"
-    description: "Instala Slice Machine en tu proyecto y define los slices (secciones reutilizables como hero, galería o testimonios) con sus campos, sincronizándolos con tu repositorio de Prismic."
+    title: Modela slices con Slice Machine
+    description: >-
+      Instala Slice Machine en tu proyecto y define los slices (secciones
+      reutilizables como hero, galería o testimonios) con sus campos,
+      sincronizándolos con tu repositorio de Prismic.
   - step: 2
-    title: "Compón páginas en el editor"
-    description: "Los editores crean páginas combinando slices en el editor de Prismic, con vista previa visual y la posibilidad de programar publicaciones y versiones."
+    title: Compón páginas en el editor
+    description: >-
+      Los editores crean páginas combinando slices en el editor de Prismic, con
+      vista previa visual y la posibilidad de programar publicaciones y
+      versiones.
   - step: 3
-    title: "Renderiza con el cliente oficial"
-    description: "Usa el cliente de Prismic en tu framework para obtener los documentos y mapear cada slice a su componente del frontend, con previews de borradores activadas."
+    title: Renderiza con el cliente oficial
+    description: >-
+      Usa el cliente de Prismic en tu framework para obtener los documentos y
+      mapear cada slice a su componente del frontend, con previews de borradores
+      activadas.
 whenToUse:
-  - title: "Sitios de marketing por secciones"
-    description: "Cuando las páginas se construyen apilando secciones reutilizables y el equipo de marketing necesita componerlas sin tocar código."
-  - title: "Flujo developer-editor bien separado"
-    description: "Si quieres que desarrollo defina los componentes (slices) con Slice Machine y el equipo editorial solo combine y rellene contenido."
+  - title: Sitios de marketing por secciones
+    description: >-
+      Cuando las páginas se construyen apilando secciones reutilizables y el
+      equipo de marketing necesita componerlas sin tocar código.
+  - title: Flujo developer-editor bien separado
+    description: >-
+      Si quieres que desarrollo defina los componentes (slices) con Slice
+      Machine y el equipo editorial solo combine y rellene contenido.
 examples:
-  - title: "Obtener una página con el cliente de Prismic"
+  - title: Obtener una página con el cliente de Prismic
     code: |
       import * as prismic from '@prismicio/client'
 
@@ -43,19 +69,36 @@ examples:
 
       const page = await client.getByUID('pagina', 'home')
       console.log(page.data.slices.map(s => s.slice_type))
-    output: "Devuelve el documento home con su array de slices listo para mapear a componentes."
+    output: >-
+      Devuelve el documento home con su array de slices listo para mapear a
+      componentes.
 tips:
-  - text: "Desarrolla los slices en local con Slice Machine y su simulador antes de publicarlos en el repositorio de Prismic."
-  - text: "Usa las variaciones de un mismo slice para cubrir casos de diseño sin multiplicar componentes."
-  - text: "Activa los previews para que los editores vean los borradores renderizados en la web real antes de publicar."
+  - text: >-
+      Desarrolla los slices en local con Slice Machine y su simulador antes de
+      publicarlos en el repositorio de Prismic.
+  - text: >-
+      Usa las variaciones de un mismo slice para cubrir casos de diseño sin
+      multiplicar componentes.
+  - text: >-
+      Activa los previews para que los editores vean los borradores renderizados
+      en la web real antes de publicar.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Prismic?"
-    answer: "El plan gratuito incluye hasta 4 usuarios, documentos e idiomas ilimitados, 100 GB de CDN y 4 millones de llamadas API al mes."
-  - question: "¿Qué son los slices?"
-    answer: "Los slices son secciones reutilizables de página (hero, galería, texto) definidas por desarrollo con Slice Machine y combinadas libremente por los editores para construir páginas."
-  - question: "¿Prismic tiene API GraphQL?"
-    answer: "La API principal es REST con CDN; además ofrece integración con GraphQL a través de su ecosistema para frameworks como Gatsby."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Prismic?
+    answer: >-
+      El plan gratuito incluye hasta 4 usuarios, documentos e idiomas
+      ilimitados, 100 GB de CDN y 4 millones de llamadas API al mes.
+  - question: ¿Qué son los slices?
+    answer: >-
+      Los slices son secciones reutilizables de página (hero, galería, texto)
+      definidas por desarrollo con Slice Machine y combinadas libremente por los
+      editores para construir páginas.
+  - question: ¿Prismic tiene API GraphQL?
+    answer: >-
+      La API principal es REST con CDN; además ofrece integración con GraphQL a
+      través de su ecosistema para frameworks como Gatsby.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/prismic.webp
 ---
 
 ## ¿Qué es?

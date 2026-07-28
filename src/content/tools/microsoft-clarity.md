@@ -2,55 +2,104 @@
 name: Microsoft Clarity
 description: Mapas de calor y grabaciones gratis para entender el comportamiento web.
 category: analytics
-tags: [heatmaps, session-replay, analytics, behavior, microsoft]
-officialSite: https://clarity.microsoft.com
+tags:
+  - heatmaps
+  - session-replay
+  - analytics
+  - behavior
+  - microsoft
+officialSite: 'https://clarity.microsoft.com'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web]
+compatibility:
+  - Web
 featured: false
 verified: false
 features:
   - Grabaciones de sesión ilimitadas y gratuitas
-  - Mapas de calor de clics, scroll y áreas de interés
-  - Detección de rage clicks, dead clicks y errores de JavaScript
-  - Segmentación por dispositivo, país y comportamiento
+  - 'Mapas de calor de clics, scroll y áreas de interés'
+  - 'Detección de rage clicks, dead clicks y errores de JavaScript'
+  - 'Segmentación por dispositivo, país y comportamiento'
   - Integración con Google Analytics para cruzar datos
   - Panel de insights automáticos con patrones detectados
-alternatives: [posthog, mixpanel]
-relatedTools: [google-analytics, umami]
+alternatives:
+  - posthog
+  - mixpanel
+relatedTools:
+  - google-analytics
+  - umami
 howToUse:
   - step: 1
-    title: "Crear el proyecto en Clarity"
-    description: "Regístrate en clarity.microsoft.com con una cuenta de Microsoft, Google o Facebook, crea un proyecto indicando la URL de tu web y obtén el código de seguimiento."
+    title: Crear el proyecto en Clarity
+    description: >-
+      Regístrate en clarity.microsoft.com con una cuenta de Microsoft, Google o
+      Facebook, crea un proyecto indicando la URL de tu web y obtén el código de
+      seguimiento.
   - step: 2
-    title: "Instalar el script de seguimiento"
-    description: "Pega el snippet en la cabecera de todas tus páginas o instálalo mediante Google Tag Manager. Las grabaciones y mapas de calor empiezan a generarse automáticamente."
+    title: Instalar el script de seguimiento
+    description: >-
+      Pega el snippet en la cabecera de todas tus páginas o instálalo mediante
+      Google Tag Manager. Las grabaciones y mapas de calor empiezan a generarse
+      automáticamente.
   - step: 3
-    title: "Analizar grabaciones y heatmaps"
-    description: "Filtra grabaciones por rage clicks, errores o páginas concretas para encontrar problemas de usabilidad. Revisa los mapas de calor de tus páginas clave para validar si los usuarios ven e interactúan con lo importante."
+    title: Analizar grabaciones y heatmaps
+    description: >-
+      Filtra grabaciones por rage clicks, errores o páginas concretas para
+      encontrar problemas de usabilidad. Revisa los mapas de calor de tus
+      páginas clave para validar si los usuarios ven e interactúan con lo
+      importante.
 whenToUse:
-  - title: "Diagnosticar problemas de usabilidad"
-    description: "Cuando las métricas dicen que los usuarios abandonan pero no sabes por qué: las grabaciones muestran exactamente qué ven y dónde se atascan."
-  - title: "Validar diseños y landing pages"
-    description: "Ideal para comprobar con mapas de calor si los usuarios hacen clic donde esperas, llegan con el scroll al contenido clave o ignoran elementos."
-  - title: "Complemento cualitativo de tu analítica"
-    description: "Perfecto junto a GA4, Umami o cualquier analítica cuantitativa: ellas te dan los números y Clarity te muestra el comportamiento detrás."
+  - title: Diagnosticar problemas de usabilidad
+    description: >-
+      Cuando las métricas dicen que los usuarios abandonan pero no sabes por
+      qué: las grabaciones muestran exactamente qué ven y dónde se atascan.
+  - title: Validar diseños y landing pages
+    description: >-
+      Ideal para comprobar con mapas de calor si los usuarios hacen clic donde
+      esperas, llegan con el scroll al contenido clave o ignoran elementos.
+  - title: Complemento cualitativo de tu analítica
+    description: >-
+      Perfecto junto a GA4, Umami o cualquier analítica cuantitativa: ellas te
+      dan los números y Clarity te muestra el comportamiento detrás.
 tips:
-  - text: "Filtra primero por rage clicks y dead clicks: son la forma más rápida de encontrar elementos rotos o diseños confusos que frustran a los usuarios."
-  - text: "Conecta Clarity con Google Analytics para saltar desde un segmento de GA directamente a las grabaciones de esos usuarios."
-  - text: "Revisa grabaciones de sesiones convertidas y no convertidas en paralelo: las diferencias de comportamiento suelen revelar qué cambiar."
-  - text: "Enmascara campos sensibles con la configuración de masking para cumplir privacidad: Clarity enmascara texto por defecto, pero revisa formularios propios."
+  - text: >-
+      Filtra primero por rage clicks y dead clicks: son la forma más rápida de
+      encontrar elementos rotos o diseños confusos que frustran a los usuarios.
+  - text: >-
+      Conecta Clarity con Google Analytics para saltar desde un segmento de GA
+      directamente a las grabaciones de esos usuarios.
+  - text: >-
+      Revisa grabaciones de sesiones convertidas y no convertidas en paralelo:
+      las diferencias de comportamiento suelen revelar qué cambiar.
+  - text: >-
+      Enmascara campos sensibles con la configuración de masking para cumplir
+      privacidad: Clarity enmascara texto por defecto, pero revisa formularios
+      propios.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Microsoft Clarity?"
-    answer: "Es totalmente gratis: proyectos, mapas de calor y grabaciones de sesión ilimitados, sin límite de tráfico ni planes de pago ocultos."
-  - question: "¿Microsoft Clarity afecta al rendimiento de mi web?"
-    answer: "El script es asíncrono y ligero, diseñado para no bloquear la carga. En la práctica su impacto en el rendimiento percibido es mínimo para la mayoría de sitios."
-  - question: "¿Clarity cumple con GDPR?"
-    answer: "Clarity enmascara contenido sensible por defecto y ofrece controles de privacidad, pero al capturar comportamiento de usuarios conviene reflejarlo en tu política de privacidad y, según tu caso, en el consentimiento."
-  - question: "¿En qué se diferencia de Google Analytics?"
-    answer: "GA mide números: visitas, eventos y conversiones. Clarity muestra el comportamiento: grabaciones, mapas de calor y frustración del usuario. Son complementarios y se integran entre sí."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Microsoft Clarity?
+    answer: >-
+      Es totalmente gratis: proyectos, mapas de calor y grabaciones de sesión
+      ilimitados, sin límite de tráfico ni planes de pago ocultos.
+  - question: ¿Microsoft Clarity afecta al rendimiento de mi web?
+    answer: >-
+      El script es asíncrono y ligero, diseñado para no bloquear la carga. En la
+      práctica su impacto en el rendimiento percibido es mínimo para la mayoría
+      de sitios.
+  - question: ¿Clarity cumple con GDPR?
+    answer: >-
+      Clarity enmascara contenido sensible por defecto y ofrece controles de
+      privacidad, pero al capturar comportamiento de usuarios conviene
+      reflejarlo en tu política de privacidad y, según tu caso, en el
+      consentimiento.
+  - question: ¿En qué se diferencia de Google Analytics?
+    answer: >-
+      GA mide números: visitas, eventos y conversiones. Clarity muestra el
+      comportamiento: grabaciones, mapas de calor y frustración del usuario. Son
+      complementarios y se integran entre sí.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/microsoft-clarity.webp
 ---
 
 ## ¿Qué es?

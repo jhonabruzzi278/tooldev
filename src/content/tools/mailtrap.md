@@ -2,40 +2,66 @@
 name: Mailtrap
 description: Prueba emails en sandboxes y envía mensajes transaccionales en producción.
 category: email
-tags: [email, testing, sandbox, smtp, transactional]
-officialSite: https://mailtrap.io
+tags:
+  - email
+  - testing
+  - sandbox
+  - smtp
+  - transactional
+officialSite: 'https://mailtrap.io'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API, SMTP]
+compatibility:
+  - Web
+  - API
+  - SMTP
 featured: false
 verified: false
 features:
   - Sandbox SMTP que captura emails sin enviarlos de verdad
   - Email API y SMTP para envío transaccional en producción
-  - Inspección de HTML, headers y puntuación de spam
+  - 'Inspección de HTML, headers y puntuación de spam'
   - Bandejas de prueba compartibles con el equipo
   - Plantillas con variables dinámicas
   - Logs y analíticas de entrega
-alternatives: [resend, mailjet, brevo]
-relatedTools: [postman, beeceptor]
+alternatives:
+  - resend
+  - mailjet
+  - brevo
+relatedTools:
+  - postman
+  - beeceptor
 howToUse:
   - step: 1
-    title: "Configura el sandbox en desarrollo"
-    description: "Crea un inbox de prueba en Mailtrap y copia sus credenciales SMTP a tu entorno de desarrollo. Todos los emails de tu app quedarán capturados ahí, sin llegar a usuarios reales."
+    title: Configura el sandbox en desarrollo
+    description: >-
+      Crea un inbox de prueba en Mailtrap y copia sus credenciales SMTP a tu
+      entorno de desarrollo. Todos los emails de tu app quedarán capturados ahí,
+      sin llegar a usuarios reales.
   - step: 2
-    title: "Inspecciona y valida los emails"
-    description: "Abre cada email capturado para revisar su renderizado HTML, el texto plano, los headers y la puntuación de spam antes de aprobar el diseño."
+    title: Inspecciona y valida los emails
+    description: >-
+      Abre cada email capturado para revisar su renderizado HTML, el texto
+      plano, los headers y la puntuación de spam antes de aprobar el diseño.
   - step: 3
-    title: "Pasa a producción con Email API"
-    description: "Cuando el diseño esté validado, cambia a las credenciales de Email API o SMTP de producción, verifica tu dominio y empieza a enviar emails reales con la misma integración."
+    title: Pasa a producción con Email API
+    description: >-
+      Cuando el diseño esté validado, cambia a las credenciales de Email API o
+      SMTP de producción, verifica tu dominio y empieza a enviar emails reales
+      con la misma integración.
 whenToUse:
-  - title: "Testing de emails en desarrollo y staging"
-    description: "Cuando quieres probar flujos de registro, recuperación de contraseña o notificaciones sin riesgo de enviar emails reales a usuarios durante las pruebas."
-  - title: "Un mismo proveedor para test y producción"
-    description: "Si quieres evitar configurar un sandbox por un lado y un proveedor de envío por otro, manteniendo una sola integración SMTP o API."
+  - title: Testing de emails en desarrollo y staging
+    description: >-
+      Cuando quieres probar flujos de registro, recuperación de contraseña o
+      notificaciones sin riesgo de enviar emails reales a usuarios durante las
+      pruebas.
+  - title: Un mismo proveedor para test y producción
+    description: >-
+      Si quieres evitar configurar un sandbox por un lado y un proveedor de
+      envío por otro, manteniendo una sola integración SMTP o API.
 examples:
-  - title: "Enviar con la Email API de Mailtrap"
+  - title: Enviar con la Email API de Mailtrap
     code: |
       const res = await fetch('https://send.api.mailtrap.io/api/send', {
         method: 'POST',
@@ -50,19 +76,34 @@ examples:
           html: '<p>Haz clic aquí para restablecerla</p>'
         })
       })
-    output: "Devuelve confirmación del envío con los ids de mensaje aceptados."
+    output: Devuelve confirmación del envío con los ids de mensaje aceptados.
 tips:
-  - text: "Usa siempre el sandbox en CI: los tests de registro no deben enviar emails reales nunca."
-  - text: "Revisa la puntuación de spam que muestra Mailtrap y corrige el HTML antes de producción."
-  - text: "Crea un inbox de prueba por entorno o por feature branch para no mezclar capturas del equipo."
+  - text: >-
+      Usa siempre el sandbox en CI: los tests de registro no deben enviar emails
+      reales nunca.
+  - text: >-
+      Revisa la puntuación de spam que muestra Mailtrap y corrige el HTML antes
+      de producción.
+  - text: >-
+      Crea un inbox de prueba por entorno o por feature branch para no mezclar
+      capturas del equipo.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Mailtrap?"
-    answer: "El plan Email API Free incluye 4.000 emails al mes con un límite de 150 al día, un dominio y logs conservados durante 3 días."
-  - question: "¿Qué diferencia hay entre el sandbox y Email API?"
-    answer: "El sandbox (Email Testing) captura los emails en una bandeja falsa para inspeccionarlos sin enviarlos. Email API es el servicio de envío transaccional real para producción."
-  - question: "¿Puedo compartir las bandejas de prueba con mi equipo?"
-    answer: "Sí, los inboxes de testing se pueden compartir, de modo que QA y diseño revisen los mismos emails capturados sin acceso a tu cuenta."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Mailtrap?
+    answer: >-
+      El plan Email API Free incluye 4.000 emails al mes con un límite de 150 al
+      día, un dominio y logs conservados durante 3 días.
+  - question: ¿Qué diferencia hay entre el sandbox y Email API?
+    answer: >-
+      El sandbox (Email Testing) captura los emails en una bandeja falsa para
+      inspeccionarlos sin enviarlos. Email API es el servicio de envío
+      transaccional real para producción.
+  - question: ¿Puedo compartir las bandejas de prueba con mi equipo?
+    answer: >-
+      Sí, los inboxes de testing se pueden compartir, de modo que QA y diseño
+      revisen los mismos emails capturados sin acceso a tu cuenta.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/mailtrap.webp
 ---
 
 ## ¿Qué es?

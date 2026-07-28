@@ -1,59 +1,96 @@
 ---
 name: OpenGraph.to
-description: "Extrae tags Open Graph, Twitter Card y SEO de cualquier URL pública: título, descripción, imagen, puntuación y meta tags sugeridos en JSON."
+description: >-
+  Extrae tags Open Graph, Twitter Card y SEO de cualquier URL pública: título,
+  descripción, imagen, puntuación y meta tags sugeridos en JSON.
 category: apis
-tags: [open-graph, seo, meta-tags, api, scraping]
-officialSite: https://www.opengraph.to
+tags:
+  - open-graph
+  - seo
+  - meta-tags
+  - api
+  - scraping
+officialSite: 'https://www.opengraph.to'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
   - Extracción de tags Open Graph y Twitter Card
-  - Título, descripción e imagen de cualquier URL pública
+  - 'Título, descripción e imagen de cualquier URL pública'
   - Puntuación SEO de los meta tags
   - Sugerencias de meta tags en la respuesta
   - Sin registro ni API key
   - Respuesta JSON con caché de 5 minutos
 alternatives: []
-relatedTools: [postman]
+relatedTools:
+  - postman
 howToUse:
   - step: 1
-    title: "Llama a la API con una URL"
-    description: "Haz una petición GET a la API de OpenGraph.to pasando la URL pública que quieres analizar. No hace falta registro ni clave de acceso."
+    title: Llama a la API con una URL
+    description: >-
+      Haz una petición GET a la API de OpenGraph.to pasando la URL pública que
+      quieres analizar. No hace falta registro ni clave de acceso.
   - step: 2
-    title: "Lee los datos extraídos"
-    description: "La respuesta JSON incluye el título, la descripción, la imagen destacada y los tags Open Graph y Twitter Card detectados en la página."
+    title: Lee los datos extraídos
+    description: >-
+      La respuesta JSON incluye el título, la descripción, la imagen destacada y
+      los tags Open Graph y Twitter Card detectados en la página.
   - step: 3
-    title: "Usa la puntuación y sugerencias"
-    description: "Aprovecha la puntuación SEO y los meta tags sugeridos para auditar tus propias páginas o para generar previews de enlaces en tu app."
+    title: Usa la puntuación y sugerencias
+    description: >-
+      Aprovecha la puntuación SEO y los meta tags sugeridos para auditar tus
+      propias páginas o para generar previews de enlaces en tu app.
 whenToUse:
-  - title: "Previews de enlaces en tu app"
-    description: "Cuando quieres mostrar tarjetas de preview con título, descripción e imagen al pegar un enlace, sin montar un scraper propio."
-  - title: "Auditoría rápida de meta tags"
-    description: "Para comprobar qué tags Open Graph y Twitter Card publica una página y recibir sugerencias de mejora SEO en una sola llamada."
+  - title: Previews de enlaces en tu app
+    description: >-
+      Cuando quieres mostrar tarjetas de preview con título, descripción e
+      imagen al pegar un enlace, sin montar un scraper propio.
+  - title: Auditoría rápida de meta tags
+    description: >-
+      Para comprobar qué tags Open Graph y Twitter Card publica una página y
+      recibir sugerencias de mejora SEO en una sola llamada.
 examples:
-  - title: "Obtener los datos Open Graph de una URL"
+  - title: Obtener los datos Open Graph de una URL
     code: |
       const url = encodeURIComponent('https://astro.build')
       const res = await fetch(`https://www.opengraph.to/api/og?url=${url}`)
       const data = await res.json()
       console.log(data.title, data.image, data.score)
-    output: "Devuelve el título, la imagen destacada, los meta tags detectados y la puntuación SEO de la URL."
+    output: >-
+      Devuelve el título, la imagen destacada, los meta tags detectados y la
+      puntuación SEO de la URL.
 tips:
-  - text: "Respeta el límite de 10 peticiones por hora por IP: cachea los resultados en tu servidor para no desperdiciar cuota."
-  - text: "La API cachea cada URL durante 5 minutos: si acabas de cambiar tus meta tags, espera unos minutos para ver el cambio."
-  - text: "Codifica siempre la URL objetivo con encodeURIComponent antes de pasarla como parámetro."
+  - text: >-
+      Respeta el límite de 10 peticiones por hora por IP: cachea los resultados
+      en tu servidor para no desperdiciar cuota.
+  - text: >-
+      La API cachea cada URL durante 5 minutos: si acabas de cambiar tus meta
+      tags, espera unos minutos para ver el cambio.
+  - text: >-
+      Codifica siempre la URL objetivo con encodeURIComponent antes de pasarla
+      como parámetro.
 faq:
-  - question: "¿Qué incluye el plan gratuito de OpenGraph.to?"
-    answer: "Es una API pública gratis sin registro ni clave, con 10 peticiones por hora por IP y caché de 5 minutos por URL."
-  - question: "¿Qué datos devuelve exactamente?"
-    answer: "Devuelve en JSON el título, la descripción, la imagen destacada, los tags Open Graph y Twitter Card detectados, una puntuación SEO y meta tags sugeridos."
-  - question: "¿Puedo usarlo para generar previews en producción?"
-    answer: "Sí, pero con el límite de 10 peticiones por hora por IP conviene cachear las respuestas en tu backend para no agotar la cuota con picos de tráfico."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de OpenGraph.to?
+    answer: >-
+      Es una API pública gratis sin registro ni clave, con 10 peticiones por
+      hora por IP y caché de 5 minutos por URL.
+  - question: ¿Qué datos devuelve exactamente?
+    answer: >-
+      Devuelve en JSON el título, la descripción, la imagen destacada, los tags
+      Open Graph y Twitter Card detectados, una puntuación SEO y meta tags
+      sugeridos.
+  - question: ¿Puedo usarlo para generar previews en producción?
+    answer: >-
+      Sí, pero con el límite de 10 peticiones por hora por IP conviene cachear
+      las respuestas en tu backend para no agotar la cuota con picos de tráfico.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/opengraph-to.webp
 ---
 
 ## ¿Qué es?

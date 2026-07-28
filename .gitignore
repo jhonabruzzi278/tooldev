@@ -40,5 +40,9 @@ pnpm-debug.log*
 # npm auth
 .npmrc
 
+# screenshot automation artifacts
+screenshot-report.json
+capture-screenshots.log
+
 # Kiro IDE specs
 .kiro/

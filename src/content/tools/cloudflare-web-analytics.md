@@ -1,13 +1,21 @@
 ---
 name: Cloudflare Web Analytics
-description: "Analítica web privacy-first de Cloudflare: sin cookies, sin datos personales y gratis para cualquier web."
+description: >-
+  Analítica web privacy-first de Cloudflare: sin cookies, sin datos personales y
+  gratis para cualquier web.
 category: analytics
-tags: [analytics, privacy, no-cookies, web, cloudflare]
-officialSite: https://www.cloudflare.com/web-analytics/
+tags:
+  - analytics
+  - privacy
+  - no-cookies
+  - web
+  - cloudflare
+officialSite: 'https://www.cloudflare.com/web-analytics/'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web]
+compatibility:
+  - Web
 featured: false
 verified: false
 features:
@@ -16,41 +24,83 @@ features:
   - Métricas de Web Vitals y rendimiento real de usuarios
   - Disponible aunque tu web no use el proxy de Cloudflare
   - Datos de bots y tráfico automatizado diferenciados
-  - Panel simple con páginas, referrers y países
-alternatives: [umami, google-analytics, ahrefs-web-analytics]
-relatedTools: [cloudflare, microsoft-clarity]
+  - 'Panel simple con páginas, referrers y países'
+alternatives:
+  - umami
+  - google-analytics
+  - ahrefs-web-analytics
+relatedTools:
+  - cloudflare
+  - microsoft-clarity
 howToUse:
   - step: 1
-    title: "Activar Web Analytics en el panel"
-    description: "Accede al dashboard de Cloudflare, entra en la sección Web Analytics y añade tu sitio. No es necesario que el dominio use la CDN ni el proxy de Cloudflare."
+    title: Activar Web Analytics en el panel
+    description: >-
+      Accede al dashboard de Cloudflare, entra en la sección Web Analytics y
+      añade tu sitio. No es necesario que el dominio use la CDN ni el proxy de
+      Cloudflare.
   - step: 2
-    title: "Instalar el beacon de JavaScript"
-    description: "Copia el snippet JS que te proporciona el panel y pégalo en la cabecera de tu web. Si tu sitio ya está detrás del proxy de Cloudflare, puedes activar la inyección automática del beacon."
+    title: Instalar el beacon de JavaScript
+    description: >-
+      Copia el snippet JS que te proporciona el panel y pégalo en la cabecera de
+      tu web. Si tu sitio ya está detrás del proxy de Cloudflare, puedes activar
+      la inyección automática del beacon.
   - step: 3
-    title: "Revisar métricas y Web Vitals"
-    description: "Consulta visitas, páginas vistas, referrers, países y navegadores desde el panel. Revisa las métricas de Core Web Vitals medidas con usuarios reales para detectar problemas de rendimiento."
+    title: Revisar métricas y Web Vitals
+    description: >-
+      Consulta visitas, páginas vistas, referrers, países y navegadores desde el
+      panel. Revisa las métricas de Core Web Vitals medidas con usuarios reales
+      para detectar problemas de rendimiento.
 whenToUse:
-  - title: "Analítica gratuita ilimitada y privada"
-    description: "Cuando quieres métricas de tráfico sin cookies, sin límites de volumen y sin pagar nada, independientemente del tamaño de tu web."
-  - title: "Medir rendimiento real con Web Vitals"
-    description: "Si te interesa conocer LCP, CLS y otros Core Web Vitals medidos en usuarios reales, no solo en tests de laboratorio."
-  - title: "Clientes y webs sin presupuesto"
-    description: "Ideal para añadir analítica a proyectos de clientes sin generar costes recurrentes ni fricción legal por cookies."
+  - title: Analítica gratuita ilimitada y privada
+    description: >-
+      Cuando quieres métricas de tráfico sin cookies, sin límites de volumen y
+      sin pagar nada, independientemente del tamaño de tu web.
+  - title: Medir rendimiento real con Web Vitals
+    description: >-
+      Si te interesa conocer LCP, CLS y otros Core Web Vitals medidos en
+      usuarios reales, no solo en tests de laboratorio.
+  - title: Clientes y webs sin presupuesto
+    description: >-
+      Ideal para añadir analítica a proyectos de clientes sin generar costes
+      recurrentes ni fricción legal por cookies.
 tips:
-  - text: "Combínala con Microsoft Clarity si necesitas mapas de calor y grabaciones: ambas son gratuitas y se complementan sin solaparse."
-  - text: "Si tu web ya usa el proxy de Cloudflare, activa la inyección automática del beacon para no tocar el código del sitio."
-  - text: "Revisa la sección de Web Vitals por página: te permite priorizar optimizaciones de rendimiento donde más usuarios afectados hay."
-  - text: "Usa el filtrado de bots para interpretar picos de tráfico: Cloudflare distingue tráfico humano de automatizado mejor que la mayoría de herramientas."
+  - text: >-
+      Combínala con Microsoft Clarity si necesitas mapas de calor y grabaciones:
+      ambas son gratuitas y se complementan sin solaparse.
+  - text: >-
+      Si tu web ya usa el proxy de Cloudflare, activa la inyección automática
+      del beacon para no tocar el código del sitio.
+  - text: >-
+      Revisa la sección de Web Vitals por página: te permite priorizar
+      optimizaciones de rendimiento donde más usuarios afectados hay.
+  - text: >-
+      Usa el filtrado de bots para interpretar picos de tráfico: Cloudflare
+      distingue tráfico humano de automatizado mejor que la mayoría de
+      herramientas.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Cloudflare Web Analytics?"
-    answer: "Es totalmente gratis para cualquier web: sin cookies, sin recolección de datos personales y sin tope de tráfico, tanto si usas la CDN de Cloudflare como si no."
-  - question: "¿Necesito usar la CDN de Cloudflare para la analítica?"
-    answer: "No. Puedes añadir el beacon de JavaScript a cualquier web aunque no uses el proxy ni la CDN de Cloudflare. Solo necesitas una cuenta gratuita."
-  - question: "¿Cloudflare Web Analytics usa cookies?"
-    answer: "No. No utiliza cookies ni identificadores persistentes y no recoge datos personales, por lo que no requiere banner de consentimiento en la mayoría de jurisdicciones."
-  - question: "¿Qué métricas de rendimiento ofrece?"
-    answer: "Mide Core Web Vitals con usuarios reales, incluyendo LCP, CLS e INP, además de las métricas clásicas de tráfico como visitas, páginas vistas y tiempo de carga."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Cloudflare Web Analytics?
+    answer: >-
+      Es totalmente gratis para cualquier web: sin cookies, sin recolección de
+      datos personales y sin tope de tráfico, tanto si usas la CDN de Cloudflare
+      como si no.
+  - question: ¿Necesito usar la CDN de Cloudflare para la analítica?
+    answer: >-
+      No. Puedes añadir el beacon de JavaScript a cualquier web aunque no uses
+      el proxy ni la CDN de Cloudflare. Solo necesitas una cuenta gratuita.
+  - question: ¿Cloudflare Web Analytics usa cookies?
+    answer: >-
+      No. No utiliza cookies ni identificadores persistentes y no recoge datos
+      personales, por lo que no requiere banner de consentimiento en la mayoría
+      de jurisdicciones.
+  - question: ¿Qué métricas de rendimiento ofrece?
+    answer: >-
+      Mide Core Web Vitals con usuarios reales, incluyendo LCP, CLS e INP,
+      además de las métricas clásicas de tráfico como visitas, páginas vistas y
+      tiempo de carga.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/cloudflare-web-analytics.webp
 ---
 
 ## ¿Qué es?

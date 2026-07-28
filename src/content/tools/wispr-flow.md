@@ -1,13 +1,25 @@
 ---
 name: Wispr Flow
-description: Herramienta de dictado por voz potenciada por IA que transcribe y escribe en tu estilo personal, funcionando en cualquier aplicación del sistema.
+description: >-
+  Herramienta de dictado por voz potenciada por IA que transcribe y escribe en
+  tu estilo personal, funcionando en cualquier aplicación del sistema.
 category: productividad
-tags: [dictado, voz, transcripcion, escritura, ia, productividad, accesibilidad, texto]
-officialSite: https://wisprflow.ai/
+tags:
+  - dictado
+  - voz
+  - transcripcion
+  - escritura
+  - ia
+  - productividad
+  - accesibilidad
+  - texto
+officialSite: 'https://wisprflow.ai/'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [macOS, Windows]
+compatibility:
+  - macOS
+  - Windows
 features:
   - Dictado por voz con transcripción en tiempo real en cualquier aplicación
   - Adaptación al estilo de escritura personal del usuario mediante IA
@@ -17,21 +29,37 @@ features:
   - Comandos de voz para edición y formateo de texto
 howToUse:
   - step: 1
-    title: "Descarga e instala Wispr Flow"
-    description: "Descarga Wispr Flow desde su sitio oficial para macOS o Windows. Instala la aplicación y concede los permisos de accesibilidad y micrófono necesarios para que funcione en cualquier app del sistema."
+    title: Descarga e instala Wispr Flow
+    description: >-
+      Descarga Wispr Flow desde su sitio oficial para macOS o Windows. Instala
+      la aplicación y concede los permisos de accesibilidad y micrófono
+      necesarios para que funcione en cualquier app del sistema.
   - step: 2
-    title: "Configura tu perfil de escritura"
-    description: "Wispr Flow aprende tu estilo de escritura con el uso. Opcionalmente, proporciona ejemplos de textos previos (emails, mensajes) para que la IA adapte más rápido el tono y vocabulario a tu forma natural de comunicarte."
+    title: Configura tu perfil de escritura
+    description: >-
+      Wispr Flow aprende tu estilo de escritura con el uso. Opcionalmente,
+      proporciona ejemplos de textos previos (emails, mensajes) para que la IA
+      adapte más rápido el tono y vocabulario a tu forma natural de comunicarte.
   - step: 3
-    title: "Dicta en cualquier aplicación"
-    description: "Presiona el atajo de teclado configurado (por defecto Cmd+Shift+Space en Mac) para activar el dictado. Habla naturalmente y Wispr Flow transcribirá, corregirá y adaptará el texto a tu estilo en el campo activo de cualquier aplicación."
+    title: Dicta en cualquier aplicación
+    description: >-
+      Presiona el atajo de teclado configurado (por defecto Cmd+Shift+Space en
+      Mac) para activar el dictado. Habla naturalmente y Wispr Flow
+      transcribirá, corregirá y adaptará el texto a tu estilo en el campo activo
+      de cualquier aplicación.
 whenToUse:
-  - title: "Escritura rápida de emails y mensajes largos"
-    description: "Cuando necesitas escribir emails extensos, respuestas detalladas o documentos y prefieres dictar a velocidad de habla natural en lugar de teclear, manteniendo tu tono personal sin sonar como texto dictado."
-  - title: "Productividad para desarrolladores en documentación"
-    description: "Para escribir documentación, comentarios de código, mensajes de commit detallados o respuestas en Slack sin interrumpir el flujo de trabajo con teclado, especialmente útil para textos largos y descriptivos."
+  - title: Escritura rápida de emails y mensajes largos
+    description: >-
+      Cuando necesitas escribir emails extensos, respuestas detalladas o
+      documentos y prefieres dictar a velocidad de habla natural en lugar de
+      teclear, manteniendo tu tono personal sin sonar como texto dictado.
+  - title: Productividad para desarrolladores en documentación
+    description: >-
+      Para escribir documentación, comentarios de código, mensajes de commit
+      detallados o respuestas en Slack sin interrumpir el flujo de trabajo con
+      teclado, especialmente útil para textos largos y descriptivos.
 examples:
-  - title: "Dictar un email profesional adaptado a tu estilo"
+  - title: Dictar un email profesional adaptado a tu estilo
     code: |
       # Activar dictado con Cmd+Shift+Space en un email nuevo
 
@@ -46,22 +74,52 @@ examples:
       anterior? Necesito presentarlo mañana en la reunión
       con stakeholders. Si puedes incluir las métricas de
       rendimiento, sería ideal. Gracias."
-    output: "El texto dictado se reformula eliminando muletillas, corrigiendo gramática y adaptándose al estilo profesional del usuario, manteniendo el significado original completo."
+    output: >-
+      El texto dictado se reformula eliminando muletillas, corrigiendo gramática
+      y adaptándose al estilo profesional del usuario, manteniendo el
+      significado original completo.
 tips:
-  - text: "Habla de forma natural sin preocuparte por muletillas o repeticiones. Wispr Flow las limpia automáticamente y reformula para mantener tu estilo de escritura habitual."
-  - text: "Usa comandos de voz como 'borra eso', 'nueva línea' o 'punto y aparte' para controlar el formato sin tocar el teclado durante la sesión de dictado."
-  - text: "Dicta primero el contenido completo y luego edita manualmente los detalles finos. Es más eficiente que intentar dictar texto perfecto desde el principio."
-  - text: "Configura el atajo de teclado en una combinación que no interfiera con tus aplicaciones frecuentes para activar el dictado de forma instantánea."
+  - text: >-
+      Habla de forma natural sin preocuparte por muletillas o repeticiones.
+      Wispr Flow las limpia automáticamente y reformula para mantener tu estilo
+      de escritura habitual.
+  - text: >-
+      Usa comandos de voz como 'borra eso', 'nueva línea' o 'punto y aparte'
+      para controlar el formato sin tocar el teclado durante la sesión de
+      dictado.
+  - text: >-
+      Dicta primero el contenido completo y luego edita manualmente los detalles
+      finos. Es más eficiente que intentar dictar texto perfecto desde el
+      principio.
+  - text: >-
+      Configura el atajo de teclado en una combinación que no interfiera con tus
+      aplicaciones frecuentes para activar el dictado de forma instantánea.
 faq:
-  - question: "¿Wispr Flow funciona offline?"
-    answer: "Wispr Flow requiere conexión a internet para el procesamiento de IA que adapta el texto a tu estilo. La transcripción básica puede funcionar offline en algunos casos, pero las funciones avanzadas de reformulación necesitan conectividad."
-  - question: "¿Cómo aprende mi estilo de escritura?"
-    answer: "Wispr Flow analiza patrones de tus textos previos (vocabulario, longitud de frases, formalidad, puntuación) para crear un perfil de estilo. Con el uso continuado, la adaptación mejora progresivamente. No comparte estos datos con terceros."
-  - question: "¿En qué idiomas funciona?"
-    answer: "Soporta múltiples idiomas incluyendo español e inglés. Puede detectar automáticamente el idioma en que hablas y cambiar el contexto de transcripción sin necesidad de configuración manual entre idiomas."
-  - question: "¿Funciona en todas las aplicaciones?"
-    answer: "Sí, Wispr Flow funciona a nivel de sistema operativo en cualquier campo de texto: emails, Slack, VS Code, navegadores, procesadores de texto, y cualquier aplicación que acepte entrada de teclado."
-publishedAt: 2025-06-15
+  - question: ¿Wispr Flow funciona offline?
+    answer: >-
+      Wispr Flow requiere conexión a internet para el procesamiento de IA que
+      adapta el texto a tu estilo. La transcripción básica puede funcionar
+      offline en algunos casos, pero las funciones avanzadas de reformulación
+      necesitan conectividad.
+  - question: ¿Cómo aprende mi estilo de escritura?
+    answer: >-
+      Wispr Flow analiza patrones de tus textos previos (vocabulario, longitud
+      de frases, formalidad, puntuación) para crear un perfil de estilo. Con el
+      uso continuado, la adaptación mejora progresivamente. No comparte estos
+      datos con terceros.
+  - question: ¿En qué idiomas funciona?
+    answer: >-
+      Soporta múltiples idiomas incluyendo español e inglés. Puede detectar
+      automáticamente el idioma en que hablas y cambiar el contexto de
+      transcripción sin necesidad de configuración manual entre idiomas.
+  - question: ¿Funciona en todas las aplicaciones?
+    answer: >-
+      Sí, Wispr Flow funciona a nivel de sistema operativo en cualquier campo de
+      texto: emails, Slack, VS Code, navegadores, procesadores de texto, y
+      cualquier aplicación que acepte entrada de teclado.
+publishedAt: 2025-06-15T00:00:00.000Z
+screenshots:
+  - /screenshots/wispr-flow.webp
 ---
 
 ## ¿Qué es?

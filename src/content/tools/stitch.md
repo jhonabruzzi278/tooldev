@@ -1,13 +1,21 @@
 ---
 name: Stitch
-description: Herramienta experimental de Google Labs que convierte prompts, imágenes y wireframes en diseños UI, código frontend y trabajo editable en Figma.
+description: >-
+  Herramienta experimental de Google Labs que convierte prompts, imágenes y
+  wireframes en diseños UI, código frontend y trabajo editable en Figma.
 category: ia
-tags: [ai, ui-design, figma, frontend, google-labs]
-officialSite: https://stitch.withgoogle.com/
+tags:
+  - ai
+  - ui-design
+  - figma
+  - frontend
+  - google-labs
+officialSite: 'https://stitch.withgoogle.com/'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web]
+compatibility:
+  - Web
 featured: false
 verified: false
 features:
@@ -18,34 +26,61 @@ features:
   - Iteración conversacional sobre los diseños generados
   - Acceso gratuito como experimento de Google Labs
 alternatives: []
-relatedTools: [google-ai-studio, notebooklm]
+relatedTools:
+  - google-ai-studio
+  - notebooklm
 howToUse:
   - step: 1
-    title: "Accede con tu cuenta de Google"
-    description: "Entra en stitch.withgoogle.com e inicia sesión con tu cuenta de Google. Al ser un experimento de Labs, el acceso es gratuito."
+    title: Accede con tu cuenta de Google
+    description: >-
+      Entra en stitch.withgoogle.com e inicia sesión con tu cuenta de Google. Al
+      ser un experimento de Labs, el acceso es gratuito.
   - step: 2
-    title: "Describe o sube tu interfaz"
-    description: "Escribe un prompt describiendo la pantalla que quieres, o sube una imagen o wireframe como referencia. Stitch genera el diseño UI."
+    title: Describe o sube tu interfaz
+    description: >-
+      Escribe un prompt describiendo la pantalla que quieres, o sube una imagen
+      o wireframe como referencia. Stitch genera el diseño UI.
   - step: 3
-    title: "Exporta a código o Figma"
-    description: "Itera sobre el resultado con nuevas instrucciones y, cuando esté listo, exporta el código frontend o envíalo a Figma para edición detallada."
+    title: Exporta a código o Figma
+    description: >-
+      Itera sobre el resultado con nuevas instrucciones y, cuando esté listo,
+      exporta el código frontend o envíalo a Figma para edición detallada.
 whenToUse:
-  - title: "Prototipar una UI en minutos"
-    description: "Cuando quieres pasar de una descripción o un boceto a un diseño de interfaz visual sin empezar desde un lienzo en blanco."
-  - title: "Generar base para Figma o código"
-    description: "Cuando necesitas un punto de partida exportable a Figma o a código frontend que luego refinarás con tu equipo."
+  - title: Prototipar una UI en minutos
+    description: >-
+      Cuando quieres pasar de una descripción o un boceto a un diseño de
+      interfaz visual sin empezar desde un lienzo en blanco.
+  - title: Generar base para Figma o código
+    description: >-
+      Cuando necesitas un punto de partida exportable a Figma o a código
+      frontend que luego refinarás con tu equipo.
 tips:
-  - text: "Sé específico en el prompt: indica tipo de app, secciones, tono visual y público objetivo para mejores resultados al primer intento."
-  - text: "Usa un wireframe a mano alzada como entrada cuando tengas clara la estructura; Stitch la interpreta sorprendentemente bien."
-  - text: "Trata el código exportado como punto de partida; revísalo y adáptalo a tu stack y sistema de diseño."
+  - text: >-
+      Sé específico en el prompt: indica tipo de app, secciones, tono visual y
+      público objetivo para mejores resultados al primer intento.
+  - text: >-
+      Usa un wireframe a mano alzada como entrada cuando tengas clara la
+      estructura; Stitch la interpreta sorprendentemente bien.
+  - text: >-
+      Trata el código exportado como punto de partida; revísalo y adáptalo a tu
+      stack y sistema de diseño.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Stitch?"
-    answer: "Acceso gratuito de Google Labs para generar UI desde texto o imágenes; pueden aplicarse límites de uso según la demanda del experimento."
-  - question: "¿Puedo editar los diseños en Figma?"
-    answer: "Sí, una de sus funciones destacadas es exportar el diseño generado a Figma para continuar el trabajo con las herramientas habituales de diseño."
-  - question: "¿El código generado es apto para producción?"
-    answer: "El código frontend es un buen punto de partida para prototipos, pero conviene revisarlo, adaptarlo a tu framework y aplicar tus estándares antes de producción."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Stitch?
+    answer: >-
+      Acceso gratuito de Google Labs para generar UI desde texto o imágenes;
+      pueden aplicarse límites de uso según la demanda del experimento.
+  - question: ¿Puedo editar los diseños en Figma?
+    answer: >-
+      Sí, una de sus funciones destacadas es exportar el diseño generado a Figma
+      para continuar el trabajo con las herramientas habituales de diseño.
+  - question: ¿El código generado es apto para producción?
+    answer: >-
+      El código frontend es un buen punto de partida para prototipos, pero
+      conviene revisarlo, adaptarlo a tu framework y aplicar tus estándares
+      antes de producción.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/stitch.webp
 ---
 
 ## ¿Qué es?

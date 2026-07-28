@@ -57,7 +57,8 @@ describe('Tools content integrity', () => {
       }
 
       const siteMatch = fm.match(/^officialSite:\s*(.+)/m);
-      if (!siteMatch || !siteMatch[1].startsWith('http')) {
+      const siteValue = siteMatch ? siteMatch[1].replace(/^['"]|['"]$/g, '') : '';
+      if (!siteMatch || !siteValue.startsWith('http')) {
         failures.push(`${file}: invalid officialSite`);
       }
 

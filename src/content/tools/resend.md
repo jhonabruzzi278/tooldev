@@ -2,40 +2,66 @@
 name: Resend
 description: API moderna de email transaccional con gran integración con React.
 category: email
-tags: [email, transactional, react, api, smtp]
-officialSite: https://resend.com
+tags:
+  - email
+  - transactional
+  - react
+  - api
+  - smtp
+officialSite: 'https://resend.com'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API, SMTP]
+compatibility:
+  - Web
+  - API
+  - SMTP
 featured: true
 verified: false
 features:
   - API REST simple y SDKs para los lenguajes populares
   - Integración con React Email para plantillas en JSX
   - Envío transaccional con alta entregabilidad
-  - Webhooks para eventos de entrega, apertura y bounce
+  - 'Webhooks para eventos de entrega, apertura y bounce'
   - Gestión guiada de dominios y registros DNS
   - Logs y analíticas de envío en el dashboard
-alternatives: [brevo, mailjet, mailtrap]
-relatedTools: [postman]
+alternatives:
+  - brevo
+  - mailjet
+  - mailtrap
+relatedTools:
+  - postman
 howToUse:
   - step: 1
-    title: "Crea una API key"
-    description: "Regístrate en resend.com y genera una API key desde el dashboard. Guárdala en una variable de entorno de tu proyecto, nunca en código que se ejecute en el cliente."
+    title: Crea una API key
+    description: >-
+      Regístrate en resend.com y genera una API key desde el dashboard. Guárdala
+      en una variable de entorno de tu proyecto, nunca en código que se ejecute
+      en el cliente.
   - step: 2
-    title: "Verifica tu dominio"
-    description: "Añade tu dominio y configura los registros DNS (SPF y DKIM) que Resend te indica. Mientras tanto puedes probar con el dominio de pruebas onboarding@resend.dev."
+    title: Verifica tu dominio
+    description: >-
+      Añade tu dominio y configura los registros DNS (SPF y DKIM) que Resend te
+      indica. Mientras tanto puedes probar con el dominio de pruebas
+      onboarding@resend.dev.
   - step: 3
-    title: "Envía tu primer email"
-    description: "Instala el SDK con npm install resend y llama a resend.emails.send() con from, to, subject y un cuerpo en HTML o un componente de React Email."
+    title: Envía tu primer email
+    description: >-
+      Instala el SDK con npm install resend y llama a resend.emails.send() con
+      from, to, subject y un cuerpo en HTML o un componente de React Email.
 whenToUse:
-  - title: "Emails transaccionales en apps modernas"
-    description: "Cuando necesitas enviar confirmaciones de registro, recuperaciones de contraseña o notificaciones desde una app Next.js o Node con el mínimo código posible."
-  - title: "Plantillas construidas con React"
-    description: "Si tu equipo ya trabaja con React y quiere crear plantillas de email como componentes tipados, con preview local y reutilización de piezas entre emails."
+  - title: Emails transaccionales en apps modernas
+    description: >-
+      Cuando necesitas enviar confirmaciones de registro, recuperaciones de
+      contraseña o notificaciones desde una app Next.js o Node con el mínimo
+      código posible.
+  - title: Plantillas construidas con React
+    description: >-
+      Si tu equipo ya trabaja con React y quiere crear plantillas de email como
+      componentes tipados, con preview local y reutilización de piezas entre
+      emails.
 examples:
-  - title: "Enviar un email con el SDK de Node"
+  - title: Enviar un email con el SDK de Node
     code: |
       import { Resend } from 'resend'
 
@@ -47,21 +73,41 @@ examples:
         subject: 'Bienvenido',
         html: '<strong>Gracias por registrarte</strong>'
       })
-    output: "Devuelve el id del email enviado y el envío queda registrado en los logs del dashboard."
+    output: >-
+      Devuelve el id del email enviado y el envío queda registrado en los logs
+      del dashboard.
 tips:
-  - text: "Usa el dominio de pruebas onboarding@resend.dev en desarrollo y verifica tu dominio propio antes de salir a producción."
-  - text: "Construye las plantillas con React Email para previsualizarlas en local y mantener consistencia visual entre emails."
-  - text: "Configura el webhook para reaccionar a bounces y quejas, y así mantener limpia tu lista de destinatarios."
+  - text: >-
+      Usa el dominio de pruebas onboarding@resend.dev en desarrollo y verifica
+      tu dominio propio antes de salir a producción.
+  - text: >-
+      Construye las plantillas con React Email para previsualizarlas en local y
+      mantener consistencia visual entre emails.
+  - text: >-
+      Configura el webhook para reaccionar a bounces y quejas, y así mantener
+      limpia tu lista de destinatarios.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Resend?"
-    answer: "El plan gratuito incluye 3.000 emails al mes con un límite de 100 emails al día, un dominio, un webhook y logs conservados durante un día."
-  - question: "¿Puedo usar Resend solo con SMTP?"
-    answer: "Sí, además de la API y los SDKs, Resend ofrece credenciales SMTP para integrarlo en herramientas que solo soportan envío por SMTP."
-  - question: "¿Qué es React Email?"
-    answer: "Es una librería del ecosistema de Resend para crear plantillas de email con componentes de React, que se renderizan a HTML compatible con los clientes de correo."
-  - question: "¿Resend sirve para newsletters masivas?"
-    answer: "Está centrado en email transaccional y comunicaciones de producto. Para campañas de marketing con editor visual y segmentación, herramientas como Brevo o Mailjet encajan mejor."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Resend?
+    answer: >-
+      El plan gratuito incluye 3.000 emails al mes con un límite de 100 emails
+      al día, un dominio, un webhook y logs conservados durante un día.
+  - question: ¿Puedo usar Resend solo con SMTP?
+    answer: >-
+      Sí, además de la API y los SDKs, Resend ofrece credenciales SMTP para
+      integrarlo en herramientas que solo soportan envío por SMTP.
+  - question: ¿Qué es React Email?
+    answer: >-
+      Es una librería del ecosistema de Resend para crear plantillas de email
+      con componentes de React, que se renderizan a HTML compatible con los
+      clientes de correo.
+  - question: ¿Resend sirve para newsletters masivas?
+    answer: >-
+      Está centrado en email transaccional y comunicaciones de producto. Para
+      campañas de marketing con editor visual y segmentación, herramientas como
+      Brevo o Mailjet encajan mejor.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/resend.webp
 ---
 
 ## ¿Qué es?

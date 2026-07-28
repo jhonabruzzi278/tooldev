@@ -2,12 +2,18 @@
 name: Storyblok
 description: CMS headless con editor visual y contenido basado en componentes.
 category: cms
-tags: [headless-cms, visual-editor, components, content]
-officialSite: https://www.storyblok.com
+tags:
+  - headless-cms
+  - visual-editor
+  - components
+  - content
+officialSite: 'https://www.storyblok.com'
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
@@ -16,26 +22,43 @@ features:
   - API de entrega de contenido con CDN
   - Gestión de imágenes con transformaciones por URL
   - Flujos de publicación y versionado de contenido
-  - SDKs para Next.js, Nuxt, Astro y más frameworks
-alternatives: [sanity, contentful, hygraph, datocms, prismic]
-relatedTools: [postman]
+  - 'SDKs para Next.js, Nuxt, Astro y más frameworks'
+alternatives:
+  - sanity
+  - contentful
+  - hygraph
+  - datocms
+  - prismic
+relatedTools:
+  - postman
 howToUse:
   - step: 1
-    title: "Define tus componentes (bloks)"
-    description: "Crea un espacio en storyblok.com y modela el contenido como componentes: hero, galería, texto enriquecido. Cada blok define sus campos editables."
+    title: Define tus componentes (bloks)
+    description: >-
+      Crea un espacio en storyblok.com y modela el contenido como componentes:
+      hero, galería, texto enriquecido. Cada blok define sus campos editables.
   - step: 2
-    title: "Edita con el editor visual"
-    description: "Conecta tu frontend al editor visual: los editores ven la web real y editan el contenido haciendo clic sobre cada componente, con preview en tiempo real."
+    title: Edita con el editor visual
+    description: >-
+      Conecta tu frontend al editor visual: los editores ven la web real y
+      editan el contenido haciendo clic sobre cada componente, con preview en
+      tiempo real.
   - step: 3
-    title: "Renderiza el contenido por API"
-    description: "Consume la Content Delivery API con un SDK oficial: cada página llega como un árbol de bloks que mapeas a tus componentes del frontend."
+    title: Renderiza el contenido por API
+    description: >-
+      Consume la Content Delivery API con un SDK oficial: cada página llega como
+      un árbol de bloks que mapeas a tus componentes del frontend.
 whenToUse:
-  - title: "Equipos que quieren edición visual"
-    description: "Cuando el equipo de contenido necesita ver y editar la página real en vez de formularios abstractos, manteniendo la arquitectura headless."
-  - title: "Sitios construidos con componentes"
-    description: "Si tu frontend ya está hecho de componentes reutilizables (React, Vue, Astro), el modelo de bloks encaja de forma natural con tu código."
+  - title: Equipos que quieren edición visual
+    description: >-
+      Cuando el equipo de contenido necesita ver y editar la página real en vez
+      de formularios abstractos, manteniendo la arquitectura headless.
+  - title: Sitios construidos con componentes
+    description: >-
+      Si tu frontend ya está hecho de componentes reutilizables (React, Vue,
+      Astro), el modelo de bloks encaja de forma natural con tu código.
 examples:
-  - title: "Obtener una página con el SDK"
+  - title: Obtener una página con el SDK
     code: |
       import StoryblokClient from 'storyblok-js-client'
 
@@ -45,19 +68,36 @@ examples:
         version: 'published'
       })
       console.log(data.story.content.body)
-    output: "Devuelve el array de bloks de la página home listo para mapear a componentes."
+    output: >-
+      Devuelve el array de bloks de la página home listo para mapear a
+      componentes.
 tips:
-  - text: "Nombra los bloks igual que tus componentes del frontend para que el mapeo sea directo y predecible."
-  - text: "Usa el servicio de imágenes (/m/ en las URLs) para redimensionar y optimizar assets sin procesarlos tú."
-  - text: "Configura el preview con la URL de desarrollo para editar en vivo contra tu entorno local."
+  - text: >-
+      Nombra los bloks igual que tus componentes del frontend para que el mapeo
+      sea directo y predecible.
+  - text: >-
+      Usa el servicio de imágenes (/m/ en las URLs) para redimensionar y
+      optimizar assets sin procesarlos tú.
+  - text: >-
+      Configura el preview con la URL de desarrollo para editar en vivo contra
+      tu entorno local.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Storyblok?"
-    answer: "El plan gratuito incluye un espacio, un usuario, 100.000 peticiones API al mes y el editor visual."
-  - question: "¿Qué diferencia a Storyblok de otros CMS headless?"
-    answer: "Su editor visual en tiempo real: los editores trabajan sobre la página real montada con tu frontend, en lugar de formularios desconectados del diseño."
-  - question: "¿Storyblok funciona con cualquier framework?"
-    answer: "Sí, la API es agnóstica y hay SDKs oficiales para Next.js, Nuxt, Astro, SvelteKit, Remix y más, además de la API REST genérica."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Storyblok?
+    answer: >-
+      El plan gratuito incluye un espacio, un usuario, 100.000 peticiones API al
+      mes y el editor visual.
+  - question: ¿Qué diferencia a Storyblok de otros CMS headless?
+    answer: >-
+      Su editor visual en tiempo real: los editores trabajan sobre la página
+      real montada con tu frontend, en lugar de formularios desconectados del
+      diseño.
+  - question: ¿Storyblok funciona con cualquier framework?
+    answer: >-
+      Sí, la API es agnóstica y hay SDKs oficiales para Next.js, Nuxt, Astro,
+      SvelteKit, Remix y más, además de la API REST genérica.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/storyblok.webp
 ---
 
 ## ¿Qué es?

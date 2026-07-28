@@ -2,12 +2,17 @@
 name: Fontshare
 description: Colección de fuentes profesionales gratis para uso personal y comercial.
 category: diseno
-tags: [fonts, typography, free, commercial-use]
-officialSite: https://www.fontshare.com
+tags:
+  - fonts
+  - typography
+  - free
+  - commercial-use
+officialSite: 'https://www.fontshare.com'
 pricing: gratis
 openSource: false
 technicalLevel: principiante
-compatibility: [Web]
+compatibility:
+  - Web
 featured: false
 verified: false
 features:
@@ -17,40 +22,80 @@ features:
   - API de fuentes y CSS listo para incrustar en web
   - Familias con múltiples pesos y variable fonts
   - Curaduría de calidad de Indian Type Foundry
-alternatives: [fontsource]
-relatedTools: [penpot, figma]
+alternatives:
+  - fontsource
+relatedTools:
+  - penpot
+  - figma
 howToUse:
   - step: 1
-    title: "Explorar y elegir la fuente"
-    description: "Entra en fontshare.com y navega por el catálogo filtrando por estilo, peso o clasificación. Previsualiza cada familia con tu propio texto y tamaños para validar cómo queda."
+    title: Explorar y elegir la fuente
+    description: >-
+      Entra en fontshare.com y navega por el catálogo filtrando por estilo, peso
+      o clasificación. Previsualiza cada familia con tu propio texto y tamaños
+      para validar cómo queda.
   - step: 2
-    title: "Descargar o incrustar vía CSS"
-    description: "Descarga los archivos de la familia para uso en escritorio o copia el enlace CSS de la API de Fontshare y añádelo a tu web, igual que harías con Google Fonts."
+    title: Descargar o incrustar vía CSS
+    description: >-
+      Descarga los archivos de la familia para uso en escritorio o copia el
+      enlace CSS de la API de Fontshare y añádelo a tu web, igual que harías con
+      Google Fonts.
   - step: 3
-    title: "Aplicar la fuente en tu proyecto"
-    description: "Declara la familia en tu CSS con font-family y define pesos con font-weight. Para autoalojar, sirve los archivos woff2 con @font-face y font-display: swap para mejor rendimiento."
+    title: Aplicar la fuente en tu proyecto
+    description: >-
+      Declara la familia en tu CSS con font-family y define pesos con
+      font-weight. Para autoalojar, sirve los archivos woff2 con @font-face y
+      font-display: swap para mejor rendimiento.
 whenToUse:
-  - title: "Tipografía de calidad sin presupuesto"
-    description: "Cuando un proyecto necesita una fuente distintiva y profesional pero no hay presupuesto para licencias de pago."
-  - title: "Uso comercial sin líos legales"
-    description: "Ideal para clientes y productos comerciales: la licencia de Fontshare permite uso comercial gratuito sin atribución obligatoria."
-  - title: "Alternativa a Google Fonts"
-    description: "Si buscas familias menos vistas que las típicas de Google Fonts, el catálogo curado de Fontshare aporta personalidad."
+  - title: Tipografía de calidad sin presupuesto
+    description: >-
+      Cuando un proyecto necesita una fuente distintiva y profesional pero no
+      hay presupuesto para licencias de pago.
+  - title: Uso comercial sin líos legales
+    description: >-
+      Ideal para clientes y productos comerciales: la licencia de Fontshare
+      permite uso comercial gratuito sin atribución obligatoria.
+  - title: Alternativa a Google Fonts
+    description: >-
+      Si buscas familias menos vistas que las típicas de Google Fonts, el
+      catálogo curado de Fontshare aporta personalidad.
 tips:
-  - text: "Descarga siempre los archivos woff2 para web: son los más ligeros y con mejor compresión, y autoalojarlos mejora rendimiento y privacidad."
-  - text: "Limita los pesos que cargas a los que realmente usas (por ejemplo 400 y 700): cada peso extra suma kilobytes de descarga."
-  - text: "Guarda una copia de la licencia descargada junto a los archivos de la fuente en tu repo de diseño para resolver dudas legales futuras."
-  - text: "Prueba las variable fonts cuando estén disponibles: un solo archivo cubre todos los pesos intermedios con mejor rendimiento."
+  - text: >-
+      Descarga siempre los archivos woff2 para web: son los más ligeros y con
+      mejor compresión, y autoalojarlos mejora rendimiento y privacidad.
+  - text: >-
+      Limita los pesos que cargas a los que realmente usas (por ejemplo 400 y
+      700): cada peso extra suma kilobytes de descarga.
+  - text: >-
+      Guarda una copia de la licencia descargada junto a los archivos de la
+      fuente en tu repo de diseño para resolver dudas legales futuras.
+  - text: >-
+      Prueba las variable fonts cuando estén disponibles: un solo archivo cubre
+      todos los pesos intermedios con mejor rendimiento.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Fontshare?"
-    answer: "Todo el catálogo es gratis: todas las fuentes pueden usarse en proyectos personales y comerciales bajo la licencia de Fontshare, y ni siquiera hace falta crear una cuenta para descargarlas."
-  - question: "¿Puedo usar las fuentes de Fontshare en proyectos comerciales?"
-    answer: "Sí, la licencia de Fontshare permite uso comercial gratuito en web, aplicaciones, impresos y branding, sin atribución obligatoria. Conviene revisar la licencia concreta de cada descarga."
-  - question: "¿Cómo uso Fontshare en mi web?"
-    answer: "Puedes incrustar las fuentes con el enlace CSS de su API, similar a Google Fonts, o descargar los archivos y autoalojarlos con @font-face, opción recomendada por rendimiento y privacidad."
-  - question: "¿Quién está detrás de Fontshare?"
-    answer: "Fontshare es una iniciativa de Indian Type Foundry (ITF), una fundición tipográfica profesional que publica parte de su catálogo de forma gratuita para fomentar la buena tipografía."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Fontshare?
+    answer: >-
+      Todo el catálogo es gratis: todas las fuentes pueden usarse en proyectos
+      personales y comerciales bajo la licencia de Fontshare, y ni siquiera hace
+      falta crear una cuenta para descargarlas.
+  - question: ¿Puedo usar las fuentes de Fontshare en proyectos comerciales?
+    answer: >-
+      Sí, la licencia de Fontshare permite uso comercial gratuito en web,
+      aplicaciones, impresos y branding, sin atribución obligatoria. Conviene
+      revisar la licencia concreta de cada descarga.
+  - question: ¿Cómo uso Fontshare en mi web?
+    answer: >-
+      Puedes incrustar las fuentes con el enlace CSS de su API, similar a Google
+      Fonts, o descargar los archivos y autoalojarlos con @font-face, opción
+      recomendada por rendimiento y privacidad.
+  - question: ¿Quién está detrás de Fontshare?
+    answer: >-
+      Fontshare es una iniciativa de Indian Type Foundry (ITF), una fundición
+      tipográfica profesional que publica parte de su catálogo de forma gratuita
+      para fomentar la buena tipografía.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/fontshare.webp
 ---
 
 ## ¿Qué es?

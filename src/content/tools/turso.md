@@ -2,57 +2,100 @@
 name: Turso
 description: Bases SQLite en el edge con réplicas cerca de tus usuarios.
 category: backend
-tags: [sqlite, edge, database, distributed, libsql]
-officialSite: https://turso.tech
-github: https://github.com/tursodatabase/libsql
+tags:
+  - sqlite
+  - edge
+  - database
+  - distributed
+  - libsql
+officialSite: 'https://turso.tech'
+github: 'https://github.com/tursodatabase/libsql'
 pricing: freemium
 openSource: true
 license: MIT
 technicalLevel: intermedio
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
-  - SQLite distribuido basado en libsql, fork abierto de SQLite
+  - 'SQLite distribuido basado en libsql, fork abierto de SQLite'
   - Réplicas de lectura en múltiples regiones del edge
   - Embedded replicas para lecturas locales con latencia cero
-  - Compatible con Drizzle, Prisma y los SDKs de SQLite
+  - 'Compatible con Drizzle, Prisma y los SDKs de SQLite'
   - Branching de bases de datos para desarrollo
   - Backups automáticos y restauración a un punto en el tiempo
   - CLI y API para gestionar bases de datos
-alternatives: [neon, supabase, upstash]
-relatedTools: [drizzle-orm, prisma]
+alternatives:
+  - neon
+  - supabase
+  - upstash
+relatedTools:
+  - drizzle-orm
+  - prisma
 howToUse:
   - step: 1
-    title: "Instalar la CLI y crear la base de datos"
-    description: "Instala la CLI de Turso desde turso.tech, autentícate con turso auth login y crea tu base de datos con turso db create mi-db."
+    title: Instalar la CLI y crear la base de datos
+    description: >-
+      Instala la CLI de Turso desde turso.tech, autentícate con turso auth login
+      y crea tu base de datos con turso db create mi-db.
   - step: 2
-    title: "Conectar tu aplicación"
-    description: "Obtén la URL con turso db show y un token con turso db tokens create, instala el cliente @libsql/client y conéctate desde tu app con esas credenciales."
+    title: Conectar tu aplicación
+    description: >-
+      Obtén la URL con turso db show y un token con turso db tokens create,
+      instala el cliente @libsql/client y conéctate desde tu app con esas
+      credenciales.
   - step: 3
-    title: "Añadir réplicas y migraciones"
-    description: "Crea réplicas en otras regiones con turso db replicate para acercar las lecturas a tus usuarios y gestiona el esquema con migraciones de Drizzle o SQL plano."
+    title: Añadir réplicas y migraciones
+    description: >-
+      Crea réplicas en otras regiones con turso db replicate para acercar las
+      lecturas a tus usuarios y gestiona el esquema con migraciones de Drizzle o
+      SQL plano.
 whenToUse:
-  - title: "Apps globales con lecturas rápidas"
-    description: "Cuando tus usuarios están repartidos por el mundo y necesitas lecturas de base de datos con baja latencia desde el edge."
-  - title: "Arquitecturas multi-tenant"
-    description: "Para crear una base de datos por cliente u organización aprovechando el bajo coste por base de datos del modelo SQLite."
-  - title: "Funciones serverless y edge"
-    description: "Ideal junto a Cloudflare Workers, Vercel o Deno Deploy, donde las conexiones TCP persistentes no son una opción."
+  - title: Apps globales con lecturas rápidas
+    description: >-
+      Cuando tus usuarios están repartidos por el mundo y necesitas lecturas de
+      base de datos con baja latencia desde el edge.
+  - title: Arquitecturas multi-tenant
+    description: >-
+      Para crear una base de datos por cliente u organización aprovechando el
+      bajo coste por base de datos del modelo SQLite.
+  - title: Funciones serverless y edge
+    description: >-
+      Ideal junto a Cloudflare Workers, Vercel o Deno Deploy, donde las
+      conexiones TCP persistentes no son una opción.
 tips:
-  - text: "Usa embedded replicas en móvil o edge para leer de una copia local sincronizada y escribir contra la primaria."
-  - text: "Aprovecha el branching de bases de datos para probar migraciones y seeds sin tocar producción."
-  - text: "Combina Turso con Drizzle ORM: la integración es de las más pulidas y te da tipado extremo a extremo."
+  - text: >-
+      Usa embedded replicas en móvil o edge para leer de una copia local
+      sincronizada y escribir contra la primaria.
+  - text: >-
+      Aprovecha el branching de bases de datos para probar migraciones y seeds
+      sin tocar producción.
+  - text: >-
+      Combina Turso con Drizzle ORM: la integración es de las más pulidas y te
+      da tipado extremo a extremo.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Turso?"
-    answer: "El plan gratuito incluye 100 bases de datos, 5 GB de almacenamiento total, 500 millones de filas leídas y 10 millones de filas escritas al mes."
-  - question: "¿Qué diferencia hay entre Turso y SQLite normal?"
-    answer: "Turso usa libsql, un fork open source de SQLite, y lo ofrece como servicio gestionado con acceso por HTTP, réplicas en el edge y backups automáticos."
-  - question: "¿Puedo usar Prisma o Drizzle con Turso?"
-    answer: "Sí, Turso es compatible con Drizzle y Prisma a través del driver de libsql, además de sus SDKs para JavaScript, TypeScript, Rust, Go y Python."
-  - question: "¿Sirve para escrituras intensivas?"
-    answer: "Las escrituras van siempre a la primaria, por lo que en cargas muy intensivas de escritura una base cliente-servidor como PostgreSQL puede encajar mejor."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Turso?
+    answer: >-
+      El plan gratuito incluye 100 bases de datos, 5 GB de almacenamiento total,
+      500 millones de filas leídas y 10 millones de filas escritas al mes.
+  - question: ¿Qué diferencia hay entre Turso y SQLite normal?
+    answer: >-
+      Turso usa libsql, un fork open source de SQLite, y lo ofrece como servicio
+      gestionado con acceso por HTTP, réplicas en el edge y backups automáticos.
+  - question: ¿Puedo usar Prisma o Drizzle con Turso?
+    answer: >-
+      Sí, Turso es compatible con Drizzle y Prisma a través del driver de
+      libsql, además de sus SDKs para JavaScript, TypeScript, Rust, Go y Python.
+  - question: ¿Sirve para escrituras intensivas?
+    answer: >-
+      Las escrituras van siempre a la primaria, por lo que en cargas muy
+      intensivas de escritura una base cliente-servidor como PostgreSQL puede
+      encajar mejor.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/turso.webp
 ---
 
 ## ¿Qué es?

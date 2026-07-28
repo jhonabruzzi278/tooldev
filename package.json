@@ -48,8 +48,10 @@
     "@testing-library/react": "^16.3.2",
     "@vitejs/plugin-react": "^5.2.0",
     "@vitest/coverage-v8": "^4.1.10",
+    "gray-matter": "^4.0.3",
     "happy-dom": "^20.9.0",
     "jsdom": "^29.1.1",
+    "playwright": "^1.62.0",
     "vitest": "^4.1.8"
   }
 }

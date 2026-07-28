@@ -2,12 +2,19 @@
 name: Web3Forms
 description: Recibe formularios de sitios estáticos en tu email mediante una API.
 category: email
-tags: [forms, api, static-sites, email, no-backend]
-officialSite: https://web3forms.com
+tags:
+  - forms
+  - api
+  - static-sites
+  - email
+  - no-backend
+officialSite: 'https://web3forms.com'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
@@ -15,27 +22,41 @@ features:
   - No requiere backend ni panel complejo
   - Envío de los datos del formulario a tu email
   - Protección antispam con honeypot y reCAPTCHA
-  - Compatible con HTML puro, JavaScript y frameworks
+  - 'Compatible con HTML puro, JavaScript y frameworks'
   - Respuestas JSON para integración con fetch
-alternatives: [formspree, tally]
+alternatives:
+  - formspree
+  - tally
 relatedTools: []
 howToUse:
   - step: 1
-    title: "Obtén tu access key"
-    description: "Entra en web3forms.com, introduce tu email y recibe una access key al instante. No hace falta crear una cuenta con contraseña para empezar."
+    title: Obtén tu access key
+    description: >-
+      Entra en web3forms.com, introduce tu email y recibe una access key al
+      instante. No hace falta crear una cuenta con contraseña para empezar.
   - step: 2
-    title: "Añade la key a tu formulario"
-    description: "Incluye un campo oculto con name=access_key y tu clave en el formulario HTML, apuntando el action a https://api.web3forms.com/submit, o envía los datos con fetch."
+    title: Añade la key a tu formulario
+    description: >-
+      Incluye un campo oculto con name=access_key y tu clave en el formulario
+      HTML, apuntando el action a https://api.web3forms.com/submit, o envía los
+      datos con fetch.
   - step: 3
-    title: "Recibe los envíos en tu email"
-    description: "Cada envío del formulario llega directamente a tu bandeja de correo con los campos rellenados, sin dashboards intermedios obligatorios."
+    title: Recibe los envíos en tu email
+    description: >-
+      Cada envío del formulario llega directamente a tu bandeja de correo con
+      los campos rellenados, sin dashboards intermedios obligatorios.
 whenToUse:
-  - title: "Contacto en sitios estáticos sin fricción"
-    description: "Cuando quieres un formulario funcional en una web estática sin crear cuentas complejas, paneles ni backend propio: solo una access key y un form."
-  - title: "Proyectos personales y portfolios"
-    description: "Para añadir contacto a un portfolio o landing personal en minutos, con antispam incluido y cero mantenimiento."
+  - title: Contacto en sitios estáticos sin fricción
+    description: >-
+      Cuando quieres un formulario funcional en una web estática sin crear
+      cuentas complejas, paneles ni backend propio: solo una access key y un
+      form.
+  - title: Proyectos personales y portfolios
+    description: >-
+      Para añadir contacto a un portfolio o landing personal en minutos, con
+      antispam incluido y cero mantenimiento.
 examples:
-  - title: "Envío con fetch desde JavaScript"
+  - title: Envío con fetch desde JavaScript
     code: |
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -48,19 +69,33 @@ examples:
         })
       })
       const data = await res.json()
-    output: "Devuelve success true y el mensaje llega a tu correo electrónico."
+    output: Devuelve success true y el mensaje llega a tu correo electrónico.
 tips:
-  - text: "Activa el honeypot incluyendo un campo checkbox oculto con name=botcheck para frenar bots sin captcha visible."
-  - text: "Usa el campo subject o from_name para personalizar el asunto de los emails que recibes."
-  - text: "Guarda la access key en el HTML solo en sitios públicos: es su modelo de uso, pero no la reutilices en entornos privados."
+  - text: >-
+      Activa el honeypot incluyendo un campo checkbox oculto con name=botcheck
+      para frenar bots sin captcha visible.
+  - text: >-
+      Usa el campo subject o from_name para personalizar el asunto de los emails
+      que recibes.
+  - text: >-
+      Guarda la access key en el HTML solo en sitios públicos: es su modelo de
+      uso, pero no la reutilices en entornos privados.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Web3Forms?"
-    answer: "El plan gratuito incluye 250 envíos al mes, formularios y sitios web ilimitados, sin necesidad de backend ni de crear una cuenta completa."
-  - question: "¿Necesito registrarme para usar Web3Forms?"
-    answer: "No hace falta una cuenta con contraseña: introduces tu email, recibes una access key y ya puedes recibir envíos de formularios."
-  - question: "¿Cómo evita el spam Web3Forms?"
-    answer: "Incluye honeypot integrado y soporte para reCAPTCHA, además de filtros automáticos en el servidor antes de reenviarte el mensaje."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Web3Forms?
+    answer: >-
+      El plan gratuito incluye 250 envíos al mes, formularios y sitios web
+      ilimitados, sin necesidad de backend ni de crear una cuenta completa.
+  - question: ¿Necesito registrarme para usar Web3Forms?
+    answer: >-
+      No hace falta una cuenta con contraseña: introduces tu email, recibes una
+      access key y ya puedes recibir envíos de formularios.
+  - question: ¿Cómo evita el spam Web3Forms?
+    answer: >-
+      Incluye honeypot integrado y soporte para reCAPTCHA, además de filtros
+      automáticos en el servidor antes de reenviarte el mensaje.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/web3forms.webp
 ---
 
 ## ¿Qué es?

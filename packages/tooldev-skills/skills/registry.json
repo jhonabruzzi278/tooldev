@@ -9,7 +9,7 @@
     "slug": "apache-kafka",
     "name": "Apache Kafka",
     "category": "backend",
-    "description": "Plataforma distribuida de streaming de eventos para pipelines de datos en tiempo real y aplicaciones de streaming."
+    "description": ">-"
   },
   {
     "slug": "astro",
@@ -33,7 +33,7 @@
     "slug": "claudekit",
     "name": "ClaudeKit",
     "category": "frontend",
-    "description": "Librería de componentes React optimizada para construir interfaces de chat e interacción con Claude AI, con componentes de conversación y streaming."
+    "description": ">-"
   },
   {
     "slug": "deno",
@@ -57,13 +57,13 @@
     "slug": "elasticsearch",
     "name": "Elasticsearch",
     "category": "backend",
-    "description": "Motor de búsqueda y análisis distribuido basado en Lucene para datos estructurados, no estructurados, logs y búsqueda."
+    "description": ">-"
   },
   {
     "slug": "fireworks-ai",
     "name": "Fireworks AI",
     "category": "ia",
-    "description": "Plataforma de inferencia rápida para ejecutar modelos LLM open-source y modelos generativos de IA con latencia ultra baja y APIs compatibles con OpenAI."
+    "description": ">-"
   },
   {
     "slug": "flowbite",
@@ -81,7 +81,7 @@
     "slug": "grafana",
     "name": "Grafana",
     "category": "observabilidad",
-    "description": "Plataforma open source de observabilidad y dashboards para métricas, logs y trazas con soporte para múltiples fuentes de datos."
+    "description": ">-"
   },
   {
     "slug": "hono",
@@ -117,7 +117,7 @@
     "slug": "nginx",
     "name": "Nginx",
     "category": "devops",
-    "description": "Servidor web, reverse proxy y balanceador de carga de alto rendimiento usado por millones de sitios en producción."
+    "description": ">-"
   },
   {
     "slug": "nodejs",
@@ -135,13 +135,13 @@
     "slug": "postgresql",
     "name": "PostgreSQL",
     "category": "backend",
-    "description": "Sistema de base de datos relacional open source avanzado con soporte para consultas complejas, extensiones y alto rendimiento."
+    "description": ">-"
   },
   {
     "slug": "prometheus",
     "name": "Prometheus",
     "category": "observabilidad",
-    "description": "Sistema de monitoreo y alerta open source con modelo de datos basado en series temporales y consultas PromQL."
+    "description": ">-"
   },
   {
     "slug": "react-bits",
@@ -177,13 +177,13 @@
     "slug": "snyk",
     "name": "Snyk",
     "category": "seguridad",
-    "description": "Plataforma de seguridad para desarrolladores que encuentra y corrige vulnerabilidades en código, dependencias, contenedores e infraestructura como código."
+    "description": ">-"
   },
   {
     "slug": "squoosh",
     "name": "Squoosh",
     "category": "frontend",
-    "description": "Compresor de imágenes en el navegador con preview en vivo, múltiples codecs y procesamiento local sin subida a servidores."
+    "description": ">-"
   },
   {
     "slug": "storybook",
@@ -207,13 +207,13 @@
     "slug": "svgl",
     "name": "SVGL",
     "category": "diseno",
-    "description": "Biblioteca de logos SVG de tecnologías y empresas populares, con API REST, categorización y soporte para modo claro/oscuro."
+    "description": ">-"
   },
   {
     "slug": "tabler-icons",
     "name": "Tabler Icons",
     "category": "diseno",
-    "description": "Biblioteca open source de más de 6100 iconos SVG con diseño consistente, licencia MIT y soporte para React, Vue y SVG plano."
+    "description": ">-"
   },
   {
     "slug": "tailwind-css",

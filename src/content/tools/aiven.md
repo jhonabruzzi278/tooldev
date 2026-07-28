@@ -2,50 +2,90 @@
 name: Aiven
 description: Servicios de datos open source gestionados con planes gratuitos seleccionados.
 category: backend
-tags: [postgres, mysql, kafka, valkey, managed-services]
-officialSite: https://aiven.io
+tags:
+  - postgres
+  - mysql
+  - kafka
+  - valkey
+  - managed-services
+officialSite: 'https://aiven.io'
 pricing: freemium
 openSource: false
 technicalLevel: intermedio
-compatibility: [Web, API]
+compatibility:
+  - Web
+  - API
 featured: false
 verified: false
 features:
-  - PostgreSQL, MySQL, Kafka, Valkey y más servicios gestionados
-  - Despliegue en AWS, Google Cloud y Azure
-  - Backups, actualizaciones y parches gestionados
+  - 'PostgreSQL, MySQL, Kafka, Valkey y más servicios gestionados'
+  - 'Despliegue en AWS, Google Cloud y Azure'
+  - 'Backups, actualizaciones y parches gestionados'
   - Terraform provider y API para infraestructura como código
   - Métricas y logs integrados con integración a Grafana
   - Planes gratuitos en servicios seleccionados para desarrollo
-alternatives: [neon, upstash, cockroachdb]
-relatedTools: [postgresql, kafka, redis]
+alternatives:
+  - neon
+  - upstash
+  - cockroachdb
+relatedTools:
+  - postgresql
+  - kafka
+  - redis
 howToUse:
   - step: 1
-    title: "Crear un servicio gratuito"
-    description: "Regístrate en aiven.io, elige un servicio con plan gratuito (PostgreSQL, MySQL, Valkey o Kafka), selecciona el proveedor cloud y la región, y lanza el servicio."
+    title: Crear un servicio gratuito
+    description: >-
+      Regístrate en aiven.io, elige un servicio con plan gratuito (PostgreSQL,
+      MySQL, Valkey o Kafka), selecciona el proveedor cloud y la región, y lanza
+      el servicio.
   - step: 2
-    title: "Conectar tu aplicación"
-    description: "Copia la URI de conexión desde la consola (incluye host, puerto, usuario y certificados TLS) y úsala en tu aplicación u ORM como con cualquier servicio estándar."
+    title: Conectar tu aplicación
+    description: >-
+      Copia la URI de conexión desde la consola (incluye host, puerto, usuario y
+      certificados TLS) y úsala en tu aplicación u ORM como con cualquier
+      servicio estándar.
   - step: 3
-    title: "Escalar cuando lo necesites"
-    description: "Cuando el proyecto crezca, cambia a un plan de pago con más recursos, réplicas de lectura y SLA sin migrar de plataforma."
+    title: Escalar cuando lo necesites
+    description: >-
+      Cuando el proyecto crezca, cambia a un plan de pago con más recursos,
+      réplicas de lectura y SLA sin migrar de plataforma.
 whenToUse:
-  - title: "Probar servicios de datos sin coste"
-    description: "Cuando quieres un PostgreSQL, MySQL, Valkey o Kafka gestionado y gratis para desarrollo, pruebas o proyectos personales."
-  - title: "Estandarizar servicios open source en multi-cloud"
-    description: "Para equipos que quieren el mismo stack de datos open source desplegado en AWS, Google Cloud o Azure con una sola consola."
+  - title: Probar servicios de datos sin coste
+    description: >-
+      Cuando quieres un PostgreSQL, MySQL, Valkey o Kafka gestionado y gratis
+      para desarrollo, pruebas o proyectos personales.
+  - title: Estandarizar servicios open source en multi-cloud
+    description: >-
+      Para equipos que quieren el mismo stack de datos open source desplegado en
+      AWS, Google Cloud o Azure con una sola consola.
 tips:
-  - text: "Usa el plan gratuito para desarrollo y staging; en producción necesitarás un plan con SLA y backups."
-  - text: "Gestiona los servicios con el provider de Terraform de Aiven para versionar tu infraestructura de datos como código."
-  - text: "Activa las integraciones de métricas con Grafana o Prometheus para observar el servicio desde tus dashboards habituales."
+  - text: >-
+      Usa el plan gratuito para desarrollo y staging; en producción necesitarás
+      un plan con SLA y backups.
+  - text: >-
+      Gestiona los servicios con el provider de Terraform de Aiven para
+      versionar tu infraestructura de datos como código.
+  - text: >-
+      Activa las integraciones de métricas con Grafana o Prometheus para
+      observar el servicio desde tus dashboards habituales.
 faq:
-  - question: "¿Qué incluye el plan gratuito de Aiven?"
-    answer: "Aiven ofrece planes gratuitos para PostgreSQL, MySQL, Valkey y Kafka con un nodo pequeño, almacenamiento limitado y sin SLA, pensados para desarrollo y pruebas."
-  - question: "¿Qué es Valkey?"
-    answer: "Valkey es el fork open source de Redis impulsado por la Linux Foundation; Aiven lo ofrece gestionado como alternativa compatible con Redis."
-  - question: "¿En qué nubes puedo desplegar?"
-    answer: "Aiven despliega sus servicios en AWS, Google Cloud y Microsoft Azure, pudiendo elegir región y cambiar de nube sin cambiar de plataforma."
-publishedAt: 2026-07-21
+  - question: ¿Qué incluye el plan gratuito de Aiven?
+    answer: >-
+      Aiven ofrece planes gratuitos para PostgreSQL, MySQL, Valkey y Kafka con
+      un nodo pequeño, almacenamiento limitado y sin SLA, pensados para
+      desarrollo y pruebas.
+  - question: ¿Qué es Valkey?
+    answer: >-
+      Valkey es el fork open source de Redis impulsado por la Linux Foundation;
+      Aiven lo ofrece gestionado como alternativa compatible con Redis.
+  - question: ¿En qué nubes puedo desplegar?
+    answer: >-
+      Aiven despliega sus servicios en AWS, Google Cloud y Microsoft Azure,
+      pudiendo elegir región y cambiar de nube sin cambiar de plataforma.
+publishedAt: 2026-07-21T00:00:00.000Z
+screenshots:
+  - /screenshots/aiven.webp
 ---
 
 ## ¿Qué es?

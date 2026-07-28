@@ -1,46 +1,87 @@
 ---
 name: Snyk
-description: Plataforma de seguridad para desarrolladores que encuentra y corrige vulnerabilidades en código, dependencias, contenedores e infraestructura como código.
+description: >-
+  Plataforma de seguridad para desarrolladores que encuentra y corrige
+  vulnerabilidades en código, dependencias, contenedores e infraestructura como
+  código.
 category: seguridad
-tags: [seguridad, vulnerabilidades, dependencias, contenedores, iac, sca, devsecops, cicd]
-officialSite: https://snyk.io/es/
-github: https://github.com/snyk/snyk
+tags:
+  - seguridad
+  - vulnerabilidades
+  - dependencias
+  - contenedores
+  - iac
+  - sca
+  - devsecops
+  - cicd
+officialSite: 'https://snyk.io/es/'
+github: 'https://github.com/snyk/snyk'
 pricing: freemium
 openSource: true
 license: Apache-2.0
 technicalLevel: intermedio
-compatibility: [Windows, macOS, Linux, Web]
+compatibility:
+  - Windows
+  - macOS
+  - Linux
+  - Web
 verified: true
 features:
   - Escaneo de vulnerabilidades en dependencias open-source (SCA)
   - Análisis estático de seguridad del código fuente (SAST)
   - Escaneo de imágenes de contenedores Docker y registros
-  - Detección de misconfiguraciones en infraestructura como código (Terraform, K8s)
-  - Integración nativa con GitHub, GitLab, Bitbucket y CI/CD pipelines
+  - >-
+    Detección de misconfiguraciones en infraestructura como código (Terraform,
+    K8s)
+  - 'Integración nativa con GitHub, GitLab, Bitbucket y CI/CD pipelines'
   - Fix automático con pull requests que actualizan dependencias vulnerables
   - Base de datos de vulnerabilidades propietaria actualizada continuamente
 howToUse:
   - step: 1
-    title: "Instala el CLI e inicia sesión"
-    description: "Instala Snyk globalmente con npm install -g snyk y ejecuta snyk auth para autenticarte via navegador. Alternativamente, conecta tu repositorio directamente desde la interfaz web de Snyk sin instalación local."
+    title: Instala el CLI e inicia sesión
+    description: >-
+      Instala Snyk globalmente con npm install -g snyk y ejecuta snyk auth para
+      autenticarte via navegador. Alternativamente, conecta tu repositorio
+      directamente desde la interfaz web de Snyk sin instalación local.
   - step: 2
-    title: "Escanea tu proyecto en busca de vulnerabilidades"
-    description: "Ejecuta snyk test en la raíz de tu proyecto para analizar dependencias, o snyk code test para análisis de código fuente. Snyk mostrará vulnerabilidades encontradas con severidad, ruta de dependencia y remediation disponible."
+    title: Escanea tu proyecto en busca de vulnerabilidades
+    description: >-
+      Ejecuta snyk test en la raíz de tu proyecto para analizar dependencias, o
+      snyk code test para análisis de código fuente. Snyk mostrará
+      vulnerabilidades encontradas con severidad, ruta de dependencia y
+      remediation disponible.
   - step: 3
-    title: "Corrige vulnerabilidades automáticamente"
-    description: "Ejecuta snyk fix para aplicar parches automáticos o actualizaciones de versión que resuelvan vulnerabilidades sin romper compatibilidad. Desde la web, Snyk puede crear PRs automáticos con las correcciones."
+    title: Corrige vulnerabilidades automáticamente
+    description: >-
+      Ejecuta snyk fix para aplicar parches automáticos o actualizaciones de
+      versión que resuelvan vulnerabilidades sin romper compatibilidad. Desde la
+      web, Snyk puede crear PRs automáticos con las correcciones.
   - step: 4
-    title: "Integra en tu pipeline de CI/CD"
-    description: "Añade snyk test como paso en tu pipeline (GitHub Actions, Jenkins, GitLab CI). Configura políticas para bloquear builds con vulnerabilidades críticas y recibir alertas cuando se descubran nuevas vulnerabilidades en dependencias ya deployadas."
+    title: Integra en tu pipeline de CI/CD
+    description: >-
+      Añade snyk test como paso en tu pipeline (GitHub Actions, Jenkins, GitLab
+      CI). Configura políticas para bloquear builds con vulnerabilidades
+      críticas y recibir alertas cuando se descubran nuevas vulnerabilidades en
+      dependencias ya deployadas.
 whenToUse:
-  - title: "Gestión continua de seguridad en dependencias"
-    description: "Cuando tu proyecto tiene decenas o cientos de dependencias npm, pip, Maven u otros ecosistemas y necesitas visibilidad continua sobre vulnerabilidades conocidas, con alertas automáticas cuando se publican nuevos CVEs."
-  - title: "DevSecOps integrado en el flujo de desarrollo"
-    description: "Para incorporar seguridad como parte del workflow de desarrollo sin crear fricción. Snyk se integra en PR reviews, editores IDE y pipelines CI para dar feedback de seguridad donde los desarrolladores ya trabajan."
-  - title: "Seguridad de contenedores e infraestructura"
-    description: "Cuando necesitas escanear imágenes Docker antes del deploy y validar que tus configuraciones de Terraform, Kubernetes o CloudFormation no tienen misconfiguraciones de seguridad."
+  - title: Gestión continua de seguridad en dependencias
+    description: >-
+      Cuando tu proyecto tiene decenas o cientos de dependencias npm, pip, Maven
+      u otros ecosistemas y necesitas visibilidad continua sobre
+      vulnerabilidades conocidas, con alertas automáticas cuando se publican
+      nuevos CVEs.
+  - title: DevSecOps integrado en el flujo de desarrollo
+    description: >-
+      Para incorporar seguridad como parte del workflow de desarrollo sin crear
+      fricción. Snyk se integra en PR reviews, editores IDE y pipelines CI para
+      dar feedback de seguridad donde los desarrolladores ya trabajan.
+  - title: Seguridad de contenedores e infraestructura
+    description: >-
+      Cuando necesitas escanear imágenes Docker antes del deploy y validar que
+      tus configuraciones de Terraform, Kubernetes o CloudFormation no tienen
+      misconfiguraciones de seguridad.
 examples:
-  - title: "Escanear dependencias npm y corregir vulnerabilidades"
+  - title: Escanear dependencias npm y corregir vulnerabilidades
     code: |
       # Instalar y autenticar Snyk
       npm install -g snyk
@@ -60,8 +101,11 @@ examples:
 
       # Monitorear continuamente
       snyk monitor
-    output: "Snyk identifica vulnerabilidades en tu árbol de dependencias, muestra la ruta de dependencia afectada, y puede aplicar correcciones automáticas actualizando a versiones parcheadas sin romper la compatibilidad."
-  - title: "Integración con GitHub Actions"
+    output: >-
+      Snyk identifica vulnerabilidades en tu árbol de dependencias, muestra la
+      ruta de dependencia afectada, y puede aplicar correcciones automáticas
+      actualizando a versiones parcheadas sin romper la compatibilidad.
+  - title: Integración con GitHub Actions
     code: |
       # .github/workflows/security.yml
       name: Snyk Security Check
@@ -77,22 +121,53 @@ examples:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
               with:
                 args: --severity-threshold=high
-    output: "Pipeline de CI que bloquea merges cuando se detectan vulnerabilidades de severidad alta o crítica en las dependencias del proyecto."
+    output: >-
+      Pipeline de CI que bloquea merges cuando se detectan vulnerabilidades de
+      severidad alta o crítica en las dependencias del proyecto.
 tips:
-  - text: "Usa snyk monitor después de cada deploy para mantener un registro continuo de vulnerabilidades y recibir alertas cuando se descubran nuevos CVEs en tus dependencias ya deployadas."
-  - text: "Configura --severity-threshold=high en CI para evitar bloquear builds por vulnerabilidades de baja severidad que pueden no ser explotables en tu contexto."
-  - text: "Aprovecha las políticas de ignore (.snyk) para marcar falsos positivos o vulnerabilidades no aplicables, documentando la razón para auditorías futuras."
-  - text: "Integra la extensión de Snyk en VS Code o IntelliJ para ver vulnerabilidades directamente en el editor mientras desarrollas, antes de hacer commit."
+  - text: >-
+      Usa snyk monitor después de cada deploy para mantener un registro continuo
+      de vulnerabilidades y recibir alertas cuando se descubran nuevos CVEs en
+      tus dependencias ya deployadas.
+  - text: >-
+      Configura --severity-threshold=high en CI para evitar bloquear builds por
+      vulnerabilidades de baja severidad que pueden no ser explotables en tu
+      contexto.
+  - text: >-
+      Aprovecha las políticas de ignore (.snyk) para marcar falsos positivos o
+      vulnerabilidades no aplicables, documentando la razón para auditorías
+      futuras.
+  - text: >-
+      Integra la extensión de Snyk en VS Code o IntelliJ para ver
+      vulnerabilidades directamente en el editor mientras desarrollas, antes de
+      hacer commit.
 faq:
-  - question: "¿Snyk es gratis para proyectos open-source?"
-    answer: "Sí, Snyk ofrece un plan gratuito generoso para proyectos open-source con tests ilimitados. Para proyectos privados, el plan gratuito permite hasta 200 tests mensuales con funcionalidad completa de escaneo de dependencias."
-  - question: "¿En qué se diferencia Snyk de npm audit?"
-    answer: "Snyk tiene una base de datos de vulnerabilidades más completa y actualizada que el advisory database de npm, ofrece fix automático más inteligente que respeta semver, y cubre mucho más que solo npm: Python, Java, Go, Ruby, contenedores e IaC."
-  - question: "¿Snyk puede escanear imágenes Docker?"
-    answer: "Sí, con snyk container test <imagen> puedes escanear imágenes de contenedores para detectar vulnerabilidades en paquetes del sistema operativo y dependencias de la aplicación. Se integra con Docker Hub, ECR, GCR y otros registros."
-  - question: "¿Cómo maneja Snyk los falsos positivos?"
-    answer: "Puedes marcar vulnerabilidades como no aplicables usando archivos de política .snyk o desde la interfaz web. Snyk también proporciona contexto de explotabilidad para ayudarte a priorizar qué vulnerabilidades son realmente riesgosas en tu contexto específico."
-publishedAt: 2025-06-15
+  - question: ¿Snyk es gratis para proyectos open-source?
+    answer: >-
+      Sí, Snyk ofrece un plan gratuito generoso para proyectos open-source con
+      tests ilimitados. Para proyectos privados, el plan gratuito permite hasta
+      200 tests mensuales con funcionalidad completa de escaneo de dependencias.
+  - question: ¿En qué se diferencia Snyk de npm audit?
+    answer: >-
+      Snyk tiene una base de datos de vulnerabilidades más completa y
+      actualizada que el advisory database de npm, ofrece fix automático más
+      inteligente que respeta semver, y cubre mucho más que solo npm: Python,
+      Java, Go, Ruby, contenedores e IaC.
+  - question: ¿Snyk puede escanear imágenes Docker?
+    answer: >-
+      Sí, con snyk container test <imagen> puedes escanear imágenes de
+      contenedores para detectar vulnerabilidades en paquetes del sistema
+      operativo y dependencias de la aplicación. Se integra con Docker Hub, ECR,
+      GCR y otros registros.
+  - question: ¿Cómo maneja Snyk los falsos positivos?
+    answer: >-
+      Puedes marcar vulnerabilidades como no aplicables usando archivos de
+      política .snyk o desde la interfaz web. Snyk también proporciona contexto
+      de explotabilidad para ayudarte a priorizar qué vulnerabilidades son
+      realmente riesgosas en tu contexto específico.
+publishedAt: 2025-06-15T00:00:00.000Z
+screenshots:
+  - /screenshots/snyk.webp
 ---
 
 ## ¿Qué es?

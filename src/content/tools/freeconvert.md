@@ -1,40 +1,77 @@
 ---
 name: FreeConvert
-description: Herramienta online de conversión de archivos que soporta más de 1500 formatos incluyendo video, audio, imágenes, documentos y ebooks.
+description: >-
+  Herramienta online de conversión de archivos que soporta más de 1500 formatos
+  incluyendo video, audio, imágenes, documentos y ebooks.
 category: productividad
-tags: [conversion, archivos, formatos, video, audio, imagenes, documentos, online]
-officialSite: https://www.freeconvert.com/video-compressor
+tags:
+  - conversion
+  - archivos
+  - formatos
+  - video
+  - audio
+  - imagenes
+  - documentos
+  - online
+officialSite: 'https://www.freeconvert.com/video-compressor'
 pricing: freemium
 openSource: false
 technicalLevel: principiante
-compatibility: [Web, Windows, macOS, Linux]
+compatibility:
+  - Web
+  - Windows
+  - macOS
+  - Linux
 features:
   - Conversión entre más de 1500 formatos de archivo
-  - Soporte para video, audio, imágenes, documentos, ebooks y archivos comprimidos
+  - >-
+    Soporte para video, audio, imágenes, documentos, ebooks y archivos
+    comprimidos
   - Procesamiento en la nube sin instalación de software
-  - Opciones avanzadas de configuración por formato (bitrate, resolución, codec)
+  - 'Opciones avanzadas de configuración por formato (bitrate, resolución, codec)'
   - Conversión por lotes de múltiples archivos simultáneamente
   - API REST disponible para integración en aplicaciones
   - Compresión de archivos con control de calidad
 howToUse:
   - step: 1
-    title: "Selecciona el tipo de conversión"
-    description: "Accede a freeconvert.com y selecciona la categoría de conversión que necesitas (video, audio, imagen, documento). También puedes buscar directamente el formato de origen y destino en el buscador de la página principal."
+    title: Selecciona el tipo de conversión
+    description: >-
+      Accede a freeconvert.com y selecciona la categoría de conversión que
+      necesitas (video, audio, imagen, documento). También puedes buscar
+      directamente el formato de origen y destino en el buscador de la página
+      principal.
   - step: 2
-    title: "Sube tu archivo y configura opciones"
-    description: "Arrastra o selecciona el archivo a convertir (máximo 1GB en plan gratuito). Ajusta opciones avanzadas si es necesario: resolución, codec de video, bitrate de audio, calidad de compresión de imagen, o tamaño de página para documentos."
+    title: Sube tu archivo y configura opciones
+    description: >-
+      Arrastra o selecciona el archivo a convertir (máximo 1GB en plan
+      gratuito). Ajusta opciones avanzadas si es necesario: resolución, codec de
+      video, bitrate de audio, calidad de compresión de imagen, o tamaño de
+      página para documentos.
   - step: 3
-    title: "Convierte y descarga el resultado"
-    description: "Haz clic en Convertir y espera el procesamiento en la nube. Una vez completado, descarga el archivo convertido. El enlace de descarga permanece disponible durante 24 horas en el plan gratuito."
+    title: Convierte y descarga el resultado
+    description: >-
+      Haz clic en Convertir y espera el procesamiento en la nube. Una vez
+      completado, descarga el archivo convertido. El enlace de descarga
+      permanece disponible durante 24 horas en el plan gratuito.
 whenToUse:
-  - title: "Conversión rápida sin instalar software"
-    description: "Cuando necesitas convertir un archivo de forma puntual y no quieres instalar programas como FFmpeg, HandBrake o ImageMagick. Ideal para conversiones ocasionales donde la conveniencia importa más que la velocidad."
-  - title: "Formatos poco comunes o legacy"
-    description: "Para convertir archivos en formatos poco habituales (HEIC, WEBP, AVIF, FLAC, OGG) que tu sistema operativo no soporta nativamente y necesitas una solución rápida sin investigar herramientas especializadas."
-  - title: "Preparación de assets para desarrollo web"
-    description: "Cuando necesitas convertir imágenes a WebP/AVIF, videos a MP4/WebM, o audios a formatos web-friendly para optimizar assets antes de subirlos a tu proyecto web."
+  - title: Conversión rápida sin instalar software
+    description: >-
+      Cuando necesitas convertir un archivo de forma puntual y no quieres
+      instalar programas como FFmpeg, HandBrake o ImageMagick. Ideal para
+      conversiones ocasionales donde la conveniencia importa más que la
+      velocidad.
+  - title: Formatos poco comunes o legacy
+    description: >-
+      Para convertir archivos en formatos poco habituales (HEIC, WEBP, AVIF,
+      FLAC, OGG) que tu sistema operativo no soporta nativamente y necesitas una
+      solución rápida sin investigar herramientas especializadas.
+  - title: Preparación de assets para desarrollo web
+    description: >-
+      Cuando necesitas convertir imágenes a WebP/AVIF, videos a MP4/WebM, o
+      audios a formatos web-friendly para optimizar assets antes de subirlos a
+      tu proyecto web.
 examples:
-  - title: "Convertir video MP4 a WebM para web con API"
+  - title: Convertir video MP4 a WebM para web con API
     code: |
       # Usando la API de FreeConvert (ejemplo con curl)
 
@@ -59,22 +96,51 @@ examples:
             }
           }
         }'
-    output: "Job de conversión creado que procesa el video MP4 a formato WebM con codec VP9 en resolución 720p, optimizado para reproducción web con menor tamaño de archivo."
+    output: >-
+      Job de conversión creado que procesa el video MP4 a formato WebM con codec
+      VP9 en resolución 720p, optimizado para reproducción web con menor tamaño
+      de archivo.
 tips:
-  - text: "Usa la conversión por lotes cuando necesitas convertir múltiples archivos al mismo formato, ahorrando tiempo de subida y configuración individual."
-  - text: "Para imágenes web, convierte a WebP con calidad 80-85% para obtener el mejor balance entre tamaño de archivo y calidad visual perceptible."
-  - text: "Aprovecha las opciones avanzadas de codec de video (H.265/HEVC) para reducir significativamente el tamaño de archivos de video manteniendo calidad equivalente a H.264."
-  - text: "Si necesitas automatizar conversiones, usa la API REST en lugar de la interfaz web. Es útil para pipelines de build que optimizan assets automáticamente."
+  - text: >-
+      Usa la conversión por lotes cuando necesitas convertir múltiples archivos
+      al mismo formato, ahorrando tiempo de subida y configuración individual.
+  - text: >-
+      Para imágenes web, convierte a WebP con calidad 80-85% para obtener el
+      mejor balance entre tamaño de archivo y calidad visual perceptible.
+  - text: >-
+      Aprovecha las opciones avanzadas de codec de video (H.265/HEVC) para
+      reducir significativamente el tamaño de archivos de video manteniendo
+      calidad equivalente a H.264.
+  - text: >-
+      Si necesitas automatizar conversiones, usa la API REST en lugar de la
+      interfaz web. Es útil para pipelines de build que optimizan assets
+      automáticamente.
 faq:
-  - question: "¿Es seguro subir archivos a FreeConvert?"
-    answer: "FreeConvert elimina los archivos subidos automáticamente después de 24 horas. La transferencia usa HTTPS cifrado. Sin embargo, para archivos muy sensibles o confidenciales, considera usar herramientas locales como FFmpeg o ImageMagick."
-  - question: "¿Cuál es el límite de tamaño de archivo?"
-    answer: "El plan gratuito permite archivos de hasta 1GB. Los planes de pago aumentan este límite hasta 5GB o más, además de ofrecer mayor prioridad en la cola de procesamiento y mayor almacenamiento temporal."
-  - question: "¿FreeConvert mantiene la calidad original?"
-    answer: "Depende de la configuración elegida. Las opciones por defecto buscan un balance entre calidad y tamaño. Puedes aumentar bitrate, resolución o calidad de compresión en las opciones avanzadas para mantener la máxima fidelidad al original."
-  - question: "¿Puedo usar FreeConvert sin cuenta?"
-    answer: "Sí, puedes realizar conversiones básicas sin crear cuenta. Registrarte desbloquea mayor tamaño de archivo, más conversiones diarias, prioridad de procesamiento y acceso al historial de conversiones."
-publishedAt: 2025-06-15
+  - question: ¿Es seguro subir archivos a FreeConvert?
+    answer: >-
+      FreeConvert elimina los archivos subidos automáticamente después de 24
+      horas. La transferencia usa HTTPS cifrado. Sin embargo, para archivos muy
+      sensibles o confidenciales, considera usar herramientas locales como
+      FFmpeg o ImageMagick.
+  - question: ¿Cuál es el límite de tamaño de archivo?
+    answer: >-
+      El plan gratuito permite archivos de hasta 1GB. Los planes de pago
+      aumentan este límite hasta 5GB o más, además de ofrecer mayor prioridad en
+      la cola de procesamiento y mayor almacenamiento temporal.
+  - question: ¿FreeConvert mantiene la calidad original?
+    answer: >-
+      Depende de la configuración elegida. Las opciones por defecto buscan un
+      balance entre calidad y tamaño. Puedes aumentar bitrate, resolución o
+      calidad de compresión en las opciones avanzadas para mantener la máxima
+      fidelidad al original.
+  - question: ¿Puedo usar FreeConvert sin cuenta?
+    answer: >-
+      Sí, puedes realizar conversiones básicas sin crear cuenta. Registrarte
+      desbloquea mayor tamaño de archivo, más conversiones diarias, prioridad de
+      procesamiento y acceso al historial de conversiones.
+publishedAt: 2025-06-15T00:00:00.000Z
+screenshots:
+  - /screenshots/freeconvert.webp
 ---
 
 ## ¿Qué es?

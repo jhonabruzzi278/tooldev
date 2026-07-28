@@ -1,14 +1,29 @@
 ---
 name: Sentry
-description: Plataforma de monitoreo de aplicaciones con detección de errores, rendimiento y trazabilidad distribuida.
+description: >-
+  Plataforma de monitoreo de aplicaciones con detección de errores, rendimiento
+  y trazabilidad distribuida.
 category: observabilidad
-tags: [monitoring, errors, performance, debugging, observability, apm]
-officialSite: https://sentry.io
+tags:
+  - monitoring
+  - errors
+  - performance
+  - debugging
+  - observability
+  - apm
+officialSite: 'https://sentry.io'
 pricing: freemium
 openSource: true
 license: MIT
 technicalLevel: intermedio
-compatibility: ["Web", "iOS", Android, Node.js, Python, Go, Rust]
+compatibility:
+  - Web
+  - iOS
+  - Android
+  - Node.js
+  - Python
+  - Go
+  - Rust
 featured: true
 features:
   - Captura de errores con stack traces completos y contexto
@@ -18,30 +33,54 @@ features:
   - Alertas inteligentes con agrupación y frecuencia
   - Integración con CI/CD para detectar regresiones
   - Dashboards personalizables con métricas y trends
-alternatives: [datadog, new-relic, bugsnag]
-relatedTools: [github, gitlab, docker, kubernetes, next-js]
+alternatives:
+  - datadog
+  - new-relic
+  - bugsnag
+relatedTools:
+  - github
+  - gitlab
+  - docker
+  - kubernetes
+  - next-js
 howToUse:
   - step: 1
-    title: "Crear un proyecto en Sentry"
-    description: "Regístrate en sentry.io, crea un proyecto y selecciona el lenguaje o framework de tu aplicación para obtener las instrucciones de instalación específicas."
+    title: Crear un proyecto en Sentry
+    description: >-
+      Regístrate en sentry.io, crea un proyecto y selecciona el lenguaje o
+      framework de tu aplicación para obtener las instrucciones de instalación
+      específicas.
   - step: 2
-    title: "Instalar el SDK en tu aplicación"
-    description: "Agrega el SDK de Sentry a tu proyecto (npm install @sentry/nextjs para Next.js, por ejemplo) e inicialízalo con el DSN de tu proyecto."
+    title: Instalar el SDK en tu aplicación
+    description: >-
+      Agrega el SDK de Sentry a tu proyecto (npm install @sentry/nextjs para
+      Next.js, por ejemplo) e inicialízalo con el DSN de tu proyecto.
   - step: 3
-    title: "Configurar alertas y monitoreo"
-    description: "Define reglas de alerta para notificarte por email, Slack o webhooks cuando ocurran errores críticos o se superen umbrales de frecuencia."
+    title: Configurar alertas y monitoreo
+    description: >-
+      Define reglas de alerta para notificarte por email, Slack o webhooks
+      cuando ocurran errores críticos o se superen umbrales de frecuencia.
   - step: 4
-    title: "Analizar y resolver errores desde el dashboard"
-    description: "Usa el panel de Sentry para ver stack traces completos, contexto de cada error, sesiones de usuario y tracing distribuido para diagnosticar y solucionar problemas."
+    title: Analizar y resolver errores desde el dashboard
+    description: >-
+      Usa el panel de Sentry para ver stack traces completos, contexto de cada
+      error, sesiones de usuario y tracing distribuido para diagnosticar y
+      solucionar problemas.
 whenToUse:
-  - title: "Monitoreo de errores en producción"
-    description: "Cuando necesitas detectar, diagnosticar y corregir errores que afectan a los usuarios reales antes de que escalen a problemas mayores."
-  - title: "Aplicaciones con microservicios"
-    description: "Para sistemas distribuidos donde necesitas trazabilidad entre múltiples servicios y entender el camino completo de una solicitud fallida."
-  - title: "Detección de regresiones en deploys"
-    description: "Integra Sentry con tu pipeline de CI/CD para identificar automáticamente nuevos errores introducidos en cada release."
+  - title: Monitoreo de errores en producción
+    description: >-
+      Cuando necesitas detectar, diagnosticar y corregir errores que afectan a
+      los usuarios reales antes de que escalen a problemas mayores.
+  - title: Aplicaciones con microservicios
+    description: >-
+      Para sistemas distribuidos donde necesitas trazabilidad entre múltiples
+      servicios y entender el camino completo de una solicitud fallida.
+  - title: Detección de regresiones en deploys
+    description: >-
+      Integra Sentry con tu pipeline de CI/CD para identificar automáticamente
+      nuevos errores introducidos en cada release.
 examples:
-  - title: "Configuración básica en Next.js"
+  - title: Configuración básica en Next.js
     code: |
       // sentry.config.js
       import { init } from '@sentry/nextjs';
@@ -49,23 +88,51 @@ examples:
         dsn: 'https://xxx@sentry.io/xxx',
         tracesSampleRate: 0.5,
       });
-    output: "Sentry comienza a capturar errores y transacciones en tu aplicación Next.js."
+    output: >-
+      Sentry comienza a capturar errores y transacciones en tu aplicación
+      Next.js.
 tips:
-  - text: "Configura tracesSampleRate en producción a un valor bajo (0.1-0.3) para controlar el volumen de datos de rendimiento sin exceder los límites del plan."
-  - text: "Usa release tracking con git commit hashes (sentry-cli releases new v1.0.0) para mapear cada error a la versión exacta del código que lo causó."
-  - text: "Aprovecha Session Replay para ver reproducciones visuales de lo que el usuario hizo justo antes de encontrar un error."
-  - text: "Agrupa notificaciones en Slack o Discord por severidad usando filtros de alerta para evitar fatiga de notificaciones en el equipo."
-  - text: "Sube source maps en cada deploy para que los stack traces minificados en producción muestren el código fuente original."
+  - text: >-
+      Configura tracesSampleRate en producción a un valor bajo (0.1-0.3) para
+      controlar el volumen de datos de rendimiento sin exceder los límites del
+      plan.
+  - text: >-
+      Usa release tracking con git commit hashes (sentry-cli releases new
+      v1.0.0) para mapear cada error a la versión exacta del código que lo
+      causó.
+  - text: >-
+      Aprovecha Session Replay para ver reproducciones visuales de lo que el
+      usuario hizo justo antes de encontrar un error.
+  - text: >-
+      Agrupa notificaciones en Slack o Discord por severidad usando filtros de
+      alerta para evitar fatiga de notificaciones en el equipo.
+  - text: >-
+      Sube source maps en cada deploy para que los stack traces minificados en
+      producción muestren el código fuente original.
 faq:
-  - question: "¿Cuánto cuesta Sentry?"
-    answer: "Sentry ofrece un plan gratuito con límite de eventos mensuales y 1 usuario. Los planes de pago escalan por volumen de eventos, errores, transacciones y attachments, con precios desde $26/mes."
-  - question: "¿Puedo auto-hospedar Sentry?"
-    answer: "Sí, Sentry es open source (licencia MIT) y puedes desplegarlo en tu propia infraestructura con Docker. Sin embargo, el mantenimiento del self-hosting requiere recursos de DevOps."
-  - question: "¿Qué diferencia a Sentry de Datadog?"
-    answer: "Sentry está especializado en errores de aplicación y experiencia de desarrollador, mientras que Datadog cubre monitoreo de infraestructura, logs, APM y más. Muchos equipos usan ambos complementariamente."
-  - question: "¿Sentry afecta el rendimiento de mi aplicación?"
-    answer: "El SDK de Sentry está diseñado para tener un impacto mínimo en rendimiento. Las operaciones son asíncronas y el muestreo configurable te permite controlar la carga."
-publishedAt: 2026-06-01
+  - question: ¿Cuánto cuesta Sentry?
+    answer: >-
+      Sentry ofrece un plan gratuito con límite de eventos mensuales y 1
+      usuario. Los planes de pago escalan por volumen de eventos, errores,
+      transacciones y attachments, con precios desde $26/mes.
+  - question: ¿Puedo auto-hospedar Sentry?
+    answer: >-
+      Sí, Sentry es open source (licencia MIT) y puedes desplegarlo en tu propia
+      infraestructura con Docker. Sin embargo, el mantenimiento del self-hosting
+      requiere recursos de DevOps.
+  - question: ¿Qué diferencia a Sentry de Datadog?
+    answer: >-
+      Sentry está especializado en errores de aplicación y experiencia de
+      desarrollador, mientras que Datadog cubre monitoreo de infraestructura,
+      logs, APM y más. Muchos equipos usan ambos complementariamente.
+  - question: ¿Sentry afecta el rendimiento de mi aplicación?
+    answer: >-
+      El SDK de Sentry está diseñado para tener un impacto mínimo en
+      rendimiento. Las operaciones son asíncronas y el muestreo configurable te
+      permite controlar la carga.
+publishedAt: 2026-06-01T00:00:00.000Z
+screenshots:
+  - /screenshots/sentry.webp
 ---
 
 ## ¿Qué es?
