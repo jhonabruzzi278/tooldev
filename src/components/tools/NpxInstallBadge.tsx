@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@/components/ui/Icon';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface NpxInstallBadgeProps {

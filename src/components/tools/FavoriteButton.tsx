@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@/components/ui/Icon';
 import { cn } from '@/lib/utils';
 import { isFavorite, toggleFavorite } from '@/lib/favorites';
 

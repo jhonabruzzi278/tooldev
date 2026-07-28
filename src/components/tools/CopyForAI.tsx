@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import type { Locale } from '@/lib/i18n/translations';

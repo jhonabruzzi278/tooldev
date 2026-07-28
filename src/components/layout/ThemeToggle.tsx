@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Icon } from '@iconify/react';
+import { Icon } from '@/components/ui/Icon';
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);

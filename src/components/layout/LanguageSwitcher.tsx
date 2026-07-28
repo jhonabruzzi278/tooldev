@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import { Icon } from '@/components/ui/Icon';
 import type { Locale } from '@/lib/i18n/translations';
 
 interface LanguageSwitcherProps {
